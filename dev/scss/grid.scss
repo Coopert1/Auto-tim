@@ -69,10 +69,7 @@
 .col-{
 	&mobileonly-{
 		@include breakpoint(mobileonly){
-			&1-1{
-				max-width: 350px;
-				margin: 10px auto;
-			}
+			
 			&1-2{
 				width: 50%;
 				float: left;
@@ -93,6 +90,14 @@
 			&1-4{
 				width: 25%;
 				float: left;
+			}
+			&1-5{
+				width: 20%;
+				float: left;
+			}
+			&1-5_right{
+				width: 20%;
+				float: right;
 			}
 			&2-3{
 				width: 66.66%;
@@ -120,8 +125,16 @@
 				width: 75%;
 				float: left;
 			}
+			&2-3{
+				width: 40%;
+				float: left;
+			}
 			&1-4{
 				width: 25%;
+				float: left;
+			}
+			&1-5{
+				width: 20%;
 				float: left;
 			}
 		}
