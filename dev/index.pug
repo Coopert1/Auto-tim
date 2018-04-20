@@ -14,7 +14,69 @@ html
 				.section__title Новое поступление
 			.section
 				.section__title Популярные разделы
-			.section
+				.row.clearfix
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_grey
+							img(src="images/popular_01.png")
+							span
+								|Боксы на крышу
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_blue
+							img(src="images/popular_02.png")
+							span
+								|Велокрепления
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_pink
+							img(src="images/popular_03.png")
+							span
+								|Багажники
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_cyan
+							img(src="images/popular_04.png")
+							span
+								|Чехлы, сумки и рюкзаки
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_green
+							img(src="images/popular_05.png")
+							span
+								|Подогреватели
+			.section.show-tablet
 				.section__title Новости
-			
+				.row.clearfix
+					.col-phablet-1-2.col-tablet-1-3
+						.article
+							.article__pic
+								a(href="#")
+									img(src="images/new_01.png")
+							.article__info
+								.article__pub-date
+									a(href="#")
+										|01.01.16
+								.article__title
+									a(href="#")
+										|Какой автохолодильник лучше купить в машину?
+					.col-phablet-1-2.col-tablet-1-3
+						.article
+							.article__pic
+								a(href="#")
+									img(src="images/new_02.png")
+							.article__info
+								.article__pub-date
+									a(href="#")
+										|01.01.16
+								.article__title
+									a(href="#")
+										|Какой автохолодильник лучше купить в машину?
+					.col-phablet-1-2.col-tablet-1-3
+						.article
+							.article__pic
+								a(href="#")
+									img(src="images/new_03.png")
+							.article__info
+								.article__pub-date
+									a(href="#")
+										|01.01.16
+								.article__title
+									a(href="#")
+										|Какой автохолодильник лучше купить в машину?
 		include ./parts/footer.pug

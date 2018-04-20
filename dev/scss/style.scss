@@ -319,7 +319,9 @@ button, input {
 		margin-right: 10px;
 	}
 }
-
+.add-border{
+	border-right: 1px solid #2b2b2b;
+}
 .main-menu{
 	position: relative;
 	background: #424242;
@@ -331,16 +333,16 @@ button, input {
 		justify-content: space-around;
 		color: #fff;
 		list-style: none;
-		// // :last-child{
-		// // 	border-right: none;
-		// }
+		@include breakpoint(tablet){
+			margin: 0;
+		}	
 		li{
+			font-size: 16px;
 			flex-grow: 1;
 			text-align: center;
 			font-family: 'robotoblack';
 			font-size: 18px;
 			padding: 15px 0;
-			border-right: 1px solid #2b2b2b;
 			position: relative;
 			a{
 				display :block;
@@ -359,6 +361,7 @@ button, input {
 				list-style: none;
 				padding: 10px;
 				@include breakpoint(tablet){
+					left: 0px;
 					display:block;
 					width:100%;
 					border: 1px solid #e3e3e3;
@@ -526,6 +529,81 @@ button, input {
 		}
 	}
 }
+.article{
+	margin: 20px 0;
+	position:relative;
+	display:inline-block;
+	img{
+		max-width:100%;
+	}
+	&__info{
+		padding:0 20px;
+		position: absolute;
+		bottom: 20px;
+		color: #fff;
+		a{
+			color: #fff;
+		}
+	}
+	&__title{
+		text-align:left;
+		font-family: 'robotoblack';
+		text-decoration:none;
+		display: block;
+		font-size:15px;
+	}
+	&__pub-date{
+		font-family: 'arial';
+		text-align:left;
+		display:block;
+		font-size: 11px;
+	}
+	&__pic{
+		display:inline-block;
+		position: relative;
+		img {
+			opacity: 1;
+			display: block;
+		}
+	}
+}
+
+.popular-section{
+	display: block;
+	max-width: 220px;
+	padding: 20px 10px;
+	text-align: center;
+	border-radius: 5px;
+	@media(min-width:800px)and(max-width:1130px){
+		min-height: 152px;
+	}
+	img{
+		height: 60px;
+		margin-bottom: 10px;
+	}
+	&_grey{
+		background: #f2f3f4;
+	}
+	&_blue{
+		background: #d3e6f8;
+	}
+	&_pink{
+		background: #ffe8da;
+	}
+	&_cyan{
+		background: #d6eef5;
+	}
+	&_green{
+		background: #e5f2dc;
+	}
+	span{
+		display: block;
+		color: #000;
+		font-family: 'robotobold';
+		font-size: 15px;
+	}
+}
+
 .show-tablet{
 	display: none;
 	@include breakpoint(tablet){
