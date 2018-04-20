@@ -6,7 +6,7 @@ $(function(){
 			{duration:300},
 		);
 	})
-	$('.search').click(function(){
+	$('.search-mobile').click(function(){
 		$(this).toggleClass('active_search');
 		$(".search-form").fadeToggle(
 			// {height: 'toggle'},
