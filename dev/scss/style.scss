@@ -163,8 +163,9 @@ button, input {
 }
 
 .header-top{
+	position:relative;
 	background: #fff;
-	padding: 10px 0;
+	padding: 8px 0;
 	font-size: 14px;
 	border-bottom: 1px solid #d4d8db;
 }
@@ -175,7 +176,7 @@ button, input {
 }
 .header-bottom-content{
 	display:flex;
-	flex-wrap: wrap;
+	flex-wrap: no-wrap;
 	align-items: stretch;
 	justify-content: space-between;
 	
@@ -194,6 +195,7 @@ button, input {
 .location{
 	font-size: 12px;
 	display: inline-block;
+	position: relative;
 	a{	
 		color: #f2762e;
 		text-decoration: none;
@@ -202,12 +204,15 @@ button, input {
 	img{
 		display: none;
 		@include breakpoint(tablet){
+			position: absolute;
+			left:2;
 			display: inline-block;
 			margin-right: 5px;
 		}
 	}
 	@include breakpoint(tablet){
 		margin-right: 50px;
+		padding-left: 20px;
 	}
 	@include breakpoint(laptop){
 		margin-right: 190px;
@@ -221,7 +226,10 @@ button, input {
 }
 
 .telephone{
-	float: right;
+	position: absolute;
+	top: -5px;
+	right: 10px;
+	vertical-align: top;
 	font-size: 18px;
 	a{
 		color: 000;
@@ -249,7 +257,7 @@ button, input {
 
 .social-hrefs{
 	display: none;
-	a{
+	a{	
 		margin: 0 15px;
 	}
 	@include breakpoint(tablet){
@@ -266,7 +274,7 @@ button, input {
 	form{
 		position: relative;
 		input{
-			margin: 10px 0;	
+			// margin: 10px 0;	
 			padding: 15px 0;
 			border-radius: 3px;
 			border: 1px solid #c8c8c8;
@@ -282,11 +290,12 @@ button, input {
 
 .enter{
 	display: none;
+	font-size:14px;
 	@include breakpoint(tablet){
 		display: inline-block;
 		float: right;
 		position: relative;
-		top: 12px;
+		top: 8px;
 	}
 	a{
 		color: #292929;
