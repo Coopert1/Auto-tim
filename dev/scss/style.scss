@@ -6,7 +6,7 @@
 		@media (min-width: 64em) { @content ; }
 	}
 	@else if $point == tablet {
-		@media (min-width: 50em) { @content ; }
+		@media (min-width: 50em)  { @content ; }
 	}
 	@else if $point == phablet {
 		@media (min-width: 37.5em)  { @content ; }
@@ -35,30 +35,7 @@ img{
 		}
 	}
 }
-.show-tablet{
-	display: none;
-	@include breakpoint(tablet){
-		display: block;
-	}
-}
-.show-laptop{
-	display: none;
-	@include breakpoint(laptop){
-		display: block;
-	}
-}
-.hide-{
-	&tablet{
-		@include breakpoint(tablet){
-			display: none;
-		}
-	}
-	&laptop{
-		@include breakpoint(laptop){
-			display: none;
-		}
-	}
-}
+
 .footer{
 	color: #5e5e5e;
 	padding: 35px 0 0 0;
@@ -187,16 +164,31 @@ button, input {
 
 .header-top{
 	background: #fff;
-	padding: 15px 0;
+	padding: 10px 0;
+	font-size: 14px;
+	border-bottom: 1px solid #d4d8db;
 }
 
 .header-bottom{
 	background: #f2f3f4;
 	padding: 20px 0;
 }
+.header-bottom-content{
+	display:flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: space-between;
+	
+}
 
 .logo{
+	flex-grow: 1;
+	margin-right:20px;
+	vertical-align: top;
 	text-align: center;
+	@include breakpoint(tablet){
+		display: inline-block;
+	}
 }
 
 .location{
@@ -209,11 +201,26 @@ button, input {
 	}
 	img{
 		display: none;
+		@include breakpoint(tablet){
+			display: inline-block;
+			margin-right: 5px;
+		}
+	}
+	@include breakpoint(tablet){
+		margin-right: 50px;
+	}
+	@include breakpoint(laptop){
+		margin-right: 190px;
 	}
 }
 
+.contact-info{
+	flex-grow: 1;
+	margin-right:20px;
+	vertical-align: top;
+}
+
 .telephone{
-	display:inline-block;
 	float: right;
 	font-size: 18px;
 	a{
@@ -222,30 +229,95 @@ button, input {
 			font-family: 'robotobold';
 		}
 	}
-	
+	@include breakpoint(tablet){
+		float: none;
+		display: block;
+		font-size: 24px;
+	}
+}
+
+.callback{
+	flex-grow: 1;
+	text-align: center;
+	margin-right:20px;
+	vertical-align: top;
+	padding: 15px;
+	background: #f2762e;
+	color: #fff;
+	border-radius: 30px;
 }
 
 .social-hrefs{
 	display: none;
+	a{
+		margin: 0 15px;
+	}
+	@include breakpoint(tablet){
+		display: inline-block;
+	}
+}
+
+.search{
+	display:none;
+	@include breakpoint(tablet){
+		display: inline-block;
+		flex-grow: 3;
+	}
+	form{
+		position: relative;
+		input{
+			margin: 10px 0;	
+			padding: 15px 0;
+			border-radius: 3px;
+			border: 1px solid #c8c8c8;
+			outline: none;
+			width: 100%;
+		}
+		button{
+			position: absolute;
+			right: 0;
+		}
+	}
 }
 
 .enter{
 	display: none;
+	@include breakpoint(tablet){
+		display: inline-block;
+		float: right;
+		position: relative;
+		top: 12px;
+	}
+	a{
+		color: #292929;
+	}
+	span{
+		margin-right:15px;
+	}
+	:last-child{
+		float: none;
+	}
+	img{
+		position:relative;
+		top:4px;
+		margin-right: 10px;
+	}
 }
 
 .main-menu{
 	position: relative;
+	background: #424242;
 	ul{
+		margin: 0 -10px;
 		display:flex;
 		flex-wrap: wrap;
 		align-items: stretch;
 		justify-content: space-around;
 		color: #fff;
 		list-style: none;
-		background: #424242;
-		:last-child{
-			border-right: none;
-		}
+		// // :last-child{
+		// // 	border-right: none;
+		// }
 		li{
 			flex-grow: 1;
 			text-align: center;
@@ -261,17 +333,28 @@ button, input {
 				display: none;
 				position: absolute;
 				top: 100%;
-				left: 0;
+				z-index: 10;
+				left: 10px;
 				width: 100vw;
+				font-size: 14px;
 				overflow: hidden;
 				background: #fff;
 				color: #5e5e5e;
 				list-style: none;
 				padding: 10px;
+				@include breakpoint(tablet){
+					display:block;
+					width:100%;
+					border: 1px solid #e3e3e3;
+					box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
+				}
 				li:last-child{
 					margin-top: 15px;
 					padding: 20px 0;
 					border-top: 1px solid #dbddde;
+					@include breakpoint(tablet){
+						display: none;
+					}
 					&:hover{
 						color: #5e5e5e;
 					}
@@ -307,6 +390,13 @@ button, input {
 				}
 			}
 		}	
+	}
+}
+
+.menu-list{
+	width: 20%;
+	@include breakpoint(tablet){
+		background: #323232;
 	}
 }
 
@@ -392,13 +482,14 @@ button, input {
 
 .search-form{
 	display:none;
+	z-index: 10;
 	position: absolute;
 	top: 100%;
 	left: 0;
 	width: 100vw;
 	padding: 10px;
 	background: #f2f3f4;
-	form{		
+	form{	
 		input{
 			-webkit-appearance: textfield;
 			outline: none;
@@ -416,6 +507,30 @@ button, input {
 			padding: 15px;
 			color: #fff;
 			font-size: 18px;
+		}
+	}
+}
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
+		display: block;
+	}
+}
+.show-laptop{
+	display: none;
+	@include breakpoint(laptop){
+		display: block;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
 		}
 	}
 }
