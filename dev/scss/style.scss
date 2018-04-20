@@ -6,6 +6,7 @@
 		@media (min-width: 64em) { @content ; }
 	}
 	@else if $point == tablet {
+		@media (min-width: 50em) { @content ; }
 	}
 	@else if $point == phablet {
 		@media (min-width: 37.5em)  { @content ; }
@@ -28,12 +29,41 @@ img{
 }
 .align-right{
 	text-align: right;
+	&_mobileonly{
+		@include breakpoint(mobileonly){
+			text-align: right;
+		}
+	}
 }
-
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
+		display: block;
+	}
+}
+.show-laptop{
+	display: none;
+	@include breakpoint(laptop){
+		display: block;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
+		}
+	}
+}
 .footer{
 	color: #5e5e5e;
 	padding: 35px 0 0 0;
 	font-size: 14px;
+	background-color: #f2f3f4;
 	&-list__title{
 		text-transform: uppercase;
 		font-size: 15px;
@@ -47,10 +77,24 @@ img{
 		&.footer-list_social-items{
 			margin: 50px 0;
 			text-align: center;
+			
 		
 			@include breakpoint(phablet){
-				margin-top: -190px;
+				margin-top: -180px;
+				margin-bottom: 100px;
+				width: 70vw;
 			}
+			
+			@include breakpoint(tablet){
+				margin: 0 0 50px 0;
+				width: auto;
+				text-align: left;
+			}
+		}
+		&__social-item{
+			display: inline-block;
+			margin-right: 15px;
+			&first-child{margin-left: 15px;}
 		}
 	}
 	&-list__item{
@@ -59,12 +103,52 @@ img{
 	&-info__phone{
 		margin-bottom: 10px;
 	}
+	&-payment{
+		display: none;
+		@include breakpoint(tablet){
+			display: block;
+			max-width: 300px;
+		}
+		&__text{
+			font-size: 12px;
+			text-transform: none;
+			font-weight: normal;
+			color: #5e5e5e;
+			font-size: 12px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		&__img a{
+			display: inline-block;
+			margin: 10px;
+			&:first-child{
+				margin-left:0;
+			}
+			
+		}
+		
+	}
 	&-info{
 		font-size: 12px;
 		&__text{
 			margin-top: 15px;
+			&_chat{
+				margin-bottom: 20px;;
+			}
+			
 			
 		}
+		&__adress{
+			@include breakpoint(phablet){
+				margin-left: 10vw;
+			}
+			@include breakpoint(laptop){
+				margin-left: 0;
+			}
+			
+			
+		}
+		
 	}
 	&-rights{
 		font-size: 12px;
@@ -75,9 +159,18 @@ img{
 	a{
 		text-decoration: none;
 		color: #5e5e5e;
+		&:hover{
+			color: #ed762e;
+		}
 	}
 	hr{
+		display: block;
 		color: #5e5e5e;
+		height: 1px;
+		border: none;
+		background: #5e5e5e;
+		margin: 25px -10px 0 -10px;
+		
 			
 	}
 
