@@ -35,7 +35,14 @@ img{
 		}
 	}
 }
-
+.section{
+	margin-top: 40px;
+	&__title{
+		font-family: 'gothamproblack', sans-serif;
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+}
 .footer{
 	color: #5e5e5e;
 	padding: 35px 0 0 0;
