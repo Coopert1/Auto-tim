@@ -51,10 +51,12 @@ gulp.task('images', function() {
     .pipe(watch('./dev/images/*'))
     .pipe(plumber())
     .pipe(gulp.dest('./app/images/'))
+    gulp.src('./dev/*.ico')
+    .pipe(gulp.dest('./app/'))
 });
 gulp.task('fonts', function() {
-    gulp.src('./dev/fonts/*')
-    .pipe(watch('./dev/fonts/*'))
+    gulp.src('./dev/fonts/**')
+    .pipe(watch('./dev/fonts/**'))
     .pipe(plumber())
     .pipe(gulp.dest('./app/fonts/'))
 });
