@@ -4,11 +4,36 @@ html
 	body
 		include ./parts/header.pug
 		.backdrop
-		.col-tablet-1-5
-			|Menu
-		.col-tablet-4-5
-			|Slider
 		.wrapper
+			.row.clearfix
+				.col-tablet-1-5
+					.test
+				.col-tablet-4-5
+					.promo
+						.promo__pic
+							img(src="images/promo_pic.png" alt="promopic")
+						.promo__text
+							a(href="#").btn
+								|Подробнее &#8594;
+			.row.clearfix
+				.col-tablet-1-5
+					.dealers
+						span
+							|Ми официальные диллери
+						img.show-tablet-inline(src="images/right-arrow.png" alt="arrow")
+				.col-tablet-4-5
+					ul#dealerslider
+						li
+							img(src="images/thule.png" alt="foto")
+						li
+							img(src="images/inno.png" alt="foto")
+						li
+							img(src="images/calix.png" alt="foto")
+						li
+							img(src="images/buzzrack.png" alt="foto")
+						li
+							img(src="images/eurodetail.png" alt="foto")
+			.wrapper
 			.section
 				.section__title Популярный товар
 				.row.cleaffix.hide-tablet
@@ -66,7 +91,7 @@ html
 							.product__icon
 							.product__img
 								a(href="#")
-									img(src="images/box_02.png" alt="foto")
+									img(src="images/box_04.png" alt="foto")
 							a(href="#")
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
@@ -79,7 +104,7 @@ html
 							.product__icon
 							.product__img
 								a(href="#")
-									img(src="images/box_02.png" alt="foto")
+									img(src="images/box_05.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
@@ -92,7 +117,7 @@ html
 							.product__icon
 							.product__img
 								a(href="#")
-									img(src="images/box_03.png" alt="foto")
+									img(src="images/box_02.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
@@ -110,7 +135,7 @@ html
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							
 							.product__add-to-card
 								a(href="#") В корзину
@@ -123,7 +148,7 @@ html
 							a(href="#")
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							
 							.product__add-to-card
 								a(href="#") В корзину
@@ -132,11 +157,11 @@ html
 							.product__icon
 							.product__img
 								a(href="#")
-									img(src="images/box_03.png" alt="foto")
+									img(src="images/box_04.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							
 							.product__add-to-card
 								a(href="#") В корзину
@@ -153,7 +178,7 @@ html
 									img(src="images/box_01.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							.product__add-to-card
 								a(href="#") В корзину
 					.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none
@@ -164,7 +189,7 @@ html
 									img(src="images/box_03.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							.product__add-to-card
 								a(href="#") В корзину
 					.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none
@@ -175,7 +200,7 @@ html
 									img(src="images/box_02.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							.product__add-to-card
 								a(href="#") В корзину
 					.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none
@@ -186,12 +211,38 @@ html
 									img(src="images/box_05.png" alt="foto")
 							a(href="#") 
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
-							.product__price 8 800 u
+							.product__price 8 800 &#8381
 							.product__add-to-card
 								a(href="#") В корзину
 			.section
 				.section__title Популярные разделы
-				.row.clearfix
+				ul#popular-section-slider.hide-tablet
+					li
+						a(href="#").popular-section.popular-section_grey
+							img(src="images/popular_01.png")
+							span
+								|Боксы на крышу
+					li
+						a(href="#").popular-section.popular-section_blue
+							img(src="images/popular_02.png")
+							span
+								|Велокрепления
+					li
+						a(href="#").popular-section.popular-section_pink
+							img(src="images/popular_03.png")
+							span
+								|Багажники
+					li
+						a(href="#").popular-section.popular-section_cyan
+							img(src="images/popular_04.png")
+							span
+								|Чехлы, сумки и рюкзаки
+					li
+						a(href="#").popular-section.popular-section_green
+							img(src="images/popular_05.png")
+							span
+								|Подогреватели
+				.row.clearfix.show-tablet
 					.col-tablet-1-5
 						a(href="#").popular-section.popular-section_grey
 							img(src="images/popular_01.png")
