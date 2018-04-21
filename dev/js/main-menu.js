@@ -21,17 +21,8 @@ $(function(){
 		item: 4,
 		controls:false,
 		slideMove:4,
+		slideMargin:-1,
 		galleryMargin: 20,
-
-//		responsive:[
-//			{
-//				breakpoint: 1200,
-//				settings:{
-//					item:4,
-//					slideMove:4,
-//				}
-//			},
-//		],
 	});
 	var product_slider_2=$('#product-slider-2').lightSlider({
 		item: 5,
@@ -60,5 +51,36 @@ $(function(){
 	});
 	$(".ls-nextSlide2").click(function(){
 		product_slider_2.goToNextSlide();
+	});
+	var slider=$('#popular-section-slider').lightSlider({
+		galleryMargin: 25,
+		item: 3,
+		slideMove:1,
+		responsive:[
+			{
+				breakpoint: 500,
+				settings:
+					{
+						item:1,
+						slideMove:1,
+					}
+			},
+		],
+	});
+
+	var dealerslider=$('#dealerslider').lightSlider({
+		galleryMargin: 25,
+		item: 5,
+		slideMove:1,
+		responsive:[
+			{
+				breakpoint: 500,
+				settings:
+					{
+						item:3,
+						slideMove:1,
+					}
+			},
+		],
 	});
 });
