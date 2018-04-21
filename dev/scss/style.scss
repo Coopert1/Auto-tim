@@ -834,6 +834,27 @@ button, input {
 		}
 	}
 }
+.promo{
+	position: relative;
+	&__text{
+		position: absolute;
+		top: 60%;
+		left: 5%;
+		:first-child{
+			font-size: 20px;
+			color: #fff;
+			padding:10px 15px;
+			border-radius: 3px;
+		}
+		span{
+			font-family: 'gothamproblack';
+			display:block;
+		}
+	}
+	// padding-left: 30px;
+}
 .test{
-	height: 540px;
+	@include breakpoint(tablet){
+			height: 540px;
+		}
 }

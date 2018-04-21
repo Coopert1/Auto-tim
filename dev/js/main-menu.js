@@ -74,7 +74,7 @@ $(function(){
 		slideMove:1,
 		responsive:[
 			{
-				breakpoint: 500,
+				breakpoint: 800,
 				settings:
 					{
 						item:3,
