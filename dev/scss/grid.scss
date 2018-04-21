@@ -44,11 +44,15 @@
 		min-height: 1px;
 		clear: both;
 	}
+	&_margin-bottom-10:after{margin-bottom: 10px;}
 }
 
 
 .row{
 	margin: 0 -10px;
+	_margin-top-10{
+		margin-top: 10px;
+	}
 }
 
 [class*='col-']{
@@ -86,6 +90,9 @@
 			&1-2{
 				width: 50%;
 				float: left;
+				&_padding-none{
+					padding: 0;
+				}
 			}
 			&1-3{
 				width: 33.33%;
