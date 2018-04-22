@@ -614,10 +614,18 @@ button, input {
 				font-size: 16px;
 			}
 			a{
+				position:relative;
+				top:1px;
 				color: #fff;
 				padding: 3px;
 				border-radius: 2px;
 				display: inline-block;
+				@include breakpoint(tablet){
+					top:6px;
+				}
+			}
+			.norm-postion{
+				top:0;
 			}
 			.shopping-sum{
 				vertical-align: top;
@@ -668,7 +676,7 @@ button, input {
 					@include breakpoint(tablet){
 						display: none;
 					}
-					&:hover{
+					li:hover{
 						color: #5e5e5e;
 					}
 					a{
@@ -748,10 +756,12 @@ button, input {
 .bars{
 	position: absolute;
 	top: 50%;
-	margin-top: -9px;
-	left: 10px;
-	width:30px;
-
+	margin-top: -10px;
+	left: -34px;
+	width: 30px;
+	@include breakpoint(tablet){
+		left: -20px;
+	}
 }
 
 .bar{
@@ -923,7 +933,10 @@ button, input {
 }
 .open{
 	background: #fff;
-	color: #5e5e5e;
+	span{
+		color: #5e5e5e;
+	}
+	
 }
 .active{
 	&_search{
@@ -974,7 +987,7 @@ button, input {
 	&__text{
 		position: absolute;
 		top: 60%;
-		left: 5%;
+		left: 8%;
 		:first-child{
 			font-size: 20px;
 			color: #fff;

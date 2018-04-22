@@ -180,26 +180,27 @@
     width: 32px;
     display: block;
     top: 50%;
-    height: 32px;
-    background-image: url('../img/controls.png');
+    height: 118px;
+    background-image: url('../images/slider_controls.png');
     cursor: pointer;
     position: absolute;
     z-index: 4;
-    margin-top: -16px;
-    opacity: 0.5;
+    margin-top: -70px;
+    opacity: 1;
     -webkit-transition: opacity 0.35s linear 0s;
     transition: opacity 0.35s linear 0s;
+    transform:scale(0.6);
 }
 .lSAction > a:hover {
     opacity: 1;
 }
 .lSAction > .lSPrev {
-    background-position: 0 0;
-    left: 10px;
+    background-position: -39px 0;
+    left: -7px;
 }
 .lSAction > .lSNext {
-    background-position: -32px 0;
-    right: 10px;
+    background-position: 0 0;
+    right: -7px;
 }
 .lSAction > a.disabled {
     pointer-events: none;
