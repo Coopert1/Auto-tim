@@ -931,7 +931,7 @@ button, input {
 	}
 }
 
-.on{	
+.on{
 	opacity: 1;
 	left: 0;
 }
@@ -970,6 +970,7 @@ button, input {
 .promo{
 	margin: 0 -10px;
 	position: relative;
+	
 	&__text{
 		position: absolute;
 		top: 60%;
@@ -987,6 +988,7 @@ button, input {
 	}
 	@include breakpoint(tablet){
 		margin: 0;
+		
 	}
 }
 

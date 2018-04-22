@@ -5,7 +5,7 @@ html
 		include ./parts/header.pug
 		.backdrop
 		.wrapper
-			.row.clearfix
+			.row_promo.clearfix
 				.col-tablet-1-5
 				.col-tablet-4-5.add-margin.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none
 					ul#promoslider
@@ -318,104 +318,105 @@ html
 							.product__img
 								a(href="#")
 									img(src="images/box_03.png" alt="foto")
-							a(href="#") 
+							a(href="#")
 								.product__name Бокс автомобильный Евродеталь Эклипс 300
 								.product__text Максимально увеличивает объем. Водонепроницаемая. Плечевой ремень и ручки. Размер 61х42х28 см.
 							.product__price 8 800 &#8381
 
 							.product__add-to-card
 								a(href="#") В корзину
-		.section
-			.section__title Популярные разделы
-			ul#popular-section-slider.hide-tablet
-				li
-					a(href="#").popular-section.popular-section_grey
-						img(src="images/popular_01.png")
-						span
-							|Боксы на крышу
-				li
-					a(href="#").popular-section.popular-section_blue
-						img(src="images/popular_02.png")
-						span
-							|Велокрепления
-				li
-					a(href="#").popular-section.popular-section_pink
-						img(src="images/popular_03.png")
-						span
-							|Багажники
-				li
-					a(href="#").popular-section.popular-section_cyan
-						img(src="images/popular_04.png")
-						span
-							|Чехлы, сумки и рюкзаки
-				li
-					a(href="#").popular-section.popular-section_green
-						img(src="images/popular_05.png")
-						span
-							|Подогреватели
-			.row.clearfix.show-tablet
-				.col-tablet-1-5
-					a(href="#").popular-section.popular-section_grey
-						img(src="images/popular_01.png")
-						span
-							|Боксы на крышу
-				.col-tablet-1-5
-					a(href="#").popular-section.popular-section_blue
-						img(src="images/popular_02.png")
-						span
-							|Велокрепления
-				.col-tablet-1-5
-					a(href="#").popular-section.popular-section_pink
-						img(src="images/popular_03.png")
-						span
-							|Багажники
-				.col-tablet-1-5
-					a(href="#").popular-section.popular-section_cyan
-						img(src="images/popular_04.png")
-						span
-							|Чехлы, сумки и рюкзаки
-				.col-tablet-1-5
-					a(href="#").popular-section.popular-section_green
-						img(src="images/popular_05.png")
-						span
-							|Подогреватели
-			.section.show-tablet
-				.section__title Новости
-				.row.clearfix
-					.col-phablet-1-2.col-tablet-1-3
-						.article
-							.article__pic
-								a(href="#")
-									img(src="images/new_01.png")
-							.article__info
-								.article__pub-date
+		.wrapper
+			.section
+				.section__title Популярные разделы
+				ul#popular-section-slider.hide-tablet
+					li
+						a(href="#").popular-section.popular-section_grey
+							img(src="images/popular_01.png")
+							span
+								|Боксы на крышу
+					li
+						a(href="#").popular-section.popular-section_blue
+							img(src="images/popular_02.png")
+							span
+								|Велокрепления
+					li
+						a(href="#").popular-section.popular-section_pink
+							img(src="images/popular_03.png")
+							span
+								|Багажники
+					li
+						a(href="#").popular-section.popular-section_cyan
+							img(src="images/popular_04.png")
+							span
+								|Чехлы, сумки и рюкзаки
+					li
+						a(href="#").popular-section.popular-section_green
+							img(src="images/popular_05.png")
+							span
+								|Подогреватели
+				.row.clearfix.show-tablet
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_grey
+							img(src="images/popular_01.png")
+							span
+								|Боксы на крышу
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_blue
+							img(src="images/popular_02.png")
+							span
+								|Велокрепления
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_pink
+							img(src="images/popular_03.png")
+							span
+								|Багажники
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_cyan
+							img(src="images/popular_04.png")
+							span
+								|Чехлы, сумки и рюкзаки
+					.col-tablet-1-5
+						a(href="#").popular-section.popular-section_green
+							img(src="images/popular_05.png")
+							span
+								|Подогреватели
+				.section.show-tablet
+					.section__title Новости
+					.row.clearfix
+						.col-phablet-1-2.col-tablet-1-3
+							.article
+								.article__pic
 									a(href="#")
-										|01.01.16
-								.article__title
+										img(src="images/new_01.png")
+								.article__info
+									.article__pub-date
+										a(href="#")
+											|01.01.16
+									.article__title
+										a(href="#")
+											|Какой автохолодильник лучше купить в машину?
+						.col-phablet-1-2.col-tablet-1-3
+							.article
+								.article__pic
 									a(href="#")
-										|Какой автохолодильник лучше купить в машину?
-					.col-phablet-1-2.col-tablet-1-3
-						.article
-							.article__pic
-								a(href="#")
-									img(src="images/new_02.png")
-							.article__info
-								.article__pub-date
+										img(src="images/new_02.png")
+								.article__info
+									.article__pub-date
+										a(href="#")
+											|01.01.16
+									.article__title
+										a(href="#")
+											|Какой автохолодильник лучше купить в машину?
+						.col-phablet-1-2.col-tablet-1-3
+							.article
+								.article__pic
 									a(href="#")
-										|01.01.16
-								.article__title
-									a(href="#")
-										|Какой автохолодильник лучше купить в машину?
-					.col-phablet-1-2.col-tablet-1-3
-						.article
-							.article__pic
-								a(href="#")
-									img(src="images/new_03.png")
-							.article__info
-								.article__pub-date
-									a(href="#")
-										|01.01.16
-								.article__title
-									a(href="#")
-										|Какой автохолодильник лучше купить в машину?
+										img(src="images/new_03.png")
+								.article__info
+									.article__pub-date
+										a(href="#")
+											|01.01.16
+									.article__title
+										a(href="#")
+											|Какой автохолодильник лучше купить в машину?
 		include ./parts/footer.pug
