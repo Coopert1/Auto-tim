@@ -130,7 +130,7 @@ $(function(){
 				$('.dealers-slider').css('width', wrapperWidth+'px');
 			} else {
 				$('.col-tablet-4-5').css('width', '100%');
-				$('.dealers-slider').css('width', '50%');
+				$('.dealers-slider').css('width', '100%');
 			}
 		
 	}
