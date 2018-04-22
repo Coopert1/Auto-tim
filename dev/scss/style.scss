@@ -466,7 +466,7 @@ button, input {
 		flex-wrap: no-wrap;
 		align-items: stretch;
 		align-content: center;
-		justify-content: space-around;
+		justify-content: space-between;
 		color: #fff;
 		list-style: none;
 		@include breakpoint(tablet){
@@ -519,7 +519,7 @@ button, input {
 				left: 10px;
 				width: 100vw;
 				font-size: 14px;
-				overflow: hidden;
+				overflow-x: scroll;
 				background: #fff;
 				color: #5e5e5e;
 				list-style: none;
@@ -527,7 +527,7 @@ button, input {
 				@include breakpoint(tablet){
 					left: 0px;
 					display:block;
-					width:100%;
+					width:267px;
 					border: 1px solid #e3e3e3;
 					box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
 				}
@@ -559,7 +559,7 @@ button, input {
 				}
 			}
 			li{
-				padding: 10px 0;
+				padding: 6px 0;
 				display: block;
 				font-size : 14px;
 				text-align: left;
@@ -835,6 +835,7 @@ button, input {
 	}
 }
 .promo{
+	margin: 0 -10px;
 	position: relative;
 	&__text{
 		position: absolute;
@@ -851,8 +852,19 @@ button, input {
 			display:block;
 		}
 	}
-	// padding-left: 30px;
+	@include breakpoint(tablet){
+		margin: 0;
+	}
 }
+
+.add-margin{
+	padding: 0;
+	margin-bottom:40px;
+	@include breakpoint(tablet){
+		margin-left: 267px;
+	}
+}
+
 .test{
 	@include breakpoint(tablet){
 			height: 540px;
