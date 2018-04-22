@@ -42,28 +42,39 @@ img{
 	border-bottom: 2px solid #d4d8db;
 	&:nth-child(odd){border-right: 2px solid #d4d8db;}
 	padding: 20px 5px 20px 20px;
-	@include breakpoint(phablet){
-		border: 2px solid #d4d8db;
-		margin-bottom: 30px
-		
-	}
+	
 	@include breakpoint(tablet){
 		text-align: left;
+		border: 2px solid #d4d8db;
 	}
 	a{
 		text-decoration: none;
 		color: black;
 	}
-	&__icon{
+	&__add-favorite{
 		text-align: right;
 		margin-right: 5px;
-		margin-top: -10px;
+		margin-top: -5px;
 		display: block;
 		height: 35px;
-		width: 35px;
 		line-height: 35px;
-		border: 2px solid #d4d8db;
-		border-radius: 50px;
+		position: relative;
+		cursor: pointer;
+		
+		&:after{
+			content: "";
+			display: inline-block;
+			height: 40px;
+			width: 40px;
+			border: 2px solid #d4d8db;
+			position: absolute;
+			border-radius: 20px;
+			top: -25%;
+			right: -4.5px;
+			
+			
+			
+		}
 	}
 	&__img{
 		text-align: center;
@@ -75,6 +86,12 @@ img{
 		font-size: 17px;
 		font-weight: bold;
 		text-decoration: none;
+		margin-bottom: 20px;
+		@include breakpoint(tablet){
+			text-decoration: underline;
+			text-decoration-color: #f2762e;
+		}
+		
 		a{font-weight: bold;}
 	}
 	__text{
@@ -82,12 +99,19 @@ img{
 		font-family: 'Arial', sans-serif;
 		color: #d4d8db;
 		display: none;
+		
+		
 	}
 	&__price{
 		font-size: 24px;
 		font-family: 'gothamproblack', sans-serif;
 		margin: 15px 0;
 		color: #f2762e;
+		
+		@include breakpoint(tablet){
+			margin: 20px 0;
+			display: inline-block;
+		}
 		
 	}
 	&__add-to-card{
@@ -98,6 +122,11 @@ img{
 		background-color: #f2762e;
 		display: inline-block;
 		border-radius: 5px;
+		@include breakpoint(tablet){
+			margin-top: 15px;
+			float: right;
+			margin-right: 20px;
+		}
 		
 		a{
 			color: white;
@@ -108,15 +137,83 @@ img{
 	
 }
 .slider-arrows{
-	//position: relative;
+	position: relative;
 	//z-index: 10;
 	display: none;
 	@include breakpoint(tablet){
 		display: block;
+		
+	}
+	
+	&:before{
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 40px;
+		border: 2px solid #d4d8db;
+		border-radius: 5px;
+		top: -62px;
+		right: 0px;
+	}
+	&:after{
+		content: "";
+		position: absolute;
+		width: 2px;
+		height: 40px;
+		background-color: #d4d8db;
+		top: -62px;
+		right:40px;
+	}
+	&-2{
+		position: relative;
+		display: none;
+		@include breakpoint(tablet){
+			display: block;
+
+		}
+		&:before{
+			content: "";
+			position: absolute;
+			width: 80px;
+			height: 40px;
+			border: 2px solid #d4d8db;
+			border-radius: 5px;
+			top: -62px;
+			right: 0px;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 40px;
+			background-color: #d4d8db;
+			top: -62px;
+			right:40px;
+		}
+		.arrow {
+			position: absolute;
+			top: -40px;
+			width: 16px;
+			height:16px;
+			background: transparent;
+			border-top: 2px solid #d4d8db;
+			border-right:2px solid #d4d8db;
+			box-shadow: 0 0 0 lightgray;
+			transition: all 200ms ease;
+			&.left {
+				right: 50px;
+				transform: translate3d(0,-50%,0) rotate(-135deg);
+			}
+			&.right {
+				right: 17px;
+				transform: translate3d(0,-50%,0) rotate(45deg);
+			}
+		}
+		
 	}
 	.arrow {
 		position: absolute;
-		top: 30px;
+		top: -40px;
 		width: 16px;
 		height:16px;
 		background: transparent;
@@ -125,7 +222,7 @@ img{
 		box-shadow: 0 0 0 lightgray;
 		transition: all 200ms ease;
 		&.left {
-			right: 40px;
+			right: 50px;
 			transform: translate3d(0,-50%,0) rotate(-135deg);
 		}
 		&.right {
@@ -138,6 +235,11 @@ img{
 	margin-right: 0px;
 }
 @include breakpoint(mobileonly){
+	.product_off-bottom-border{
+		border-bottom: none;
+	}
+}
+@include breakpoint(phablet){
 	.product_off-bottom-border{
 		border-bottom: none;
 	}

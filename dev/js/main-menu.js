@@ -22,20 +22,28 @@ $(function(){
 		item: 4,
 		controls:false,
 		slideMove:4,
-		slideMargin:-2,
-		galleryMargin: 20,
-	});
-	var product_slider_2=$('#product-slider-2').lightSlider({
-		item: 5,
-		controls:false,
-		slideMove:5,
-
+		slideMargin: -2,
 		responsive:[
 			{
 				breakpoint: 1200,
 				settings:{
-					item:4,
-					slideMove:4,
+					item:3,
+					slideMove:3,
+				}
+			},
+		],
+	});
+	var product_slider_2=$('#product-slider-2').lightSlider({
+		item: 4,
+		controls:false,
+		slideMove:4,
+		slideMargin: -2,
+		responsive:[
+			{
+				breakpoint: 1200,
+				settings:{
+					item:3,
+					slideMove:3,
 				}
 			},
 			
