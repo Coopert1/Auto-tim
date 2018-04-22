@@ -1,5 +1,5 @@
 $(function(){
-	SameHeight();
+	promSlider();
 	$('.menu-list').click(function(){
 		$(this).toggleClass('open');
 		$('.backdrop').toggleClass('on');
@@ -17,7 +17,7 @@ $(function(){
 			// {duration:100},
 		);
 	})
-	
+	SameHeight();
 	var product_slider_1=$('#product-slider-1').lightSlider({
 		item: 4,
 		controls:false,
@@ -100,24 +100,40 @@ $(function(){
 		pager: false,
 
 		addClass: '',
-        mode: "slide",
-        useCSS: true,
-        cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
-        easing: 'linear', //'for jquery animation',////
- 
-        speed: 400, //ms'
-        auto: true,
-        loop: true,
-        slideEndAnimation: true,
-        pause: 5000,
+		mode: "slide",
+		useCSS: true,
+		cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+		easing: 'linear', //'for jquery animation',////
+
+		speed: 400, //ms'
+		auto: true,
+		loop: true,
+		slideEndAnimation: true,
+		pause: 5000,
 	});
-	function SameHeight() {
+	
+	
+	function promSlider(){
 		var browserMinWidth = $(window).width()
+		if (browserMinWidth > 800) {
+				$('.col-tablet-4-5').css('width', ($('.wrapper').width()-274)+'px');
+			} else {
+				$('.col-tablet-4-5').css('width', '100%');
+			}
+		console.log("1");
+	}
+	
+	
+	function SameHeight() {
+			var browserMinWidth = $(window).width()
 			if (browserMinWidth > 800) {
 				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
-			}
+			} 
 		}
-		$(window).resize(function(){
-			SameHeight();	
-		});
+	
+	$(window).resize(function(){
+		SameHeight();
+		promSlider();
+		console.log('1')
+	});
 });

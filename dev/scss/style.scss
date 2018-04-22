@@ -35,7 +35,9 @@ img{
 		}
 	}
 }
-
+.margin-bottom-30{
+	margin-bottom: 30px;
+}
 .product{
 	
 	border-top: 2px solid #d4d8db;
@@ -68,7 +70,7 @@ img{
 			width: 40px;
 			border: 2px solid #d4d8db;
 			position: absolute;
-			border-radius: 20px;
+			border-radius: 40px;
 			top: -25%;
 			right: -4.5px;
 			
@@ -79,17 +81,33 @@ img{
 	&__img{
 		text-align: center;
 		margin: 20px 0;
-		min-height: 120px;
+		height: 150px;
+		
+		&:before{
+			vertical-align: middle;
+			content: '';
+			display: inline-block;
+			height: 100%;
+		}
+		a{
+			display: inline-block;
+			vertical-align: middle;
+			
+		}
+		
+		
 		
 	}
 	&__name{
-		font-size: 17px;
+		font-size: 14px;
+		
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
 		@include breakpoint(tablet){
 			text-decoration: underline;
 			text-decoration-color: #f2762e;
+			font-size: 16px;
 		}
 		
 		a{font-weight: bold;}
@@ -301,6 +319,9 @@ img{
 	}
 	&-info__phone{
 		margin-bottom: 10px;
+		@include breakpoint(tablet){
+			font-size: 18px;
+		}
 	}
 	&-payment{
 		display: none;
@@ -910,7 +931,7 @@ button, input {
 	}
 }
 
-.on{	
+.on{
 	opacity: 1;
 	left: 0;
 }
@@ -949,6 +970,7 @@ button, input {
 .promo{
 	margin: 0 -10px;
 	position: relative;
+	
 	&__text{
 		position: absolute;
 		top: 60%;
@@ -966,6 +988,7 @@ button, input {
 	}
 	@include breakpoint(tablet){
 		margin: 0;
+		
 	}
 }
 
