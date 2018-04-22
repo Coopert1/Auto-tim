@@ -81,6 +81,7 @@ $(function(){
 		galleryMargin: 25,
 		item: 5,
 		slideMove:1,
+		controls:false,
 		responsive:[
 			{
 				breakpoint: 900,
@@ -107,7 +108,6 @@ $(function(){
 		item: 1,
 		slideMove:1,
 		pager: false,
-
 		addClass: '',
 		mode: "slide",
 		useCSS: true,
@@ -118,7 +118,7 @@ $(function(){
 		auto: true,
 		loop: true,
 		slideEndAnimation: true,
-		pause: 5000,
+		pause: 10000,
 	});
 	
 	
