@@ -87,7 +87,7 @@ $(function(){
 				breakpoint: 800,
 				settings:
 					{
-						item:3,
+						item:4,
 						slideMove:1,
 					}
 			},

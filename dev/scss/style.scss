@@ -39,44 +39,40 @@ img{
 	margin-bottom: 30px;
 }
 .product{
-	
+	position:relative;
 	border-top: 2px solid #d4d8db;
 	border-bottom: 2px solid #d4d8db;
-	&:nth-child(odd){border-right: 2px solid #d4d8db;}
-	padding: 20px 5px 20px 20px;
+	padding: 10px;
+	&:nth-child(odd){
+		border-right: 2px solid #d4d8db;
+	}
 	
 	@include breakpoint(tablet){
 		text-align: left;
 		border: 2px solid #d4d8db;
+		padding: 20px;
 	}
 	a{
 		text-decoration: none;
 		color: black;
 	}
 	&__add-favorite{
-		text-align: right;
-		margin-right: 5px;
-		margin-top: -5px;
-		display: block;
+		position: absolute;
+		display: inline-block;
 		height: 35px;
+		right:20px;
 		line-height: 35px;
-		position: relative;
-		cursor: pointer;
-		
-		&:after{
-			content: "";
-			display: inline-block;
-			height: 40px;
-			width: 40px;
-			border: 2px solid #d4d8db;
-			position: absolute;
-			border-radius: 40px;
-			top: -25%;
-			right: -4.5px;
-			
-			
-			
-		}
+		// &:after{
+		// 	content: "";
+		// 	display: inline-block;
+		// 	height: 40px;
+		// 	width: 40px;
+		// 	border: 2px solid #d4d8db;
+		// 	position: absolute;
+		// 	border-radius: 40px;
+		// 	top: -25%;
+		// 	right: -4.5px;
+		// }
 	}
 	&__img{
 		text-align: center;
@@ -99,7 +95,7 @@ img{
 		
 	}
 	&__name{
-		font-size: 14px;
+		font-size: 13px;
 		
 		font-weight: bold;
 		text-decoration: none;
@@ -143,7 +139,6 @@ img{
 		@include breakpoint(tablet){
 			margin-top: 15px;
 			float: right;
-			margin-right: 20px;
 		}
 		
 		a{
@@ -1013,9 +1008,14 @@ button, input {
 		margin-top: 9px;
 	}
 }
-
-.test{
-	@include breakpoint(tablet){
-			height: 540px;
+.icon{
+	display: inline-block;
+	&_fav{
+		background:url(../images/add_to_fav.png);
+		width: 34px;
+		height: 33px;
+		&:hover{
+			background-position: 37px 0;
 		}
+	}
 }
