@@ -4,9 +4,8 @@ html
 	body
 		include ./parts/header.pug
 		.backdrop
-		.wrapper
+		.wrapper#wrap-width
 			.row_promo.clearfix
-				.col-tablet-1-5
 				.col-tablet-4-5.add-margin.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none
 					ul#promoslider
 						li
@@ -30,13 +29,12 @@ html
 								.promo__text
 									a(href="#").btn
 										|Подробнее &#8594;
-			.row.clearfix
-				.col-tablet-1-5
-					.dealers
-						span
-							|Мы официальные диллери
-						img.show-tablet-inline(src="images/right-arrow.png" alt="arrow")
-				.col-tablet-4-5
+			.clearfix
+				.dealers
+					span
+						|Мы официальные диллери
+					img.show-tablet-inline(src="images/right-arrow.png" alt="arrow")
+				.dealers-slider
 					ul#dealerslider
 						li
 							img(src="images/thule.png" alt="foto")
@@ -325,6 +323,11 @@ html
 
 							.product__add-to-card
 								a(href="#") В корзину
+				include ./parts/products.pug
+			.section
+				.section__title Новое поступление
+				include ./parts/products1.pug
+
 		.wrapper
 			.section
 				.section__title Популярные разделы
