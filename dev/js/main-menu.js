@@ -106,7 +106,7 @@ $(function(){
 	function SameHeight() {
 		var browserMinWidth = $(window).width()
 			if (browserMinWidth > 800) {
-				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height());
+				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
 			}
 		}
 		$(window).resize(function(){
