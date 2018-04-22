@@ -110,7 +110,7 @@
     text-indent: -999em;
     width: 8px;
     position: relative;
-    z-index: 99;
+    z-index: 4;
     -webkit-transition: all 0.5s linear 0s;
     transition: all 0.5s linear 0s;
     @include breakpoint(tablet){

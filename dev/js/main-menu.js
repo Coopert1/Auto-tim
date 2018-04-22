@@ -1,4 +1,5 @@
 $(function(){
+	SameHeight();
 	$('.menu-list').click(function(){
 		$(this).toggleClass('open');
 		$('.backdrop').toggleClass('on');
@@ -91,4 +92,32 @@ $(function(){
 			},
 		],
 	});
+
+	var promoslider=$('#promoslider').lightSlider({
+		galleryMargin: 25,
+		item: 1,
+		slideMove:1,
+		pager: false,
+
+		addClass: '',
+        mode: "slide",
+        useCSS: true,
+        cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+        easing: 'linear', //'for jquery animation',////
+ 
+        speed: 400, //ms'
+        auto: true,
+        loop: true,
+        slideEndAnimation: true,
+        pause: 5000,
+	});
+	function SameHeight() {
+		var browserMinWidth = $(window).width()
+			if (browserMinWidth > 800) {
+				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height());
+			}
+		}
+		$(window).resize(function(){
+			SameHeight();	
+		});
 });
