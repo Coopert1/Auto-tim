@@ -1,0 +1,39 @@
+html
+	head
+		include ./parts/head.pug
+	body
+		include ./parts/header.pug
+		.wrapper
+			ul.breadcrumbs.show-tablet
+				li
+					a(href="index.html") Главная
+				li
+					a(href="#") Боксы на крышу
+			.row.clearfix
+				.col-tablet-1-2
+					.commodity
+						.commodity__name.hide-tablet Бокс автомобильный Евродеталь Борнео 350 (серый)
+						.commodity__producer.hide-tablet  Производитель: Евродеталь
+						.commodity__favorite.hide-tablet
+						.commodity__filter.hide-tablet
+						.commodity__img
+							img(src="images/box_01.png")
+						.commodity__thumbnail
+							img(src="images/box_01.png")
+						.commodity__thumbnail
+							img(src="images/box_01.png")
+						.commodity__thumbnail
+							img(src="images/box_01.png")
+				.col-tablet-1-2.show-tablet
+					.commodity__name Бокс автомобильный Евродеталь Борнео 350 (серый)
+						.commodity__producer Производитель: Евродеталь
+						.commodity__favorite
+					
+				
+			.section
+				.section__title Аксессуары
+				include ./parts/products.pug
+			.section
+				.section__title Недавно вы смотрели
+				include ./parts/products1.pug
+		include ./parts/footer.pug

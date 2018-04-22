@@ -72,7 +72,7 @@ img{
 			position: absolute;
 			border-radius: 40px;
 			top: -25%;
-			right: -4.5px;
+			right: -5.5px;
 			
 			
 			
@@ -895,6 +895,16 @@ button, input {
 .dealers{
 	text-align: center;
 	margin-bottom: 30px;
+	@include breakpoint(tablet){
+		text-align: left;
+		float: left;
+		width: 264px;
+		
+	}
+	&-slider{
+		float: left;
+		
+	}
 	span{
 		font-family: 'gothamproblack';
 		font-size: 21px;
@@ -1005,4 +1015,78 @@ button, input {
 	@include breakpoint(tablet){
 			height: 540px;
 		}
+}
+
+//product-catalog
+
+.breadcrumbs{
+	font-size: 14px;
+	font-weight: bold;
+	list-style: none;
+	margin-top: 25px;
+	li{
+		display: inline-block;
+		margin-right: 10px;
+		position: relative;
+		&:not(:last-child):after{
+			content: "/";
+			display: inline-block;
+			position: absolute;
+			right: -10px;
+			font-size: 18px;
+			top: -3px;
+		}
+	}
+	a{
+		color: black;
+	}
+}
+.commodity{
+	text-align: center;
+	margin-top: 25px;
+	&__producer{
+		font-size: 14px;
+		@include breakpoint(tablet){
+			margin: 25px;
+		}
+	}
+	&__name{
+		font-size: 24px;
+		font-weight: bold;
+		margin: 25px 0;
+	}
+	&__favorite{
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background-image: url(../images/heart.png);
+		margin: 25px 10px 25px 0;
+		@include breakpoint(tablet){
+			&.hide-tablet{
+				display: none;
+			}
+		}
+	}
+	&__filter{
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background-image: url(../images/heart.png);
+		margin: 25px 0;
+		@include breakpoint(tablet){
+			&.hide-tablet{
+				display: none;
+			}
+		}
+		
+	}
+	&__img{
+		margin-bottom: 30px;
+	}
+	&__thumbnail{
+		display: inline-block;
+		width: 75px;
+		margin-right: 25px;
+		height: 75px;
+	}
 }

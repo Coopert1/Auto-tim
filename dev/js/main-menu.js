@@ -83,6 +83,14 @@ $(function(){
 		slideMove:1,
 		responsive:[
 			{
+				breakpoint: 900,
+				settings:
+					{
+						item:4,
+						slideMove:1,
+					}
+			},
+			{
 				breakpoint: 800,
 				settings:
 					{
@@ -90,6 +98,7 @@ $(function(){
 						slideMove:1,
 					}
 			},
+			
 		],
 	});
 
@@ -114,19 +123,22 @@ $(function(){
 	
 	
 	function promSlider(){
-		var browserMinWidth = $(window).width()
-		if (browserMinWidth > 800) {
-				$('.col-tablet-4-5').css('width', ($('.wrapper').width()-274)+'px');
+		var browserMinWidth = $(window).width();
+		if (browserMinWidth >= 800) {
+			var wrapperWidth=$('#wrap-width').width()-274;
+				$('.col-tablet-4-5').css('width', wrapperWidth+'px');
+				$('.dealers-slider').css('width', wrapperWidth+'px');
 			} else {
 				$('.col-tablet-4-5').css('width', '100%');
+				$('.dealers-slider').css('width', '50%');
 			}
-		console.log("1");
+		
 	}
 	
 	
 	function SameHeight() {
 			var browserMinWidth = $(window).width()
-			if (browserMinWidth > 800) {
+			if (browserMinWidth >= 800) {
 				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
 			} 
 		}
@@ -134,6 +146,6 @@ $(function(){
 	$(window).resize(function(){
 		SameHeight();
 		promSlider();
-		console.log('1')
+		
 	});
 });
