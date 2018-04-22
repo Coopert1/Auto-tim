@@ -79,17 +79,33 @@ img{
 	&__img{
 		text-align: center;
 		margin: 20px 0;
-		min-height: 120px;
+		height: 150px;
+		
+		&:before{
+			vertical-align: middle;
+			content: '';
+			display: inline-block;
+			height: 100%;
+		}
+		a{
+			display: inline-block;
+			vertical-align: middle;
+			
+		}
+		
+		
 		
 	}
 	&__name{
-		font-size: 17px;
+		font-size: 14px;
+		
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
 		@include breakpoint(tablet){
 			text-decoration: underline;
 			text-decoration-color: #f2762e;
+			font-size: 16px;
 		}
 		
 		a{font-weight: bold;}
@@ -301,6 +317,9 @@ img{
 	}
 	&-info__phone{
 		margin-bottom: 10px;
+		@include breakpoint(tablet){
+			font-size: 18px;
+		}
 	}
 	&-payment{
 		display: none;
