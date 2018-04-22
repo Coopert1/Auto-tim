@@ -46,6 +46,9 @@ img{
 	&:nth-child(odd){
 		border-right: 2px solid #d4d8db;
 	}
+	&:last-child{
+		border-right: 2px solid #d4d8db;
+	}
 	
 	@include breakpoint(tablet){
 		text-align: left;
@@ -1027,6 +1030,7 @@ button, input {
 		&:hover{
 			background-position: 37px 0;
 		}
+	}
 }
 
 //product-catalog
