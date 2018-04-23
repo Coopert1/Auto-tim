@@ -42,12 +42,12 @@ img{
 	
 	border-top: 2px solid #d4d8db;
 	border-bottom: 2px solid #d4d8db;
-	&:nth-child(odd){border-right: 2px solid #d4d8db;}
 	padding: 20px 5px 20px 20px;
 	
 	@include breakpoint(tablet){
 		text-align: left;
 		border: 2px solid #d4d8db;
+	
 	}
 	a{
 		text-decoration: none;
@@ -154,6 +154,9 @@ img{
 	}
 	
 }
+.lSSlideOuter ul li:last-child{
+	border-right: 1.5px solid #d4d8db;
+}
 .slider-arrows{
 	position: relative;
 	//z-index: 10;
@@ -256,10 +259,17 @@ img{
 	.product_off-bottom-border{
 		border-bottom: none;
 	}
+	.product_right-border{
+		border-right: 2px solid #d4d8db;
+	}
 }
 @include breakpoint(phablet){
 	.product_off-bottom-border{
 		border-bottom: none;
+		
+	}
+	.product_right-border{
+		border-right: 2px solid #d4d8db;
 	}
 }
 
@@ -990,6 +1000,7 @@ button, input {
 		}
 	}
 }
+
 .promo{
 	margin: 0 -10px;
 	position: relative;
@@ -1101,5 +1112,31 @@ button, input {
 		width: 75px;
 		margin-right: 25px;
 		height: 75px;
+	}
+	&__price{
+		display: block;
+		font-size: 30px;
+		color: #f2762e;
+		font-weight: bold;
+		
+	}
+	&__add-to-card{
+		display: inline-block;
+		color: white;
+		padding: 10px 20px;
+		background-color: #f2762e;
+		border-radius: 5px;
+		font-size: 16px;
+		margin: 10px;
+	}
+		
+	&__buy-to-click{
+		display: inline-block;
+		color: black;
+		padding: 10px 20px;
+		border: 2px solid #bcbcbc;
+		border-radius: 5px;
+		font-size: 16px;
+		margin: 10px;
 	}
 }
