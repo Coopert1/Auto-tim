@@ -1004,6 +1004,16 @@ button, input {
 		width: 38px;
 		background-position: 43px 0px;
 	}
+	&_amount-plus{
+		background:url(../images/amount_plus.png);
+		height: 26px;
+		width: 26px;
+	}
+	&_amount-minus{
+		background:url(../images/amount_minus.png);
+		height: 26px;
+		width: 26px;
+	}
 }
 
 //product-catalog
@@ -1078,6 +1088,45 @@ button, input {
 		margin-right: 25px;
 		height: 75px;
 	}
+}
+
+// cart.pug styles
+.cart-item{
+	position: relative;
+	padding: 10px 0;
+	border-top: 2px solid #e1e1e1;
+	border-bottom: 2px solid #e1e1e1;
+	&__description{
+		padding: 10px 0;
+		padding-bottom: 20px;
+		padding-left: 83px;
+		border-style: solid;
+		border-bottom-width: 2px;
+		border-image: url(../images/dashed_border.png) 2 fill repeat;
+	}
+	&__image{
+		position: absolute;
+		top: 20px;
+		left: 0;
+	}
+	&__name{
+		font-family: 'robotobold';
+		font-size: 16px;
+	}
+	&__number{
+		font-family: 'arial';
+		font-size: 11px;
+	}
+	&__field-name{
+		color: #919292;
+		font-size: 14px;
+		margin: 5px 0;
+	}
+}
+
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
 	&__price{
 		display: block;
 		font-size: 30px;
@@ -1103,5 +1152,17 @@ button, input {
 		border-radius: 5px;
 		font-size: 16px;
 		margin: 10px;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
+		}
 	}
 }
