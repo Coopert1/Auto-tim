@@ -59,6 +59,11 @@ img{
 		text-decoration: none;
 		color: black;
 	}
+	&__stripe{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 	&__add-favorite{
 		position: absolute;
 		display: inline-block;
@@ -99,7 +104,7 @@ img{
 	}
 	&__name{
 		font-size: 13px;
-		
+		font-family: 'robotobold';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
@@ -124,7 +129,9 @@ img{
 		font-family: 'gothamproblack', sans-serif;
 		margin: 15px 0;
 		color: #f2762e;
-		
+		span{
+			font-family:'rouble';
+		}
 		@include breakpoint(tablet){
 			margin: 20px 0;
 			display: inline-block;
@@ -157,29 +164,28 @@ img{
 	//z-index: 10;
 	display: none;
 	@include breakpoint(tablet){
-		display: block;
-		
+		display: block;	
 	}
 	
-	&:before{
-		content: "";
-		position: absolute;
-		width: 80px;
-		height: 40px;
-		border: 2px solid #d4d8db;
-		border-radius: 5px;
-		top: -62px;
-		right: 0px;
-	}
-	&:after{
-		content: "";
-		position: absolute;
-		width: 2px;
-		height: 40px;
-		background-color: #d4d8db;
-		top: -62px;
-		right:40px;
-	}
+	// &:before{
+	// 	content: "";
+	// 	position: absolute;
+	// 	width: 80px;
+	// 	height: 40px;
+	// 	border: 2px solid #d4d8db;
+	// 	border-radius: 5px;
+	// 	top: -62px;
+	// 	right: 0px;
+	// }
+	// &:after{
+	// 	content: "";
+	// 	position: absolute;
+	// 	width: 2px;
+	// 	height: 40px;
+	// 	background-color: #d4d8db;
+	// 	top: -62px;
+	// 	right:40px;
+	// }
 	&-2{
 		position: relative;
 		display: none;
@@ -187,66 +193,72 @@ img{
 			display: block;
 
 		}
-		&:before{
-			content: "";
-			position: absolute;
-			width: 80px;
-			height: 40px;
-			border: 2px solid #d4d8db;
-			border-radius: 5px;
-			top: -62px;
-			right: 0px;
-		}
-		&:after{
-			content: "";
-			position: absolute;
-			width: 2px;
-			height: 40px;
-			background-color: #d4d8db;
-			top: -62px;
-			right:40px;
-		}
-		.arrow {
-			position: absolute;
-			top: -40px;
-			width: 16px;
-			height:16px;
-			background: transparent;
-			border-top: 2px solid #d4d8db;
-			border-right:2px solid #d4d8db;
-			box-shadow: 0 0 0 lightgray;
-			transition: all 200ms ease;
-			&.left {
-				right: 50px;
-				transform: translate3d(0,-50%,0) rotate(-135deg);
-			}
-			&.right {
-				right: 17px;
-				transform: translate3d(0,-50%,0) rotate(45deg);
-			}
-		}
+		// &:before{
+		// 	content: "";
+		// 	position: absolute;
+		// 	width: 80px;
+		// 	height: 40px;
+		// 	border: 2px solid #d4d8db;
+		// 	border-radius: 5px;
+		// 	top: -62px;
+		// 	right: 0px;
+		// }
+		// &:after{
+		// 	content: "";
+		// 	position: absolute;
+		// 	width: 2px;
+		// 	height: 40px;
+		// 	background-color: #d4d8db;
+		// 	top: -62px;
+		// 	right:40px;
+		// }
+	// 	.arrow {
+	// 		position: absolute;
+	// 		top: -40px;
+	// 		width: 16px;
+	// 		height:16px;
+	// 		background: transparent;
+	// 		border-top: 2px solid #d4d8db;
+	// 		border-right:2px solid #d4d8db;
+	// 		box-shadow: 0 0 0 lightgray;
+	// 		transition: all 200ms ease;
+	// 		&.left {
+	// 			right: 50px;
+	// 			transform: translate3d(0,-50%,0) rotate(-135deg);
+	// 		}
+	// 		&.right {
+	// 			right: 17px;
+	// 			transform: translate3d(0,-50%,0) rotate(45deg);
+	// 		}
+	// 	}
 		
-	}
-	.arrow {
-		position: absolute;
-		top: -40px;
-		width: 16px;
-		height:16px;
-		background: transparent;
-		border-top: 2px solid #d4d8db;
-		border-right:2px solid #d4d8db;
-		box-shadow: 0 0 0 lightgray;
-		transition: all 200ms ease;
-		&.left {
-			right: 50px;
-			transform: translate3d(0,-50%,0) rotate(-135deg);
-		}
-		&.right {
-			right: 17px;
-			transform: translate3d(0,-50%,0) rotate(45deg);
-		}
+	// }
+	// .arrow {
+	// 	position: absolute;
+	// 	top: -40px;
+	// 	width: 16px;
+	// 	height:16px;
+	// 	background: transparent;
+	// 	border-top: 2px solid #d4d8db;
+	// 	border-right:2px solid #d4d8db;
+	// 	box-shadow: 0 0 0 lightgray;
+	// 	transition: all 200ms ease;
+	// 	&.left {
+	// 		right: 50px;
+	// 		transform: translate3d(0,-50%,0) rotate(-135deg);
+	// 	}
+	// 	&.right {
+	// 		right: 17px;
+	// 		transform: translate3d(0,-50%,0) rotate(45deg);
+	// 	}
+	// }
 	}
 }
+.slider_controls{
+		position: absolute;
+		right: 0px;
+		top: -60px;
+	}
 .lslide{
 	margin-right: 0px;
 }
@@ -707,6 +719,11 @@ button, input {
 				&:hover{
 					color: #e0641c;
 				}
+				a{
+					&:hover{
+					color: #e0641c;
+					}
+				}
 			}
 		}	
 	}
@@ -910,8 +927,11 @@ button, input {
 		
 	}
 	&-slider{
+		position: relative;
 		float: left;
-		
+		@include breakpoint(tablet){
+			padding: 0 50px;
+		}
 	}
 	span{
 		font-family: 'gothamproblack';
@@ -957,37 +977,6 @@ button, input {
 	left: 0;
 }
 
-.show-tablet{
-	display: none;
-	@include breakpoint(tablet){
-		display: block;
-	}
-}
-.show-tablet-inline{
-	display: none;
-	@include breakpoint(tablet){
-		display: inline-block;
-	}
-}
-
-.show-laptop{
-	display: none;
-	@include breakpoint(laptop){
-		display: block;
-	}
-}
-.hide-{
-	&tablet{
-		@include breakpoint(tablet){
-			display: none;
-		}
-	}
-	&laptop{
-		@include breakpoint(laptop){
-			display: none;
-		}
-	}
-}
 .promo{
 	margin: 0 -10px;
 	position: relative;
@@ -1030,6 +1019,42 @@ button, input {
 		&:hover{
 			background-position: 37px 0;
 		}
+	}
+	&_controls_prev{
+		background:url(../images/partners_slider_controls.png);
+		background-position: 0px 38px;
+		width: 38px;
+		height: 38px;
+		position: absolute;
+		left: 0;
+		top: 0px;
+		&:hover{
+				background-position: 0px 0px;
+			}
+	}
+		&_controls_next{
+		background:url(../images/partners_slider_controls.png);
+		position: absolute;
+		width: 38px;
+		height: 38px;
+		background-position: 38px 38px;
+		right: -10px;
+		top: 0px;
+			&:hover{
+				background-position: 38px 0px;
+			}
+	}
+	&_product-slider_prev{
+		background:url(../images/product_slider_controls.png);
+		height: 40px;
+		width: 39px;
+		background-position: -5px 0;
+	}
+	&_product-slider_next{
+		background:url(../images/product_slider_controls.png);
+		height: 40px;
+		width: 38px;
+		background-position: 43px 0px;
 	}
 }
 
@@ -1104,5 +1129,37 @@ button, input {
 		width: 75px;
 		margin-right: 25px;
 		height: 75px;
+	}
+}
+
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
+		display: block;
+	}
+}
+.show-tablet-inline{
+	display: none;
+	@include breakpoint(tablet){
+		display: inline-block;
+	}
+}
+
+.show-laptop{
+	display: none;
+	@include breakpoint(laptop){
+		display: block;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
+		}
 	}
 }

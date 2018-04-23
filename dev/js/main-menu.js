@@ -1,14 +1,16 @@
 $(function(){
 	promSlider();
 	$('.menu-list').click(function(){
-		$(this).toggleClass('open');
-		$('.backdrop').toggleClass('on');
-		$('.bars').toggleClass('active');
-		$(".main-menu ul li ul").animate(
-			{height: 'toggle'},
-			{duration:300},
-		);
-		// $('.backdrop').toggleClass('active');
+		var browserMinWidth = $(window).width();
+		if (browserMinWidth < 800) {
+			$(this).toggleClass('open');
+			$('.backdrop').toggleClass('on');
+			$('.bars').toggleClass('active');
+			$(".main-menu ul li ul").animate(
+				{height: 'toggle'},
+				{duration:300},
+			);
+		}
 	})
 	$('.search-mobile').click(function(){
 		$(this).toggleClass('active_search');
@@ -64,7 +66,8 @@ $(function(){
 	var slider=$('#popular-section-slider').lightSlider({
 		galleryMargin: 25,
 		item: 3,
-		slideMove:1,
+		controls: false,
+		slideMove: 1,
 		responsive:[
 			{
 				breakpoint: 500,
@@ -101,6 +104,12 @@ $(function(){
 			},
 			
 		],
+	});
+	$("#wrap-width > div:nth-child(2) > div.dealers-slider > span.icon.icon_controls_prev.show-tablet-inline").click(function(){
+		dealerslider.goToPrevSlide();
+	});
+	$("#wrap-width > div:nth-child(2) > div.dealers-slider > span.icon.icon_controls_next.show-tablet-inline").click(function(){
+		dealerslider.goToNextSlide();
 	});
 
 	var promoslider=$('#promoslider').lightSlider({
@@ -140,6 +149,9 @@ $(function(){
 			var browserMinWidth = $(window).width()
 			if (browserMinWidth >= 800) {
 				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
+				$('menu-list').click(function(event) {
+					event.preventDefault();
+				});
 			} 
 		}
 	
