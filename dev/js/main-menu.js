@@ -21,7 +21,7 @@ $(function(){
 		);
 	})
 	var product_slider_1=$('#product-slider-1').lightSlider({
-		item: 4,
+		item: 5,
 		controls:false,
 		slideMove:4,
 		slideMargin: -2,
@@ -36,7 +36,7 @@ $(function(){
 		],
 	});
 	var product_slider_2=$('#product-slider-2').lightSlider({
-		item: 4,
+		item: 5,
 		controls:false,
 		slideMove:4,
 		slideMargin: -2,
