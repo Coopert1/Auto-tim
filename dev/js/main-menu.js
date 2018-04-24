@@ -24,7 +24,7 @@ $(function(){
 		item: 5,
 		controls:false,
 		slideMove:4,
-		slideMargin: -2,
+		slideMargin: -1,
 		responsive:[
 			{
 				breakpoint: 1200,
@@ -39,7 +39,7 @@ $(function(){
 		item: 5,
 		controls:false,
 		slideMove:4,
-		slideMargin: -2,
+		slideMargin: -1,
 		responsive:[
 			{
 				breakpoint: 1200,
@@ -173,6 +173,24 @@ $(function(){
 		promSlider();
 		
 	});
+	// this part for add products
+
+	$('.icon_amount-minus').click(function () {
+		var $input = $(this).parent().find('input');
+		var count = parseInt($input.val()) - 1;
+		count = count < 1 ? 1 : count;
+		$input.val(count);
+		$input.change();
+		return false;
+	});
+	$('.icon_amount-plus').click(function () {
+		var $input = $(this).parent().find('input');
+		$input.val(parseInt($input.val()) + 1);
+		$input.change();
+		return false;
+	});
+
+	// this part for slider products
 	
 	//this part for looking .commodity__img
 	$(".commodity__thumbnails img").click(function(){

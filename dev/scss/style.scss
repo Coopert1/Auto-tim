@@ -40,12 +40,12 @@ img{
 }
 .product{
 	position:relative;
-	border-top: 2px solid #d4d8db;
-	border-bottom: 2px solid #d4d8db;
+	border-top: 1px solid #d4d8db;
+	border-bottom: 1px solid #d4d8db;
 	padding: 20px 5px 20px 20px;
 	@include breakpoint(tablet){
 		text-align: left;
-		border: 2px solid #d4d8db;
+		border: 1px solid #d4d8db;
 		padding: 20px;
 	}
 	a{
@@ -96,7 +96,9 @@ img{
 		&:hover{
 			color: #f2762e;
 		}
-		a{font-weight: bold;}
+		a{
+			font-weight: bold;
+		}
 	}
 	&__text{
 		font-size: 11px;
@@ -181,7 +183,7 @@ img{
 		border-bottom: none;
 	}
 	.product_right-border{
-		border-right: 2px solid #d4d8db;
+		border-right: 1px solid #d4d8db;
 	}
 }
 @include breakpoint(phablet){
@@ -190,7 +192,7 @@ img{
 		
 	}
 	.product_right-border{
-		border-right: 2px solid #d4d8db;
+		border-right: 1px solid #d4d8db;
 	}
 }
 
@@ -200,6 +202,7 @@ img{
 	&__title{
 		font-family: 'gothamproblack', sans-serif;
 		font-size: 30px;
+		color: #3b3b3b;
 		margin-bottom: 25px;
 		text-align: center;
 		@include breakpoint(tablet){
@@ -292,18 +295,22 @@ button, input {
 	&_submit-order{
 		text-align: left;
 		display: block;
+		font-size: 16px;
 		margin: 20px auto;
 		padding: 10px 10px 10px 30px;
 		border-radius:5px;
 		color: #fff;
-		width: 300px;
+		width: 290px;
 		span{
 			float:right;
 		}
 		@include breakpoint(phablet){
-			display: block;
-			
-			
+			display: block;	
+		}
+		@include breakpoint(tablet){
+			float: right;	
+			width: 218px;
+			padding: 10px;
 		}
 	}
 }
@@ -497,7 +504,7 @@ button, input {
 				padding: 10px;
 				@include breakpoint(tablet){
 					left: 0px;
-					display:block;
+					// display:block;
 					width:267px;
 					border: 1px solid #e3e3e3;
 					box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
@@ -1021,10 +1028,10 @@ button, input {
 	}
 	hr{
 		display: block;
-		color: #5e5e5e;
+		color: #d4d8db;
 		height: 1px;
 		border: none;
-		background: #5e5e5e;
+		background: #d4d8db;
 		margin: 25px -10px 0 -10px;
 		
 			
@@ -1397,6 +1404,7 @@ button, input {
 // end product-catalog
 
 // cart.pug styles
+
 .cart-item{
 	margin-top: -1px;
 	position: relative;
@@ -1414,10 +1422,6 @@ button, input {
 		margin-bottom:10px;
 		padding-left: 83px;
 		border-bottom: 1px dashed #e1e1e1;
-
-		// border-style: solid;
-		// border-bottom-width: 2px;
-		// border-image: url(../images/dashed_border.png) 2 fill repeat;
 	}
 	&__image{
 		position: absolute;
@@ -1458,37 +1462,46 @@ button, input {
 		font-size: 18px;
 		font-family: 'gothamproblack';
 	}
-	.amount{
+}
+
+.amount{
 		position:relative;
 		top: -8px;
 		width: 25px;
 		text-align:center;
 		font-size: 18px;
 		font-family: 'gothamproblack';
-	}
 }
+
 .order-sum{
 	margin: 10px auto;
+	margin-top: 40px;
 	text-align: center;
 	font-size: 21px;
 	font-family: 'gothamproblack';
-	span:nth-child(1){
-		font-family: 'gothamproblack';
+	&__text{
+		span:nth-child(1){
+			font-family: 'gothamproblack';
+		}
+		span:nth-child(2){
+			font-size:21px;
+			color: #f2762e;
+			font-family: 'gothamproblack';
+		}
+		span:nth-child(3){
+			font-size:21px;
+			color: #f2762e;
+			font-family: 'rouble';
+		}
 	}
-	span:nth-child(2){
-		font-size:21px;
-		color: #f2762e;
-		font-family: 'gothamproblack';
-	}
-	span:nth-child(3){
-		font-size:21px;
-		color: #f2762e;
-		font-family: 'rouble';
-	}
+	@include breakpoint(tablet){
+		margin-top: 20px;
+		float:right;
+	} 
 }
 .coupon{
-	position:relative;
 	form{
+		position:relative;
 		input{
 			-webkit-appearance: textfield;
 			outline: none;
@@ -1512,14 +1525,94 @@ button, input {
 			font-size: 14px;
 		}
 	}
+	@include breakpoint(tablet){
+		margin-top:20px;
+		width: 50%;
+		margin-bottom: 50px;
+	}
+}
+table#order{
+	width: 100%;
+	border-spacing: 0;
+	th{
+		text-align: left;
+		background: #f2f3f4;
+		border-bottom: 1px solid #e1e1e1;
+		padding: 10px;
+		color: #929292;
+		font-size: 14px;
+	}
+	td{
+		padding: 20px 10px;
+		text-align: left;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	.fix-width{
+		width: 15%;
+	}
 }
 
 
+//galery.pug styles
+.gallery{
+	margin-top: 70px;
+}
+.galery-brand{
+	margin-bottom: 50px;
+	text-align:center;
+	&__pic{
+		vertical-align: top;
+		height: 50px;
+		margin-bottom: 20px;
+	}
+	&__name{
+		font-size: 12px;
+		color: #292929;
+		height: 30px;
+	}
+}
 
+//news
+
+.paginator{
+	ul{
+		text-align: center;
+		display: black;
+		margin: 30px auto;
+		margin-top: 15px;
+		list-style: none;
+		li{
+			color: #181818;
+			display: inline-block;
+			margin: 0px 5px;
+			line-height: 40px;
+			border: 1px solid #d3d3d3;
+			border-radius: 100%;
+			width: 40px;
+			height: 40px;
+		}
+		li.active{
+			background: #f2762e;
+			color: #fff;
+			border: 1px solid #f2762e;
+		}
+		li.prev, li.next{
+			background: #f0f0f0;
+		}
+	}
+}
+
+.show-tablet-table{
+	display: none;
+	@include breakpoint(tablet){
+		display: table;	
+	}
+}
 
 .show-tablet{
 	display: none;
 	@include breakpoint(tablet){
+
 		display: block;
 	}
 }
