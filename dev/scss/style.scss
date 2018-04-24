@@ -1494,15 +1494,61 @@ table#order{
 	}
 }
 
+
+//galery.pug styles
+.gallery{
+	margin-top: 70px;
+}
+.galery-brand{
+	margin-bottom: 50px;
+	text-align:center;
+	&__pic{
+		vertical-align: top;
+		height: 50px;
+		margin-bottom: 20px;
+	}
+	&__name{
+		font-size: 12px;
+		color: #292929;
+		height: 30px;
+	}
+}
+
+//news
+
+.paginator{
+	ul{
+		text-align: center;
+		display: black;
+		margin: 30px auto;
+		margin-top: 15px;
+		list-style: none;
+		li{
+			display: inline-block;
+			margin: 0px 5px;
+			line-height: 40px;
+			border: 1px solid #d3d3d3;
+			border-radius: 100%;
+			width: 40px;
+			height: 40px;
+		}
+		li.active{
+			background: #f2762e;
+			color: #fff;
+			border: 1px solid #f2762e;
+		}
+		li.prev, li.next{
+			background: #f0f0f0;
+		}
+	}
+}
+
 .show-tablet-table{
 	display: none;
 	@include breakpoint(tablet){
 		display: table;	
 	}
 }
-
-
-
 
 .show-tablet{
 	display: none;
