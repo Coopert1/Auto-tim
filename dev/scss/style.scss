@@ -40,12 +40,12 @@ img{
 }
 .product{
 	position:relative;
-	border-top: 2px solid #d4d8db;
-	border-bottom: 2px solid #d4d8db;
+	border-top: 1px solid #d4d8db;
+	border-bottom: 1px solid #d4d8db;
 	padding: 20px 5px 20px 20px;
 	@include breakpoint(tablet){
 		text-align: left;
-		border: 2px solid #d4d8db;
+		border: 1px solid #d4d8db;
 		padding: 20px;
 	}
 	a{
@@ -96,7 +96,9 @@ img{
 		&:hover{
 			color: #f2762e;
 		}
-		a{font-weight: bold;}
+		a{
+			font-weight: bold;
+		}
 	}
 	&__text{
 		font-size: 11px;
@@ -179,7 +181,7 @@ img{
 		border-bottom: none;
 	}
 	.product_right-border{
-		border-right: 2px solid #d4d8db;
+		border-right: 1px solid #d4d8db;
 	}
 }
 @include breakpoint(phablet){
@@ -188,7 +190,7 @@ img{
 		
 	}
 	.product_right-border{
-		border-right: 2px solid #d4d8db;
+		border-right: 1px solid #d4d8db;
 	}
 }
 
@@ -1144,6 +1146,7 @@ button, input {
 }
 
 // cart.pug styles
+
 .cart-item{
 	margin-top: -1px;
 	position: relative;
@@ -1161,10 +1164,6 @@ button, input {
 		margin-bottom:10px;
 		padding-left: 83px;
 		border-bottom: 1px dashed #e1e1e1;
-
-		// border-style: solid;
-		// border-bottom-width: 2px;
-		// border-image: url(../images/dashed_border.png) 2 fill repeat;
 	}
 	&__image{
 		position: absolute;
@@ -1274,6 +1273,27 @@ button, input {
 		margin-bottom: 50px;
 	}
 }
+table#order{
+	width: 100%;
+	border-spacing: 0;
+	th{
+		text-align: left;
+		background: #f2f3f4;
+		border-bottom: 1px solid #e1e1e1;
+		padding: 10px;
+		color: #929292;
+		font-size: 14px;
+	}
+	td{
+		padding: 20px 10px;
+		text-align: left;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	.fix-width{
+		width: 15%;
+	}
+}
+
 .show-tablet-table{
 	display: none;
 	@include breakpoint(tablet){
@@ -1297,25 +1317,4 @@ button, input {
 			display: none;
 		}
 	}
-}
-table#order{
-	width: 100%;
-	border-spacing: 0;
-	th{
-		text-align: left;
-		background: #f2f3f4;
-		border-bottom: 1px solid #e1e1e1;
-		padding: 10px;
-		color: #929292;
-		font-size: 14px;
-	}
-	td{
-		padding: 20px 10px;
-		text-align: left;
-		border-bottom: 1px solid #e1e1e1;
-	}
-	.fix-width{
-		width: 15%;
-	}
-
 }

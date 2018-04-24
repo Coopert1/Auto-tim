@@ -24,7 +24,7 @@ $(function(){
 		item: 5,
 		controls:false,
 		slideMove:4,
-		slideMargin: -2,
+		slideMargin: -1,
 		responsive:[
 			{
 				breakpoint: 1200,
@@ -39,7 +39,7 @@ $(function(){
 		item: 5,
 		controls:false,
 		slideMove:4,
-		slideMargin: -2,
+		slideMargin: -1,
 		responsive:[
 			{
 				breakpoint: 1200,
