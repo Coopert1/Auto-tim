@@ -202,6 +202,7 @@ img{
 	&__title{
 		font-family: 'gothamproblack', sans-serif;
 		font-size: 30px;
+		color: #3b3b3b;
 		margin-bottom: 25px;
 		text-align: center;
 		@include breakpoint(tablet){
@@ -1524,6 +1525,7 @@ table#order{
 		margin-top: 15px;
 		list-style: none;
 		li{
+			color: #181818;
 			display: inline-block;
 			margin: 0px 5px;
 			line-height: 40px;
