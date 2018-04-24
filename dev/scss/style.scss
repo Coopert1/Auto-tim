@@ -1066,17 +1066,31 @@ button, input {
 }
 .commodity{
 	text-align: center;
-	margin-top: 25px;
+	//margin-top: 25px;
+	position: relative;
+	top: 50px;
+	
 	&__producer{
 		font-size: 14px;
+		color: #3b3b3b;
+		
+		a{
+			text-decoration: underline;
+			padding-left: 10px;
+			color: #3b3b3b;
+		}
+		span{
+			color: #3b3b3b;
+		}
 		@include breakpoint(tablet){
-			margin: 25px;
+			margin: 25px 25px 25px 0;
 		}
 	}
 	&__name{
 		font-size: 24px;
 		font-family: 'gothamproblack', sans-serif;
 		margin: 25px 0 20px 0;
+		color: #3b3b3b;
 	}
 	&__favorite{
 		display: inline-block;
@@ -1112,10 +1126,25 @@ button, input {
 		font-size: 11px;
 		float: right;
 		margin-top: -20px;
+		color: #5a5a5a;
 		
 	}
 	&__img{
 		margin-bottom: 30px;
+		position: relative;
+		margin-top: -30px;
+		@include breakpoint(tablet){
+			margin-top:0;
+		}
+		&_stripe{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 94px;
+			height: 83px;
+			background-image: url(../images/sale.png);
+		}
+		
 	}
 	&__thumbnail{
 		display: inline-block;
@@ -1129,8 +1158,11 @@ button, input {
 		color: #f2762e;
 		font-family: 'gothamproblack', sans-serif;
 		position: relative;
-		
-		span:first-child{
+		span{font-family: 'gothamproblack', sans-serif;}
+		span.rouble{
+			font-family: 'rouble', sans-serif;
+		}
+		&_before{
 			display: inline-block;
 			text-decoration: line-through;
 			color: #a6a6a6;
@@ -1139,13 +1171,15 @@ button, input {
 			margin-right: 10px;
 			margin-top: -5px;
 			left: -60%;
+
 			@include breakpoint(tablet){
 				display: block;
 				margin-bottom: -5px;
 				margin-left: 15px;
 			}
-			
 		}
+		
+		
 		&.hide-tablet{
 			@include breakpoint(tablet){
 				display: none;
@@ -1160,7 +1194,7 @@ button, input {
 		background-color: #f2762e;
 		border-radius: 5px;
 		font-size: 16px;
-		margin: 10px;
+		margin: 10px 10px 10px 0;
 		&.hide-tablet{
 			
 			@include breakpoint(tablet){
@@ -1169,6 +1203,7 @@ button, input {
 		}
 		&.show-tablet{
 			display: inline-block;
+			
 		}
 	}
 		
@@ -1181,6 +1216,9 @@ button, input {
 		font-size: 16px;
 		margin: 10px;
 		cursor: pointer;
+		&:hover{
+			background-color: #f2762e;
+		}
 		&.hide-tablet{
 			
 			@include breakpoint(tablet){
@@ -1196,6 +1234,8 @@ button, input {
 		border-top: 1px solid #bcbcbc;
 		margin-top: 20px;
 		padding-top: 15px;
+		color: #292929;
+		font-weight: bold;
 		&_title{
 			font-size: 18px;
 			margin-bottom: 20px;
@@ -1212,17 +1252,32 @@ button, input {
 		font-size: 14px;
 		td{
 			line-height: 1.5;
-			&:first-child{padding-left: 20px;}
+			
+			&:first-child{
+				position: relative;
+				overflow: hidden;
+				
+				&:after{
+					content: " ";
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					border-bottom: 1px dotted #bcbcbc;
+					bottom: 5px;
+				}
+			}
 			&:last-child{
 				min-width: 120px;
+				
+				
 			}
 		}
 		a{
 			color: inherit;
 		}
 		&.show-tablet{
-			margin: 20px -15px 15px -15px;
-			padding: 15px 15px 0 15px;
+			margin: 20px -15px 15px -35px;
+			padding: 15px 15px 0 35px;
 		}
 		&.hide-tablet{
 			margin: 20px -15px 15px -15px;
@@ -1234,7 +1289,7 @@ button, input {
 		padding: 15px 15px 25px 40px;
 		text-align: left;
 		font-size: 14px;
-		border-top: 2px solid #bcbcbc;
+		border-top: 1px solid #bcbcbc;
 		margin-top: 30px;
 		margin: 30px -15px 0 -15px;
 		position: relative;
@@ -1258,11 +1313,11 @@ button, input {
 		
 	}
 	.content{
-		margin-bottom: -7px;
+		margin-bottom: -15px;
 		border-top: 1px solid #bcbcbc;
 		margin-top: 30px;
-		margin-left: -15px;
-		padding-left: 15px;
+		margin-left: -35px;
+		padding-left: 35px;
 	}
 	&__spare-parts{
 		padding: 15px 15px 25px 40px;
@@ -1273,7 +1328,10 @@ button, input {
 		border-bottom: 1px solid #bcbcbc;
 		border-top: 1px solid #bcbcbc;
 		margin: 30px -15px 0 -15px;
-		a{color: inherit;}
+		a{
+			color: inherit;
+			font-family:  "gothamproblack", sans-serif;
+		}
 		@include breakpoint(tablet){
 			float: right;
 			width: 40%;
@@ -1299,6 +1357,8 @@ button, input {
 	}
 	&.show-tablet{
 		text-align: left;
+		margin-left: 20px;
+		position: static;
 		
 	}
 	hr{
@@ -1548,7 +1608,7 @@ table#order{
 .show-tablet-table{
 	display: none;
 	@include breakpoint(tablet){
-		display: table;	
+		display: table;
 	}
 }
 
