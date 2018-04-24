@@ -1132,7 +1132,10 @@ button, input {
 	&__img{
 		margin-bottom: 30px;
 		position: relative;
-		height: 455px;
+		margin-top: -30px;
+		@include breakpoint(tablet){
+			margin-top:0;
+		}
 		&_stripe{
 			position: absolute;
 			top: 0;
@@ -1605,7 +1608,7 @@ table#order{
 .show-tablet-table{
 	display: none;
 	@include breakpoint(tablet){
-		display: table;	
+		display: table;
 	}
 }
 
