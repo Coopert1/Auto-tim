@@ -14,7 +14,9 @@ html
 				.col-tablet-1-2
 					.commodity
 						.commodity__name.hide-tablet Бокс автомобильный Евродеталь Борнео 350 (серый)
-						.commodity__producer.hide-tablet  Производитель: Евродеталь
+						.commodity__producer.hide-tablet
+							span Производитель:
+							a(href="#") Евродеталь
 						.commodity__favorite.hide-tablet
 						.commodity__filter.hide-tablet
 						.commodity__img
@@ -27,8 +29,12 @@ html
 							.commodity__thumbnail
 								img(src="images/box_01.png")
 						.commodity__price.hide-tablet
-							span 9 800
-							span 8 800 &#8381
+							.commodity__price_before
+								span 9 800
+								span.rouble u
+							.commodity__price_after
+								span 8 800
+								span.rouble u
 						br
 						.commodity__add-to-card.hide-tablet В корзину
 						.commodity__buy-to-click.hide-tablet Купить в 1 клик
@@ -72,10 +78,16 @@ html
 						.commodity__filter
 						.commodity__article арт.3166
 						.commodity__name Бокс автомобильный Евродеталь Борнео 350 (серый)
-						.commodity__producer Производитель: Евродеталь
-						.commodity__price.show-tablet 
-							span 9 800
-							span 8 800 &#8381
+						.commodity__producer
+							span Производитель:
+							a(href="#") Евродеталь
+						.commodity__price.show-tablet
+							.commodity__price_before
+								span 9 800
+								span.rouble u
+							.commodity__price_after
+								span 8 800
+								span.rouble u
 						.commodity__add-to-card.show-tablet В корзину
 						.commodity__buy-to-click.show-tablet Купить в 1 клик
 						.commodity__peculiar-properties.show-tablet
