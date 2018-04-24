@@ -1,0 +1,94 @@
+html
+	head
+		include ./parts/head.pug
+	body
+		include ./parts/header.pug
+		.wrapper
+			.section
+				.section__title Корзина
+				.cart-item
+					.cart-item__remove
+						img(src="/images/remove_item.png",alt="remove_item")
+					.cart-item__description.clearfix
+						.cart-item__image
+							img(src="/images/cart_item.png", alt="cart_item")
+						.cart-item__number
+							|арт.3166
+						.cart-item__name
+							|Установочный комплект для авт. багажника Thule 3166
+					.clearfix
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__price
+								.cart-item__field-name
+									|Цена
+								|8 800 
+								span
+									|u
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__amount
+								.cart-item__field-name
+									|Количество
+								span.icon.icon_amount-minus
+								input(type="text" value="1" class="amount")
+								span.icon.icon_amount-plus
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__sum
+								.cart-item__field-name
+									|Сумма
+								|8 800 
+								span
+									|u
+				.cart-item
+					.cart-item__remove
+						img(src="/images/remove_item.png",alt="remove_item")
+					.cart-item__description.clearfix
+						.cart-item__image
+							img(src="/images/cart_item.png", alt="cart_item")
+						.cart-item__number
+							|арт.3166
+						.cart-item__name
+							|Установочный комплект для авт. багажника Thule 3166
+					.clearfix
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__price
+								.cart-item__field-name
+									|Цена
+								|8 800 
+								span
+									|u
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__amount
+								.cart-item__field-name
+									|Количество
+								span.icon.icon_amount-minus
+								input(type="text" value="1" class="amount")
+								span.icon.icon_amount-plus
+						.col-mobileonly-1-3.col-mobileonly-1-3_padding-none.col-phablet-1-3
+							.cart-item__sum
+								.cart-item__field-name
+									|Сумма
+								|8 800 
+								span
+									|u
+				.order-sum
+					span
+						|Итого: 
+					span
+						|8 800
+					span
+						|u
+				a(href="#").btn.btn_submit-order
+					|Оформить заказ
+					span
+						|&#8594;
+				p
+					|Если у вас есть код купона для получения скидки, введите его здесь:
+				.coupon
+					form
+							input(type="text", placeholder="", name="coupon")
+							button(type="submit") Активировать
+			.section
+				.section__title
+					|Аксессуары
+				include ./parts/products.pug
+		include ./parts/footer.pug

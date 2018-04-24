@@ -1,5 +1,6 @@
 $(function(){
 	promSlider();
+	SameHeight();
 	$('.menu-list').click(function(){
 		var browserMinWidth = $(window).width();
 		if (browserMinWidth < 800) {
@@ -19,9 +20,8 @@ $(function(){
 			// {duration:100},
 		);
 	})
-	SameHeight();
 	var product_slider_1=$('#product-slider-1').lightSlider({
-		item: 4,
+		item: 5,
 		controls:false,
 		slideMove:4,
 		slideMargin: -2,
@@ -36,7 +36,7 @@ $(function(){
 		],
 	});
 	var product_slider_2=$('#product-slider-2').lightSlider({
-		item: 4,
+		item: 5,
 		controls:false,
 		slideMove:4,
 		slideMargin: -2,
@@ -63,6 +63,11 @@ $(function(){
 	$(".ls-nextSlide2").click(function(){
 		product_slider_2.goToNextSlide();
 	});
+	
+
+	//Slider for popular parts
+
+
 	var slider=$('#popular-section-slider').lightSlider({
 		galleryMargin: 25,
 		item: 3,
@@ -79,6 +84,10 @@ $(function(){
 			},
 		],
 	});
+
+
+	//Slider for dealers
+
 
 	var dealerslider=$('#dealerslider').lightSlider({
 		galleryMargin: 25,
@@ -105,12 +114,16 @@ $(function(){
 			
 		],
 	});
-	$("#wrap-width > div:nth-child(2) > div.dealers-slider > span.icon.icon_controls_prev.show-tablet-inline").click(function(){
+	$(".icon_controls_prev").click(function(){
 		dealerslider.goToPrevSlide();
 	});
-	$("#wrap-width > div:nth-child(2) > div.dealers-slider > span.icon.icon_controls_next.show-tablet-inline").click(function(){
+	$(".icon_controls_next").click(function(){
 		dealerslider.goToNextSlide();
 	});
+
+
+	// Main Slider (promo)
+
 
 	var promoslider=$('#promoslider').lightSlider({
 		galleryMargin: 25,
