@@ -2,27 +2,28 @@ html
 	head
 		include ./parts/head.pug
 	body
-		include ./parts/header.pug
+		//include ./parts/header.pug
 		.wrapper
 			ul.breadcrumbs.show-tablet
 				li
 					a(href="index.html") Главная
 				li
 					a(href="#") Боксы на крышу
+		.wrapper_product-card
 			.row.clearfix
-				.col-tablet-1-2.border-right-tablet
+				.col-tablet-1-2
 					.commodity
 						.commodity__name.hide-tablet Бокс автомобильный Евродеталь Борнео 350 (серый)
 						.commodity__producer.hide-tablet  Производитель: Евродеталь
 						.commodity__favorite.hide-tablet
 						.commodity__filter.hide-tablet
 						.commodity__img
-							img(src="images/box_01.png")
+							img(src="images/product_card.png")
 						.commodity__thumbnails
 							.commodity__thumbnail
 								img(src="images/box_02.png")
 							.commodity__thumbnail
-								img(src="images/box_03.png")
+								img(src="images/product_card.png")
 							.commodity__thumbnail
 								img(src="images/box_01.png")
 						.commodity__price.hide-tablet
@@ -65,7 +66,7 @@ html
 							a(href="#") Описание
 							.commodity__describe_text Автомобильный бокс Магнум 350 имеет оптимальные размеры (140 см в длину, 90 см в ширину и 42 см в высоту) для размещения как на коротких крышах седанов, так и на хэтчбэках, универсалах и джипах. Бокс предназначен для перевозки различных грузов. Бокс оснащен центральным замком и механическими подпружиненными держателями крышки с фиксаторами.
 							
-				.col-tablet-1-2
+				.col-tablet-1-2.border-left-tablet
 					.commodity.show-tablet
 						.commodity__favorite
 						.commodity__filter
@@ -118,7 +119,7 @@ html
 			
 
 					
-				
+		.wrapper
 			.section
 				.section__title Аксессуары
 				include ./parts/products.pug

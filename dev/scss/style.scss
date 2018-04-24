@@ -818,37 +818,7 @@ button, input {
 	left: 0;
 }
 
-.show-tablet{
-	display: none;
-	@include breakpoint(tablet){
-		display: block;
-	}
-}
-.show-tablet-inline{
-	display: none;
-	@include breakpoint(tablet){
-		display: inline-block;
-	}
-}
 
-.show-laptop{
-	display: none;
-	@include breakpoint(laptop){
-		display: block;
-	}
-}
-.hide-{
-	&tablet{
-		@include breakpoint(tablet){
-			display: none;
-		}
-	}
-	&laptop{
-		@include breakpoint(laptop){
-			display: none;
-		}
-	}
-}
 
 
 .promo{
@@ -1185,9 +1155,13 @@ button, input {
 		font-size: 16px;
 		margin: 10px;
 		&.hide-tablet{
+			
 			@include breakpoint(tablet){
 				display: none;
 			}
+		}
+		&.show-tablet{
+			display: inline-block;
 		}
 	}
 		
@@ -1195,20 +1169,24 @@ button, input {
 		display: inline-block;
 		color: black;
 		padding: 10px 20px;
-		border: 2px solid #bcbcbc;
+		border: 1px solid #bcbcbc;
 		border-radius: 5px;
 		font-size: 16px;
 		margin: 10px;
 		cursor: pointer;
 		&.hide-tablet{
+			
 			@include breakpoint(tablet){
 				display: none;
 			}
 		}
+		&.show-tablet{
+			display: inline-block;
+		}
 	}
 	&__peculiar-properties{
 		text-align: left;
-		border-top: 2px solid #bcbcbc;
+		border-top: 1px solid #bcbcbc;
 		margin-top: 20px;
 		padding-top: 15px;
 		&_title{
@@ -1217,7 +1195,7 @@ button, input {
 		}
 		&_all{
 			font-size: 14px;
-			border-bottom: 2px dotted #bcbcbc;
+			border-bottom: 1px dotted #bcbcbc;
 			display: inline-block;
 			margin-top: 20px;
 			a{
@@ -1234,6 +1212,14 @@ button, input {
 		}
 		a{
 			color: inherit;
+		}
+		&.show-tablet{
+			margin: 20px -15px 15px -15px;
+			padding: 15px 15px 0 15px;
+		}
+		&.hide-tablet{
+			margin: 20px -15px 15px -15px;
+			padding: 15px 15px 0 15px;
 		}
 		
 	}
@@ -1265,9 +1251,11 @@ button, input {
 		
 	}
 	.content{
-		border-bottom: 2px solid #bcbcbc;
-		border-top: 2px solid #bcbcbc;
+		margin-bottom: -7px;
+		border-top: 1px solid #bcbcbc;
 		margin-top: 30px;
+		margin-left: -15px;
+		padding-left: 15px;
 	}
 	&__spare-parts{
 		padding: 15px 15px 25px 40px;
@@ -1275,14 +1263,14 @@ button, input {
 		font-size: 18px;
 		color: #f2762e;
 		font-family:  "gothamproblack", sans-serif;
-		border-bottom: 2px solid #bcbcbc;
-		border-top: 2px solid #bcbcbc;
+		border-bottom: 1px solid #bcbcbc;
+		border-top: 1px solid #bcbcbc;
 		margin: 30px -15px 0 -15px;
 		a{color: inherit;}
 		@include breakpoint(tablet){
 			float: right;
 			width: 40%;
-			border-left: 2px solid #bcbcbc;
+			border-left: 1px solid #bcbcbc;
 			border-bottom: none;
 			border-top: none;
 			margin: 0;
@@ -1308,17 +1296,47 @@ button, input {
 	}
 	hr{
 		display: block;
-		height: 2px;
+		height: 1px;
 		border: none;
 		background-color: #bcbcbc;
 		margin: 25px -10px 0 -10px;
 	}
+	
 }
-.border-right-tablet {
-	@include breakpoint(tablet){
-		border-right: 2px solid #bcbcbc;
+.wrapper_product-card{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 10px;
+	&:after{
+		float: left;
+		width: 100%;
+		content: "";
+		height: 1px;
+		width: 100%;
+		background-color: #bcbcbc;
+		display: none;
+		@include breakpoint(tablet){
+			display: block;
+		}
+
+	}
+
+}
+.border-left-tablet {
+	position: relative;
+	border-left: 1px solid #bcbcbc;
+	&:before{
+		content: "";
+		width: 1px;
+		height: 45px;
+		display: inline-block;
+		position: absolute;
+		background-color: #bcbcbc;
+		top: -45px;
+		left: -1px;
 	}
 }
+
 // end product-catalog
 
 // cart.pug styles
@@ -1435,6 +1453,40 @@ button, input {
 			padding: 15px;
 			color: #5a5a5a;
 			font-size: 14px;
+		}
+	}
+}
+
+
+
+
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
+		display: block;
+	}
+}
+.show-tablet-inline{
+	display: none;
+	@include breakpoint(tablet){
+		display: inline-block;
+	}
+}
+.show-laptop{
+	display: none;
+	@include breakpoint(laptop){
+		display: block;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
 		}
 	}
 }
