@@ -173,4 +173,22 @@ $(function(){
 		promSlider();
 		
 	});
+	// this part for add products
+
+	$('.icon_amount-minus').click(function () {
+		var $input = $(this).parent().find('input');
+		var count = parseInt($input.val()) - 1;
+		count = count < 1 ? 1 : count;
+		$input.val(count);
+		$input.change();
+		return false;
+	});
+	$('.icon_amount-plus').click(function () {
+		var $input = $(this).parent().find('input');
+		$input.val(parseInt($input.val()) + 1);
+		$input.change();
+		return false;
+	});
+
+	// this part for slider products
 });

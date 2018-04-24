@@ -4,11 +4,18 @@ html
 	body
 		include ./parts/header.pug
 		.wrapper
+			.backdrop
+			ul.breadcrumbs.show-tablet
+				li
+					a(href="index.html") Главная
+				li
+					a(href="#") Боксы на крышу
 			.section
 				.section__title Корзина
-				.cart-item
+				.cart-item.hide-tablet
 					.cart-item__remove
-						img(src="/images/remove_item.png",alt="remove_item")
+						a(href="#")
+							img(src="/images/remove_item.png",alt="remove_item")
 					.cart-item__description.clearfix
 						.cart-item__image
 							img(src="/images/cart_item.png", alt="cart_item")
@@ -38,9 +45,10 @@ html
 								|8 800 
 								span
 									|u
-				.cart-item
+				.cart-item.hide-tablet
 					.cart-item__remove
-						img(src="/images/remove_item.png",alt="remove_item")
+						a(href="#")
+							img(src="/images/remove_item.png",alt="remove_item")
 					.cart-item__description.clearfix
 						.cart-item__image
 							img(src="/images/cart_item.png", alt="cart_item")
@@ -70,20 +78,84 @@ html
 								|8 800 
 								span
 									|u
+				table(id="order").show-tablet-table
+							tr
+								th
+								th Наименование
+								th.fix-width Цена
+								th.fix-width Количество
+								th.fix-width Стоимость
+								th
+							tr
+								td
+									img(src="images/cart_item_02.png")
+								td 
+									.cart-item__number
+										|арт.3166
+									.cart-item__name
+										|Установочный комплект для авт. багажника Thule 3166
+								td 
+									.cart-item__price
+										|8 800 
+										span
+											|u
+								td
+									.cart-item__amount
+										span.icon.icon_amount-minus
+										input(type="text" value="1" class="amount")
+										span.icon.icon_amount-plus
+								td 
+									.cart-item__sum
+										|8 800 
+										span
+											|u
+								td
+									a(href="#")
+										img(src="/images/remove_item.png",alt="remove_item")
+							tr
+								td
+									img(src="images/cart_item_02.png")
+								td 
+									.cart-item__number
+										|арт.3166
+									.cart-item__name
+										|Установочный комплект для авт. багажника Thule 3166
+								td 
+									.cart-item__price
+										|8 800 
+										span
+											|u
+								td
+									.cart-item__amount
+										span.icon.icon_amount-minus
+										input(type="text" value="1" class="amount")
+										span.icon.icon_amount-plus
+								td 
+									.cart-item__sum
+										|8 800 
+										span
+											|u
+								td
+									a(href="#")
+										img(src="/images/remove_item.png",alt="remove_item")
+							//- tr
+							//- 	td(colspan="4") Сумма:
+							//- 	td.order-sum 3600 руб.
 				.order-sum
-					span
-						|Итого: 
-					span
-						|8 800
-					span
-						|u
-				a(href="#").btn.btn_submit-order
-					|Оформить заказ
-					span
-						|&#8594;
-				p
-					|Если у вас есть код купона для получения скидки, введите его здесь:
+					.order-sum__text
+						span
+							|Итого: 
+						span
+							|8 800
+						span
+							|u
+					a(href="#").btn.btn_submit-order
+						|Оформить заказ
+						span
+							|&#8594;
 				.coupon
+					p
+						|Если у вас есть код купона для получения скидки, введите его здесь:
 					form
 							input(type="text", placeholder="", name="coupon")
 							button(type="submit") Активировать

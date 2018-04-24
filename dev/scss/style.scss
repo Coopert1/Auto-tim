@@ -415,18 +415,22 @@ button, input {
 	&_submit-order{
 		text-align: left;
 		display: block;
+		font-size: 16px;
 		margin: 20px auto;
 		padding: 10px 10px 10px 30px;
 		border-radius:5px;
 		color: #fff;
-		width: 300px;
+		width: 290px;
 		span{
 			float:right;
 		}
 		@include breakpoint(phablet){
-			display: block;
-			
-			
+			display: block;	
+		}
+		@include breakpoint(tablet){
+			float: right;	
+			width: 218px;
+			padding: 10px;
 		}
 	}
 }
@@ -620,7 +624,7 @@ button, input {
 				padding: 10px;
 				@include breakpoint(tablet){
 					left: 0px;
-					display:block;
+					// display:block;
 					width:267px;
 					border: 1px solid #e3e3e3;
 					box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
@@ -1201,37 +1205,46 @@ button, input {
 		font-size: 18px;
 		font-family: 'gothamproblack';
 	}
-	.amount{
+}
+
+.amount{
 		position:relative;
 		top: -8px;
 		width: 25px;
 		text-align:center;
 		font-size: 18px;
 		font-family: 'gothamproblack';
-	}
 }
+
 .order-sum{
 	margin: 10px auto;
+	margin-top: 40px;
 	text-align: center;
 	font-size: 21px;
 	font-family: 'gothamproblack';
-	span:nth-child(1){
-		font-family: 'gothamproblack';
+	&__text{
+		span:nth-child(1){
+			font-family: 'gothamproblack';
+		}
+		span:nth-child(2){
+			font-size:21px;
+			color: #f2762e;
+			font-family: 'gothamproblack';
+		}
+		span:nth-child(3){
+			font-size:21px;
+			color: #f2762e;
+			font-family: 'rouble';
+		}
 	}
-	span:nth-child(2){
-		font-size:21px;
-		color: #f2762e;
-		font-family: 'gothamproblack';
-	}
-	span:nth-child(3){
-		font-size:21px;
-		color: #f2762e;
-		font-family: 'rouble';
-	}
+	@include breakpoint(tablet){
+		margin-top: 20px;
+		float:right;
+	} 
 }
 .coupon{
-	position:relative;
 	form{
+		position:relative;
 		input{
 			-webkit-appearance: textfield;
 			outline: none;
@@ -1255,37 +1268,22 @@ button, input {
 			font-size: 14px;
 		}
 	}
+	@include breakpoint(tablet){
+		margin-top:20px;
+		width: 50%;
+		margin-bottom: 50px;
+	}
+}
+.show-tablet-table{
+	display: none;
+	@include breakpoint(tablet){
+		display: table;	
+	}
 }
 .show-tablet{
 	display: none;
 	@include breakpoint(tablet){
 		display: block;	
-	}
-	&__price{
-		display: block;
-		font-size: 30px;
-		color: #f2762e;
-		font-weight: bold;
-		
-	}
-	&__add-to-card{
-		display: inline-block;
-		color: white;
-		padding: 10px 20px;
-		background-color: #f2762e;
-		border-radius: 5px;
-		font-size: 16px;
-		margin: 10px;
-	}
-		
-	&__buy-to-click{
-		display: inline-block;
-		color: black;
-		padding: 10px 20px;
-		border: 2px solid #bcbcbc;
-		border-radius: 5px;
-		font-size: 16px;
-		margin: 10px;
 	}
 }
 .hide-{
@@ -1299,4 +1297,25 @@ button, input {
 			display: none;
 		}
 	}
+}
+table#order{
+	width: 100%;
+	border-spacing: 0;
+	th{
+		text-align: left;
+		background: #f2f3f4;
+		border-bottom: 1px solid #e1e1e1;
+		padding: 10px;
+		color: #929292;
+		font-size: 14px;
+	}
+	td{
+		padding: 20px 10px;
+		text-align: left;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	.fix-width{
+		width: 15%;
+	}
+
 }
