@@ -173,4 +173,11 @@ $(function(){
 		promSlider();
 		
 	});
+	
+	//this part for looking .commodity__img
+	$(".commodity__thumbnails img").click(function(){
+		var sourse =  $(this).attr('src');
+		$(".commodity__img img").attr( 'src', sourse);
+	});
+	//end part for looking .commodity__img
 });
