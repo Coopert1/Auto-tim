@@ -1059,7 +1059,9 @@ button, input {
 }
 .commodity{
 	text-align: center;
-	margin-top: 25px;
+	//margin-top: 25px;
+	position: relative;
+	top: 50px;
 	
 	&__producer{
 		font-size: 14px;
@@ -1122,6 +1124,17 @@ button, input {
 	}
 	&__img{
 		margin-bottom: 30px;
+		position: relative;
+		height: 455px;
+		&_stripe{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 94px;
+			height: 83px;
+			background-image: url(../images/sale.png);
+		}
+		
 	}
 	&__thumbnail{
 		display: inline-block;
@@ -1335,6 +1348,7 @@ button, input {
 	&.show-tablet{
 		text-align: left;
 		margin-left: 20px;
+		position: static;
 		
 	}
 	hr{
