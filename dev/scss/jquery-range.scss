@@ -1,0 +1,107 @@
+.slider-container {
+  width: 200px;
+}
+.slider-container .back-bar {
+  height: 10px;
+  position: relative;
+}
+.slider-container .back-bar .selected-bar {
+  position: absolute;
+  height: 100%;
+}
+.slider-container .back-bar .pointer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  cursor: col-resize;
+  opacity: 1;
+  z-index: 2;
+}
+.slider-container .back-bar .pointer.last-active {
+  z-index: 3;
+} 
+.pointer-label{
+  color:#333333;
+  display: none;
+}
+.high{
+    position: absolute;
+    top: 16px;
+    right:0px;
+    font-size: 15px;
+    background: white;
+    white-space: nowrap;
+    line-height: 1;
+  }
+.low{
+    position: absolute;
+    top: 16px;
+    left:0;
+    font-size: 15px;
+    background: white;
+    white-space: nowrap;
+    line-height: 1; 
+  }
+.slider-container .back-bar .focused {
+  z-index: 10;
+}
+.slider-container .clickable-dummy {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.slider-container .scale {
+  top: 2px;
+  position: relative;
+}
+.slider-container .scale span {
+  position: absolute;
+  height: 5px;
+  border-left: 1px solid #999;
+  font-size: 0;
+}
+.slider-container .scale ins {
+  font-size: 15px;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #333333;
+  line-height: 1;
+}
+.slider-container.slider-readonly .clickable-dummy,
+.slider-container.slider-readonly .pointer {
+  cursor: auto;
+}
+.theme-green .back-bar {
+  height: 8px;
+  border-radius: 0px;
+  background: #dee3e8;
+ 
+}
+.selected-bar {
+  background: #f2762e; 
+}
+.theme-green .back-bar .pointer {
+  width: 18px;
+  height: 18px;
+  top: -4px;
+  border-radius: 100%;
+  border-bottom: 0px solid #b5b5b5;
+  background: #fff;
+  box-shadow: 0px 1px 3px 1px rgba(182,183,184,1); 
+  background-repeat: repeat-x;
+  
+}
+.theme-green .back-bar{
+  color: #999;
+}
+.theme-green .back-bar .focused {
+  color: #333333;
+}
+.theme-green .scale span {
+  border-left: 1px solid #e5e5e5;
+}

@@ -151,7 +151,7 @@ $(function(){
 				$('.col-tablet-4-5').css('width', wrapperWidth+'px');
 				$('.dealers-slider').css('width', wrapperWidth+'px');
 			} else {
-				$('.col-tablet-4-5').css('width', '100%');
+				// $('.col-tablet-4-5').css('width', '100%');
 				$('.dealers-slider').css('width', '100%');
 			}
 		
@@ -198,4 +198,32 @@ $(function(){
 		$(".commodity__img img").attr( 'src', sourse);
 	});
 	//end part for looking .commodity__img
+
+	//range slider
+
+	$('.range-slider').jRange({
+		from:1000,
+		to: 10000,
+		step: 100,
+		scale: [1000,5000],
+		format: '%s',
+		width: '100%',
+		showLabels: true,
+		isRange : true
+		}).jRange('setValue', '1000,7000');
+	// $('body > div.wrapper > div.section > div.filters > div:nth-child(3) > div.slider-container.theme-green > div.back-bar > div.pointer-label.high').change(function(){
+	// 	var high = +($('body > div.wrapper > div.section > div.filters > div:nth-child(3) > div.slider-container.theme-green > div.back-bar > div.pointer-label.high').text());
+	// 	$('.pointer-label-high').val(high);
+	// 	console.log(typeof(high))
+	// });
+	
+
+	//show-hide filters
+
+	$('#show-filter-mobile').click(function(){
+		$(".filters").show();
+	})
+	$('.filters__close-btn').click(function(){
+		$(".filters").hide();
+	})
 });
