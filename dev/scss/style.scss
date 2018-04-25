@@ -27,6 +27,26 @@
 img{
 	max-width: 100%;
 }
+h1{
+	color: #3b3b3b;
+	font-family: 'gothamproblack';
+	font-size: 36px;
+}
+h2{
+	color: #3b3b3b;
+	font-family: 'gothamproblack';
+	font-size: 30px;
+}
+h3{
+	color: #3b3b3b;
+	font-family: 'gothamproblack';
+	font-size: 24px;
+}
+h4{
+	color: #3b3b3b;
+	font-family: 'gothamproblack';
+	font-size: 18px;
+}
 .align-right{
 	text-align: right;
 	&_mobileonly{
@@ -353,6 +373,16 @@ button, input {
 	}
 	&_promo-slider{
 		padding: 10px 15px;
+	}
+	&_continue-shopping{
+		font-size: 24px;
+		border-radius:5px;
+		color: #fff;
+			padding: 10px 20px;
+		@include breakpoint(tablet){
+			padding: 20px 60px;
+		}
+		
 	}
 }
 
@@ -1866,8 +1896,35 @@ table#order{
 	float: right;
 }
 
-//
+/////////
 
+.thanks-for-order{
+	max-width: 640px;
+	margin: 50px auto 50px;
+	text-align: center;
+	@include breakpoint(tablet){
+		margin: 161px auto 143px;
+	}
+	p{
+		font-size: 15px;
+		color: #818181;
+		margin: 30px 0 50px 0;
+	}
+}
+.order-number{
+	font-family: "museosansregular";
+	margin-top: 30px;
+	padding: 22px 0px;
+	font-size: 18px;
+	background:url(../images/order_number_bg.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	@include breakpoint(tablet){
+		font-size: 24px;
+		padding: 22px 70px;
+	}
+}
 
 .no-border{
 	border:none;

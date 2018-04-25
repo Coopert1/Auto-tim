@@ -1,0 +1,16 @@
+html
+	head
+		include ./parts/head.pug
+	body
+		include ./parts/header.pug
+		.wrapper
+			.thanks-for-order
+				h1
+					|Благодарим за заказ!
+				.order-number
+					|Ваш номер заказа: №33429871
+				p
+					|В ближайшее время с Вами свяжется наш менеджер для уточнения деталей заказа. Также Вы можете позвонить нам по номеру: 8 812 922 08 45 или написать нам на info@auto-tim.ru
+				a(href="#").btn.btn_continue-shopping
+					|Продолжить покупки 
+		include ./parts/footer.pug
