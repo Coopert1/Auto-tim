@@ -23,11 +23,18 @@ $(function(){
 	var product_slider_1=$('#product-slider-1').lightSlider({
 		item: 5,
 		controls:false,
-		slideMove:4,
-		slideMargin:-1,
+		slideMove:3,
+		slideMargin: -1,
 		responsive:[
 			{
-				breakpoint: 1200,
+				breakpoint: 1100,
+				settings:{
+					item:4,
+					slideMove:4,
+				}
+			},
+			{
+				breakpoint: 900,
 				settings:{
 					item:3,
 					slideMove:3,
@@ -42,7 +49,14 @@ $(function(){
 		slideMargin: -1,
 		responsive:[
 			{
-				breakpoint: 1200,
+				breakpoint: 1100,
+				settings:{
+					item:4,
+					slideMove:4,
+				}
+			},
+			{
+				breakpoint: 900,
 				settings:{
 					item:3,
 					slideMove:3,
@@ -245,14 +259,6 @@ $(function(){
 		setRangeFilter()
 	})
 	
-
-  //   $("input.sliderValue").change(function() {
-  //       var $this = $(this);
-  //       $("#slider").slider("values", $this.data("index"), $this.val());
-  //   });
-
-	
-
 	//show-hide filters
 
 	$('#show-filter-mobile').click(function(){

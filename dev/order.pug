@@ -1,0 +1,122 @@
+html
+	head
+		include ./parts/head.pug
+	body
+		include ./parts/header.pug
+		.wrapper
+			ul.breadcrumbs
+				li Главная
+				li Оформление заказа
+			
+			.order-form__title Оформление заказа
+			.order-form-tab Физическое лицо
+			.row.clearfix
+				.col-laptop-1-1
+					.order-form
+						form
+							.form-contact
+								.wrap-input
+									input.contact-name
+									.label
+										span Контактное лицо:
+										span *
+								.wrap-input
+									input.contact-mail
+									.label
+										span E-Mail:
+										span *
+								.wrap-input
+									input.contact-phone
+									.label
+										span Телефон:
+										span *
+								.wrap-select
+									select.contact-location
+										option(selected) Выберите город
+										option
+									.label
+										span Местоположение
+										span *
+								.wrap-input
+									input.contact-address
+									.label
+										span Адрес (без города):
+										span *
+								.wrap-input
+									input.contact-zip-code
+									.label
+										span Индекс:
+										span *
+							.form-pay
+								.form-pay__title Оплата
+								input#pay-check(type="radio" name="pay")
+								label(for="pay-check") Квитанция
+								br
+								input#pay-cash(type="radio" name="pay")
+								label(for="pay-cash") Курьеру наличными при получении товара
+								br
+								input#pay-shope(type="radio" name="pay")
+								label(for="pay-shope") Оплата в магазине
+									.span-wrap
+										span Оплата по получению в офисе
+							br
+							.form-delivery
+								.form-delivery__title Доставка
+								input#delivery-self(type="radio" name="delivery")
+								label(for="delivery-self") Самовывоз из магазина
+								br
+								input#delivery-company(type="radio" name="delivery")
+								label(for="delivery-company") Транспортная компания
+								br
+								input#delivery-courier(type="radio" name="delivery")
+								label(for="delivery-courier") Доставка курьером
+									.span-wrap 
+										span При стоимости товара до 5000 руб, составлят 400 руб. 
+										span При стоимости товара от 5000 руб - доставка бесплатно.
+							br
+							.form-comment
+								.form-comment__title Дополнительная информация
+								span Комментарий к заказу
+								textarea.textarea
+								br
+								.order-form__submit
+									input.btn.btn_submit-order(type="submit" value="Оформить заказ")
+					.your-order.show-laptop
+						.order__title Ваш заказ
+						.cart-item
+							.cart-item__description.clearfix
+								.cart-item__image
+									img(src="images/cart_item.png", alt="cart_item")
+								.cart-item__number
+									|арт.3166
+								.cart-item__name.cart-item__name_order
+									|Установочный комплект для авт. багажника Thule 3166
+								.cart-item__amount 1 х
+								.cart-item__price
+										|8 800
+										span
+											|u
+						.cart-item
+							.cart-item__description.clearfix
+								.cart-item__image
+									img(src="images/cart_item.png", alt="cart_item")
+								.cart-item__number
+									|арт.3166
+								.cart-item__name.cart-item__name_order
+									|Установочный комплект для авт. багажника Thule 3166
+								.cart-item__amount 1 х
+								.cart-item__price
+										|8 800 
+										span
+											|u
+						.order-sum
+							.order-sum__text
+								span
+									|Итого:
+								span
+									|8 800
+								span
+									|u
+					.clearfix
+					
+		include ./parts/footer.pug
