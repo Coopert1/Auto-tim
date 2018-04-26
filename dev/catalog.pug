@@ -15,137 +15,56 @@ html
 			.filter-main.hide-tablet
 				form
 					.filter-main__input
-						//- input(type='text' class='brand' placeholder='Марка',id="filter__brand")
-						select
-							option
-								|марка
-							option
-							option
-						label(for='filter__brand')
-							i.fa.fa-caret-down
+						select.select-brand
+							option Марка 
+							option Thule
+							option Inno
+							option Callix
+							option Евродеталь
 					.filter-main__input
-						select
-							option
-								|марка
-							option
-							option
-						//- input(type='text' class='model' placeholder='Модель')
-						label(for='filter__brand')
-							i.fa.fa-caret-down
+						select.select-model
+							option Модель 
+							option Thule
+							option Inno
+							option Callix
+							option Евродеталь
 					.filter-main__input
-						//- input(type='text' class='series' placeholder='Серия')
-						select
-							option
-								|марка
-							option
-							option
-						label(for='filter__brand')
-							i.fa.fa-caret-down
+						select.select-series
+							option Серия 
+							option Thule
+							option Inno
+							option Callix
+							option Евродеталь
 					button.btn.btn_filter Подобрать
 			a.btn.btn_show-filter.hide-tablet(id="show-filter-mobile")
 				|Показать фильтрацию
 			.row.clearfix
 				.col-tablet-1-5
-					.filters
-						.section__title.hide-tablet
-							|Фильтр
-						.filters__close-btn.hide-tablet
-							img(src="images/remove_item.png", alt="Спрятать фильтр")
-						.filter__block.filter__block_top
-							.filter__block__item
-								a(href="#")
-									|Боксы Евродеталь (Россия)
-							.filter__block__item
-								a(href="#")
-									|Боксы INMAX (Россия)
-							.filter__block__item
-								a(href="#")
-									|Боксы Thule (Швеция)
-							.filter__block__item
-								a(href="#")
-									|Боксы Autoform (Швеция)
-							.filter__block__item
-								a(href="#")
-									|Боксы Atlant (Россия)
-							.filter__block__item
-								a(href="#")
-									|Аксессуары для боксов
-						.filter__block
-							.filter__block__name Цена, руб.
-							input.pointer-label-low(type="text", value="")
-							input.pointer-label-high(type="text", value="")
-							input(type="hidden" class="range-slider" value="5000")
-						.filter__block
-							.filter__block__name Производитель
-							.filter__block__item
-								input(type="checkbox", name="s1", id="s1")
-								label(for="s1")
-									span Евродеталь
-							.filter__block__item
-								input(type="checkbox" name="s2", id="s2")
-								label(for="s2")
-									span INMAX
-							.filter__block__item
-								input(type="checkbox" name="s3", id="s3")
-								label(for="s3")
-									span INNO
-							.filter__block__item
-								input(type="checkbox" name="s4", id="s4")
-								label(for="s4")
-									span Thule
-							.filter__block__item
-								input(type="checkbox" name="s5", id="s5")
-								label(for="s5")
-									span Autoform
-							.filter__block__item
-								input(type="checkbox" name="s6", id="s6")
-								label(for="s6")
-									span Atlant
-						.filter__block
-							.filter__block__name  Объем:
-							.filter__block__item
-								input(type="checkbox" name="s7", id="s7")
-								label(for="s7")
-									span до 400
-							.filter__block__item
-								input(type="checkbox" name="s8", id="s8")
-								label(for="s8")
-									span свыше 400
-						.filter__block.no-border
-							.filter__block__name  Цвет:
-						a.btn.btn_filter.btn_margin-bottom Показать
-						a.dashed.dashed_black очистить фильтр
+					include ./parts/filters.pug
 				.col-tablet-4-5
 					.filter-main.show-tablet
 						form
 							.filter-main__input
-								select
-									option
-										|марка
-									option
-										|Acura
-									option
-										|BMW
-								label(for='filter__brand')
-									i.fa.fa-caret-down
+								select.select-brand(name="brand-name")
+									option Марка 
+									option Thule
+									option Inno
+									option Callix
+									option Евродеталь
 							.filter-main__input
-								select
-									option
-										|марка
-									option
-									option
-								//- input(type='text' class='model' placeholder='Модель')
-								label(for='filter__brand')
-									i.fa.fa-caret-down
+								select.select-model(name="model")
+									option Модель 
+									option Thule
+									option Inno
+									option Callix
+									option Евродеталь
 							.filter-main__input
-								select(placeholder='Модель')
-									option(label="Электроник" value="1" selected)
-										|марка
-									option
-									option
-								//- input(type='text' class='series' placeholder='Серия')
-								label(for='filter__brand')
-									i.fa.fa-caret-down
+								select.select-series(name="series")
+									option Серия 
+									option Thule
+									option Inno
+									option Callix
+									option Евродеталь
 							button.btn.btn_filter.btn_filter_tablet Подобрать
 					.sort-items
 						span
@@ -171,7 +90,7 @@ html
 							span.dashed
 								|25
 					.clearfix
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -187,7 +106,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/sale.png" alt="foto")
@@ -203,7 +122,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -219,7 +138,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -235,7 +154,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -251,7 +170,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/sale.png" alt="foto")
@@ -267,7 +186,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__add-favorite
 									span.icon.icon_fav
@@ -281,7 +200,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__add-favorite
 									span.icon.icon_fav
@@ -295,7 +214,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -311,7 +230,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -327,7 +246,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
@@ -343,7 +262,7 @@ html
 									span u
 								.product__add-to-card
 									a(href="#") В корзину
-						.col-mobileonly-1-2.col-phablet-1-2.col-mobileonly-1-2_padding-none.col-phablet-1-2_padding-none.col-tablet-1-3.col-laptop-1-4
+						.col-mobileonly-1-2.col-phablet-1-3.col-mobileonly-1-2_padding-none.col-phablet-1-3_padding-none.col-tablet-1-3.col-laptop-1-4
 							.product
 								.product__stripe
 									img(src="images/new_item.png" alt="foto")
