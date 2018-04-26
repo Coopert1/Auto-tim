@@ -418,6 +418,13 @@ button, input {
 		}
 		
 	}
+	&_go-to-cart{
+		padding: 10px 30px;
+		color: #fff;
+		border-radius:5px;
+		font-size: 16px;
+		margin-top: 15px;
+	}
 }
 
 
@@ -1646,10 +1653,21 @@ button, input {
 			color: #f2762e;
 			font-family: 'rouble',sans-serif;
 		}
+		span.filter{
+			font-family: 'robotobold';
+			display:block;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
 	}
 	@include breakpoint(tablet){
 		margin-top: 20px;
 		float:right;
+	}
+	&_filter{
+		text-align: left;
+		float:none;
+		margin:0;
 	} 
 }
 .coupon{
@@ -2134,29 +2152,31 @@ table#order{
 		display: block;
 		padding: 0;
 		box-shadow: none;
+		margin-bottom: 50px;
 	}
 	&__close-btn{
 		position: absolute;
 		right: 15px;
 		top: 15px;
 	}
-	[id^=chkbox]{
-		display: none;
+}
+[id^=chkbox]{
+	display: none;
+}
+[id^=chkbox] + label{
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background:url('../images/checkbox_unchecked.png');
+	background-repeat: no-repeat;
+	// background-position: -46px -21px;
+span{
+		position: relative;
+		top: 0px;
+		left: 25px;
 	}
-	[id^=chkbox] + label{
-		display: inline-block;
-		// width: 19px;
-		height: 19px;
-		background:url('../images/checkbox_unchecked.png');
-		background-repeat: no-repeat;
-		// background-position: -46px -21px;
-	span{
-			position: relative;
-			top: 0px;
-			left: 25px;
-		}
-	}
-	[id^=chkbox]:checked + label{
+}
+[id^=chkbox]:checked + label{
 	display: inline-block;
 	height: 19px;
 	background:url('../images/checkbox_checked.png');
@@ -2168,8 +2188,7 @@ table#order{
 			left: 24px;
 		}
 	}
-}
-}
+}	
 .filter__block{
 	text-align: left;
 	border-bottom: 1px solid #b9bbc4;
@@ -2287,6 +2306,82 @@ table#order{
 .no-border{
 	border:none;
 }
+// result.pug styles//
+.filters-result-name{
+	margin: 35px 0;
+	position: relative;
+	vertical-align:middle;
+	padding-left: 55px;
+	img{
+		position: absolute;
+		left: 0px;
+		top: 50%;
+		margin-top: -20px;
+		display:inline-block;
+	}
+	span{
+		font-size: 24px;
+		color: #3b3b3b;
+		font-family: 'gothamproblack';
+		vertical-align:middle;
+	}
+}
+.filters-result{
+	position: relative;
+	margin-bottom:30px;
+}
+table.filters-result-items{
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	@include breakpoint(laptop){
+	width: 68%;
+	}
+	th{
+		border: 1px solid #f2f3f4;
+		background: #f2f3f4;
+		padding: 15px;
+		h4{
+			display: inline-block;
+		}
+		img{
+			float: right;
+		}
+	}
+	td{
+		border: 1px solid #b9bbc4;
+		padding: 18px;
+	}
+	td.picture{
+		position: relative;
+		border-right: none;
+	}
+	td.text{
+		position: relative;
+		border-left: none;
+	}
+	.item-check{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+}	
+.filter-result-sum{
+	float:right;
+	display: block;
+	margin: 20px auto;
+	padding: 20px;
+	padding-right: 50px;
+	@include breakpoint(laptop){
+		margin: 0;
+		display: inline-block;
+		position: absolute;
+		top: 0px;
+		left: 73.5%;
+		border: 1px solid #c7c7c7;
+	}
+}
+
 
 
 .show-tablet-table{
