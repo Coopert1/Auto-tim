@@ -305,10 +305,10 @@ button, input {
 			float:right;
 		}
 		@include breakpoint(phablet){
-			display: block;	
+			display: block;
 		}
 		@include breakpoint(tablet){
-			float: right;	
+			float: right;
 			width: 218px;
 			padding: 10px;
 		}
@@ -1472,7 +1472,7 @@ button, input {
 		left: 0;
 	}
 	&__name{
-		font-family: 'robotobold';
+		font-family: 'robotobold',sans-serif;
 		font-size: 16px;
 	}
 	&__number{
@@ -1488,7 +1488,7 @@ button, input {
 	&__price{
 		color: #f2762e;
 		font-size: 18px;
-		font-family: 'gothamproblack';
+		font-family: 'gothamproblack',sans-serif;
 		span{
 			font-family: 'rouble';
 		}
@@ -1496,14 +1496,14 @@ button, input {
 	&__sum{
 		color: #f2762e;
 		font-size: 18px;
-		font-family: 'gothamproblack';
+		font-family: 'gothamproblack',sans-serif;
 		span{
 			font-family: 'rouble';
 		}
 	}
 	&__amount{
 		font-size: 18px;
-		font-family: 'gothamproblack';
+		font-family: 'gothamproblack',sans-serif;
 	}
 }
 
@@ -1513,7 +1513,7 @@ button, input {
 		width: 25px;
 		text-align:center;
 		font-size: 18px;
-		font-family: 'gothamproblack';
+		font-family: 'gothamproblack',sans-serif;
 }
 
 .order-sum{
@@ -1524,17 +1524,17 @@ button, input {
 	font-family: 'gothamproblack';
 	&__text{
 		span:nth-child(1){
-			font-family: 'gothamproblack';
+			font-family: 'gothamproblack',sans-serif;
 		}
 		span:nth-child(2){
 			font-size:21px;
 			color: #f2762e;
-			font-family: 'gothamproblack';
+			font-family: 'gothamproblack',sans-serif;
 		}
 		span:nth-child(3){
 			font-size:21px;
 			color: #f2762e;
-			font-family: 'rouble';
+			font-family: 'rouble',sans-serif;
 		}
 	}
 	@include breakpoint(tablet){
@@ -1645,6 +1645,325 @@ table#order{
 	}
 }
 
+
+
+
+//start order page
+.order-form{
+	margin: 0 0 35px 0;
+	padding: 60px 0 0 0px;
+	background-color: #f2f3f4;
+	position: relative;
+	&-tab{
+		background-color: #f2f3f4;
+		font-size: 14px;
+		font-family: 'gothamproblack',sans-serif;
+		display: inline-block;
+		padding: 20px 60px 25px 60px;
+		margin-left: 5px;
+	}
+	&__title{
+		font-family: 'gothamproblack',sans-serif;
+		font-size: 36px;
+		margin-bottom: 35px;
+		margin-top: 25px;
+	}
+	&__submit{
+		position: relative;
+		display: inline-block;
+		
+		&:before{
+			content: "\279C";
+			position: absolute;
+			right: 12px;
+			top: 40px;
+			color: white;
+		}
+		input{
+			outline: none;
+		}
+	}
+	.form-contact{
+		background-color: #f2f3f4;
+		margin: 0 25px 50px 25px;
+		max-width: 785px;
+		border-bottom: 2px solid white;
+		display: inline-block;
+		input{
+			display: inline-block;
+			height: 35px;
+			min-width: 242px;
+			margin: 0 20px 45px 0;
+			
+		}
+		.wrap-input{
+			display: inline-block;
+			position: relative;
+			.label{
+				position: absolute;
+				top: -30px;
+				left: 0;
+				font-size: 14px;
+				color: #424242;
+				span:last-child{
+					color: red;
+				}
+			}
+			
+
+		}
+		.wrap-select{
+			display: block;
+			max-width: 515px;
+			position: relative;
+			@include breakpoint(mobileonly){
+				max-width: 242px;
+			}
+			.label{
+				position: absolute;
+				top: -30px;
+				left: 0;
+				font-size: 14px;
+				color: #424242;
+				span:last-child{
+					color: red;
+				}
+			}
+		}
+		
+		.contact-{
+			&location{
+				display: block;
+				height: 35px;
+				width: 100%;
+				margin-bottom: 55px;
+			}
+			&zip-code{
+				min-width:80px;
+				
+			}
+			&phone{
+				margin-right: 0;
+			}
+		}
+		
+		
+	}
+	
+	.form-pay{
+		margin: 0 25px 50px 25px;
+		max-width: 785px;
+		border-bottom: 2px solid white;
+		display: inline-block;
+		padding-bottom: 60px;
+		&__title{
+			font-size: 14px;
+			font-family: 'gothamproblack',sans-serif;
+			margin-bottom: 30px;
+		}
+		label{
+			font-size: 14px;
+			color: #424242;
+			padding-left: 10px;
+			display: inline-block;
+			margin-bottom: 18px;
+			
+			
+		}
+		input[type="radio"] {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+			margin: 10px 0 0 7px;
+		}
+		input[type="radio"] + label {
+			position: relative;
+			padding: 0 0 0 35px;
+			cursor: pointer;
+		}
+		input[type="radio"] + label:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			border: 1px solid #c9c9c9;
+			border-radius: 50%;
+			background: #FFF;
+		}
+		
+		input[type="radio"]:checked + label:after {
+			opacity: 1;
+		}
+		input[type="radio"]:focus + label:before {
+			border: 3px solid #f2762e;
+			width: 12px;
+			height: 12px;
+		}
+		#pay-shope+label{
+			margin-bottom: 0;
+			.span-wrap{
+				font-size: 12px;
+				color: inherit;
+				position: absolute;
+				bottom: -15px;
+				left: 35px;
+				width: 380px;
+				
+				
+			}
+		}
+
+	}
+	
+	.form-delivery{
+		margin: 0 25px 50px 25px;
+		max-width: 785px;
+		border-bottom: 2px solid white;
+		display: inline-block;
+		padding-bottom: 60px;
+		&__title{
+			font-size: 14px;
+			font-family: 'gothamproblack',sans-serif;
+			margin-bottom: 30px;
+		}
+		label{
+			font-size: 14px;
+			color: #424242;
+			padding-left: 10px;
+			display: inline-block;
+			margin-bottom: 18px;
+		}
+		input[type="radio"] {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+			margin: 10px 0 0 7px;
+		}
+		input[type="radio"] + label {
+			position: relative;
+			padding: 0 0 0 35px;
+			cursor: pointer;
+		}
+		input[type="radio"] + label:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			border: 1px solid #c9c9c9;
+			border-radius: 50%;
+			background: #FFF;
+		}
+		
+		input[type="radio"]:checked + label:after {
+			opacity: 1;
+		}
+		input[type="radio"]:focus + label:before {
+			border: 3px solid #f2762e;
+			width: 12px;
+			height: 12px;
+		}
+		#delivery-courier+label{
+			margin-bottom: 0;
+			.span-wrap{
+				font-size: 12px;
+				color: inherit;
+				position: absolute;
+				bottom: -30px;
+				left: 35px;
+				width: 380px;
+				span{
+					display: block;
+				}
+				
+				
+			}
+		}
+
+	}
+	
+	.form-comment{
+		margin: 0 25px 0 25px;
+		max-width: 785px;
+		display: inline-block;
+		padding-bottom: 50px;
+		&__title{
+			font-size: 14px;
+			font-family: 'gothamproblack',sans-serif;
+			margin-bottom: 30px;
+		}
+		span{
+			display: block;
+			margin-bottom: 15px;
+			font-size: 14px;
+			color: #424242;
+		}
+		.textarea{
+			width: 500px;
+			height: 85px;
+			resize: none;
+			display: inline-block;
+			outline: none;
+		}
+		.btn_submit-order{
+			float: left;
+			margin: 30px 0 0 0;
+			width: 230px;
+			padding-left: 20px;
+			
+			
+		}
+	}
+	
+	
+}
+
+.your-order{
+	position: absolute;
+	width: 320px;
+	top: 264px;
+	right: 40px;
+	background-color: white;
+	padding: 0 20px;
+	.order__title{
+		font-size: 18px;
+		font-family:'gothamproblack',sans-serif;
+		text-align: center;
+		padding: 20px 0 15px 0;
+	}
+	.cart-item{
+		padding-top: 15px;
+		&__description{
+			padding: 0 0 0 83px;
+			border: none;
+		}
+		&__image{
+			top: 50px;
+		}
+		&__name{
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+		&__amount{
+			display: inline-block;
+			font-family:'gothamproblack',sans-serif;
+			font-size: 14px;
+			color: #464646;
+			margin-right: 10px;
+		}
+		&__price{
+			display: inline-block;
+		}
+	}
+	
+}
+// end order page
+
+
+
 .show-tablet-table{
 	display: none;
 	@include breakpoint(tablet){
@@ -1683,6 +2002,10 @@ table#order{
 		}
 	}
 }
+
+
+
+
 
 
 
