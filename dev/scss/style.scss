@@ -63,6 +63,18 @@ h4{
 	border-top: 1px solid #d4d8db;
 	border-bottom: 1px solid #d4d8db;
 	padding: 20px 5px 20px 20px;
+	.peculiar-properties.show-tablet{
+		padding-top: 0;
+		margin-top: 0;
+		margin-bottom: 15px;
+		border: none;
+		table{
+			display: inline-block;
+			font-size: 11px;
+			height: 72px;
+			overflow: hidden;
+		}
+	}
 	@include breakpoint(tablet){
 		text-align: left;
 		border: 1px solid #d4d8db;
@@ -126,11 +138,13 @@ h4{
 		font-size: 11px;
 		font-family: 'Arial', sans-serif;
 		color: #5a5a5a;
-		line-height:1.5;
+		line-height:1.7;
 		display: none;
+		height: 72px;
+		overflow: hidden;
 		@include breakpoint(tablet){
 			display: block;
-			margin-bottom: 21px;
+			margin-bottom: 15px;
 		}
 
 		
@@ -1141,6 +1155,62 @@ button, input {
 		color: black;
 	}
 }
+.peculiar-properties{
+		text-align: left;
+		border-top: 1px solid #bcbcbc;
+		margin-top: 20px;
+		padding-top: 15px;
+		color: #292929;
+		font-weight: bold;
+		&_title{
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		&_all{
+			font-size: 14px;
+			border-bottom: 1px dotted #bcbcbc;
+			display: inline-block;
+			margin-top: 20px;
+			a{
+				color: inherit;
+			}
+		}
+		font-size: 14px;
+		td{
+			line-height: 1.5;
+			
+			&:first-child{
+				position: relative;
+				overflow: hidden;
+				
+				&:after{
+					content: " ";
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					border-bottom: 1px dotted #bcbcbc;
+					bottom: 5px;
+				}
+			}
+			&:last-child{
+				min-width: 120px;
+				
+				
+			}
+		}
+		a{
+			color: inherit;
+		}
+		&.show-tablet{
+			margin: 20px -15px 15px -35px;
+			padding: 15px 15px 0 35px;
+		}
+		&.hide-tablet{
+			margin: 20px -15px 15px -15px;
+			padding: 15px 15px 0 15px;
+		}
+		
+	}
 .commodity{
 	text-align: center;
 	//margin-top: 25px;
@@ -1331,62 +1401,7 @@ button, input {
 			display: inline-block;
 		}
 	}
-	&__peculiar-properties{
-		text-align: left;
-		border-top: 1px solid #bcbcbc;
-		margin-top: 20px;
-		padding-top: 15px;
-		color: #292929;
-		font-weight: bold;
-		&_title{
-			font-size: 18px;
-			margin-bottom: 20px;
-		}
-		&_all{
-			font-size: 14px;
-			border-bottom: 1px dotted #bcbcbc;
-			display: inline-block;
-			margin-top: 20px;
-			a{
-				color: inherit;
-			}
-		}
-		font-size: 14px;
-		td{
-			line-height: 1.5;
-			
-			&:first-child{
-				position: relative;
-				overflow: hidden;
-				
-				&:after{
-					content: " ";
-					position: absolute;
-					width: 100%;
-					height: 2px;
-					border-bottom: 1px dotted #bcbcbc;
-					bottom: 5px;
-				}
-			}
-			&:last-child{
-				min-width: 120px;
-				
-				
-			}
-		}
-		a{
-			color: inherit;
-		}
-		&.show-tablet{
-			margin: 20px -15px 15px -35px;
-			padding: 15px 15px 0 35px;
-		}
-		&.hide-tablet{
-			margin: 20px -15px 15px -15px;
-			padding: 15px 15px 0 15px;
-		}
-		
-	}
+	
 	&__instruction{
 		padding: 15px 0 25px 40px;
 		text-align: left;
