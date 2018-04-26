@@ -174,6 +174,7 @@ h4{
 	
 }
 #product-slider-2,#product-slider-1{
+	border-top: 1px solid #d4d8db;
 	li:last-child{
 		border-right: 1.5px solid #d4d8db;
 	}
@@ -1115,7 +1116,7 @@ button, input {
 
 }
 
-//product-catalog
+//product-card
 
 .breadcrumbs{
 	font-size: 14px;
@@ -1241,7 +1242,6 @@ button, input {
 		color: #f2762e;
 		font-family: 'gothamproblack', sans-serif;
 		position: relative;
-		margin-right: 35px;
 		
 		span{font-family: 'gothamproblack', sans-serif;}
 		span.rouble{
@@ -1286,7 +1286,7 @@ button, input {
 		background-color: #f2762e;
 		border-radius: 5px;
 		font-size: 16px;
-		margin: 10px 10px 0 0;
+		margin: 10px 10px;
 		cursor: pointer;
 		&:before{
 			content: "";
@@ -1520,7 +1520,7 @@ button, input {
 	}
 }
 
-// end product-catalog
+// end product-card
 
 // cart.pug styles
 
