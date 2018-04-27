@@ -18,11 +18,11 @@ gulp.task('webserver', function() {
       open: true,
       livereload: {
       enable: true,
-      port: livereloadPort
+      //port: livereloadPort
       }
     }))
     .pipe(plumber())
-    console.log(livereloadPort)
+    
 });
 
 gulp.task('html', function(){
