@@ -2340,7 +2340,7 @@ table.filters-result-items{
 	th{
 		border: 1px solid #f2f3f4;
 		background: #f2f3f4;
-		padding: 15px;
+		padding: 10px 15px;
 		h4{
 			display: inline-block;
 		}
@@ -2353,8 +2353,16 @@ table.filters-result-items{
 		padding: 18px;
 	}
 	td.picture{
+		width: 20%;
+		padding: 0px;
+		padding-left: 5px;
 		position: relative;
 		border-right: none;
+		@include breakpoint(phablet){
+			width: auto;
+			padding: 15px;
+			padding-right: 0;
+		}
 	}
 	td.text{
 		position: relative;
@@ -2367,6 +2375,7 @@ table.filters-result-items{
 	}
 }	
 .filter-result-sum{
+	position:relative;
 	float:right;
 	display: block;
 	margin: 20px auto;
@@ -2379,6 +2388,20 @@ table.filters-result-items{
 		top: 0px;
 		left: 73.5%;
 		border: 1px solid #c7c7c7;
+	}
+	&:before{
+		position: absolute;
+		transform: rotate(135deg);
+		background: #fff;
+		left: -8.5px;
+		top: 30px;
+		content: '';
+		width: 15px;
+		height: 15px;
+		border-bottom: 1px solid #c7c7c7;
+		border-right: 1px solid #c7c7c7;
+		border-top: 1px solid #fff;
+		border-left: 1px solid #fff;
 	}
 }
 
