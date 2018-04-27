@@ -34,8 +34,8 @@
 		.logo
 			a(href="index.html")
 				img(src="images/logo.png", alt="logo")
-		.contact-info.show-tablet
-			span
+		.contact-info.show-tablet-inline
+			span.time
 				|Время работы
 			.telephone
 				a(href="tel:78129220845")
@@ -44,7 +44,7 @@
 					span
 						|922 08 45
 		
-		a(href="#").btn.btn_callback.show-tablet
+		a(href="#").btn.btn_callback.show-tablet-inline
 			|Перезвонить мне
 		.search
 			form
@@ -132,7 +132,7 @@
 					span
 						|Фотогалерея
 			li.add-border.show-tablet
-				a(href="#").no-hover.norm-postion
+				a(href="filters-result.html").no-hover.norm-postion
 					img(src="images/settings.png", alt="filter")
 			li.add-border
 				a(href="#").no-hover.norm-postion
@@ -147,7 +147,9 @@
 						span.cart-item-count 3
 					.shopping-sum.show-tablet
 						span
-							|8800 &#8381
+							|8800 
+						span
+							|u
 		.search-form
 					form
 						input(type="search", placeholder="Поиск", name="search")
