@@ -803,8 +803,12 @@ button, input {
 		}
 	}
 }
+.news{
+	margin: 30px 0;
+}
+
 .article{
-	margin: 20px 0;
+	margin: 5px 0;
 	position:relative;
 	display:inline-block;
 	&:hover{
@@ -2243,9 +2247,9 @@ span{
 			width: 62px;
 			padding: 5px;
 		}
-		@include breakpoint(laptop){
-			width: 62px;
-			padding: 5px;
+		@media(min-width: 1130px){
+			width: 92px;
+			padding: 10px;
 		}
 	}
 	.sliderValue_right{
