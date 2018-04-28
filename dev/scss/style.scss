@@ -29,13 +29,16 @@ img{
 }
 h1{
 	color: #3b3b3b;
-	font-family: 'gothamproblack';
+	font-family: 'gothamproblack', sans-serif;
 	font-size: 36px;
+	margin-bottom: 30px;
+	margin-top: 15px;
 }
 h2{
 	color: #3b3b3b;
 	font-family: 'gothamproblack';
 	font-size: 30px;
+	margin-bottom: 20px;
 }
 h3{
 	color: #3b3b3b;
@@ -46,6 +49,46 @@ h4{
 	color: #3b3b3b;
 	font-family: 'gothamproblack';
 	font-size: 18px;
+	margin-bottom: 25px;
+}
+p.text{
+	margin-bottom: 25px;
+	font-size: 13px;
+	color: #5a5a5a;
+}
+ul.text{
+	list-style: none;
+	padding-left: 20px;
+	font-size: 13px;
+	color: #5a5a5a;
+	margin: 30px 40px 50px 0;
+	display: inline-block;
+	
+	
+	li{
+		padding-left: 20px;
+		position: relative;
+		margin-bottom: 10px;
+		&::before {
+			content: "";
+			position: absolute;
+			background-color:#f2762e;
+			display: inline-block; 
+			width: 8px;
+			height: 8px;
+			margin-left: -20px;
+			border-radius: 8px;
+			left: 0;
+			top: 5px;
+		}
+	}
+	
+}
+.image-left{
+	float: left;
+	margin:  25px 25px 25px 0;
+	max-width: 330px;
+	max-height: 270px;
 }
 .align-right{
 	text-align: right;
@@ -304,6 +347,9 @@ button, input {
 }
 .header-bottom-content{
 	display:block;
+	@include breakpoint(tablet){
+		text-align: center;
+	}
 	a{
 		color: #fff;
 	}
@@ -1403,11 +1449,11 @@ button, input {
 		&:before{
 			content: "";
 			display: inline-block;
-			width: 25px;
+			width: 27.5px;
 			height: 20px;
-			background-image: url(../images/bascket.png);
+			background-image: url(../images/bascket-btn.png);
 			position: absolute;
-			background-position: 1px 1px;
+			background-position: -1px 0;
 			left: 10px;
 		}
 		&.hide-tablet{
@@ -1459,6 +1505,18 @@ button, input {
 			position: absolute;
 			top: 60%;
 		}
+		&:after{
+			content: "";
+			font-size: 12px;
+			color: #a6a6a6;
+			position: absolute;
+			top: 35%;
+			left: 5px;
+			display: inline-block;
+			background-image: url(../images/instruction.png);
+			width: 22px;
+			height: 28px;
+		}
 		a{color: inherit;}
 		@include breakpoint(tablet){
 			border-bottom: none;
@@ -1488,6 +1546,25 @@ button, input {
 		border-bottom: 1px solid #bcbcbc;
 		border-top: 1px solid #bcbcbc;
 		margin: 0 -15px 0 -15px;
+		position: relative;
+		text-decoration: underline;
+		text-decoration-color: #fcddcb;
+		&:after{
+			content: "";
+			position: absolute;
+			
+			left: 10px;
+			display: inline-block;
+			background-image: url(../images/mechanism.png);
+			width: 25px;
+			height: 25px;
+			@include breakpoint(phablet){
+				top: 25%;
+			}
+			@include breakpoint(tablet){
+				top: 35%;
+			}
+		}
 		a{
 			color: inherit;
 			font-family:  "gothamproblack", sans-serif;
@@ -1511,6 +1588,9 @@ button, input {
 				background-color: #bcbcbc;
 				bottom: -5px;
 				left: -1px;
+				@include breakpoint(laptop){
+					left: -1.5px;
+				}
 			}
 			
 		}
@@ -1832,7 +1912,7 @@ table#order{
 	.form-contact{
 		background-color: #f2f3f4;
 		margin: 0 25px 50px 25px;
-		max-width: 785px;
+		width: 785px;
 		border-bottom: 2px solid white;
 		display: inline-block;
 		input{
@@ -1898,7 +1978,7 @@ table#order{
 	
 	.form-pay{
 		margin: 0 25px 50px 25px;
-		max-width: 785px;
+		width: 775px;
 		border-bottom: 2px solid white;
 		display: inline-block;
 		padding-bottom: 60px;
@@ -1951,7 +2031,7 @@ table#order{
 			margin-bottom: 0;
 			.span-wrap{
 				font-size: 12px;
-				color: inherit;
+				color: #919292;
 				position: absolute;
 				bottom: -15px;
 				left: 35px;
@@ -1965,7 +2045,7 @@ table#order{
 	
 	.form-delivery{
 		margin: 0 25px 50px 25px;
-		max-width: 785px;
+		width: 775px;
 		border-bottom: 2px solid white;
 		display: inline-block;
 		padding-bottom: 60px;
@@ -2016,7 +2096,7 @@ table#order{
 			margin-bottom: 0;
 			.span-wrap{
 				font-size: 12px;
-				color: inherit;
+				color: #919292;
 				position: absolute;
 				bottom: -30px;
 				left: 35px;
@@ -2033,7 +2113,7 @@ table#order{
 	
 	.form-comment{
 		margin: 0 25px 0 25px;
-		max-width: 785px;
+		width: 775px;
 		display: inline-block;
 		padding-bottom: 50px;
 		&__title{
@@ -2207,7 +2287,7 @@ span{
 			left: 24px;
 		}
 	}
-}	
+}
 .filter__block{
 	text-align: left;
 	border-bottom: 1px solid #b9bbc4;
@@ -2424,7 +2504,7 @@ table.filters-result-items{
 		top: 10px;
 		left: 10px;
 	}
-}	
+}
 .filter-result-sum{
 	position:relative;
 	float:right;
@@ -2465,6 +2545,178 @@ table.filters-result-items{
 	margin-bottom: 30px;
 }
 
+//start text-information page
+
+.comments{
+	color: #3b3b3b;
+	margin-left: 70px;
+	position: relative;
+	&__img{
+		position: absolute;
+		top: 45px;
+		left: -70px;
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+	}
+	&__textarea{
+		display: block;
+		height: 60px;
+		outline: none;
+		border: solid 1px #c0c0c0;
+		resize: none;
+		width: 100%;
+		padding: 10px;
+	}
+	&__textarea-underline{
+		height: 30px;
+		border: solid 1px #c0c0c0;
+		border-top: none;
+		&:before{
+			content: "";
+			
+			display: inline-block;
+			width: 40px;
+			height: 30px;
+			
+			background-image: url(../images/photo.png);
+			background-position: 5px 0;
+			background-repeat: no-repeat;
+		}
+	}
+	&__hint{
+		margin-top: 10px;
+		margin-bottom: 25px;
+		color: #3b3b3b;
+	}
+	
+}
+.social-come-in{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	float: left;
+	&__title{
+		color: #3b3b3b;
+		font-size: 14px;
+		text-transform: uppercase;
+		
+	}
+	&__icons{
+		display: inline-block;
+	}
+	.icon{
+		margin: 0 5px 5px 0;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		border-radius: 10px;
+		&_sv{
+			background-position: 0 0;
+			width: 100px;
+			height: 30px;
+			margin-right: 20px;
+		}
+		&_vk{
+			background-image: url(../images/vkontakte.png);
+		}
+			
+		&_ok{
+			background-image: url(../images/ok.png);
+			background-position: 0 0;
+		}
+		&_mail-ru{
+			background-image: url(../images/mail-ru.png);			
+			height: 29px;
+			padding-bottom: 1px;
+		}
+		&_fb{
+			background-image: url(../images/facebook.png);
+			
+		}
+		&_tw{
+			background-image: url(../images/tw.png);
+			
+		}
+		&_g{
+			background-image: url(../images/g.png);
+		
+		}
+	}
+	
+}
+
+.registration{
+	margin: 0 0 0 150px;
+	padding-right: 100px;
+	position: relative;
+	input{
+		display: block;
+		min-width: 242px;
+		width: 100%;
+		height: 30px;
+		margin-top: 10px;
+		outline: none;
+		border: solid 1px #c0c0c0;
+		padding: 10px;
+		
+	}
+	#guest-public{
+		width: 12px;
+		height: 12px;
+		border-radius: 3px;
+		border: solid 1px #c0c0c0;
+		outline: none;
+		min-width: auto;
+		display: inline-block;
+		float: left;
+		margin-top: 15px;
+	}
+	#guest-public+ label{
+		margin-top: 10px;
+		display: block;
+		margin-left: 20px;
+		
+	}
+	&__title{
+		text-transform: uppercase;
+	}
+	input.registration__submit{
+		display: inline-block;
+		width: 85px;
+		min-width: auto;
+		height: 30px;
+		position: absolute;
+		right: 0;
+		top: 35%;
+	}
+}
+
+.best-reviews{
+	color: #3b3b3b;
+	display: block;
+	border-bottom: solid 1px #c0c0c0;
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	i{
+		vertical-align: top;
+	}
+}
+.no-comments {
+	text-align: center;
+	padding-bottom: 50px;
+	color: #3b3b3b;
+	&__text{
+		background-color: #eeeeee;
+		display: inline-block;
+		border: solid 1px #c0c0c0;
+		padding: 25px 55px;
+	}
+}
+
+
+//end text-information page
 
 .show-tablet-table{
 	display: none;
@@ -2504,10 +2756,6 @@ table.filters-result-items{
 		}
 	}
 }
-
-
-
-
 
 
 
