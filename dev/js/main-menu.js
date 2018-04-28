@@ -214,24 +214,51 @@ $(function(){
 	//end part for looking .commodity__img
 
 	//range slider
-
+	var inputRangeInsert = false;
+	var maxRange = 100000;
 	$('.range-slider').jRange({
-		from:1000,
-		to: 10000,
-		step: 100,
+		from:0,
+		to: maxRange,
+		step: 500,
 		scale: [1000,5000],
 		format: '%s',
 		width: '100%',
 		showLabels: true,
-		isRange : true
-		}).jRange('setValue', '1000,7000');
-	// $('body > div.wrapper > div.section > div.filters > div:nth-child(3) > div.slider-container.theme-green > div.back-bar > div.pointer-label.high').change(function(){
-	// 	var high = +($('body > div.wrapper > div.section > div.filters > div:nth-child(3) > div.slider-container.theme-green > div.back-bar > div.pointer-label.high').text());
-	// 	$('.pointer-label-high').val(high);
-	// 	console.log(typeof(high))
-	// });
+		isRange : true,
+		onstatechange: function(e){
+			if(!inputRangeInsert){
+				$('.sliderValue').eq(0).val(e.split(',')[0]);
+				$('.sliderValue').eq(1).val(e.split(',')[1])	
+			};
+			
+		}
+		}).jRange('setValue', '15000,60000');
+	function setRangeFilter(){
+		inputRangeInsert = true;
+		var min = $('.sliderValue').eq(0).val();
+		var max = $('.sliderValue').eq(1).val();
+		console.log(min,max);
+		if(max > maxRange){
+			max = maxRange;
+			$('.sliderValue').eq(1).val(maxRange);
+		}
+		$('.range-slider').jRange('setValue', min+","+max);
+		inputRangeInsert = false;
+		// 
+	}
+	$('.sliderValue').on('keyup', function(){
+		var input = $(this).val();
+		var patt =  new RegExp('^\\d+$');
+		var res = patt.test(input);
+		
+		if(!res){
+			console.log(res)
+			$(this).val($(this).val().slice(0,-1))	
+			return false;
+		}
+		setRangeFilter()
+	})
 	
-
 	//show-hide filters
 
 	$('#show-filter-mobile').click(function(){
@@ -240,4 +267,7 @@ $(function(){
 	$('.filters__close-btn').click(function(){
 		$(".filters").hide();
 	})
+	$( ".select-brand, .select-model, .select-series" ).selectmenu({
+  		width: 100 + '%',
+	});
 });

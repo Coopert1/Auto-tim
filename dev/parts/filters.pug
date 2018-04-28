@@ -1,0 +1,70 @@
+.filters
+	form
+		.section__title.hide-tablet
+			|Фильтр
+		.filters__close-btn.hide-tablet
+			img(src="images/remove_item.png", alt="Спрятать фильтр")
+		.filter__block.filter__block_top
+			.filter__block__item
+				a(href="#")
+					|Боксы Евродеталь (Россия)
+			.filter__block__item
+				a(href="#")
+					|Боксы INMAX (Россия)
+			.filter__block__item
+				a(href="#")
+					|Боксы Thule (Швеция)
+			.filter__block__item
+				a(href="#")
+					|Боксы Autoform (Швеция)
+			.filter__block__item
+				a(href="#")
+					|Боксы Atlant (Россия)
+			.filter__block__item
+				a(href="#")
+					|Аксессуары для боксов
+		.filter__block
+			.filter__block__name Цена, руб.
+			input(type="text" class="sliderValue" data-index="0" value="0")
+			input.sliderValue.sliderValue_right(type="text" data-index="1" value="30000")
+			input(type="hidden" class="range-slider" value="5000" name="price")
+		.filter__block
+			.filter__block__name Производитель
+			.filter__block__item
+				input(type="checkbox", name="s1", id="chkbox1")
+				label(for="chkbox1")
+					span Евродеталь
+			.filter__block__item
+				input(type="checkbox" name="s2", id="chkbox2")
+				label(for="chkbox2")
+					span INMAX
+			.filter__block__item
+				input(type="checkbox" name="s3", id="chkbox3")
+				label(for="chkbox3")
+					span INNO
+			.filter__block__item
+				input(type="checkbox" name="s4", id="chkbox4")
+				label(for="chkbox4")
+					span Thule
+			.filter__block__item
+				input(type="checkbox" name="s5", id="chkbox5")
+				label(for="chkbox5")
+					span Autoform
+			.filter__block__item
+				input(type="checkbox" name="s6", id="chkbox6")
+				label(for="chkbox6")
+					span Atlant
+		.filter__block
+			.filter__block__name  Объем:
+			.filter__block__item
+				input(type="checkbox" name="s7", id="chkbox7")
+				label(for="chkbox7")
+					span до 400
+			.filter__block__item
+				input(type="checkbox" name="s8", id="chkbox8")
+				label(for="chkbox8")
+					span cвыше 400
+		.filter__block.no-border
+			.filter__block__name  Цвет:
+		button(type="submit").btn.btn_filter.btn_margin-bottom Показать
+		button(type="reset").dashed.dashed_black очистить фильтр
