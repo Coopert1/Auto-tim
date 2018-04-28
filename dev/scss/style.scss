@@ -346,6 +346,9 @@ button, input {
 }
 .header-bottom-content{
 	display:block;
+	@include breakpoint(tablet){
+		text-align: center;
+	}
 	a{
 		color: #fff;
 	}
@@ -1441,11 +1444,11 @@ button, input {
 		&:before{
 			content: "";
 			display: inline-block;
-			width: 25px;
+			width: 27.5px;
 			height: 20px;
-			background-image: url(../images/bascket.png);
+			background-image: url(../images/bascket-btn.png);
 			position: absolute;
-			background-position: 1px 1px;
+			background-position: -1px 0;
 			left: 10px;
 		}
 		&.hide-tablet{
@@ -1497,6 +1500,18 @@ button, input {
 			position: absolute;
 			top: 60%;
 		}
+		&:after{
+			content: "";
+			font-size: 12px;
+			color: #a6a6a6;
+			position: absolute;
+			top: 35%;
+			left: 5px;
+			display: inline-block;
+			background-image: url(../images/instruction.png);
+			width: 22px;
+			height: 28px;
+		}
 		a{color: inherit;}
 		@include breakpoint(tablet){
 			border-bottom: none;
@@ -1526,6 +1541,25 @@ button, input {
 		border-bottom: 1px solid #bcbcbc;
 		border-top: 1px solid #bcbcbc;
 		margin: 0 -15px 0 -15px;
+		position: relative;
+		text-decoration: underline;
+		text-decoration-color: #fcddcb;
+		&:after{
+			content: "";
+			position: absolute;
+			
+			left: 10px;
+			display: inline-block;
+			background-image: url(../images/mechanism.png);
+			width: 25px;
+			height: 25px;
+			@include breakpoint(phablet){
+				top: 25%;
+			}
+			@include breakpoint(tablet){
+				top: 35%;
+			}
+		}
 		a{
 			color: inherit;
 			font-family:  "gothamproblack", sans-serif;
@@ -1549,6 +1583,9 @@ button, input {
 				background-color: #bcbcbc;
 				bottom: -5px;
 				left: -1px;
+				@include breakpoint(laptop){
+					left: -1.5px;
+				}
 			}
 			
 		}
@@ -2245,7 +2282,7 @@ span{
 			left: 24px;
 		}
 	}
-}	
+}
 .filter__block{
 	text-align: left;
 	border-bottom: 1px solid #b9bbc4;
@@ -2462,7 +2499,7 @@ table.filters-result-items{
 		top: 10px;
 		left: 10px;
 	}
-}	
+}
 .filter-result-sum{
 	position:relative;
 	float:right;
@@ -2503,46 +2540,6 @@ table.filters-result-items{
 	margin-bottom: 30px;
 }
 
-
-.show-tablet-table{
-	display: none;
-	@include breakpoint(tablet){
-		display: table;
-	}
-}
-
-.show-tablet{
-	display: none;
-	@include breakpoint(tablet){
-
-		display: block;
-	}
-}
-.show-tablet-inline{
-	display: none;
-	@include breakpoint(tablet){
-		display: inline-block;
-	}
-}
-.show-laptop{
-	display: none;
-	@include breakpoint(laptop){
-		display: block;
-	}
-}
-.hide-{
-	&tablet{
-		@include breakpoint(tablet){
-			display: none;
-		}
-	}
-	&laptop{
-		@include breakpoint(laptop){
-			display: none;
-		}
-	}
-}
-
 //start text-information page
 
 .comments{
@@ -2556,7 +2553,6 @@ table.filters-result-items{
 		display: inline-block;
 		width: 50px;
 		height: 50px;
-		background-color: gainsboro;
 	}
 	&__textarea{
 		display: block;
@@ -2573,10 +2569,14 @@ table.filters-result-items{
 		border-top: none;
 		&:before{
 			content: "";
-			background-color: grey;
+			
 			display: inline-block;
 			width: 40px;
 			height: 30px;
+			
+			background-image: url(../images/photo.png);
+			background-position: 5px 0;
+			background-repeat: no-repeat;
 		}
 	}
 	&__hint{
@@ -2605,32 +2605,42 @@ table.filters-result-items{
 		width: 30px;
 		height: 30px;
 		display: inline-block;
+		border-radius: 10px;
 		&_sv{
 			background-position: 0 0;
 			width: 100px;
 			height: 30px;
+			margin-right: 20px;
 		}
 		&_vk{
-			background-position: 0 0;
+			background-image: url(../images/vkontakte.png);
 		}
+			
 		&_ok{
+			background-image: url(../images/ok.png);
 			background-position: 0 0;
 		}
 		&_mail-ru{
-			background-position: 0 0;
+			background-image: url(../images/mail-ru.png);			
+			height: 29px;
+			padding-bottom: 1px;
 		}
 		&_fb{
-			background-position: 0 0;
+			background-image: url(../images/facebook.png);
+			
 		}
-		&_tv{
-			background-position: 0 0;
+		&_tw{
+			background-image: url(../images/tw.png);
+			
 		}
 		&_g{
-			background-position: 0 0;
+			background-image: url(../images/g.png);
+		
 		}
 	}
 	
 }
+
 .registration{
 	margin: 0 0 0 150px;
 	padding-right: 100px;
@@ -2701,7 +2711,46 @@ table.filters-result-items{
 }
 
 
+//end text-information page
 
+.show-tablet-table{
+	display: none;
+	@include breakpoint(tablet){
+		display: table;
+	}
+}
+
+.show-tablet{
+	display: none;
+	@include breakpoint(tablet){
+
+		display: block;
+	}
+}
+.show-tablet-inline{
+	display: none;
+	@include breakpoint(tablet){
+		display: inline-block;
+	}
+}
+.show-laptop{
+	display: none;
+	@include breakpoint(laptop){
+		display: block;
+	}
+}
+.hide-{
+	&tablet{
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	&laptop{
+		@include breakpoint(laptop){
+			display: none;
+		}
+	}
+}
 
 
 
