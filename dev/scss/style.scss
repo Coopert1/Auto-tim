@@ -1961,6 +1961,7 @@ table#order{
 
 
 //start order page
+
 .order-form{
 	margin: 0 0 35px 0;
 	padding: 60px 0 0 0px;
@@ -1995,6 +1996,7 @@ table#order{
 			outline: none;
 		}
 	}
+	
 	.form-contact{
 		background-color: #f2f3f4;
 		margin: 0 25px 50px 25px;
@@ -2007,6 +2009,15 @@ table#order{
 			min-width: 242px;
 			margin: 0 20px 45px 0;
 			
+		}
+		@include breakpoint(phablet){
+			max-width: 500px;
+		}
+		@include breakpoint(tablet){
+			max-width: 600px;
+		}
+		@include breakpoint(laptop){
+			max-width: 775px;
 		}
 		.wrap-input{
 			display: inline-block;
@@ -2068,6 +2079,15 @@ table#order{
 		border-bottom: 2px solid white;
 		display: inline-block;
 		padding-bottom: 60px;
+		@include breakpoint(phablet){
+			max-width: 500px;
+		}
+		@include breakpoint(tablet){
+			max-width: 600px;
+		}
+		@include breakpoint(laptop){
+			max-width: 775px;
+		}
 		&__title{
 			font-size: 14px;
 			font-family: 'gothamproblack',sans-serif;
@@ -2135,6 +2155,15 @@ table#order{
 		border-bottom: 2px solid white;
 		display: inline-block;
 		padding-bottom: 60px;
+		@include breakpoint(phablet){
+			max-width: 500px;
+		}
+		@include breakpoint(tablet){
+			max-width: 600px;
+		}
+		@include breakpoint(laptop){
+			max-width: 775px;
+		}
 		&__title{
 			font-size: 14px;
 			font-family: 'gothamproblack',sans-serif;
@@ -2202,6 +2231,15 @@ table#order{
 		width: 775px;
 		display: inline-block;
 		padding-bottom: 50px;
+		@include breakpoint(phablet){
+			max-width: 500px;
+		}
+		@include breakpoint(tablet){
+			max-width: 600px;
+		}
+		@include breakpoint(laptop){
+			max-width: 775px;
+		}
 		&__title{
 			font-size: 14px;
 			font-family: 'gothamproblack',sans-serif;
@@ -2240,6 +2278,7 @@ table#order{
 	right: 40px;
 	background-color: white;
 	padding: 0 20px;
+	min-height: 750px;
 	.order__title{
 		font-size: 18px;
 		font-family:'gothamproblack',sans-serif;
@@ -2667,10 +2706,10 @@ table.filters-result-items{
 			
 			display: inline-block;
 			width: 40px;
-			height: 30px;
+			height: 29px;
 			
-			background-image: url(../images/photo.png);
-			background-position: 5px 0;
+			background-image: url(../images/icon_photo.png);
+			//background-position: 5px 0;
 			background-repeat: no-repeat;
 		}
 	}
@@ -2706,6 +2745,7 @@ table.filters-result-items{
 			width: 100px;
 			height: 30px;
 			margin-right: 20px;
+			background-image: url(../images/sv.png);
 		}
 		&_vk{
 			background-image: url(../images/vkontakte.png);
@@ -2716,7 +2756,7 @@ table.filters-result-items{
 			background-position: 0 0;
 		}
 		&_mail-ru{
-			background-image: url(../images/mail-ru.png);			
+			background-image: url(../images/mail-ru.png);
 			height: 29px;
 			padding-bottom: 1px;
 		}
@@ -2775,10 +2815,12 @@ table.filters-result-items{
 		display: inline-block;
 		width: 85px;
 		min-width: auto;
-		height: 30px;
+		height: 40px;
 		position: absolute;
 		right: 0;
-		top: 35%;
+		top: 32%;
+		padding: 0;
+		border: none;
 	}
 }
 
