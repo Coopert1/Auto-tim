@@ -2,7 +2,7 @@ html
 	head
 		include ./parts/head.pug
 	body
-		//include ./parts/header.pug
+		include ./parts/header.pug
 		.wrapper
 			ul.breadcrumbs.show-tablet
 				li
@@ -11,7 +11,7 @@ html
 					a(href="#") Боксы на крышу
 		.wrapper_product-card
 			.row.clearfix
-				.col-tablet-1-2
+				.col-tablet-3-5
 					.commodity
 						.commodity__name.hide-tablet Бокс автомобильный Евродеталь Борнео 350 (серый)
 						.commodity__producer.hide-tablet
@@ -24,11 +24,11 @@ html
 							img(src="images/product_card.png")
 						.commodity__thumbnails
 							.commodity__thumbnail
-								img(src="images/box_02.png")
+								img(src="images/product_card.png")
 							.commodity__thumbnail
 								img(src="images/product_card.png")
 							.commodity__thumbnail
-								img(src="images/box_01.png")
+								img(src="images/product_card.png")
 						.commodity__price.hide-tablet
 							.commodity__price_before
 								span 9 800
@@ -72,7 +72,7 @@ html
 							a(href="#") Описание
 							.commodity__describe_text Автомобильный бокс Магнум 350 имеет оптимальные размеры (140 см в длину, 90 см в ширину и 42 см в высоту) для размещения как на коротких крышах седанов, так и на хэтчбэках, универсалах и джипах. Бокс предназначен для перевозки различных грузов. Бокс оснащен центральным замком и механическими подпружиненными держателями крышки с фиксаторами.
 							
-				.col-tablet-1-2.border-left-tablet
+				.col-tablet-2-3.border-left-tablet#commodity-colum
 					.commodity.show-tablet
 						.commodity__favorite
 						.commodity__filter
@@ -81,7 +81,7 @@ html
 						.commodity__producer
 							span Производитель:
 							a(href="#") Евродеталь
-						.commodity__price.show-tablet
+						.commodity__price
 							.commodity__price_before
 								span 9 800
 								span.rouble u
@@ -90,7 +90,7 @@ html
 								span.rouble u
 						.commodity__add-to-card.show-tablet В корзину
 						.commodity__buy-to-click.show-tablet Купить в 1 клик
-						.peculiar-properties.show-tablet
+						.peculiar-properties.show-laptop
 							.peculiar-properties_title Особенности
 								 
 							table
@@ -118,13 +118,45 @@ html
 										td 50 кг
 							.peculiar-properties_all
 								a(href="#") Все особенности
-							div
-							.content
-								.commodity__instruction
-									a(href="#") Инструкция эксплуатации
-								.commodity__spare-parts
-									a(href="#") Запчасти
-							
+						div
+						.content
+							.commodity__instruction
+								a(href="#") Инструкция эксплуатации
+							.commodity__spare-parts
+								a(href="#") Запчасти
+			.peculiar-properties.show-tablet.hide-laptop
+				.peculiar-properties_title Особенности
+					table
+						tbody
+							tr
+								td Модель:
+								td Магнум 350
+							tr
+								td Объем:
+								td 350 литров
+							tr
+								td Внешние размеры:
+								td 1400х900х420
+							tr
+								td Открытие:
+								td с двух сторон
+							tr
+								td Система фиксации на багажной системе: 
+								td U-скоба
+							tr
+								td Цвет:
+								td черныйй карбон
+							tr
+								td Грузоподъемность:
+								td 50 кг
+
+				.commodity__instruction.hide-tablet Инструкция эксплуатации
+				.commodity__spare-parts.hide-tablet
+					a(href="#") Запчасти
+				.commodity__describe
+					a(href="#") Описание
+					.commodity__describe_text Автомобильный бокс Магнум 350 имеет оптимальные размеры (140 см в длину, 90 см в ширину и 42 см в высоту) для размещения как на коротких крышах седанов, так и на хэтчбэках, универсалах и джипах. Бокс предназначен для перевозки различных грузов. Бокс оснащен центральным замком и механическими подпружиненными держателями крышки с фиксаторами.
+
 
 
 					
