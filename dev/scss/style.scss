@@ -313,7 +313,7 @@ ul.text{
 		text-align: center;
 		@include breakpoint(tablet){
 			text-align: left;
-			margin-bottom: 20px 0 25px 0;
+			margin: 20px 0 25px 0;
 		}
 		&_catalog{
 			font-size: 24px;
@@ -1936,6 +1936,7 @@ table#order{
 		margin-top: 15px;
 		list-style: none;
 		li{
+			vertical-align: middle;
 			color: #181818;
 			display: inline-block;
 			margin: 0px 5px;
@@ -1951,6 +1952,7 @@ table#order{
 			border: 1px solid #f2762e;
 		}
 		li.prev, li.next{
+			padding-top: 10px;
 			background: #f0f0f0;
 		}
 	}
