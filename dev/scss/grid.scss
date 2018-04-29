@@ -35,7 +35,7 @@
 		content: '';
 		clear: both;
 		display: block;
-		min-height: 1px;
+		// min-height: 1px;
 	}
 	&-phablet{
 		min-height: 1px;
@@ -204,4 +204,12 @@
 }
 .no-padding{
 	padding: 0;
+	&_tablet{
+		@include breakpoint(tablet){
+			padding: 0 15px;
+		}
+	}
+}
+.padding-5{
+	padding: 0 5px;
 }

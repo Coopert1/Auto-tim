@@ -24,6 +24,10 @@
 	box-sizing: border-box;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 img{
 	max-width: 100%;
 }
@@ -104,8 +108,8 @@ ul.text{
 .product{
 	position:relative;
 	border: 1px solid #d4d8db;
-	margin-right: -1px;
-	margin-top: -1px;
+	// margin-right: -1px;
+	// margin-top: -1px;
 	// border-top: 1px solid #d4d8db;
 	// border-bottom: 1px solid #d4d8db;
 	.lSSlideOuter &{
@@ -113,7 +117,7 @@ ul.text{
 		border-right: 0;
 	}
 	padding: 20px 5px 20px 20px;
-	@include breakpoint(phablet){
+	@include breakpoint(tablet){
 		margin-right: -1px;
 		margin-top: -1px;
 	}
@@ -346,7 +350,11 @@ button, input {
 	padding: 20px 0;
 }
 .header-bottom-content{
-	display:block;
+	display:flex;
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+
 	@include breakpoint(tablet){
 		text-align: center;
 	}
@@ -355,13 +363,14 @@ button, input {
 	}
 }
 .logo{
+	width: 25%;
 	flex-grow: 1;
-	margin-right:20px;
+	// margin-right:20px;
 	vertical-align: middle;
 	text-align: center;
 	@include breakpoint(tablet){
 		display: inline-block;
-		margin-right: 70px;
+		// margin-right: 40px;
 	}
 }
 .location{
@@ -390,7 +399,7 @@ button, input {
 		padding-left: 20px;
 	}
 	@include breakpoint(laptop){
-		margin-right: 190px;
+		margin-right: 330px;
 	}
 }
 .btn{
@@ -475,6 +484,7 @@ button, input {
 
 
 .contact-info{
+	flex-grow: 1;
 	text-align: right;
 	display: inline-block;
 	margin-right:20px;
@@ -485,6 +495,7 @@ button, input {
 }
 
 .telephone{
+	// width: 187px;
 	a{
 		color: #000;
 		span:nth-child(2){
@@ -513,7 +524,7 @@ button, input {
 .social-hrefs{
 	display: none;
 	a{
-		margin: 0 15px;
+		margin: 0 7px;
 	}
 	@include breakpoint(tablet){
 		display: inline-block;
@@ -527,9 +538,10 @@ button, input {
 .search{
 	display:none;
 	@include breakpoint(tablet){
+		flex-grow:2;
 		display: inline-block;
 		vertical-align:middle;
-		width: 37%;
+		// width: 37%;
 	}
 	form{
 		position: relative;
@@ -650,8 +662,10 @@ button, input {
 					font-family: 'rouble';
 				}
 			}
-			a:hover{
+			.photogallery{
 				background: #f2762e;
+				border-radius: 5px;
+				padding: 2px;
 			}
 			.no-hover{
 				display: block;
@@ -709,7 +723,9 @@ button, input {
 						display: none;
 					}
 					li:hover{
-						color: #5e5e5e;
+						a{
+							color: #f2762e;
+						}
 					}
 					a{
 						color: #5e5e5e;
@@ -742,6 +758,7 @@ button, input {
 
 .dashed{
 	color: #f2762e;
+	background: #fff;
 	text-decoration: none;
 	border-bottom: 1px dashed #f2762e;
 	&_black{
@@ -849,8 +866,12 @@ button, input {
 		}
 	}
 }
+.news{
+	margin: 30px 0;
+}
+
 .article{
-	margin: 20px 0;
+	margin: 5px 0;
 	position:relative;
 	display:inline-block;
 	&:hover{
@@ -986,6 +1007,11 @@ button, input {
 	background: #fff;
 	span{
 		color: #5e5e5e;
+	}
+	li{
+		span:hover{
+			color: #f2762e;
+		}
 	}
 	
 }
@@ -2385,9 +2411,9 @@ span{
 			width: 62px;
 			padding: 5px;
 		}
-		@include breakpoint(laptop){
-			width: 62px;
-			padding: 5px;
+		@media(min-width: 1130px){
+			width: 92px;
+			padding: 10px;
 		}
 	}
 	.sliderValue_right{
@@ -2405,6 +2431,7 @@ span{
 		}
 	}
 	a{
+		color: #000;
 		margin-right:6px;
 		@include breakpoint(tablet){
 			margin-right: 10px;
@@ -2525,6 +2552,9 @@ table.filters-result-items{
 	width: 100%;
 	@include breakpoint(laptop){
 	width: 68%;
+	}
+	h4{
+		margin: 0;
 	}
 	th{
 		border: 1px solid #f2f3f4;
@@ -2772,9 +2802,17 @@ table.filters-result-items{
 		padding: 25px 55px;
 	}
 }
-
-
 //end text-information page
+.text-a-center{
+	text-align: center;
+}
+.border_top_bottom{
+	border-top: 1px solid #d4d8db;
+	border-bottom: 1px solid #d4d8db;
+	@include breakpoint(tablet){
+		border: none;
+	}
+}
 
 .show-tablet-table{
 	display: none;
