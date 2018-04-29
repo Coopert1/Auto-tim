@@ -1240,61 +1240,76 @@ button, input {
 	}
 }
 .peculiar-properties{
-		text-align: left;
-		border-top: 1px solid #bcbcbc;
-		margin-top: 20px;
-		padding-top: 15px;
-		color: #292929;
-		font-weight: bold;
-		&_title{
-			font-size: 18px;
-			margin-bottom: 20px;
-		}
-		&_all{
-			font-size: 14px;
-			border-bottom: 1px dotted #bcbcbc;
-			display: inline-block;
-			margin-top: 20px;
-			a{
-				color: inherit;
-			}
-		}
+	text-align: left;
+	border-top: 1px solid #bcbcbc;
+	margin-top: 20px;
+	padding-top: 15px;
+	color: #292929;
+	font-weight: bold;
+	position: relative;
+	&_title{
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	&_all{
 		font-size: 14px;
-		td{
-			line-height: 1.5;
-			
-			&:first-child{
-				position: relative;
-				overflow: hidden;
-				
-				&:after{
-					content: " ";
-					position: absolute;
-					width: 100%;
-					height: 2px;
-					border-bottom: 1px dotted #bcbcbc;
-					bottom: 5px;
-				}
-			}
-			&:last-child{
-				min-width: 120px;
-				
-				
-			}
-		}
+		border-bottom: 1px dotted #bcbcbc;
+		display: inline-block;
+		margin-top: 20px;
 		a{
 			color: inherit;
 		}
-		&.show-tablet{
-			margin: 20px -15px 15px -35px;
-			padding: 15px 15px 0 35px;
-		}
-		&.hide-tablet{
-			margin: 20px -15px 15px -15px;
-			padding: 15px 15px 0 15px;
-		}
-		
 	}
+	font-size: 14px;
+	td{
+		line-height: 1.5;
+
+		&:first-child{
+			position: relative;
+			overflow: hidden;
+
+			&:after{
+				content: " ";
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				border-bottom: 1px dotted #bcbcbc;
+				bottom: 5px;
+			}
+		}
+		&:last-child{
+			min-width: 120px;
+
+
+		}
+	}
+	a{
+		color: inherit;
+	}
+	&.show-tablet{
+		margin: -1px -15px 15px -35px;
+		padding: 15px 15px 0 35px;
+	}
+	&.hide-tablet{
+		margin: 20px -15px 15px -15px;
+		padding: 15px 15px 0 15px;
+	}
+	@include breakpoint(laptop){
+		margin: 10px -15px 15px -35px;
+		padding: 15px 15px 0 35px;
+	}
+		
+}
+#commodity-colum{
+	@include breakpoint(tablet){
+		min-height: 530px;
+	}
+	@include breakpoint(laptop){
+		padding-top: 45px;
+		margin-top: -45px;
+	}
+
+}
 .commodity{
 	text-align: center;
 	//margin-top: 25px;
@@ -1325,7 +1340,7 @@ button, input {
 		font-family: 'gothamproblack', sans-serif;
 		margin: 25px 0 20px 0;
 		color: #3b3b3b;
-		@include breakpoint(tablet){
+		@include breakpoint(laptop){
 			margin: 15px 0 10px 0;
 			font-size: 36px;
 		}
@@ -1335,7 +1350,7 @@ button, input {
 		width: 34px;
 		height: 34px;
 		background-image: url(../images/add_to_fav.png);
-		margin: 25px 10px 25px 0;
+		margin: 25px 10px 30px 0;
 		background-position: 0 1px;
 		@include breakpoint(tablet){
 			margin-top:-20px;
@@ -1347,10 +1362,11 @@ button, input {
 	}
 	&__filter{
 		display: inline-block;
-		width: 30px;
-		height: 30px;
-		background-image: url(../images/settings.png);
-		margin: 25px 0;
+		width: 33px;
+		height: 33px;
+		background-image: url(../images/filter_little.png);
+		margin: 25px 10px 30px 0;
+		background-position: 0 0;
 		@include breakpoint(tablet){
 			margin-top: -40px;
 			margin-bottom: 0;
@@ -1384,11 +1400,18 @@ button, input {
 		}
 		
 	}
+	&__thumbnails{
+		
+	}
 	&__thumbnail{
 		display: inline-block;
-		width: 75px;
+		width: 100px;
 		margin-right: 25px;
-		height: 75px;
+		height: 100px;
+		img{
+			vertical-align: middle;
+		}
+		
 	}
 	&__price{
 		display: inline-block;
@@ -1401,9 +1424,17 @@ button, input {
 		span.rouble{
 			font-family: 'rouble', sans-serif;
 		}
-		&.show-tablet{
-			display: inline-block;
+		@include breakpoint(tablet){
+			display: block;
+			
 		}
+		@media (min-width: 1195px){
+			display: inline-block;
+			top: 5px;
+		}
+		
+		
+		
 		&_before{
 			display: inline-block;
 			text-decoration: line-through;
@@ -1436,12 +1467,16 @@ button, input {
 		position: relative;
 		display: inline-block;
 		color: white;
-		padding: 10px 13px 10px 50px;
+		padding: 10px 18px 10px 50px;
 		background-color: #f2762e;
 		border-radius: 5px;
 		font-size: 16px;
 		margin: 10px 10px;
 		cursor: pointer;
+		@include breakpoint(tablet){
+			margin-left: 0;
+		}
+		
 		&:before{
 			content: "";
 			display: inline-block;
@@ -1472,9 +1507,7 @@ button, input {
 		border-radius: 5px;
 		font-size: 16px;
 		cursor: pointer;
-		&:hover{
-			background-color: #f2762e;
-		}
+		
 		&.hide-tablet{
 			
 			@include breakpoint(tablet){
@@ -1512,14 +1545,24 @@ button, input {
 			background-image: url(../images/instruction.png);
 			width: 22px;
 			height: 28px;
+			@include breakpoint(tablet){
+				left: 25px;
+			}
+			@include breakpoint(laptop){
+				left: 5px;
+			}
 		}
 		a{color: inherit;}
 		@include breakpoint(tablet){
+			padding: 15px 0 25px 60px;
+		}
+		@include breakpoint(laptop){
 			border-bottom: none;
 			border-top: none;
 			display: inline-block;
 			margin-top: 0;
 			padding: 25px 0 40px 40px;
+			min-height: 80px;
 			&.hide-tablet{
 				display: none;
 			}
@@ -1527,11 +1570,19 @@ button, input {
 		
 	}
 	.content{
-		margin-bottom: -15px;
+		margin-bottom: -5px;
 		border-top: 1px solid #bcbcbc;
 		margin-top: 30px;
 		margin-left: -35px;
 		padding-left: 35px;
+		@include breakpoint(tablet){
+			margin-left: -55px;
+			border-top: none;
+		}
+		@include breakpoint(laptop){
+			margin-left: -35px;
+			border-top: 1px solid #bcbcbc;
+		}
 	}
 	&__spare-parts{
 		padding: 15px 15px 25px 40px;
@@ -1559,6 +1610,10 @@ button, input {
 			}
 			@include breakpoint(tablet){
 				top: 35%;
+				left: 30px;
+			}
+			@include breakpoint(laptop){
+				left: 10px;
 			}
 		}
 		a{
@@ -1566,6 +1621,9 @@ button, input {
 			font-family:  "gothamproblack", sans-serif;
 		}
 		@include breakpoint(tablet){
+			padding: 15px 0 25px 60px;
+		}
+		@include breakpoint(laptop){
 			float: right;
 			width: 40%;
 			border-left: 1px solid #bcbcbc;
@@ -1575,8 +1633,9 @@ button, input {
 			padding-right: 0;
 			padding: 30px 0 30px 40px;
 			position: relative;
+			min-height: 80px;
 			&:before{
-				content: "";
+				//content: "";
 				display: block;
 				position: absolute;
 				height: 10px;
@@ -1623,6 +1682,9 @@ button, input {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 10px;
+	@include breakpoint(tablet){
+		padding: 0 15px;
+	}
 	&:after{
 		float: left;
 		width: 100%;
@@ -1641,16 +1703,16 @@ button, input {
 .border-left-tablet {
 	position: relative;
 	border-left: 1px solid #bcbcbc;
-	&:before{
-		content: "";
-		width: 1px;
-		height: 45px;
-		display: inline-block;
-		position: absolute;
-		background-color: #bcbcbc;
-		top: -45px;
-		left: -1px;
-	}
+//	&:before{
+//		content: "";
+//		width: 1px;
+//		height: 45px;
+//		display: inline-block;
+//		position: absolute;
+//		background-color: #bcbcbc;
+//		top: -45px;
+//		left: -1px;
+//	}
 }
 
 // end product-card
