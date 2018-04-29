@@ -24,6 +24,10 @@
 	box-sizing: border-box;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 img{
 	max-width: 100%;
 }
@@ -754,6 +758,7 @@ button, input {
 
 .dashed{
 	color: #f2762e;
+	background: #fff;
 	text-decoration: none;
 	border-bottom: 1px dashed #f2762e;
 	&_black{
@@ -2735,9 +2740,10 @@ table.filters-result-items{
 		padding: 25px 55px;
 	}
 }
-
-
 //end text-information page
+.text-a-center{
+	text-align: center;
+}
 .border_top_bottom{
 	border-top: 1px solid #d4d8db;
 	border-bottom: 1px solid #d4d8db;
