@@ -1132,12 +1132,20 @@ button, input {
 		color: black;
 		margin-bottom: 25px;
 		display: inline-block;
+		
 	}
 	&-list{
 		list-style: none;
+		//display: inline-block;
+		&.fixed-colum{
+			display: inline-block;
+			text-align: left;
+		}
 		&.footer-list_social-items{
 			margin: 50px 0;
 			text-align: center;
+			position: relative;
+			top: -8px;
 			
 		
 			@include breakpoint(phablet){
@@ -1150,6 +1158,7 @@ button, input {
 				margin: 0 0 50px 0;
 				width: auto;
 				text-align: left;
+				top: 0;
 			}
 		}
 		&__social-item{
@@ -1973,7 +1982,7 @@ table#order{
 		font-family: 'gothamproblack',sans-serif;
 		display: inline-block;
 		padding: 20px 60px 25px 60px;
-		margin-left: 5px;
+		margin-left:-10px;
 	}
 	&__title{
 		font-family: 'gothamproblack',sans-serif;
@@ -1999,26 +2008,48 @@ table#order{
 	
 	.form-contact{
 		background-color: #f2f3f4;
-		margin: 0 25px 50px 25px;
-		width: 785px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
+		float: left;
 		input{
 			display: inline-block;
 			height: 35px;
 			min-width: 242px;
 			margin: 0 20px 45px 0;
+			outline: none;
+			@include breakpoint(mobileonly){
+				margin-right: 0;
+			}
+			&.contact-zip-code{
+				margin-bottom: 35px;
+			}
+			
 			
 		}
+		@include breakpoint(mobileonly){
+			
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
 		}
+		@media (min-width: 1210px){
+			max-width: 785px;
+		}
+		
+		
+		
+		
 		.wrap-input{
 			display: inline-block;
 			position: relative;
@@ -2040,7 +2071,8 @@ table#order{
 			max-width: 515px;
 			position: relative;
 			@include breakpoint(mobileonly){
-				max-width: 242px;
+				width: 242px;
+				margin-right: 0;
 			}
 			.label{
 				position: absolute;
@@ -2063,6 +2095,7 @@ table#order{
 			}
 			&zip-code{
 				min-width:80px;
+				margin-right: 80px;
 				
 			}
 			&phone{
@@ -2074,19 +2107,28 @@ table#order{
 	}
 	
 	.form-pay{
-		margin: 0 25px 50px 25px;
-		width: 775px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
+		float: left;
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
+		}
+		@media (min-width: 1210px){
+			max-width: 785px;
 		}
 		&__title{
 			font-size: 14px;
@@ -2099,7 +2141,9 @@ table#order{
 			padding-left: 10px;
 			display: inline-block;
 			margin-bottom: 18px;
-			
+			@include breakpoint(mobileonly){
+				width: 100%;
+			}
 			
 		}
 		input[type="radio"] {
@@ -2138,10 +2182,16 @@ table#order{
 			.span-wrap{
 				font-size: 12px;
 				color: #919292;
-				position: absolute;
-				bottom: -15px;
-				left: 35px;
-				width: 380px;
+				position: relative;
+				//bottom: -15px;
+				//left: 35px;
+				width: 580px;
+				@include breakpoint(mobileonly){
+					width: 100%;
+				}
+				@include breakpoint(phablet){
+					width: 100%;
+				}
 				
 				
 			}
@@ -2150,19 +2200,28 @@ table#order{
 	}
 	
 	.form-delivery{
-		margin: 0 25px 50px 25px;
-		width: 775px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
+		float: left;
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
+		}
+		@media (min-width: 1210px){
+			max-width: 785px;
 		}
 		&__title{
 			font-size: 14px;
@@ -2175,6 +2234,9 @@ table#order{
 			padding-left: 10px;
 			display: inline-block;
 			margin-bottom: 18px;
+			@include breakpoint(mobileonly){
+				width: 100%;
+			}
 		}
 		input[type="radio"] {
 			position: absolute;
@@ -2212,12 +2274,19 @@ table#order{
 			.span-wrap{
 				font-size: 12px;
 				color: #919292;
-				position: absolute;
-				bottom: -30px;
-				left: 35px;
-				width: 380px;
+				position: relative;
+				//bottom: -30px;
+				//left: 35px;
+				width: 580px;
+				@include breakpoint(mobileonly){
+					width: 100%;
+				}
+				@include breakpoint(phablet){
+					width: 100%;
+				}
 				span{
 					display: block;
+					
 				}
 				
 				
@@ -2228,18 +2297,28 @@ table#order{
 	
 	.form-comment{
 		margin: 0 25px 0 25px;
-		width: 775px;
+		width: 774px;
 		display: inline-block;
 		padding-bottom: 50px;
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
 		}
+		@media (min-width: 1210px){
+			max-width: 785px;
+		}
+		
+		
 		&__title{
 			font-size: 14px;
 			font-family: 'gothamproblack',sans-serif;
@@ -2257,13 +2336,18 @@ table#order{
 			resize: none;
 			display: inline-block;
 			outline: none;
+			@include breakpoint(mobileonly){
+				width: 242px;
+			}
 		}
 		.btn_submit-order{
 			float: left;
 			margin: 30px 0 0 0;
 			width: 230px;
 			padding-left: 20px;
-			
+			@include breakpoint(mobileonly){
+				width: 180px;
+			}
 			
 		}
 	}
@@ -2278,7 +2362,7 @@ table#order{
 	right: 40px;
 	background-color: white;
 	padding: 0 20px;
-	min-height: 750px;
+	min-height: 720px;
 	.order__title{
 		font-size: 18px;
 		font-family:'gothamproblack',sans-serif;
@@ -2676,176 +2760,7 @@ table.filters-result-items{
 
 //start text-information page
 
-.comments{
-	color: #3b3b3b;
-	margin-left: 70px;
-	position: relative;
-	&__img{
-		position: absolute;
-		top: 45px;
-		left: -70px;
-		display: inline-block;
-		width: 50px;
-		height: 50px;
-	}
-	&__textarea{
-		display: block;
-		height: 60px;
-		outline: none;
-		border: solid 1px #c0c0c0;
-		resize: none;
-		width: 100%;
-		padding: 10px;
-	}
-	&__textarea-underline{
-		height: 30px;
-		border: solid 1px #c0c0c0;
-		border-top: none;
-		&:before{
-			content: "";
-			
-			display: inline-block;
-			width: 40px;
-			height: 29px;
-			
-			background-image: url(../images/icon_photo.png);
-			//background-position: 5px 0;
-			background-repeat: no-repeat;
-		}
-	}
-	&__hint{
-		margin-top: 10px;
-		margin-bottom: 25px;
-		color: #3b3b3b;
-	}
-	
-}
-.social-come-in{
-	display: inline-block;
-	width: 150px;
-	height: 150px;
-	float: left;
-	&__title{
-		color: #3b3b3b;
-		font-size: 14px;
-		text-transform: uppercase;
-		
-	}
-	&__icons{
-		display: inline-block;
-	}
-	.icon{
-		margin: 0 5px 5px 0;
-		width: 30px;
-		height: 30px;
-		display: inline-block;
-		border-radius: 10px;
-		&_sv{
-			background-position: 0 0;
-			width: 100px;
-			height: 30px;
-			margin-right: 20px;
-			background-image: url(../images/sv.png);
-		}
-		&_vk{
-			background-image: url(../images/vkontakte.png);
-		}
-			
-		&_ok{
-			background-image: url(../images/ok.png);
-			background-position: 0 0;
-		}
-		&_mail-ru{
-			background-image: url(../images/mail-ru.png);
-			height: 29px;
-			padding-bottom: 1px;
-		}
-		&_fb{
-			background-image: url(../images/facebook.png);
-			
-		}
-		&_tw{
-			background-image: url(../images/tw.png);
-			
-		}
-		&_g{
-			background-image: url(../images/g.png);
-		
-		}
-	}
-	
-}
 
-.registration{
-	margin: 0 0 0 150px;
-	padding-right: 100px;
-	position: relative;
-	input{
-		display: block;
-		min-width: 242px;
-		width: 100%;
-		height: 30px;
-		margin-top: 10px;
-		outline: none;
-		border: solid 1px #c0c0c0;
-		padding: 10px;
-		
-	}
-	#guest-public{
-		width: 12px;
-		height: 12px;
-		border-radius: 3px;
-		border: solid 1px #c0c0c0;
-		outline: none;
-		min-width: auto;
-		display: inline-block;
-		float: left;
-		margin-top: 15px;
-	}
-	#guest-public+ label{
-		margin-top: 10px;
-		display: block;
-		margin-left: 20px;
-		
-	}
-	&__title{
-		text-transform: uppercase;
-	}
-	input.registration__submit{
-		display: inline-block;
-		width: 85px;
-		min-width: auto;
-		height: 40px;
-		position: absolute;
-		right: 0;
-		top: 32%;
-		padding: 0;
-		border: none;
-	}
-}
-
-.best-reviews{
-	color: #3b3b3b;
-	display: block;
-	border-bottom: solid 1px #c0c0c0;
-	position: relative;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-	i{
-		vertical-align: top;
-	}
-}
-.no-comments {
-	text-align: center;
-	padding-bottom: 50px;
-	color: #3b3b3b;
-	&__text{
-		background-color: #eeeeee;
-		display: inline-block;
-		border: solid 1px #c0c0c0;
-		padding: 25px 55px;
-	}
-}
 //end text-information page
 .text-a-center{
 	text-align: center;
