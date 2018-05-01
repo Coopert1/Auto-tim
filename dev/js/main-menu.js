@@ -109,7 +109,9 @@ $(function(){
 
 	var dealerslider=$('#dealerslider').lightSlider({
 		galleryMargin: 25,
+		autoWidth: false,
 		item: 5,
+		slideMargin: 10,
 		slideMove:1,
 		controls:false,
 		responsive:[
@@ -118,6 +120,7 @@ $(function(){
 				settings:
 					{
 						item:4,
+						autoWidth: false,
 						slideMove:1,
 					}
 			},
@@ -125,7 +128,8 @@ $(function(){
 				breakpoint: 800,
 				settings:
 					{
-						item:4,
+						item:1.5,
+						autoWidth: false,
 						slideMove:1,
 					}
 			},
@@ -276,5 +280,9 @@ $(function(){
 	$( ".select-brand, .select-model, .select-series" ).selectmenu({
   		width: 100 + '%',
 	});
+	$( ".select-city" ).selectmenu({
+		width: 100 + '%',
+	});
+
 
 });
