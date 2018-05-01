@@ -49,15 +49,15 @@ html
 						li
 							img(src="images/eurodetail.png" alt="foto")
 		.wrapper
-			.section
-				.section__title Популярный товар
-				include ./parts/products.pug
-			.section
-				.section__title Новое поступление
-				include ./parts/products1.pug
+			h2
+				|Популярный товар
+			include ./parts/products.pug
+			h2
+				|Новое поступление
+			include ./parts/products1.pug
 		.wrapper
 			.section
-				.section__title Популярные разделы
+				h2 Популярные разделы
 				ul#popular-section-slider.hide-tablet
 					li
 						a(href="#").popular-section.popular-section_grey
@@ -111,7 +111,8 @@ html
 							span
 								|Подогреватели
 				.section.show-tablet
-					a(href="news.html").section__title Новости
+					a(href="news.html")
+						h2 Новости
 					.news
 						.clearfix
 							.col-phablet-1-2.col-tablet-1-3.padding-5

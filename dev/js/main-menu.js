@@ -1,5 +1,21 @@
 $(function(){
+	function displayCatalog() {
+		var browserMinWidth = $(window).width()
+		if (browserMinWidth >= 1150) {
+			$('.main-menu .catalog-list').addClass('open');
+		}
+		else {
+			$('.main-menu .catalog-list').removeClass('open');
+		}
+	}
 	promSlider();
+	displayCatalog();
+	
+	$(window).resize(function(){
+		// SetSameHeight();
+		promSlider();
+		displayCatalog();	
+	});
 	
 	//scroll fixes top main-menu
 	$(window).scroll(function(){
@@ -37,21 +53,24 @@ $(function(){
 		})
 	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
-		$(this).toggleClass('open');
+		// if (browserMinWidth < 1150) {
+			$(this).toggleClass('open');
+			// $(".main-menu .catalog-list ul").animate(
+			// 	{height: 'toggle'},
+			// 	{duration:300},
+			// );
+		// }
 		if (browserMinWidth < 800) {
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
-			$(".main-menu .catalog-list ul").animate(
-				{height: 'toggle'},
-				{duration:300},
-			);
 		}
 	})
-	$('.search-mobile').click(function(){
+	$('.search-mobile').click(function(event){
+		event.preventDefault();
 		$(this).toggleClass('active_search');
-		$(".search-form").fadeToggle(
-			// {height: 'toggle'},
-			// {duration:100},
+		$(".search-form").animate(
+			{height: 'toggle'},
+			{duration:300},
 		);
 	})
 	var product_slider_1=$('#product-slider-1').lightSlider({
@@ -139,7 +158,9 @@ $(function(){
 
 	var dealerslider=$('#dealerslider').lightSlider({
 		galleryMargin: 25,
+		autoWidth: false,
 		item: 5,
+		slideMargin: 10,
 		slideMove:1,
 		controls:false,
 		responsive:[
@@ -148,6 +169,7 @@ $(function(){
 				settings:
 					{
 						item:4,
+						autoWidth: false,
 						slideMove:1,
 					}
 			},
@@ -155,7 +177,8 @@ $(function(){
 				breakpoint: 800,
 				settings:
 					{
-						item:4,
+						item:1.5,
+						autoWidth: false,
 						slideMove:1,
 					}
 			},
@@ -205,22 +228,18 @@ $(function(){
 		
 	}
 	
+
 	
-	function SameHeight() {
+	function SetSameHeight() {
 			var browserMinWidth = $(window).width()
-			if (browserMinWidth >= 800) {
-				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
+			if (browserMinWidth >= 1150) {
+				$('body > div.main-menu > div > ul > li.main-menu__item.catalog-list.add-border > ul').css('height', $('.promo').height()+22+'px');
 				$('menu-list').click(function(event) {
 					event.preventDefault();
 				});
 			} 
 		}
 	
-	$(window).resize(function(){
-		// SameHeight();
-		promSlider();
-		
-	});
 	// this part for add products
 
 	$('.icon_amount-minus').click(function () {
@@ -306,5 +325,7 @@ $(function(){
 	$( ".select-brand, .select-model, .select-series" ).selectmenu({
   		width: 100 + '%',
 	});
-
+	$( ".select-city" ).selectmenu({
+		width: 100 + '%',
+	});
 });

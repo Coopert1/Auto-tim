@@ -173,14 +173,11 @@ ul.text{
 			display: inline-block;
 			vertical-align: middle;
 			
-		}
-		
-		
-		
+		}			
 	}
 	&__name{
 		font-size: 16px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
@@ -231,7 +228,7 @@ ul.text{
 		color: white;
 		margin-bottom: 15px;
 		padding: 5px 10px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		background-color: #f2762e;
 		display: inline-block;
 		border-radius: 5px;
@@ -243,7 +240,7 @@ ul.text{
 		
 		a{
 			color: white;
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 		
 		}
 	}
@@ -410,9 +407,9 @@ button, input {
 	display: inline-block;
 	background: #f2762e;
 	text-align: center;
+	font-family: 'robotoblack';
 	&_callback{
 		border-radius: 30px;
-		font-family: 'robotobold';
 		text-transform: uppercase;
 		font-size: 11px;
 		margin-right:45px;
@@ -507,7 +504,7 @@ button, input {
 	a{
 		color: #000;
 		span:nth-child(2){
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 		}
 	}
 	@include breakpoint(tablet){
@@ -600,9 +597,6 @@ button, input {
 		margin-right: 10px;
 	}
 }
-.add-border{
-	border-right: 1px solid #2b2b2b;
-}
 .main-menu{
 	padding: 0;
 	background: #424242;
@@ -624,6 +618,7 @@ button, input {
 		justify-content: space-between;
 	}
 	&__item{
+		// align-self:stretch;
 		flex-grow: 1;
 		padding: 9px 5px;
 		display: inline-block;
@@ -632,7 +627,7 @@ button, input {
 		& a{
 			color: #fff;
 			span{
-				font-family: 'robotobold';
+				font-family: 'robotoblack';
 			}
 		}
 		.shopping-sum{
@@ -663,7 +658,7 @@ button, input {
 .catalog-list{
 	color: #fff;
 	position:relative;
-	font-family: 'robotobold';
+	font-family: 'robotoblack';
 	margin-left: -10px;
 	@include breakpoint(tablet){
 			margin: 0;
@@ -687,8 +682,9 @@ button, input {
 			box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
 		}
 		@media(min-width: 1150px){
-			display: block;
+			// display: block;
 			width: 100%;
+			// height: 450px;
 		}
 	}
 	li{
@@ -730,7 +726,7 @@ button, input {
 		background:#f2762e;
 	}
 	span{
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 	}
 	span.hide-laptop{
 		line-height: 38px;
@@ -749,15 +745,25 @@ button, input {
 		}
 	}
 }
-
-.menu-list{
-	height: 100%;
-	padding-left: 40px;
-	width: 20%;
-	@include breakpoint(tablet){
-		background: #f2762e;
+.add-border{
+	// padding: 15px 0;
+	border-left: 1px solid #2b2b2b;
+}
+.center-icons{
+	align-self:stretch;
+	img{
+		position: relative;
+		top: 5px;
 	}
 }
+// .menu-list{
+// 	height: 100%;
+// 	padding-left: 40px;
+// 	width: 20%;
+// 	@include breakpoint(tablet){
+// 		background: #f2762e;
+// 	}
+// }
 .underline{
 	text-decoration: underline
 	// border-bottom: 1px solid #292929;
@@ -952,7 +958,7 @@ button, input {
 	span{
 		display: block;
 		color: #000;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		font-size: 15px;
 	}
 }
@@ -1007,15 +1013,19 @@ button, input {
 	@include breakpoint(tablet){
 		background: #323232;
 	}
-	span{
+	span.menu-list-name{
 		color: #5e5e5e;
 		@include breakpoint(tablet){
+			color: #fff;
 		}
 	}
 	li{
 		span:hover{
 			color: #f2762e;
 		}
+	}
+	ul{
+		display:block;
 	}
 	
 }
@@ -1033,10 +1043,14 @@ button, input {
 
 
 .col-promo{
-	margin-bottom: 25px;
-	text-align: center;
-	@include breakpoint(mobileonly){
-		margin-bottom: 15px;
+	margin: 0 -10px;
+	margin-bottom: 15px;
+	@include breakpoint(tablet){
+		margin-bottom: 25px;
+	}
+	@include breakpoint(laptop){
+		margin: 25px 0;
+		text-align: center;
 	}
 	@media(min-width: 1150px){
 		float:right;
@@ -1875,7 +1889,7 @@ button, input {
 		left: 0;
 	}
 	&__name{
-		font-family: 'robotobold',sans-serif;
+		font-family: 'robotoblack',sans-serif;
 		font-size: 16px;
 	}
 	&__number{
@@ -1940,7 +1954,7 @@ button, input {
 			font-family: 'rouble',sans-serif;
 		}
 		span.filter{
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 			display:block;
 			font-size: 18px;
 			margin-bottom: 10px;
@@ -2115,6 +2129,17 @@ table#order{
 		border-bottom: 2px solid white;
 		display: inline-block;
 		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
 		input{
 			display: inline-block;
 			height: 35px;
@@ -2155,6 +2180,11 @@ table#order{
 		.wrap-input{
 			display: inline-block;
 			position: relative;
+			input{
+				border-radius: 5px;
+				box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+				outline: none;
+			}
 			.label{
 				position: absolute;
 				top: -30px;
@@ -2215,6 +2245,17 @@ table#order{
 		display: inline-block;
 		padding-bottom: 40px;
 		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
 		@include breakpoint(mobileonly){
 			width: 80%;
 			margin-right: 0;
@@ -2308,6 +2349,17 @@ table#order{
 		display: inline-block;
 		padding-bottom: 40px;
 		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
 		@include breakpoint(mobileonly){
 			width: 80%;
 			margin-right: 0;
@@ -2438,6 +2490,8 @@ table#order{
 			resize: none;
 			display: inline-block;
 			outline: none;
+			border-radius: 5px;
+			box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
 			@include breakpoint(mobileonly){
 				width: 242px;
 			}
@@ -2578,7 +2632,7 @@ table#order{
 		display: block;
 		width:100%;
 		height: auto;
-		overflow: hidden;
+		overflow: visible;
 		right: 0;
 		visibility: visible;
 		position:relative;
@@ -2638,7 +2692,7 @@ span{
 	&__name{
 		color: #242424;
 		font-size: 14px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		margin-bottom: 20px;
 	}
 	&__item{
@@ -2844,7 +2898,6 @@ table.filters-result-items{
 }
 .filter-result-sum{
 	position:relative;
-	float:right;
 	display: block;
 	margin: 20px auto;
 	padding: 20px;
