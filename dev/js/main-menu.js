@@ -1,5 +1,35 @@
 $(function(){
 	promSlider();
+	
+	//scroll fixes top main-menu
+	$(window).scroll(function(){
+		var scrolTop = $(this).scrollTop();
+		var width = $(window).width();
+		if (width<800){
+			if(scrolTop>=123){
+				$(".main-menu").addClass("fixed");
+			} else $(".main-menu").removeClass("fixed");
+		}else{
+			if(scrolTop>=136){
+				$(".main-menu").addClass("fixed");
+			} else $(".main-menu").removeClass("fixed");
+		}
+		
+	});
+	// end scroll fixes top main-menu
+	
+	// peculiar-properties row show/hide
+	$('.peculiar-properties_all').click(function(e){
+		e.preventDefault();
+		var elem = $(this).siblings(".peculiar-properties");
+		elem.toggleClass("all")
+		if(elem.hasClass("all")){
+			$(this).children().text("Свернуть")
+		}else { $(this).children().text("Все особенности")}
+		
+	});
+	
+	// end peculiar-properties row show/hide
 	// SameHeight();
 	$('span.icon.icon_fav').click(function(){
 		console.log(1);

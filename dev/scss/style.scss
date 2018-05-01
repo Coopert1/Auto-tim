@@ -608,6 +608,12 @@ button, input {
 	background: #424242;
 	position: relative;
 	z-index: 6;
+	&.fixed{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 	ul{
 		list-style: none;
 		display: flex;
@@ -1289,6 +1295,12 @@ button, input {
 	color: #292929;
 	font-weight: bold;
 	position: relative;
+	max-height: 240px;
+	overflow: hidden;
+	&.all{
+		max-height: none;
+	}
+	
 	&_title{
 		font-size: 18px;
 		margin-bottom: 20px;
@@ -1299,13 +1311,16 @@ button, input {
 		border-bottom: 1px dotted #bcbcbc;
 		display: inline-block;
 		margin-top: 20px;
-		color: #8d8d8d;
-		
+		&.show-laptop{
+			display: inline-block;
+		}
 		a{
+			color: #8d8d8d;
 			
 		}
 	}
 	font-size: 14px;
+	
 	td{
 		line-height: 1.5;
 		vertical-align: bottom;
