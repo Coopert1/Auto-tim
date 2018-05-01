@@ -1026,7 +1026,18 @@ button, input {
 
 
 
-
+.col-promo{
+	margin-bottom: 25px;
+	text-align: center;
+	@include breakpoint(mobileonly){
+		margin-bottom: 15px;
+	}
+	@media(min-width: 1150px){
+		float:right;
+		margin-left: 274px;
+		width: 76%;
+	}
+}
 .promo{
 	margin: 0 -10px;
 	position: relative;
@@ -1052,14 +1063,7 @@ button, input {
 	}
 }
 
-.add-margin{
-	padding: 0;
-	margin-bottom:40px;
-	@include breakpoint(tablet){
-		margin-left: 274px;
-		margin-top: 9px;
-	}
-}
+
 
 .icon{
 	display: inline-block;
