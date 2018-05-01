@@ -1297,8 +1297,10 @@ button, input {
 	position: relative;
 	max-height: 240px;
 	overflow: hidden;
+	transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 	&.all{
-		max-height: none;
+		max-height: 1000px;
+		transition: max-height 0.5s ease-in-out;
 	}
 	
 	&_title{
