@@ -1,13 +1,17 @@
 $(function(){
 	promSlider();
-	SameHeight();
-	$('.menu-list').click(function(){
+	// SameHeight();
+	$('span.icon.icon_fav').click(function(){
+		console.log(1);
+		$(this).toggleClass('icon_fav_active');
+		})
+	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
+		$(this).toggleClass('open');
 		if (browserMinWidth < 800) {
-			$(this).toggleClass('open');
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
-			$(".main-menu ul li ul").animate(
+			$(".main-menu .catalog-list ul").animate(
 				{height: 'toggle'},
 				{duration:300},
 			);
@@ -92,7 +96,7 @@ $(function(){
 				breakpoint: 500,
 				settings:
 					{
-						item:1,
+						item:1.5,
 						slideMove:1,
 					}
 			},
@@ -162,7 +166,7 @@ $(function(){
 		var browserMinWidth = $(window).width();
 		if (browserMinWidth >= 800) {
 			var wrapperWidth=$('#wrap-width').width()-274;
-				$('.col-tablet-4-5').css('width', wrapperWidth+'px');
+				// $('.col-tablet-4-5').css('width', wrapperWidth+'px');
 				$('.dealers-slider').css('width', wrapperWidth+'px');
 			} else {
 				// $('.col-tablet-4-5').css('width', '100%');
@@ -183,7 +187,7 @@ $(function(){
 		}
 	
 	$(window).resize(function(){
-		SameHeight();
+		// SameHeight();
 		promSlider();
 		
 	});
@@ -262,12 +266,15 @@ $(function(){
 	//show-hide filters
 
 	$('#show-filter-mobile').click(function(){
-		$(".filters").show();
+		$(".filters").addClass('filters_active');
+		$('.backdrop').toggleClass('on');
 	})
 	$('.filters__close-btn').click(function(){
-		$(".filters").hide();
+		$(".filters").removeClass('filters_active');
+		$('.backdrop').toggleClass('on');
 	})
 	$( ".select-brand, .select-model, .select-series" ).selectmenu({
   		width: 100 + '%',
 	});
+
 });

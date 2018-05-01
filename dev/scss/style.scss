@@ -36,13 +36,14 @@ h1{
 	font-family: 'gothamproblack', sans-serif;
 	font-size: 36px;
 	margin-bottom: 30px;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 h2{
 	color: #3b3b3b;
 	font-family: 'gothamproblack';
 	font-size: 30px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
+	margin-top: 20px;
 }
 h3{
 	color: #3b3b3b;
@@ -368,9 +369,10 @@ button, input {
 	// margin-right:20px;
 	vertical-align: middle;
 	text-align: center;
-	@include breakpoint(tablet){
+	@media(min-width: 1230px){
 		display: inline-block;
-		// margin-right: 40px;
+		margin-left: -103px;
+		margin-right: 20px;
 	}
 }
 .location{
@@ -399,7 +401,7 @@ button, input {
 		padding-left: 20px;
 	}
 	@include breakpoint(laptop){
-		margin-right: 330px;
+		margin-right: 190px;
 	}
 }
 .btn{
@@ -411,7 +413,7 @@ button, input {
 		font-family: 'robotobold';
 		text-transform: uppercase;
 		font-size: 11px;
-		margin-right:20px;
+		margin-right:45px;
 		padding:12px 16px;
 	}
 	&_submit-order{
@@ -491,6 +493,10 @@ button, input {
 	vertical-align: top;
 	span.time{
 		font-size: 12px;
+	}
+	@media(min-width: 1230px){
+		display: inline-block;
+		margin-left: -186px;
 	}
 }
 
@@ -595,182 +601,168 @@ button, input {
 .add-border{
 	border-right: 1px solid #2b2b2b;
 }
-
 .main-menu{
-	position: relative;
+	padding: 0;
 	background: #424242;
+	position: relative;
 	z-index: 6;
 	ul{
-		margin: 0 -10px;
-		display:flex;
+		list-style: none;
+		display: flex;
 		flex-wrap: no-wrap;
-		align-items: stretch;
+		align-items: center;
 		flex-shrink: 0;
 		align-content: center;
 		justify-content: space-between;
-		color: #fff;
-		list-style: none;
-		@include breakpoint(tablet){
+	}
+	&__item{
+		flex-grow: 1;
+		padding: 9px 5px;
+		display: inline-block;
+		color:#fff;
+		text-align:center;
+		& a{
+			color: #fff;
+			span{
+				font-family: 'robotobold';
+			}
+		}
+		.shopping-sum{
+			vertical-align: top;
+			margin-left: 5px;
+			color:#f2762e;
+			font-size: 18px;
+			font-family: 'gothamproblack';
+			@include breakpoint(tablet){
+				// display: inline-block;
+			}
+			span{
+				position: relative;
+				top: 4px;
+				font-family: 'gothamproblack';
+			}
+			span:nth-child(2){
+				font-family: 'rouble';
+			}
+		}
+		.photogallery{
+			background: #f2762e;
+			padding: 1px 5px;
+			border-radius: 3px;
+		}
+	}
+}
+.catalog-list{
+	color: #fff;
+	position:relative;
+	font-family: 'robotobold';
+	margin-left: -10px;
+	@include breakpoint(tablet){
 			margin: 0;
 		}
-		li:first-child{
-			padding-left: 40px;
+	ul{
+		display: none;
+		position: absolute;
+		height: auto;
+		top: 100%;
+		z-index: 10;
+		left: 0px;
+		width: 100vw;
+		font-size: 14px;
+		background: #fff;
+		color: #5e5e5e;
+		list-style: none;
+		padding: 10px;
+		@include breakpoint(tablet){
+			width: 262px;
+			left: 0px;
+			box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
 		}
+		@media(min-width: 1150px){
+			display: block;
+			width: 100%;
+		}
+	}
+	li{
+
+		padding: 6px 0;
+		display: block;
+		font-size : 14px;
+		text-align: left;
+		width: 100%;
+		border: none;
+
+		span{
+			font-family: 'robotoregular';
+		}
+		&:hover{
+			color: #f2762e;
+		}
+		:last-child{
+			float: right;
+		}
+	}
+	li:last-child{
+		margin-top: 15px;
+		padding: 20px 0;
+		border-top: 1px solid #dbddde;
 		a{
-			padding: 0 10px;
+			color: #292929;
+			margin: 0 5px;
 		}
-		li{
-			flex-grow: 1;
-			text-align: center;
-			font-family: 'robotoblack';
-			font-size: 18px;
-			padding: 15px 0;
-			position: relative;
-			@media(min-width:800px)and(max-width:1130px){
-				padding: 10px 0;
-				font-size: 16px;
-			}
-			a{
-				position:relative;
-				top:1px;
-				color: #fff;
-				padding: 3px;
-				border-radius: 2px;
-				display: inline-block;
-				@include breakpoint(tablet){
-					top:6px;
-				}
-			}
-			.norm-postion{
-				top:0;
-			}
-			.shopping-sum{
-				vertical-align: top;
-				margin-left: 5px;
-				color:#f2762e;
-				font-size: 18px;
-				font-family: 'gothamproblack';
-				@include breakpoint(tablet){
-					display: inline-block;
-				}
-				span{
-					position: relative;
-					top: 4px;
-					font-family: 'gothamproblack';
-				}
-				span:nth-child(2){
-					font-family: 'rouble';
-				}
-			}
-			.photogallery{
-				background: #f2762e;
-				border-radius: 5px;
-				padding: 2px;
-			}
-			.no-hover{
-				display: block;
-				&:hover{
-					background: none;
-				}
-			}
-			ul{
-				display: none;
-				position: absolute;
-				top: 100%;
-				z-index: 10;
-				left: 10px;
-				width: 100vw;
-				font-size: 14px;
-				overflow-x: scroll;
-				background: #fff;
-				color: #5e5e5e;
-				list-style: none;
-				padding: 10px;
-				@include breakpoint(tablet){
-					left: 0px;
-					 // display:block;
-					width:267px;
-					border: 1px solid #e3e3e3;
-					box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
-				}
-				li:hover{
-						color: #e0641c;
-					}
-				li{
-					padding: 6px 0;
-					display: block;
-					font-size : 14px;
-					text-align: left;
-					width: 100%;
-					border: none;
-					:last-child{
-						float: right;
-					}
-					a{
-						&:hover{
-						color: #e0641c;
-						}
-					}
-				}
-				li:first-child{
-					padding-left: 0px;
-				}
-				li:last-child{
-					margin-top: 15px;
-					padding: 20px 0;
-					border-top: 1px solid #dbddde;
-					@include breakpoint(tablet){
-						display: none;
-					}
-					li:hover{
-						a{
-							color: #f2762e;
-						}
-					}
-					a{
-						color: #5e5e5e;
-						display: inline-block;
-					}
-					span{
-						margin-right:15px;
-					}
-					:last-child{
-						float: none;
-					}
-					img{
-						position:relative;
-						top:4px;
-						margin-right: 10px;
-					}
-				}
-			}
+		@include breakpoint(tablet){
+			display: none;
+		}
+		:last-child{
+			float: none;
+		}
+	}
+	@include breakpoint(tablet){
+		width: 20%;
+		background:#f2762e;
+	}
+	span{
+		font-family: 'robotobold';
+	}
+	span.hide-laptop{
+		line-height: 38px;
+		display: inline-block;
+		vertical-align: top;
+		@include breakpoint(laptop){
+			display: none;
+		}
+	}
+	span.show-laptop{
+		line-height: 38px;
+		display: none;
+		@include breakpoint(laptop){
+			display: inline-block;
+			vertical-align: top;	
 		}
 	}
 }
 
 .menu-list{
+	height: 100%;
 	padding-left: 40px;
 	width: 20%;
 	@include breakpoint(tablet){
-		background: #323232;
+		background: #f2762e;
 	}
 }
-
+.underline{
+	text-decoration: underline
+	// border-bottom: 1px solid #292929;
+}
 .dashed{
 	color: #f2762e;
 	background: #fff;
-	text-decoration: none;
-	border-bottom: 1px dashed #f2762e;
+	text-decoration:underline;
+	text-decoration-style:dashed;
 	&_black{
 		color: #5e5e5e;
 		font-size: 12px;
-		border-bottom: 1px dashed #5e5e5e;
 	}
-}
-	
-.catalog{
-	// position: relative;
-	padding-left: 40px;
 }
 
 .cart-item-count{
@@ -794,20 +786,16 @@ button, input {
 }
 
 .bars{
-	position: absolute;
-	top: 50%;
-	margin-top: -10px;
-	left: -34px;
+	margin-right: 10px;
+	display: inline-block;
+	position: relative;
 	width: 30px;
-	@include breakpoint(tablet){
-		left: -20px;
-	}
 }
 
 .bar{
 	height:2px;
 	background:#fff;
-	margin:4px 0;
+	margin:8px 0;
 }
 
 .active .bar:nth-child(2){
@@ -816,7 +804,7 @@ button, input {
 }
 
 .active .bar:nth-child(1){
-	transform: rotate(45deg) translateY(4px) translateX(0px);
+	transform: rotate(45deg) translateY(9px) translateX(5px);
 	transition: all 1s ease;
 	background: #5e5e5e;
 }
@@ -1001,12 +989,20 @@ button, input {
 .active .menu-list{
 	background: #fff;
 	color: #5e5e5e;
+	@include breakpoint(tablet){
+		background: #fff;
+	}
 
 }
 .open{
 	background: #fff;
+	@include breakpoint(tablet){
+		background: #323232;
+	}
 	span{
 		color: #5e5e5e;
+		@include breakpoint(tablet){
+		}
 	}
 	li{
 		span:hover{
@@ -1062,16 +1058,17 @@ button, input {
 		margin-top: 9px;
 	}
 }
+
 .icon{
 	display: inline-block;
 	&_fav{
 		background:url(../images/add_to_fav.png);
 		width: 34px;
 		height: 33px;
-		&:hover{
+	}
+	&_fav_active{
 			background-position: 37px 0;
 		}
-	}
 	&_controls_prev{
 		background:url(../images/partners_slider_controls.png);
 		background-position: 0px 38px;
@@ -1255,8 +1252,11 @@ button, input {
 	font-size: 14px;
 	font-weight: bold;
 	list-style: none;
+	color: #323232;
 	margin-top: 25px;
+	margin-bottom: 20px;
 	display: inline-block;
+	font-family: 'gothamproblack';
 	li{
 		display: inline-block;
 		margin-right: 10px;
@@ -1271,7 +1271,8 @@ button, input {
 		}
 	}
 	a{
-		color: black;
+		font-family: 'gothamproblack';
+		color: #323232;
 	}
 }
 .peculiar-properties{
@@ -1862,6 +1863,8 @@ button, input {
 .coupon{
 	p{
 		margin-bottom: 10px;
+		font-size: 11px;
+		color: #5a5a5a; 
 	}
 	form{
 		position:relative;
@@ -2454,13 +2457,35 @@ table#order{
 	
 }
 .filters{
-	display: none;
+	width: 320px;
 	text-align: center;
 	box-shadow: 0px 1px 3px 1px rgba(182,183,184,1);
 	padding: 50px;
-	position: relative;
+    height: 100%;
+    background: #fff;
+	transition: all 0.4s ease;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    z-index: 9;
+	overflow-x: scroll;
+    visibility: hidden;
+    &_active{
+		transition: all 0.4s ease;
+		right: 0;
+		visibility: visible;
+		bottom: 0;
+		top: 0;
+		position: fixed;
+	}
 	@include breakpoint(tablet){
 		display: block;
+		width:100%;
+		height: auto;
+		overflow: hidden;
+		right: 0;
+		visibility: visible;
+		position:relative;
 		padding: 0;
 		box-shadow: none;
 		margin-bottom: 50px;
@@ -2608,8 +2633,8 @@ span{
 	}
 }
 ////// brands.pug styles
-.container{
-	margin: 30px auto;
+.brand-container{
+	margin-bottom: 80px;
 }
 .brand{
 	color: #292929;
@@ -2800,6 +2825,12 @@ table.filters-result-items{
 	display: none;
 	@include breakpoint(laptop){
 		display: block;
+	}
+}
+.show-laptop-inline{
+	display: none;
+	@include breakpoint(laptop){
+		display: inline-block;
 	}
 }
 .hide-{
