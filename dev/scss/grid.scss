@@ -55,12 +55,7 @@
 	_margin-top-10{
 		margin-top: 10px;
 	}
-	&_promo{
-		margin: 0 -10px;
-		@include breakpoint(tablet){
-			margin: 0;
-		}
-	}
+	
 }
 
 [class*='col-']{
