@@ -1288,6 +1288,7 @@ button, input {
 	&_title{
 		font-size: 18px;
 		margin-bottom: 20px;
+		font-family: "robotoblack";
 	}
 	&_all{
 		font-size: 14px;
@@ -1352,7 +1353,7 @@ button, input {
 	@include breakpoint(laptop){
 		
 		padding-top: 45px;
-		margin-top: -45px;
+		margin-top: -60px;
 		
 	}
 	@media (min-width:1220px){
@@ -1553,6 +1554,7 @@ button, input {
 		font-size: 16px;
 		margin: 10px 10px;
 		cursor: pointer;
+		font-family: "robotoblack";
 		@include breakpoint(mobileonly){
 			margin-left: 0;
 			padding-right: 8px;
@@ -1589,16 +1591,17 @@ button, input {
 		
 	&__buy-to-click{
 		display: inline-block;
-		color: black;
+		color: #424242;
 		padding: 10px 13px 10px 10px;
 		border: 1px solid #bcbcbc;
 		border-radius: 5px;
 		font-size: 16px;
 		cursor: pointer;
+		font-family: "robotoblack";
 		@include breakpoint(mobileonly){
 			
-			padding-right: 8px;
-			padding-left: 8px;
+			padding-right: 7px;
+			padding-left: 7px;
 		}
 		&.hide-tablet{
 			
