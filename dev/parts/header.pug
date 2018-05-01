@@ -53,17 +53,20 @@
 					img(src="images/magnifying-glass.png", alt="logo")
 .main-menu
 	.wrapper
+		.search-form
+					form
+						input(type="search", placeholder="Поиск", name="search")
+						button(type="submit") Найти
 		ul
-			li.menu-list.add-border
-				a(href="#").no-hover
-					.bars
-						.bar
-						.bar
-						.bar
-					span.hide-laptop
-							|Меню
-					span.show-laptop
-						|Каталог товаров
+			li.main-menu__item.catalog-list.add-border
+				.bars
+					.bar
+					.bar
+					.bar
+				span.hide-laptop
+						|Меню
+				span.show-laptop
+					|Каталог товаров
 				ul
 					li 
 						span Боксы на крышу
@@ -110,47 +113,43 @@
 							span.dashed Вход
 						span |
 						a(href="#").no-hover
-							span Регистрация
-			li.show-tablet
+							span.underline Регистрация
+			li.main-menu__item.show-tablet-inline
 				a(href="#")
 					span
-						|О Компании
-			li.show-tablet
+						|О Компании
+			li.main-menu__item.show-tablet-inline
 				a(href="#")
 					span
 						|Доставка
-			li.show-tablet
+			li.main-menu__item.show-tablet-inline
 				a(href="#")
 					span
 						|Оплата
-			li.show-tablet
+			li.main-menu__item.show-tablet-inline
 				a(href="#")
 					span
 						|Контакты
-			li.show-tablet.add-border
+			li.main-menu__item.show-tablet-inline.add-border
 				a.photogallery(href="gallery.html")
 					span
 						|Фотогалерея
-			li.add-border.show-tablet
-				a(href="filters_results.html").no-hover.norm-postion
+			li.main-menu__item.show-tablet-inline.add-border
+				a(href="filter_results.html")
 					img(src="images/settings.png", alt="filter")
-			li.add-border
-				a(href="#").no-hover.norm-postion
+			li.main-menu__item.add-border
+				a(href="#")
 					img(src="images/heart.png", alt="favorite")
-			li.search-mobile.add-border.hide-tablet
-				a(href="#").no-hover.norm-postion
+			li.main-menu__item.search-mobile.add-border.hide-tablet
+				a(href="#")
 					img(src="images/zoom.png", alt="search")
-			li.add-border
-				a(href="cart.html").no-hover.norm-postion
+			li.main-menu__item.add-border
+				a(href="cart.html")
 					.shoppingcart
 						img(src="images/bascket.png", alt="bascket")
 						span.cart-item-count 3
-					.shopping-sum.show-tablet
+					.shopping-sum.show-laptop-inline
 						span
 							|8800 
 						span
 							|u
-		.search-form
-					form
-						input(type="search", placeholder="Поиск", name="search")
-						button(type="submit") Найти
