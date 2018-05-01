@@ -11,10 +11,10 @@ html
 			.order-form__title Оформление заказа
 			.order-form-tab Физическое лицо
 			.row.clearfix
-				.col-laptop-1-1
+				.col-laptop-1-1.no-padding
 					.order-form
 						form
-							.form-contact
+							.form-contact.clearfix
 								.wrap-input
 									input.contact-name
 									.label
@@ -48,6 +48,7 @@ html
 									.label
 										span Индекс:
 										span *
+							.clearfix
 							.form-pay
 								.form-pay__title Оплата
 								input#pay-check(type="radio" name="pay")
@@ -60,7 +61,7 @@ html
 								label(for="pay-shope") Оплата в магазине
 									.span-wrap
 										span Оплата по получению в офисе
-							br
+							.clearfix
 							.form-delivery
 								.form-delivery__title Доставка
 								input#delivery-self(type="radio" name="delivery")
@@ -74,7 +75,7 @@ html
 									.span-wrap 
 										span При стоимости товара до 5000 руб, составлят 400 руб. 
 										span При стоимости товара от 5000 руб - доставка бесплатно.
-							br
+							.clearfix
 							.form-comment
 								.form-comment__title Дополнительная информация
 								span Комментарий к заказу
@@ -82,7 +83,7 @@ html
 								br
 								.order-form__submit
 									input.btn.btn_submit-order(type="submit" value="Оформить заказ")
-					.your-order.show-laptop
+					.your-order.show-tablet
 						.order__title Ваш заказ
 						.cart-item
 							.cart-item__description.clearfix

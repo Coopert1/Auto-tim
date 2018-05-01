@@ -180,10 +180,12 @@ ul.text{
 	}
 	&__name{
 		font-size: 16px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
+		height: 83px;
+		overflow: hidden;
 		@include breakpoint(tablet){
 			font-size: 16px;
 		}
@@ -229,7 +231,7 @@ ul.text{
 		color: white;
 		margin-bottom: 15px;
 		padding: 5px 10px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		background-color: #f2762e;
 		display: inline-block;
 		border-radius: 5px;
@@ -241,7 +243,7 @@ ul.text{
 		
 		a{
 			color: white;
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 		
 		}
 	}
@@ -408,9 +410,9 @@ button, input {
 	display: inline-block;
 	background: #f2762e;
 	text-align: center;
+	font-family: 'robotoblack';
 	&_callback{
 		border-radius: 30px;
-		font-family: 'robotobold';
 		text-transform: uppercase;
 		font-size: 11px;
 		margin-right:45px;
@@ -505,7 +507,7 @@ button, input {
 	a{
 		color: #000;
 		span:nth-child(2){
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 		}
 	}
 	@include breakpoint(tablet){
@@ -621,7 +623,7 @@ button, input {
 		& a{
 			color: #fff;
 			span{
-				font-family: 'robotobold';
+				font-family: 'robotoblack';
 			}
 		}
 		.shopping-sum{
@@ -652,7 +654,7 @@ button, input {
 .catalog-list{
 	color: #fff;
 	position:relative;
-	font-family: 'robotobold';
+	font-family: 'robotoblack';
 	margin-left: -10px;
 	@include breakpoint(tablet){
 			margin: 0;
@@ -719,7 +721,7 @@ button, input {
 		background:#f2762e;
 	}
 	span{
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 	}
 	span.hide-laptop{
 		line-height: 38px;
@@ -944,7 +946,7 @@ button, input {
 	span{
 		display: block;
 		color: #000;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		font-size: 15px;
 	}
 }
@@ -1129,12 +1131,20 @@ button, input {
 		color: black;
 		margin-bottom: 25px;
 		display: inline-block;
+		
 	}
 	&-list{
 		list-style: none;
+		//display: inline-block;
+		&.fixed-colum{
+			display: inline-block;
+			text-align: left;
+		}
 		&.footer-list_social-items{
 			margin: 50px 0;
 			text-align: center;
+			position: relative;
+			top: -8px;
 			
 		
 			@include breakpoint(phablet){
@@ -1147,6 +1157,7 @@ button, input {
 				margin: 0 0 50px 0;
 				width: auto;
 				text-align: left;
+				top: 0;
 			}
 		}
 		&__social-item{
@@ -1277,23 +1288,28 @@ button, input {
 	&_title{
 		font-size: 18px;
 		margin-bottom: 20px;
+		font-family: "robotoblack";
 	}
 	&_all{
 		font-size: 14px;
 		border-bottom: 1px dotted #bcbcbc;
 		display: inline-block;
 		margin-top: 20px;
+		color: #8d8d8d;
+		
 		a{
-			color: inherit;
+			
 		}
 	}
 	font-size: 14px;
 	td{
 		line-height: 1.5;
+		vertical-align: bottom;
 
 		&:first-child{
 			position: relative;
 			overflow: hidden;
+			color: #303030;
 
 			&:after{
 				content: " ";
@@ -1306,6 +1322,7 @@ button, input {
 		}
 		&:last-child{
 			min-width: 120px;
+			color: #5e5e5e;
 
 
 		}
@@ -1319,21 +1336,31 @@ button, input {
 	}
 	&.hide-tablet{
 		margin: 20px -15px 15px -15px;
-		padding: 15px 15px 0 15px;
+		padding: 15px 0 0 12px;
+		border-top: none;
 	}
 	@include breakpoint(laptop){
-		margin: 10px -15px 15px -35px;
+		margin: 10px 0 0 -35px;
 		padding: 15px 15px 0 35px;
 	}
 		
 }
-#commodity-colum{
+#commodity-column{
 	@include breakpoint(tablet){
 		min-height: 530px;
+		padding-right: 0;
 	}
 	@include breakpoint(laptop){
+		
 		padding-top: 45px;
-		margin-top: -45px;
+		margin-top: -60px;
+		
+	}
+	@media (min-width:1220px){
+		width: 510px;
+		&_img{
+			width: 680px;
+		}
 	}
 
 }
@@ -1359,6 +1386,9 @@ button, input {
 			color: #3b3b3b;
 		}
 		@include breakpoint(tablet){
+			margin: 0 0 30px 0;
+		}
+		@include breakpoint(laptop){
 			margin: 0 0 35px 0;
 		}
 	}
@@ -1377,7 +1407,7 @@ button, input {
 		width: 34px;
 		height: 34px;
 		background-image: url(../images/add_to_fav.png);
-		margin: 25px 10px 30px 0;
+		margin: 10px 10px 30px 0;
 		background-position: 0 1px;
 		@include breakpoint(tablet){
 			margin-top:-20px;
@@ -1392,7 +1422,7 @@ button, input {
 		width: 33px;
 		height: 33px;
 		background-image: url(../images/filter_little.png);
-		margin: 25px 10px 30px 0;
+		margin: 10px 10px 30px 0;
 		background-position: 0 0;
 		@include breakpoint(tablet){
 			margin-top: -40px;
@@ -1408,12 +1438,15 @@ button, input {
 		float: right;
 		margin-top: -20px;
 		color: #5a5a5a;
+		margin-right: 10px;
 		
 	}
 	&__img{
 		margin-bottom: 30px;
 		position: relative;
 		margin-top: -30px;
+		max-width: 670px;
+		max-height: 460px;
 		@include breakpoint(tablet){
 			margin-top:0;
 		}
@@ -1428,24 +1461,36 @@ button, input {
 		
 	}
 	&__thumbnails{
-		
+		@include breakpoint(mobileonly){
+			margin-bottom: 20px;
+		}
+		@include breakpoint(laptop){
+			position: relative;
+			top: 50px;
+		}
 	}
 	&__thumbnail{
 		display: inline-block;
 		width: 100px;
-		margin-right: 25px;
+		margin-right: 10px;
 		height: 100px;
 		img{
 			vertical-align: middle;
 		}
+		@include breakpoint(mobileonly){
+			width: 75px;
+			height: 50px;
+			
+		}
 		
 	}
 	&__price{
-		display: inline-block;
+		display: block;
 		font-size: 30px;
 		color: #f2762e;
 		font-family: 'gothamproblack', sans-serif;
 		position: relative;
+		
 		
 		span{font-family: 'gothamproblack', sans-serif;}
 		span.rouble{
@@ -1453,16 +1498,24 @@ button, input {
 		}
 		@include breakpoint(tablet){
 			display: block;
+			top: 5px;
+			margin-bottom: 10px;
 			
+		}
+		@include breakpoint(laptop){
+			//margin-right: 35px;
+			top: 10px;
+			min-width: 146px;
 		}
 		@media (min-width: 1195px){
 			display: inline-block;
-			top: 5px;
+			top: 10px;
 		}
 		
 		
 		
 		&_before{
+			font-family: 'gothamproblack', sans-serif;
 			display: inline-block;
 			text-decoration: line-through;
 			color: #a6a6a6;
@@ -1470,18 +1523,19 @@ button, input {
 			vertical-align: middle;
 			margin-right: 10px;
 			margin-top: -5px;
-			left: -60%;
+			left: 2px;
 
 			@include breakpoint(tablet){
 				display: inline-block;
-				margin-bottom: -5px;
-				margin-left: 15px;
+				top: -12px;
+				
+				position: absolute;
 			}
-			&_after{
-				display: inline-block;
-			}
+			
 		}
-		
+		&_after{
+			display: inline-block;
+		}
 		
 		&.hide-tablet{
 			@include breakpoint(tablet){
@@ -1500,8 +1554,17 @@ button, input {
 		font-size: 16px;
 		margin: 10px 10px;
 		cursor: pointer;
+		font-family: "robotoblack";
+		@include breakpoint(mobileonly){
+			margin-left: 0;
+			padding-right: 8px;
+			padding-left: 40px;
+			margin-right: 8px;
+			margin-bottom: 0;
+		}
 		@include breakpoint(tablet){
 			margin-left: 0;
+			margin-top: 0;
 		}
 		
 		&:before{
@@ -1528,13 +1591,18 @@ button, input {
 		
 	&__buy-to-click{
 		display: inline-block;
-		color: black;
+		color: #424242;
 		padding: 10px 13px 10px 10px;
 		border: 1px solid #bcbcbc;
 		border-radius: 5px;
 		font-size: 16px;
 		cursor: pointer;
-		
+		font-family: "robotoblack";
+		@include breakpoint(mobileonly){
+			
+			padding-right: 7px;
+			padding-left: 7px;
+		}
 		&.hide-tablet{
 			
 			@include breakpoint(tablet){
@@ -1547,7 +1615,7 @@ button, input {
 	}
 	
 	&__instruction{
-		padding: 15px 0 25px 40px;
+		padding: 13px 0 23px 40px;
 		text-align: left;
 		font-size: 14px;
 		border-top: 1px solid #bcbcbc;
@@ -1559,14 +1627,14 @@ button, input {
 			font-size: 12px;
 			color: #a6a6a6;
 			position: absolute;
-			top: 60%;
+			top: 55%;
 		}
 		&:after{
 			content: "";
 			font-size: 12px;
 			color: #a6a6a6;
 			position: absolute;
-			top: 35%;
+			top: 25%;
 			left: 5px;
 			display: inline-block;
 			background-image: url(../images/instruction.png);
@@ -1577,19 +1645,22 @@ button, input {
 			}
 			@include breakpoint(laptop){
 				left: 5px;
+				top: 35%;
 			}
 		}
 		a{color: inherit;}
 		@include breakpoint(tablet){
 			padding: 15px 0 25px 60px;
+			margin: 30px 0 0 0;
 		}
 		@include breakpoint(laptop){
 			border-bottom: none;
 			border-top: none;
 			display: inline-block;
 			margin-top: 0;
-			padding: 25px 0 40px 40px;
-			min-height: 80px;
+			margin-left: 25px;
+			padding: 25px 0 35px 40px;
+			//min-height: 80px;
 			&.hide-tablet{
 				display: none;
 			}
@@ -1601,18 +1672,26 @@ button, input {
 		border-top: 1px solid #bcbcbc;
 		margin-top: 30px;
 		margin-left: -35px;
-		padding-left: 35px;
+		position: absolute;
+		
+		//padding-left: 35px;
 		@include breakpoint(tablet){
-			margin-left: -55px;
+			//margin-left: -55px;
 			border-top: none;
+			margin-top: 15px;
+			bottom: 0;
+			width: 100%;
 		}
 		@include breakpoint(laptop){
+			min-height: 75px;
 			margin-left: -35px;
 			border-top: 1px solid #bcbcbc;
+			position: static;
+			width: auto;
 		}
 	}
 	&__spare-parts{
-		padding: 15px 15px 25px 40px;
+		padding: 13px 15px 20px 40px;
 		text-align: left;
 		font-size: 18px;
 		color: #f2762e;
@@ -1627,7 +1706,7 @@ button, input {
 			content: "";
 			position: absolute;
 			
-			left: 10px;
+			left: 7px;
 			display: inline-block;
 			background-image: url(../images/mechanism.png);
 			width: 25px;
@@ -1636,11 +1715,15 @@ button, input {
 				top: 25%;
 			}
 			@include breakpoint(tablet){
-				top: 35%;
+				top: 15px;
 				left: 30px;
+				
+				
 			}
 			@include breakpoint(laptop){
 				left: 10px;
+				top: 30px;
+				
 			}
 		}
 		a{
@@ -1649,6 +1732,8 @@ button, input {
 		}
 		@include breakpoint(tablet){
 			padding: 15px 0 25px 60px;
+			margin: 0;
+			border-bottom: none;
 		}
 		@include breakpoint(laptop){
 			float: right;
@@ -1660,20 +1745,21 @@ button, input {
 			padding-right: 0;
 			padding: 30px 0 30px 40px;
 			position: relative;
-			min-height: 80px;
-			&:before{
-				//content: "";
-				display: block;
-				position: absolute;
-				height: 10px;
-				width: 1px;
-				background-color: #bcbcbc;
-				bottom: -5px;
-				left: -1px;
-				@include breakpoint(laptop){
-					left: -1.5px;
-				}
-			}
+			
+			//min-height: 80px;
+//			&:before{
+//				//content: "";
+//				display: block;
+//				position: absolute;
+//				height: 10px;
+//				width: 1px;
+//				background-color: #bcbcbc;
+//				bottom: -5px;
+//				left: -1px;
+//				@include breakpoint(laptop){
+//					left: -1.5px;
+//				}
+//			}
 			
 		}
 	}
@@ -1709,22 +1795,20 @@ button, input {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 10px;
+	position: relative;
+	
+	
 	@include breakpoint(tablet){
 		padding: 0 15px;
 	}
-	&:after{
-		float: left;
-		width: 100%;
-		content: "";
-		height: 1px;
-		width: 100%;
-		background-color: #bcbcbc;
-		display: none;
-		@include breakpoint(tablet){
-			display: block;
-		}
-
+	@include breakpoint(laptop){
+		border-bottom: 1px solid #bcbcbc;
 	}
+	@media (min-width:1200px){
+		max-width: 1180px;
+		padding: 0;
+	}
+
 
 }
 .border-left-tablet {
@@ -1770,7 +1854,7 @@ button, input {
 		left: 0;
 	}
 	&__name{
-		font-family: 'robotobold',sans-serif;
+		font-family: 'robotoblack',sans-serif;
 		font-size: 16px;
 	}
 	&__number{
@@ -1835,7 +1919,7 @@ button, input {
 			font-family: 'rouble',sans-serif;
 		}
 		span.filter{
-			font-family: 'robotobold';
+			font-family: 'robotoblack';
 			display:block;
 			font-size: 18px;
 			margin-bottom: 10px;
@@ -1979,7 +2063,7 @@ table#order{
 		font-family: 'gothamproblack',sans-serif;
 		display: inline-block;
 		padding: 20px 60px 25px 60px;
-		margin-left: 5px;
+		margin-left:-10px;
 	}
 	&__title{
 		font-family: 'gothamproblack',sans-serif;
@@ -2005,26 +2089,59 @@ table#order{
 	
 	.form-contact{
 		background-color: #f2f3f4;
-		margin: 0 25px 50px 25px;
-		width: 785px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
+		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
 		input{
 			display: inline-block;
 			height: 35px;
 			min-width: 242px;
 			margin: 0 20px 45px 0;
+			outline: none;
+			@include breakpoint(mobileonly){
+				margin-right: 0;
+			}
+			&.contact-zip-code{
+				margin-bottom: 35px;
+			}
+			
 			
 		}
+		@include breakpoint(mobileonly){
+			
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
 		}
+		@media (min-width: 1210px){
+			max-width: 785px;
+		}
+		
+		
+		
+		
 		.wrap-input{
 			display: inline-block;
 			position: relative;
@@ -2051,7 +2168,8 @@ table#order{
 			max-width: 515px;
 			position: relative;
 			@include breakpoint(mobileonly){
-				max-width: 242px;
+				width: 242px;
+				margin-right: 0;
 			}
 			.label{
 				position: absolute;
@@ -2074,6 +2192,7 @@ table#order{
 			}
 			&zip-code{
 				min-width:80px;
+				margin-right: 80px;
 				
 			}
 			&phone{
@@ -2085,19 +2204,39 @@ table#order{
 	}
 	
 	.form-pay{
-		margin: 0 25px 50px 25px;
-		width: 775px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
+		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
+		}
+		@media (min-width: 1210px){
+			max-width: 785px;
 		}
 		&__title{
 			font-size: 14px;
@@ -2110,7 +2249,9 @@ table#order{
 			padding-left: 10px;
 			display: inline-block;
 			margin-bottom: 18px;
-			
+			@include breakpoint(mobileonly){
+				width: 100%;
+			}
 			
 		}
 		input[type="radio"] {
@@ -2149,10 +2290,16 @@ table#order{
 			.span-wrap{
 				font-size: 12px;
 				color: #919292;
-				position: absolute;
-				bottom: -15px;
-				left: 35px;
-				width: 380px;
+				position: relative;
+				//bottom: -15px;
+				//left: 35px;
+				width: 580px;
+				@include breakpoint(mobileonly){
+					width: 100%;
+				}
+				@include breakpoint(phablet){
+					width: 100%;
+				}
 				
 				
 			}
@@ -2161,19 +2308,39 @@ table#order{
 	}
 	
 	.form-delivery{
-		margin: 0 25px 50px 25px;
-		width: 775px;
+		margin: 0 25px 30px 25px;
+		width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
+		float: left;
+		position: relative;
+		&:before{
+			position: absolute;
+			content:'';
+			display: block;
+			height: 2px;
+			width: 25px;
+			left: -25px;
+			background: #fff;
+			bottom: -2px;
+		}
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
+		}
+		@media (min-width: 1210px){
+			max-width: 785px;
 		}
 		&__title{
 			font-size: 14px;
@@ -2186,6 +2353,9 @@ table#order{
 			padding-left: 10px;
 			display: inline-block;
 			margin-bottom: 18px;
+			@include breakpoint(mobileonly){
+				width: 100%;
+			}
 		}
 		input[type="radio"] {
 			position: absolute;
@@ -2223,12 +2393,19 @@ table#order{
 			.span-wrap{
 				font-size: 12px;
 				color: #919292;
-				position: absolute;
-				bottom: -30px;
-				left: 35px;
-				width: 380px;
+				position: relative;
+				//bottom: -30px;
+				//left: 35px;
+				width: 580px;
+				@include breakpoint(mobileonly){
+					width: 100%;
+				}
+				@include breakpoint(phablet){
+					width: 100%;
+				}
 				span{
 					display: block;
+					
 				}
 				
 				
@@ -2239,18 +2416,28 @@ table#order{
 	
 	.form-comment{
 		margin: 0 25px 0 25px;
-		width: 775px;
+		width: 774px;
 		display: inline-block;
 		padding-bottom: 50px;
+		@include breakpoint(mobileonly){
+			width: 80%;
+			margin-right: 0;
+			padding-right: 0;
+		}
 		@include breakpoint(phablet){
-			max-width: 500px;
+			max-width: 420px;
 		}
-		@include breakpoint(tablet){
-			max-width: 600px;
+		@media (min-width: 800px){
+			max-width: 320px;
 		}
-		@include breakpoint(laptop){
-			max-width: 775px;
+		@media (min-width: 960px){
+			max-width: 520px;
 		}
+		@media (min-width: 1210px){
+			max-width: 785px;
+		}
+		
+		
 		&__title{
 			font-size: 14px;
 			font-family: 'gothamproblack',sans-serif;
@@ -2270,13 +2457,18 @@ table#order{
 			outline: none;
 			border-radius: 5px;
 			box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+			@include breakpoint(mobileonly){
+				width: 242px;
+			}
 		}
 		.btn_submit-order{
 			float: left;
 			margin: 30px 0 0 0;
 			width: 230px;
 			padding-left: 20px;
-			
+			@include breakpoint(mobileonly){
+				width: 180px;
+			}
 			
 		}
 	}
@@ -2291,7 +2483,7 @@ table#order{
 	right: 40px;
 	background-color: white;
 	padding: 0 20px;
-	min-height: 750px;
+	min-height: 720px;
 	.order__title{
 		font-size: 18px;
 		font-family:'gothamproblack',sans-serif;
@@ -2465,7 +2657,7 @@ span{
 	&__name{
 		color: #242424;
 		font-size: 14px;
-		font-family: 'robotobold';
+		font-family: 'robotoblack';
 		margin-bottom: 20px;
 	}
 	&__item{
@@ -2710,176 +2902,7 @@ table.filters-result-items{
 
 //start text-information page
 
-.comments{
-	color: #3b3b3b;
-	margin-left: 70px;
-	position: relative;
-	&__img{
-		position: absolute;
-		top: 45px;
-		left: -70px;
-		display: inline-block;
-		width: 50px;
-		height: 50px;
-	}
-	&__textarea{
-		display: block;
-		height: 60px;
-		outline: none;
-		border: solid 1px #c0c0c0;
-		resize: none;
-		width: 100%;
-		padding: 10px;
-	}
-	&__textarea-underline{
-		height: 30px;
-		border: solid 1px #c0c0c0;
-		border-top: none;
-		&:before{
-			content: "";
-			
-			display: inline-block;
-			width: 40px;
-			height: 29px;
-			
-			background-image: url(../images/icon_photo.png);
-			//background-position: 5px 0;
-			background-repeat: no-repeat;
-		}
-	}
-	&__hint{
-		margin-top: 10px;
-		margin-bottom: 25px;
-		color: #3b3b3b;
-	}
-	
-}
-.social-come-in{
-	display: inline-block;
-	width: 150px;
-	height: 150px;
-	float: left;
-	&__title{
-		color: #3b3b3b;
-		font-size: 14px;
-		text-transform: uppercase;
-		
-	}
-	&__icons{
-		display: inline-block;
-	}
-	.icon{
-		margin: 0 5px 5px 0;
-		width: 30px;
-		height: 30px;
-		display: inline-block;
-		border-radius: 10px;
-		&_sv{
-			background-position: 0 0;
-			width: 100px;
-			height: 30px;
-			margin-right: 20px;
-			background-image: url(../images/sv.png);
-		}
-		&_vk{
-			background-image: url(../images/vkontakte.png);
-		}
-			
-		&_ok{
-			background-image: url(../images/ok.png);
-			background-position: 0 0;
-		}
-		&_mail-ru{
-			background-image: url(../images/mail-ru.png);
-			height: 29px;
-			padding-bottom: 1px;
-		}
-		&_fb{
-			background-image: url(../images/facebook.png);
-			
-		}
-		&_tw{
-			background-image: url(../images/tw.png);
-			
-		}
-		&_g{
-			background-image: url(../images/g.png);
-		
-		}
-	}
-	
-}
 
-.registration{
-	margin: 0 0 0 150px;
-	padding-right: 100px;
-	position: relative;
-	input{
-		display: block;
-		min-width: 242px;
-		width: 100%;
-		height: 30px;
-		margin-top: 10px;
-		outline: none;
-		border: solid 1px #c0c0c0;
-		padding: 10px;
-		
-	}
-	#guest-public{
-		width: 12px;
-		height: 12px;
-		border-radius: 3px;
-		border: solid 1px #c0c0c0;
-		outline: none;
-		min-width: auto;
-		display: inline-block;
-		float: left;
-		margin-top: 15px;
-	}
-	#guest-public+ label{
-		margin-top: 10px;
-		display: block;
-		margin-left: 20px;
-		
-	}
-	&__title{
-		text-transform: uppercase;
-	}
-	input.registration__submit{
-		display: inline-block;
-		width: 85px;
-		min-width: auto;
-		height: 40px;
-		position: absolute;
-		right: 0;
-		top: 32%;
-		padding: 0;
-		border: none;
-	}
-}
-
-.best-reviews{
-	color: #3b3b3b;
-	display: block;
-	border-bottom: solid 1px #c0c0c0;
-	position: relative;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-	i{
-		vertical-align: top;
-	}
-}
-.no-comments {
-	text-align: center;
-	padding-bottom: 50px;
-	color: #3b3b3b;
-	&__text{
-		background-color: #eeeeee;
-		display: inline-block;
-		border: solid 1px #c0c0c0;
-		padding: 25px 55px;
-	}
-}
 //end text-information page
 .text-a-center{
 	text-align: center;

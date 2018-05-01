@@ -18,7 +18,7 @@ gulp.task('webserver', function() {
       open: true,
       livereload: {
       enable: true,
-      //port: livereloadPort
+      port: livereloadPort
       }
     }))
     .pipe(plumber())
