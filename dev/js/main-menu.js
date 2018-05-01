@@ -1,6 +1,8 @@
 $(function(){
 	promSlider();
-	// SameHeight();
+	// SetSameHeight();
+	DisplayCatalog();
+	var browserMinWidth = $(window).width()
 	$('span.icon.icon_fav').click(function(){
 		console.log(1);
 		$(this).toggleClass('icon_fav_active');
@@ -8,13 +10,13 @@ $(function(){
 	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
 		$(this).toggleClass('open');
-		if (browserMinWidth < 800) {
-			$('.backdrop').toggleClass('on');
-			$('.bars').toggleClass('active');
 			$(".main-menu .catalog-list ul").animate(
 				{height: 'toggle'},
 				{duration:300},
 			);
+		if (browserMinWidth < 800) {
+			$('.backdrop').toggleClass('on');
+			$('.bars').toggleClass('active');
 		}
 	})
 	$('.search-mobile').click(function(){
@@ -179,11 +181,19 @@ $(function(){
 		
 	}
 	
+	function DisplayCatalog() {
+		if (browserMinWidth >= 1150) {
+			$('.main-menu .catalog-list').addClass('open');
+		}
+		if (browserMinWidth < 1150) {
+			$('.main-menu .catalog-list').removeClass('open');
+		}
+	}
 	
-	function SameHeight() {
+	function SetSameHeight() {
 			var browserMinWidth = $(window).width()
-			if (browserMinWidth >= 800) {
-				$('body > div.main-menu > div > ul > li.menu-list.add-border > ul').css('height', $('.promo').height()+8+'px');
+			if (browserMinWidth >= 1150) {
+				$('body > div.main-menu > div > ul > li.main-menu__item.catalog-list.add-border > ul').css('height', $('.promo').height()+22+'px');
 				$('menu-list').click(function(event) {
 					event.preventDefault();
 				});
@@ -191,8 +201,9 @@ $(function(){
 		}
 	
 	$(window).resize(function(){
-		// SameHeight();
+		// SetSameHeight();
 		promSlider();
+		DisplayCatalog();
 		
 	});
 	// this part for add products
@@ -283,6 +294,4 @@ $(function(){
 	$( ".select-city" ).selectmenu({
 		width: 100 + '%',
 	});
-
-
 });
