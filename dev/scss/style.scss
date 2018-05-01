@@ -602,6 +602,12 @@ button, input {
 	background: #424242;
 	position: relative;
 	z-index: 6;
+	&.fixed{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 	ul{
 		list-style: none;
 		display: flex;
@@ -612,6 +618,7 @@ button, input {
 		justify-content: space-between;
 	}
 	&__item{
+		// align-self:stretch;
 		flex-grow: 1;
 		padding: 9px 5px;
 		display: inline-block;
@@ -675,7 +682,7 @@ button, input {
 			box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
 		}
 		@media(min-width: 1150px){
-			display: block;
+			// display: block;
 			width: 100%;
 			// height: 450px;
 		}
@@ -740,7 +747,14 @@ button, input {
 }
 .add-border{
 	// padding: 15px 0;
-	border-right: 1px solid #2b2b2b;
+	border-left: 1px solid #2b2b2b;
+}
+.center-icons{
+	align-self:stretch;
+	img{
+		position: relative;
+		top: 5px;
+	}
 }
 // .menu-list{
 // 	height: 100%;
@@ -1009,6 +1023,9 @@ button, input {
 		span:hover{
 			color: #f2762e;
 		}
+	}
+	ul{
+		display:block;
 	}
 	
 }
@@ -1292,6 +1309,14 @@ button, input {
 	color: #292929;
 	font-weight: bold;
 	position: relative;
+	max-height: 240px;
+	overflow: hidden;
+	transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+	&.all{
+		max-height: 1000px;
+		transition: max-height 0.5s ease-in-out;
+	}
+	
 	&_title{
 		font-size: 18px;
 		margin-bottom: 20px;
@@ -1302,13 +1327,16 @@ button, input {
 		border-bottom: 1px dotted #bcbcbc;
 		display: inline-block;
 		margin-top: 20px;
-		color: #8d8d8d;
-		
+		&.show-laptop{
+			display: inline-block;
+		}
 		a{
+			color: #8d8d8d;
 			
 		}
 	}
 	font-size: 14px;
+	
 	td{
 		line-height: 1.5;
 		vertical-align: bottom;
