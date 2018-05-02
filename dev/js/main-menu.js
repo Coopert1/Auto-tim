@@ -1,11 +1,13 @@
 $(function(){
 	function displayCatalog() {
-		var browserMinWidth = $(window).width()
-		if (browserMinWidth >= 1150) {
-			$('.main-menu .catalog-list').addClass('open');
-		}
-		else {
-			$('.main-menu .catalog-list').removeClass('open');
+		if (window.location.pathname== '/index.html') {
+			var browserMinWidth = $(window).width()
+			if (browserMinWidth >= 1150) {
+				$('.main-menu .catalog-list').addClass('open');
+			}
+			else {
+				$('.main-menu .catalog-list').removeClass('open');
+			}
 		}
 	}
 	promSlider();
@@ -48,9 +50,12 @@ $(function(){
 	// end peculiar-properties row show/hide
 	// SameHeight();
 	$('span.icon.icon_fav').click(function(){
-		console.log(1);
 		$(this).toggleClass('icon_fav_active');
 		})
+	$('.commodity__favorite').click(function(){
+		$(this).toggleClass('active');
+		})
+	
 	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
 		// if (browserMinWidth < 1150) {
@@ -65,6 +70,10 @@ $(function(){
 			$('.bars').toggleClass('active');
 		}
 	})
+	// $('.product__add-favorite a, .product__add-filter a').click(function(event){
+	// 	event.preventDefault();
+	// }
+	
 	$('.search-mobile').click(function(event){
 		event.preventDefault();
 		$(this).toggleClass('active_search');
