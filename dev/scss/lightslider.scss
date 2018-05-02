@@ -185,11 +185,16 @@
     cursor: pointer;
     position: absolute;
     z-index: 4;
-    margin-top: -70px;
+    margin-top: -60px;
     opacity: 1;
     -webkit-transition: opacity 0.35s linear 0s;
     transition: opacity 0.35s linear 0s;
     transform:scale(0.6);
+    transition: all 1s ease;
+    @include breakpoint(phablet){
+        transform:scale(1);
+        transition: all 1s ease;
+    }
 }
 .lSAction > a:hover {
     opacity: 1;
@@ -197,10 +202,18 @@
 .lSAction > .lSPrev {
     background-position: -39px 0;
     left: -7px;
+    @include breakpoint(phablet){
+        left:-1px;
+        transition: all 1s ease;
+    }
 }
 .lSAction > .lSNext {
     background-position: 0 0;
     right: -7px;
+    @include breakpoint(phablet){
+        right: -1px;
+        transition: all 1s ease;
+    }
 }
 .lSAction > a.disabled {
     pointer-events: none;

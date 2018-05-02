@@ -140,7 +140,7 @@ ul.text{
 		border: 1px solid #d4d8db;
 		padding: 20px;
 		margin-right: -1px;
-		margin-top: -2px;
+		margin-top: -1px;
 	}
 	a{
 		text-decoration: none;
@@ -150,6 +150,13 @@ ul.text{
 		position: absolute;
 		top: 0;
 		left: 0;
+	}
+	&__add-filter{
+		position: absolute;
+		display: inline-block;
+
+		right:50px;
+		top: 10px;
 	}
 	&__add-favorite{
 		position: absolute;
@@ -256,6 +263,9 @@ ul.text{
 	// border-top: 1px solid #d4d8db;
 	li:last-child{
 		border-right: 2px solid #d4d8db;
+		.product{
+			margin-top: -2px;
+		}
 	}
 }
 .slider-arrows{
@@ -284,6 +294,13 @@ ul.text{
 .lslide{
 	margin-right: 0px;
 }
+#popular{
+	.lSSlideOuter{
+		@include breakpoint(tablet){
+			display:none;
+		}
+	}
+}
 @include breakpoint(mobileonly){
 	.product_off-bottom-border{
 		border-bottom: none;
@@ -303,7 +320,7 @@ ul.text{
 }
 
 .section{
-	margin-top: 40px;
+	// margin-top: 40px;
 	margin-bottom: 40px;
 	&__title{
 		font-family: 'gothamproblack', sans-serif;
@@ -325,7 +342,7 @@ ul.text{
 	p{
 		color:#5a5a5a;
 		font-family: 'arial';
-		font-size: 11px;
+		font-size: 12px;
 		margin-bottom: 20px;
 		padding: 5px;
 	}
@@ -461,7 +478,11 @@ button, input {
 		margin-bottom:10px;
 	}
 	&_promo-slider{
+		font-size: 12px;
 		padding: 10px 15px;
+		@include breakpoint(tablet){
+			font-size: 20px
+		}
 	}
 	&_continue-shopping{
 		font-size: 18px;
@@ -601,7 +622,7 @@ button, input {
 	padding: 0;
 	background: #424242;
 	position: relative;
-	z-index: 6;
+	z-index: 10;
 	&.fixed{
 		position: fixed;
 		top: 0;
@@ -631,7 +652,8 @@ button, input {
 			}
 		}
 		.shopping-sum{
-			vertical-align: top;
+			position: relative;
+			top: -5px;
 			margin-left: 5px;
 			color:#f2762e;
 			font-size: 18px;
@@ -689,7 +711,7 @@ button, input {
 	}
 	li{
 
-		padding: 6px 0;
+		padding: 7px 0;
 		display: block;
 		font-size : 14px;
 		text-align: left;
@@ -722,7 +744,7 @@ button, input {
 		}
 	}
 	@include breakpoint(tablet){
-		width: 20%;
+		width: 17.8%;
 		background:#f2762e;
 	}
 	span{
@@ -756,23 +778,14 @@ button, input {
 		top: 5px;
 	}
 }
-// .menu-list{
-// 	height: 100%;
-// 	padding-left: 40px;
-// 	width: 20%;
-// 	@include breakpoint(tablet){
-// 		background: #f2762e;
-// 	}
-// }
+
 .underline{
-	text-decoration: underline
-	// border-bottom: 1px solid #292929;
+	border-bottom: 1px solid #292929;
 }
 .dashed{
+	border-bottom: 1px dashed #f2762e;
 	color: #f2762e;
 	background: #fff;
-	text-decoration:underline;
-	text-decoration-style:dashed;
 	&_black{
 		color: #5e5e5e;
 		font-size: 12px;
@@ -869,7 +882,7 @@ button, input {
 	}
 }
 .news{
-	margin: 30px 0;
+	margin-bottom: 30px;
 }
 
 .article{
@@ -1055,7 +1068,7 @@ button, input {
 	@media(min-width: 1150px){
 		float:right;
 		margin-left: 274px;
-		width: 76%;
+		width: 78%;
 	}
 }
 .promo{
@@ -1067,10 +1080,13 @@ button, input {
 		top: 60%;
 		left: 8%;
 		:first-child{
-			font-size: 20px;
+			font-size: 12px;
 			color: #fff;
 			padding:10px 15px;
 			border-radius: 3px;
+			@include breakpoint(phablet){
+				font-size: 20px;
+			}
 		}
 		span{
 			font-family: 'gothamproblack';
@@ -1082,7 +1098,11 @@ button, input {
 		
 	}
 }
-
+#popular-section-slider{
+	@include breakpoint(tablet){
+		display: none;
+	}
+}
 
 
 .icon{
@@ -1090,6 +1110,11 @@ button, input {
 	&_fav{
 		background:url(../images/add_to_fav.png);
 		width: 34px;
+		height: 33px;
+	}
+	&_filter{
+		background:url(../images/filter_little.png);
+		width: 33px;
 		height: 33px;
 	}
 	&_fav_active{
@@ -1276,7 +1301,7 @@ button, input {
 
 .breadcrumbs{
 	font-size: 14px;
-	font-weight: bold;
+	// font-weight: bold;
 	list-style: none;
 	color: #323232;
 	margin-top: 25px;
@@ -1345,14 +1370,17 @@ button, input {
 			position: relative;
 			overflow: hidden;
 			color: #303030;
-
-			&:after{
+			span{
+				position: relative;
+				&:after{
 				content: " ";
 				position: absolute;
-				width: 100%;
+				width: 350px;
+				left: 100%;
 				height: 2px;
 				border-bottom: 1px dotted #bcbcbc;
 				bottom: 5px;
+				}	
 			}
 		}
 		&:last-child{
@@ -1440,16 +1468,19 @@ button, input {
 	&__favorite{
 		display: inline-block;
 		width: 34px;
-		height: 34px;
+		height: 33px;
 		background-image: url(../images/add_to_fav.png);
 		margin: 10px 10px 30px 0;
-		background-position: 0 1px;
+		background-position: 0 0px;
 		@include breakpoint(tablet){
 			margin-top:-20px;
 			margin-bottom: 0;
 			&.hide-tablet{
 				display: none;
 			}
+		}
+		&.active{
+			background-position: 37px 0;
 		}
 	}
 	&__filter{
@@ -1605,9 +1636,9 @@ button, input {
 		&:before{
 			content: "";
 			display: inline-block;
-			width: 27.5px;
-			height: 20px;
-			background-image: url(../images/bascket-btn.png);
+			width: 25px;
+			height: 18px;
+			background-image: url(../images/cart_little.png);
 			position: absolute;
 			background-position: -1px 0;
 			left: 10px;
@@ -1925,8 +1956,10 @@ button, input {
 }
 
 .amount{
-		position:relative;
-		top: -8px;
+		user-select: none;
+		position: relative;
+		margin-right: 3px;
+		top: -6px;
 		width: 25px;
 		text-align:center;
 		font-size: 18px;
@@ -2004,7 +2037,7 @@ button, input {
 	@include breakpoint(tablet){
 		margin-top:20px;
 		width: 50%;
-		margin-bottom: 50px;
+		margin-bottom: 90px;
 	}
 }
 table#order{
@@ -2032,6 +2065,7 @@ table#order{
 //galery.pug styles
 .gallery{
 	margin-top: 70px;
+	margin-bottom: 30px;
 }
 .galery-brand{
 	margin-bottom: 50px;
@@ -2052,6 +2086,9 @@ table#order{
 
 .paginator{
 	margin: 30px auto;
+	@include breakpoint(tablet){
+		margin-bottom: 55px;
+	}
 	&_gallery{
 		margin-top:0;
 	}
@@ -2141,6 +2178,7 @@ table#order{
 			bottom: -2px;
 		}
 		input{
+			padding: 0 15px;
 			display: inline-block;
 			height: 35px;
 			min-width: 242px;
@@ -2485,15 +2523,16 @@ table#order{
 			color: #424242;
 		}
 		.textarea{
-			width: 500px;
+			width: 100%;		
 			height: 85px;
 			resize: none;
+			padding: 15px;
 			display: inline-block;
 			outline: none;
 			border-radius: 5px;
 			box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
-			@include breakpoint(mobileonly){
-				width: 242px;
+			@include breakpoint(tablet){
+				width: 500px;
 			}
 		}
 		.btn_submit-order{
@@ -2617,7 +2656,7 @@ table#order{
     position: fixed;
     top: 0;
     right: -320px;
-    z-index: 9;
+    z-index: 11;
 	overflow-x: scroll;
     visibility: hidden;
     &_active{
@@ -2634,6 +2673,7 @@ table#order{
 		height: auto;
 		overflow: visible;
 		right: 0;
+		z-index: 6;
 		visibility: visible;
 		position:relative;
 		padding: 0;
@@ -2876,6 +2916,7 @@ table.filters-result-items{
 	}
 	td.picture{
 		width: 20%;
+		text-align: center;
 		padding: 0px;
 		padding-left: 5px;
 		position: relative;
@@ -2900,9 +2941,10 @@ table.filters-result-items{
 	position:relative;
 	display: block;
 	margin: 20px auto;
-	padding: 20px;
+	padding: 20px 0;
 	padding-right: 50px;
 	@include breakpoint(laptop){
+		padding: 20px;
 		margin: 0;
 		display: inline-block;
 		position: absolute;
