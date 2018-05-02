@@ -90,10 +90,14 @@ ul.text{
 	
 }
 .image-left{
-	float: left;
-	margin:  25px 25px 25px 0;
-	max-width: 330px;
-	max-height: 270px;
+	text-align: center;
+	margin:  25px 0 25px 0;
+	@include breakpoint(phablet){
+		float: left;
+		margin:  25px 25px 25px 0;
+		max-width: 330px;
+		max-height: 270px;
+	}
 }
 .align-right{
 	text-align: right;
@@ -320,7 +324,6 @@ ul.text{
 }
 
 .section{
-	// margin-top: 40px;
 	margin-bottom: 40px;
 	&__title{
 		font-family: 'gothamproblack', sans-serif;
@@ -1184,7 +1187,6 @@ button, input {
 	}
 	&-list{
 		list-style: none;
-		//display: inline-block;
 		&.fixed-colum{
 			display: inline-block;
 			text-align: left;
@@ -1274,7 +1276,25 @@ button, input {
 	&-rights{
 		font-size: 12px;
 		text-align: center;
-		padding: 15px;
+		padding: 15px 0;
+		@include breakpoint(tablet){
+			text-align: left;
+			display: inline-block;
+		}
+	}
+	.footer__design-autor{
+		display: none;
+		@include breakpoint(tablet){
+			display: inline-block;
+			float: right;
+			font-size: 12px;
+			padding: 15px 0;
+			
+		}
+		a{
+			text-decoration: underline;
+			padding-left: 2px
+		}
 	}
 	
 	a{
@@ -1291,8 +1311,6 @@ button, input {
 		border: none;
 		background: #d4d8db;
 		margin: 25px -10px 0 -10px;
-		
-			
 	}
 
 }
@@ -1301,7 +1319,6 @@ button, input {
 
 .breadcrumbs{
 	font-size: 14px;
-	// font-weight: bold;
 	list-style: none;
 	color: #323232;
 	margin-top: 25px;
@@ -1312,11 +1329,12 @@ button, input {
 		display: inline-block;
 		margin-right: 10px;
 		position: relative;
+		font-family: 'gothamproblack';
 		&:not(:last-child):after{
 			content: "/";
 			display: inline-block;
 			position: absolute;
-			right: -10px;
+			right: -11px;
 			font-size: 18px;
 			top: -3px;
 		}
@@ -1365,7 +1383,6 @@ button, input {
 	td{
 		line-height: 1.5;
 		vertical-align: bottom;
-
 		&:first-child{
 			position: relative;
 			overflow: hidden;
@@ -1380,7 +1397,7 @@ button, input {
 				height: 2px;
 				border-bottom: 1px dotted #bcbcbc;
 				bottom: 5px;
-				}	
+				}
 			}
 		}
 		&:last-child{
@@ -1520,8 +1537,8 @@ button, input {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 94px;
-			height: 83px;
+			width: 92px;
+			height: 80px;
 			background-image: url(../images/sale.png);
 		}
 		
@@ -1726,7 +1743,6 @@ button, input {
 			margin-top: 0;
 			margin-left: 25px;
 			padding: 25px 0 35px 40px;
-			//min-height: 80px;
 			&.hide-tablet{
 				display: none;
 			}
@@ -1812,28 +1828,16 @@ button, input {
 			padding: 30px 0 30px 40px;
 			position: relative;
 			
-			//min-height: 80px;
-//			&:before{
-//				//content: "";
-//				display: block;
-//				position: absolute;
-//				height: 10px;
-//				width: 1px;
-//				background-color: #bcbcbc;
-//				bottom: -5px;
-//				left: -1px;
-//				@include breakpoint(laptop){
-//					left: -1.5px;
-//				}
-//			}
-			
 		}
 	}
 	&__describe{
-		margin: 25px 0 20px 0;
+		margin: 25px 0 40px 0;
 		text-align: left;
 		font-family:  "gothamproblack", sans-serif;
 		font-size: 18px;
+		@include breakpoint(tablet){
+			margin-bottom: 55px;
+		}
 		a{color: inherit;}
 		&_text{
 			font-size: 14px;
@@ -2190,11 +2194,10 @@ table#order{
 			&.contact-zip-code{
 				margin-bottom: 35px;
 			}
-			
-			
+				
 		}
+		
 		@include breakpoint(mobileonly){
-			
 			width: 80%;
 			margin-right: 0;
 			padding-right: 0;
@@ -2212,9 +2215,7 @@ table#order{
 			max-width: 785px;
 		}
 		
-		
-		
-		
+			
 		.wrap-input{
 			display: inline-block;
 			position: relative;
@@ -2233,8 +2234,6 @@ table#order{
 					color: red;
 				}
 			}
-			
-
 		}
 		.wrap-select{
 			display: block;
@@ -2481,7 +2480,6 @@ table#order{
 					
 				}
 				
-				
 			}
 		}
 
@@ -2523,7 +2521,7 @@ table#order{
 			color: #424242;
 		}
 		.textarea{
-			width: 100%;		
+			width: 100%;
 			height: 85px;
 			resize: none;
 			padding: 15px;
@@ -2546,14 +2544,13 @@ table#order{
 			
 		}
 	}
-	
-	
+		
 }
 
 .your-order{
 	position: absolute;
 	width: 320px;
-	top: 264px;
+	top: 238px;
 	right: 40px;
 	background-color: white;
 	padding: 0 20px;

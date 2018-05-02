@@ -1,7 +1,8 @@
 $(function(){
+	//open main menu only main page and show/hide menu
 	function displayCatalog() {
 		if (window.location.pathname== '/index.html') {
-			var browserMinWidth = $(window).width()
+			var browserMinWidth =  window.innerWidth;
 			if (browserMinWidth >= 1150) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
@@ -10,16 +11,14 @@ $(function(){
 			}
 		}
 	}
-	promSlider();
+
 	displayCatalog();
 	
 	$(window).resize(function(){
-		// SetSameHeight();
-		promSlider();
-		displayCatalog();	
+		displayCatalog();
 	});
 	
-	//scroll fixes top main-menu 
+	//scroll fixed top main-menu
 	$(window).scroll(function(){
 		var scrolTop = $(this).scrollTop();
 		var width = $(window).width();
@@ -33,11 +32,12 @@ $(function(){
 				if (window.location.pathname== '/index.html') {
 					$('.main-menu .catalog-list').removeClass('open');
 				}
-			} else {$(".main-menu").removeClass("fixed");
+			} else {
+				$(".main-menu").removeClass("fixed");
 					if (window.location.pathname== '/index.html') {
 						$('.main-menu .catalog-list').addClass('open');
 					}
-					}
+				}
 
 		}
 		
@@ -56,7 +56,8 @@ $(function(){
 	});
 	
 	// end peculiar-properties row show/hide
-	// SameHeight();
+	
+	
 	$('span.icon.icon_fav').click(function(){
 		$(this).toggleClass('icon_fav_active');
 		})
@@ -66,21 +67,15 @@ $(function(){
 	
 	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
-		// if (browserMinWidth < 1150) {
+		
 			$(this).toggleClass('open');
-			// $(".main-menu .catalog-list ul").animate(
-			// 	{height: 'toggle'},
-			// 	{duration:300},
-			// );
-		// }
+			
 		if (browserMinWidth < 800) {
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
 		}
 	})
-	// $('.product__add-favorite a, .product__add-filter a').click(function(event){
-	// 	event.preventDefault();
-	// }
+	
 	
 	$('.search-mobile').click(function(event){
 		event.preventDefault();
@@ -90,69 +85,69 @@ $(function(){
 			{duration:300},
 		);
 	})
-	var product_slider_1=$('#product-slider-1').lightSlider({
-		item: 5,
-		controls:false,
-		slideMove:3,
-		slideMargin: -1,
-		responsive:[
-			{
-				breakpoint: 1100,
-				settings:{
-					item:4,
-					slideMove:4,
-				}
-			},
-			{
-				breakpoint: 900,
-				settings:{
-					item:3,
-					slideMove:3,
-				}
-			},
-		],
-	});
-	var product_slider_2=$('#product-slider-2').lightSlider({
-		item: 5,
-		controls:false,
-		slideMove:4,
-		slideMargin: -1,
-		responsive:[
-			{
-				breakpoint: 1100,
-				settings:{
-					item:4,
-					slideMove:4,
-				}
-			},
-			{
-				breakpoint: 900,
-				settings:{
-					item:3,
-					slideMove:3,
-				}
-			},
-			
-		],
-	});
-	$(".ls-prevSlide").click(function(){
-		product_slider_1.goToPrevSlide();
-	});
-	$(".ls-nextSlide").click(function(){
-		product_slider_1.goToNextSlide();
-	});
-	$(".ls-prevSlide2").click(function(){
-		product_slider_2.goToPrevSlide();
-	});
-	$(".ls-nextSlide2").click(function(){
-		product_slider_2.goToNextSlide();
-	});
 	
+	//wrap in slider elemets
+		//product slider setting
+		var product_slider_1=$('#product-slider-1').lightSlider({
+			item: 5,
+			controls:false,
+			slideMove:3,
+			slideMargin: -1,
+			responsive:[
+				{
+					breakpoint: 1100,
+					settings:{
+						item:4,
+						slideMove:4,
+					}
+				},
+				{
+					breakpoint: 900,
+					settings:{
+						item:3,
+						slideMove:3,
+					}
+				},
+			],
+		});
+		var product_slider_2=$('#product-slider-2').lightSlider({
+			item: 5,
+			controls:false,
+			slideMove:4,
+			slideMargin: -1,
+			responsive:[
+				{
+					breakpoint: 1100,
+					settings:{
+						item:4,
+						slideMove:4,
+					}
+				},
+				{
+					breakpoint: 900,
+					settings:{
+						item:3,
+						slideMove:3,
+					}
+				},
 
-	//Slider for popular parts
-
-
-	var slider=$('#popular-section-slider').lightSlider({
+			],
+		});
+		$(".ls-prevSlide").click(function(){
+			product_slider_1.goToPrevSlide();
+		});
+		$(".ls-nextSlide").click(function(){
+			product_slider_1.goToNextSlide();
+		});
+		$(".ls-prevSlide2").click(function(){
+			product_slider_2.goToPrevSlide();
+		});
+		$(".ls-nextSlide2").click(function(){
+			product_slider_2.goToNextSlide();
+		});
+	
+		//Slider for popular parts setting
+		var slider=$('#popular-section-slider').lightSlider({
 		galleryMargin: 25,
 		item: 3,
 		controls: false,
@@ -169,51 +164,46 @@ $(function(){
 		],
 	});
 
+		//Slider for dealers setting
+			var dealerslider=$('#dealerslider').lightSlider({
+			galleryMargin: 25,
+			autoWidth: false,
+			item: 5,
+			slideMargin: 10,
+			slideMove:1,
+			controls:false,
+			responsive:[
+				{
+					breakpoint: 900,
+					settings:
+						{
+							item:4,
+							autoWidth: false,
+							slideMove:1,
+						}
+				},
+				{
+					breakpoint: 800,
+					settings:
+						{
+							item:1.5,
+							autoWidth: false,
+							slideMove:1,
+						}
+				},
 
-	//Slider for dealers
-
-
-	var dealerslider=$('#dealerslider').lightSlider({
-		galleryMargin: 25,
-		autoWidth: false,
-		item: 5,
-		slideMargin: 10,
-		slideMove:1,
-		controls:false,
-		responsive:[
-			{
-				breakpoint: 900,
-				settings:
-					{
-						item:4,
-						autoWidth: false,
-						slideMove:1,
-					}
-			},
-			{
-				breakpoint: 800,
-				settings:
-					{
-						item:1.5,
-						autoWidth: false,
-						slideMove:1,
-					}
-			},
-			
-		],
-	});
-	$(".icon_controls_prev").click(function(){
-		dealerslider.goToPrevSlide();
-	});
-	$(".icon_controls_next").click(function(){
-		dealerslider.goToNextSlide();
-	});
+			],
+		});
+		$(".icon_controls_prev").click(function(){
+			dealerslider.goToPrevSlide();
+		});
+		$(".icon_controls_next").click(function(){
+			dealerslider.goToNextSlide();
+		});
 
 
-	// Main Slider (promo)
-
-
-	var promoslider=$('#promoslider').lightSlider({
+		//Main Slider (promo) setting
+		var promoslider=$('#promoslider').lightSlider({
 		galleryMargin: 25,
 		item: 1,
 		slideMove:1,
@@ -231,34 +221,9 @@ $(function(){
 		pause: 10000,
 	});
 	
+	// end wrap in slider elemets
 	
-	function promSlider(){
-		var browserMinWidth = $(window).width();
-		if (browserMinWidth >= 800) {
-			var wrapperWidth=$('#wrap-width').width()-274;
-				// $('.col-tablet-4-5').css('width', wrapperWidth+'px');
-				$('.dealers-slider').css('width', wrapperWidth+'px');
-			} else {
-				// $('.col-tablet-4-5').css('width', '100%');
-				$('.dealers-slider').css('width', '100%');
-			}
-		
-	}
-	
-
-	
-	function SetSameHeight() {
-			var browserMinWidth = $(window).width()
-			if (browserMinWidth >= 1150) {
-				$('body > div.main-menu > div > ul > li.main-menu__item.catalog-list.add-border > ul').css('height', $('.promo').height()+22+'px');
-				$('menu-list').click(function(event) {
-					event.preventDefault();
-				});
-			} 
-		}
-	
-	// this part for add products
-
+	// this part for count
 	$('.icon_amount-minus').click(function () {
 		var $input = $(this).parent().find('input');
 		var count = parseInt($input.val()) - 1;
@@ -273,8 +238,8 @@ $(function(){
 		$input.change();
 		return false;
 	});
-
-	// this part for slider products
+	// end part for count
+	
 	
 	//this part for looking .commodity__img
 	$(".commodity__thumbnails img").click(function(){
@@ -328,9 +293,9 @@ $(function(){
 		}
 		setRangeFilter()
 	})
+	//end range slider
 	
 	//show-hide filters
-
 	$('#show-filter-mobile').click(function(){
 		$(".filters").addClass('filters_active');
 		$('.backdrop').toggleClass('on');
@@ -339,10 +304,16 @@ $(function(){
 		$(".filters").removeClass('filters_active');
 		$('.backdrop').toggleClass('on');
 	})
+	// end show-hide filters
+	
+	//select menu
 	$( ".select-brand, .select-model, .select-series" ).selectmenu({
   		width: 100 + '%',
 	});
 	$( ".select-city" ).selectmenu({
 		width: 100 + '%',
 	});
+	
+	
+	
 });
