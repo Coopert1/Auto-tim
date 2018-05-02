@@ -19,7 +19,7 @@ $(function(){
 		displayCatalog();	
 	});
 	
-	//scroll fixes top main-menu
+	//scroll fixes top main-menu 
 	$(window).scroll(function(){
 		var scrolTop = $(this).scrollTop();
 		var width = $(window).width();
@@ -30,7 +30,11 @@ $(function(){
 		}else{
 			if(scrolTop>=136){
 				$(".main-menu").addClass("fixed");
-			} else $(".main-menu").removeClass("fixed");
+				$('.main-menu .catalog-list').removeClass('open');
+			} else {$(".main-menu").removeClass("fixed");
+					$('.main-menu .catalog-list').addClass('open');
+					}
+
 		}
 		
 	});
