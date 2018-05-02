@@ -30,9 +30,13 @@ $(function(){
 		}else{
 			if(scrolTop>=136){
 				$(".main-menu").addClass("fixed");
-				$('.main-menu .catalog-list').removeClass('open');
+				if (window.location.pathname== '/index.html') {
+					$('.main-menu .catalog-list').removeClass('open');
+				}
 			} else {$(".main-menu").removeClass("fixed");
-					$('.main-menu .catalog-list').addClass('open');
+					if (window.location.pathname== '/index.html') {
+						$('.main-menu .catalog-list').addClass('open');
+					}
 					}
 
 		}
