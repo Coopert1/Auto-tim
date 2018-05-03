@@ -11,7 +11,7 @@ $(function(){
 			}
 		}
 	}
-
+	fixMenuBar();
 	displayCatalog();
 	//dealersSlider
 	dealersSlider()
@@ -34,22 +34,21 @@ $(function(){
 	
 	//scroll fixed top main-menu
 	function fixMenuBar(){
-		var scrolTop = $(this).scrollTop();
+		var scrolTop = $(window).scrollTop();
 		var width = $(window).width();
-			if (width<800){
+			if (width<1150){
 				if(scrolTop>=123){
 					$('body').addClass("scroll_padding-top")
 					$(".main-menu").addClass("fixed");
 				} else {
 						$(".main-menu").removeClass("fixed");
 						$('body').removeClass("scroll_padding-top")
-
 					}
 			}
-			else{
+			else {
 				if(window.location.pathname== '/index.html'){
 					//show-hide menu
-					if(scrolTop>=645 && scrolTop<=660){
+					if(scrolTop>=645 && scrolTop<=860){
 						$('.main-menu .catalog-list').removeClass('open')
 					}
 					else if(scrolTop<645) {
@@ -81,45 +80,23 @@ $(function(){
 			}
 
 	};
-	$(window).scroll(function(e){
+	$(window).scroll(function(){
 		fixMenuBar();
-		
-		// }else{
-			// if (window.location.pathname== '/index.html') {
-			// 	if(scrolTop>=645){
-			// 		$('body').addClass("scroll_padding-top");
-			// 		$(".main-menu").addClass("fixed");
-			// 	}
-			// // else{
-			// // 	// if(scrolTop>=136){
-			// // 	// 	$('body').addClass("scroll_padding-top")
-			// // 	// 	$(".main-menu").addClass("fixed");
-			// // 	// }
-			// // }
-
-			// if(scrolTop>=645 && scrolTop<=660){
-			// 	$('.main-menu .catalog-list').removeClass('open')
-			// }
-			// } else {
-			// 	$('body').removeClass("scroll_padding-top")
-			// 	$(".main-menu").removeClass("fixed");
-			// 		if (window.location.pathname== '/index.html') {
-			// 			$('.main-menu .catalog-list').addClass('open');
-			// 		}
-			// 	}
-
-		// }
 		
 	});
 	// end scroll fixes top main-menu
+	
+	//prevent click main page on laptop
 	$('.catalog-list').click(function(e){
 		var scrolTop = $(window).scrollTop();
-		var width = $(window).width();
+		var width = window.innerWidth;
 		if (window.location.pathname== '/index.html') {
-			if(scrolTop<645){
+			if(width>=1150 && scrolTop<645) {
 				e.stopImmediatePropagation();
-			}
-		}
+			}else return
+		}else return
+			
+		
 	})
 	
 	// peculiar-properties row show/hide
