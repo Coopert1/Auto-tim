@@ -1,9 +1,9 @@
 $(function(){
 	//open main menu only main page and show/hide menu
 	function displayCatalog() {
-		if (window.location.pathname== '/taras/autotim/app/index.html') {
+		if (window.location.pathname== '/index.html') {
 			var browserMinWidth =  window.innerWidth;
-			if (browserMinWidth >= 1150 && !($(".main-menu.fixed"))) {
+			if (browserMinWidth >= 1150) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
 			else {
@@ -47,7 +47,7 @@ $(function(){
 				$('body').addClass("scroll_padding-top")
 				//$(".col-promo").addClass("scroll_margin-top")
 				$(".main-menu").addClass("fixed");
-				if (window.location.pathname== '/taras/autotim/app/index.html') {
+				if (window.location.pathname== '/index.html') {
 					$('.main-menu .catalog-list').removeClass('open');
 				}
 			} else {
@@ -56,7 +56,7 @@ $(function(){
 				
 				
 				$(".main-menu").removeClass("fixed");
-					if (window.location.pathname== '/taras/autotim/app/index.html') {
+					if (window.location.pathname== '/index.html') {
 						$('.main-menu .catalog-list').addClass('open');
 					}
 				}
