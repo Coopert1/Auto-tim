@@ -730,6 +730,10 @@ button, input {
 		:last-child{
 			float: right;
 		}
+		i{
+			position: relative;
+			top: 3px;
+		}
 	}
 	li:last-child{
 		margin-top: 15px;
