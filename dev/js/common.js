@@ -3,7 +3,7 @@ $(function(){
 	function displayCatalog() {
 		if (window.location.pathname== '/index.html') {
 			var browserMinWidth =  window.innerWidth;
-			if (browserMinWidth >= 1150 && !($(".main-menu.fixed"))) {
+			if (browserMinWidth >= 1150) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
 			else {
