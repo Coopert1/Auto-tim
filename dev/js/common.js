@@ -3,7 +3,7 @@ $(function(){
 	function displayCatalog() {
 		if (window.location.pathname== '/index.html') {
 			var browserMinWidth =  window.innerWidth;
-			if (browserMinWidth >= 1150) {
+			if (browserMinWidth >= 1150 && !($(".main-menu.fixed"))) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
 			else {
@@ -13,9 +13,23 @@ $(function(){
 	}
 
 	displayCatalog();
+	//dealersSlider
+	dealersSlider()
+	function dealersSlider(){
+		var browserMinWidth = $(window).width();
+		if (browserMinWidth >= 800) {
+			var wrapperWidth=$('#wrap-width').width()-274;
+				$('.dealers-slider').css('width', wrapperWidth+'px');
+			} else {
+				$('.dealers-slider').css('width', '100%');
+			}
+		
+	}
+	//End dealersSlider
 	
 	$(window).resize(function(){
 		displayCatalog();
+		dealersSlider();
 	});
 	
 	//scroll fixed top main-menu
@@ -24,15 +38,23 @@ $(function(){
 		var width = $(window).width();
 		if (width<800){
 			if(scrolTop>=123){
+				$('body').addClass("scroll_padding-top")
+				//$(".col-promo").addClass("scroll_margin-top")
 				$(".main-menu").addClass("fixed");
 			} else $(".main-menu").removeClass("fixed");
 		}else{
 			if(scrolTop>=136){
+				$('body').addClass("scroll_padding-top")
+				//$(".col-promo").addClass("scroll_margin-top")
 				$(".main-menu").addClass("fixed");
 				if (window.location.pathname== '/index.html') {
 					$('.main-menu .catalog-list').removeClass('open');
 				}
 			} else {
+				$('body').removeClass("scroll_padding-top")
+				//$(".col-promo").removeClass("scroll_margin-top")
+				
+				
 				$(".main-menu").removeClass("fixed");
 					if (window.location.pathname== '/index.html') {
 						$('.main-menu .catalog-list').addClass('open');
