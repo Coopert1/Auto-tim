@@ -41,7 +41,10 @@ $(function(){
 				$('body').addClass("scroll_padding-top")
 				//$(".col-promo").addClass("scroll_margin-top")
 				$(".main-menu").addClass("fixed");
-			} else $(".main-menu").removeClass("fixed");
+			} else {
+				$('body').removeClass("scroll_padding-top")
+				$(".main-menu").removeClass("fixed");
+			}
 		}else{
 			if(scrolTop>=136){
 				$('body').addClass("scroll_padding-top")
