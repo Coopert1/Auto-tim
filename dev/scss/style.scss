@@ -31,6 +31,9 @@ input {
 img{
 	max-width: 100%;
 }
+.relative{
+	position: relative;
+}
 .scroll{
 	&_margin-top{
 		margin-top: 75px !important;
@@ -192,7 +195,7 @@ ul.text{
 			display: inline-block;
 			vertical-align: middle;
 			
-		}			
+		}
 	}
 	&__name{
 		font-size: 16px;
@@ -1382,7 +1385,10 @@ button, input {
 		display: inline-block;
 		margin-top: 20px;
 		&.show-laptop{
-			display: inline-block;
+			@include breakpoint(laptop){
+				display: inline-block;
+			}
+			
 		}
 		a{
 			color: #8d8d8d;
@@ -1457,8 +1463,7 @@ button, input {
 }
 .commodity{
 	text-align: center;
-	//margin-top: 25px;
-	position: relative;
+	//position: relative;
 	
 	@include breakpoint(tablet){
 		top: 50px;
@@ -1539,10 +1544,12 @@ button, input {
 		margin-bottom: 30px;
 		position: relative;
 		margin-top: -30px;
-		max-width: 670px;
+		ma-width: 670px;
 		max-height: 460px;
+		img{vertical-align: middle;}
 		@include breakpoint(tablet){
-			margin-top:0;
+			margin-top:40px;
+			
 		}
 		&_stripe{
 			position: absolute;
@@ -1553,14 +1560,17 @@ button, input {
 			background-image: url(../images/sale.png);
 		}
 		
+		
 	}
 	&__thumbnails{
+		
 		@include breakpoint(mobileonly){
 			margin-bottom: 20px;
 		}
-		@include breakpoint(laptop){
-			position: relative;
-			top: 50px;
+		@include breakpoint(tablet){
+			position: absolute;
+			width: 50%;
+			bottom: 0;
 		}
 	}
 	&__thumbnail{
