@@ -120,12 +120,28 @@ $(function(){
 		$(this).toggleClass('active');
 		})
 	
+	
+	function noScrollBody(self){
+		var scrollTop = $(window).scrollTop();
+		if(!($(self).hasClass('open'))){
+			//document.body.style.position = '';
+			document.body.style.width = '';
+			document.body.style.top = '';
+			$("body").removeClass("no-scroll");
+		}else{
+			//document.body.style.position = 'fixed';
+			//document.body.style.top = -scrollTop + 'px';
+			$("body").addClass("no-scroll");
+		}
+		console.log($(self).hasClass('open'));
+		
+	}
 	$('.main-menu .catalog-list').click(function(){
 		var browserMinWidth = $(window).width();
 		
 			$(this).toggleClass('open');
-			
 		if (browserMinWidth < 800) {
+			noScrollBody(this);
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
 		}

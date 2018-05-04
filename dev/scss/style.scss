@@ -34,6 +34,12 @@ img{
 .relative{
 	position: relative;
 }
+.no-scroll {
+	//height: 100%;
+	overflow: hidden;
+	//width: 100%;
+	//position: absolute;
+}
 .scroll{
 	&_margin-top{
 		margin-top: 75px !important;
