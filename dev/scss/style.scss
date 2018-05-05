@@ -1203,6 +1203,13 @@ button, input {
 		color: black;
 		margin-bottom: 25px;
 		display: inline-block;
+		&.phone,&.chat{
+			margin-bottom: 15px;
+		}
+		&.adress{
+			margin-bottom: 10px;
+			margin-top: 35px;
+		}
 		
 	}
 	&-list{
@@ -1253,7 +1260,7 @@ button, input {
 		}
 	}
 	&-info__phone{
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 		color: #6e6e6e;
 		font-size: 14px;
 		@include breakpoint(tablet){
@@ -1290,6 +1297,10 @@ button, input {
 		color: #6e6e6e;
 		&__text{
 			margin-top: 15px;
+			font-size: 12px;
+			@include breakpoint(tablet){
+				margin: 0;
+			}
 			&_chat{
 				margin-bottom: 20px;;
 			}
@@ -1298,6 +1309,9 @@ button, input {
 		}
 		&__adress{
 			color: #6e6e6e;
+			@include breakpoint(tablet){
+				font-size: 14px;
+			}
 			@include breakpoint(phablet){
 				margin-left: 10vw;
 			}
