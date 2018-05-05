@@ -64,15 +64,15 @@
 
 }
 
-.show-phablet{
-	display:none;
-	@include breakpoint(phablet){
-		display:block;
-	}
-	@include breakpoint(tablet){
-		display:none;
-	}
-}
+//.show-phablet{
+//	display:none;
+//	@include breakpoint(phablet){
+//		display:block;
+//	}
+//	@include breakpoint(tablet){
+//		display:none;
+//	}
+//}
 
 .col-{
 	&mobileonly-{

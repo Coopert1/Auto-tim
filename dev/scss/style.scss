@@ -129,7 +129,7 @@ ul.text{
 }
 .product{
 	position:relative;
-	border: 1px solid #d4d8db;
+	//border: 1px solid #d4d8db;
 	// margin-right: -1px;
 	// margin-top: -1px;
 	// border-top: 1px solid #d4d8db;
@@ -144,10 +144,12 @@ ul.text{
 		margin-top: -1px;
 	}
 	.peculiar-properties.show-tablet{
-		padding-top: 0;
-		margin-top: 0;
-		margin-bottom: 15px;
+		//padding-top: 0;
+		//margin-top: 0;
+		//margin-bottom: 15px;
 		border: none;
+		margin: 0 0 15px 0;
+		padding: 0;
 		table{
 			color: #5a5a5a;
 			display: inline-block;
@@ -182,7 +184,7 @@ ul.text{
 	&__add-favorite{
 		position: absolute;
 		display: inline-block;
-
+		cursor: pointer;
 		right:10px;
 		top: 10px;
 	}
@@ -255,11 +257,10 @@ ul.text{
 		font-size: 14px;
 		color: white;
 		margin-bottom: 15px;
-		padding: 5px 10px;
-		font-family: 'robotoblack';
+		padding: 6px 10px;
 		background-color: #f2762e;
 		display: inline-block;
-		border-radius: 5px;
+		border-radius: 3px;
 		@include breakpoint(tablet){
 			float: right;
 			position: relative;
@@ -268,9 +269,13 @@ ul.text{
 		
 		a{
 			color: white;
-			font-family: 'robotoblack';
+			//font-family: 'robotoblack';
+			font-weight: 600;
 		
 		}
+	}
+	&.product_bottom-border{
+		border-bottom: 1px solid #d4d8db;
 	}
 	
 }
@@ -283,7 +288,7 @@ ul.text{
 	}
 	// border-top: 1px solid #d4d8db;
 	li:last-child{
-		border-right: 2px solid #d4d8db;
+		border-right: 1.5px solid #d4d8db;
 		.product{
 			margin-top: -2px;
 		}
@@ -1455,7 +1460,7 @@ button, input {
 			}
 		}
 		&:last-child{
-			min-width: 120px;
+			//min-width: 120px;
 			color: #5e5e5e;
 
 
@@ -2852,6 +2857,20 @@ span{
 .show-items-on-page{
 	float: right;
 }
+.col-laptop_1100-1-4{
+	float: left;
+	width: 33.33%;
+	@media(min-width:1100px){
+		float: left;
+		width: 25%;
+	}
+}
+.show-width_1024{
+	display: none;
+	@media(min-width:1024px){
+		display: block;
+	}
+}
 
 ///////// thanks-for-order
 
@@ -3084,7 +3103,20 @@ table.filters-result-items{
 		display: inline-block;
 	}
 }
+.show-{
+	&phablet{
+		display: none;
+		@include breakpoint(phablet){
+			display: block;
+		}
+	}
+}
 .hide-{
+	&phablet{
+		@include breakpoint(phablet){
+			display: none;
+		}
+	}
 	&tablet{
 		@include breakpoint(tablet){
 			display: none;
