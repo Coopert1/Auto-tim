@@ -1212,23 +1212,32 @@ button, input {
 			text-align: left;
 		}
 		&.footer-list_social-items{
-			margin: 50px 0;
+			margin: 30px 0 40px 0;
 			text-align: center;
 			position: relative;
-			top: -8px;
 			
-		
+			.footer-list__title {
+				margin-bottom: 10px;
+				@include breakpoint(tablet){
+					margin-bottom: 15px;
+				}
+			}
+			@media (min-width: 480px){
+				//margin-top: 40px;
+			}
 			@include breakpoint(phablet){
-				margin-top: -180px;
-				margin-bottom: 100px;
-				width: 70vw;
+				margin-top: -165px;
+				margin-bottom: 140px;
+				//width: 70vw;
+				//top: -14px;
 			}
 			
 			@include breakpoint(tablet){
-				margin: 0 0 50px 0;
+				margin:0 0 10px 0;
 				width: auto;
 				text-align: left;
 				top: 0;
+				
 			}
 		}
 		&__social-item{
@@ -1239,9 +1248,14 @@ button, input {
 	}
 	&-list__item{
 		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 	&-info__phone{
 		margin-bottom: 10px;
+		color: #6e6e6e;
+		font-size: 14px;
 		@include breakpoint(tablet){
 			font-size: 18px;
 		}
@@ -1256,7 +1270,7 @@ button, input {
 			font-size: 12px;
 			text-transform: none;
 			font-weight: normal;
-			color: #5e5e5e;
+			color: #6e6e6e;
 			font-size: 12px;
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -1273,6 +1287,7 @@ button, input {
 	}
 	&-info{
 		font-size: 12px;
+		color: #6e6e6e;
 		&__text{
 			margin-top: 15px;
 			&_chat{
@@ -1282,6 +1297,7 @@ button, input {
 			
 		}
 		&__adress{
+			color: #6e6e6e;
 			@include breakpoint(phablet){
 				margin-left: 10vw;
 			}
@@ -1294,6 +1310,7 @@ button, input {
 		
 	}
 	&-rights{
+		color: #6e6e6e;
 		font-size: 12px;
 		text-align: center;
 		padding: 15px 0;
