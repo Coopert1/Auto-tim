@@ -169,6 +169,9 @@ ul.text{
 		text-decoration: none;
 		color: black;
 	}
+	&.product_margin-top-5{
+		margin-top: -5px;
+	}
 	&__stripe{
 		position: absolute;
 		top: 0;
@@ -206,14 +209,14 @@ ul.text{
 		}
 	}
 	&__name{
-		font-size: 16px;
+		font-size: 12px;
 		font-family: 'robotoblack';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
 		height: 83px;
 		overflow: hidden;
-		@include breakpoint(tablet){
+		@include breakpoint(phablet){
 			font-size: 16px;
 		}
 		&:hover{
@@ -2857,17 +2860,24 @@ span{
 .show-items-on-page{
 	float: right;
 }
+.border-bottom-off {
+	border-bottom: none;
+}
+.border-right-off {
+	border-right: none;
+}
+
 .col-laptop_1100-1-4{
-	float: left;
-	width: 33.33%;
+	
 	@media(min-width:1100px){
 		float: left;
 		width: 25%;
 	}
 }
-.show-width_1024{
+.show-width_1100{
 	display: none;
-	@media(min-width:1024px){
+	border-right: 1px solid #d4d8db;
+	@media(min-width:1100px){
 		display: block;
 	}
 }
@@ -3066,9 +3076,9 @@ table.filters-result-items{
 .border_top_bottom{
 	border-top: 1px solid #d4d8db;
 	border-bottom: 1px solid #d4d8db;
-	@include breakpoint(tablet){
-		border: none;
-	}
+//	@include breakpoint(tablet){
+//		border: none;
+//	}
 }
 
 .show-tablet-table{
@@ -3111,7 +3121,13 @@ table.filters-result-items{
 		}
 	}
 }
+.hide-width_1099{
+	@media(min-width:1099px){
+		display: none;
+	}
+}
 .hide-{
+	
 	&phablet{
 		@include breakpoint(phablet){
 			display: none;
