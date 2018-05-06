@@ -116,6 +116,11 @@ $(function(){
 	$('span.icon.icon_fav').click(function(){
 		$(this).toggleClass('icon_fav_active');
 		})
+
+	$('span.icon.icon_filter').click(function(){
+		$(this).toggleClass('icon_filter_active');
+		})
+
 	$('.commodity__favorite').click(function(){
 		$(this).toggleClass('active');
 		})
