@@ -116,6 +116,11 @@ $(function(){
 	$('span.icon.icon_fav').click(function(){
 		$(this).toggleClass('icon_fav_active');
 		})
+
+	$('span.icon.icon_filter').click(function(){
+		$(this).toggleClass('icon_filter_active');
+		})
+
 	$('.commodity__favorite').click(function(){
 		$(this).toggleClass('active');
 		})
@@ -238,9 +243,9 @@ $(function(){
 		//Slider for dealers setting
 			var dealerslider=$('#dealerslider').lightSlider({
 			galleryMargin: 25,
-			autoWidth: false,
+			autoWidth: true,
 			item: 5,
-			slideMargin: 10,
+			slideMargin: 30,
 			slideMove:1,
 			controls:false,
 			responsive:[
@@ -249,7 +254,7 @@ $(function(){
 					settings:
 						{
 							item:4,
-							autoWidth: false,
+							autoWidth: true,
 							slideMove:1,
 						}
 				},
@@ -258,7 +263,7 @@ $(function(){
 					settings:
 						{
 							item:1.5,
-							autoWidth: false,
+							autoWidth: true,
 							slideMove:1,
 						}
 				},

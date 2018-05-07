@@ -26,6 +26,10 @@
 
 input {
     -webkit-appearance: none;
+    &:focus::-webkit-input-placeholder { color:transparent; }
+	&:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+	&:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+	&:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 
 img{
@@ -381,6 +385,9 @@ button, input {
 	padding: 8px 0;
 	font-size: 14px;
 	border-bottom: 1px solid #d4d8db;
+	@include breakpoint(tablet){
+		padding: 5px 0;
+	}
 }
 .header-bottom{
 	background: #f2f3f4;
@@ -407,7 +414,7 @@ button, input {
 	text-align: center;
 	@media(min-width: 1230px){
 		display: inline-block;
-		margin-left: -103px;
+		margin-left: -119px;
 		margin-right: 20px;
 	}
 }
@@ -451,6 +458,9 @@ button, input {
 		font-size: 11px;
 		margin-right:45px;
 		padding:12px 16px;
+		&:hover{
+			background: #d9621d;
+		}
 	}
 	&_submit-order{
 		text-align: left;
@@ -498,10 +508,14 @@ button, input {
 		margin-bottom:10px;
 	}
 	&_promo-slider{
+		font-family: 'robotoblack';
 		font-size: 12px;
-		padding: 10px 15px;
+		padding: 12px 15px;
 		@include breakpoint(tablet){
 			font-size: 20px
+		}
+		span{
+			margin-right: 15px;
 		}
 	}
 	&_continue-shopping{
@@ -569,6 +583,7 @@ button, input {
 
 .social-hrefs{
 	display: none;
+	font-size: 12px;
 	a{
 		margin: 0 7px;
 	}
@@ -578,6 +593,7 @@ button, input {
 	span{
 		position: relative;
 		top: -7px;
+		margin-right: 7px;
 	}
 }
 
@@ -610,13 +626,16 @@ button, input {
 			right: 0;
 			top: 0;
 			border-radius: 0 3px 3px 0;
+			&:hover{
+				background: #d9621d;
+			}
 		}
 	}
 }
 
 .enter{
 	display: none;
-	font-size:14px;
+	font-size:12px;
 	@include breakpoint(tablet){
 		display: inline-block;
 		float: right;
@@ -653,7 +672,7 @@ button, input {
 		list-style: none;
 		display: flex;
 		flex-wrap: no-wrap;
-		align-items: center;
+		align-items: stretch;
 		flex-shrink: 0;
 		align-content: center;
 		justify-content: space-between;
@@ -665,10 +684,15 @@ button, input {
 		display: inline-block;
 		color:#fff;
 		text-align:center;
+		&.active{
+			background: #323232;
+		}
 		& a{
+			position: relative;
+			top: 7px;
 			color: #fff;
 			span{
-				font-family: 'robotoblack';
+				font-family: 'robotobold';
 			}
 		}
 		.shopping-sum{
@@ -683,7 +707,7 @@ button, input {
 			}
 			span{
 				position: relative;
-				top: 4px;
+				top: 0px;
 				font-family: 'gothamproblack';
 			}
 			span:nth-child(2){
@@ -692,15 +716,20 @@ button, input {
 		}
 		.photogallery{
 			background: #f2762e;
-			padding: 1px 5px;
+			padding: 0px 4px 2px 4px;
 			border-radius: 3px;
+		}
+		.normal-position{
+			position: relative{
+				top: 0;
+			}
 		}
 	}
 }
 .catalog-list{
 	color: #fff;
 	position:relative;
-	font-family: 'robotoblack';
+	font-family: 'robotobold';
 	margin-left: -10px;
 	@include breakpoint(tablet){
 			margin: 0;
@@ -837,10 +866,13 @@ button, input {
 }
 
 .bars{
-	margin-right: 10px;
+	margin-right: 15px;
 	display: inline-block;
 	position: relative;
 	width: 30px;
+	@include breakpoint(tablet){
+		margin-right: 30px;
+	}
 }
 
 .bar{
@@ -973,9 +1005,16 @@ button, input {
 	@media(min-width:800px)and(max-width:1130px){
 		min-height: 152px;
 	}
+	&:hover{
+		img{
+			position: relative;
+			top: -3px;
+		}
+	}
 	img{
 		height: 60px;
 		margin-bottom: 10px;
+		
 	}
 	&_grey{
 		background: #f2f3f4;
@@ -1140,6 +1179,9 @@ button, input {
 		width: 33px;
 		height: 33px;
 	}
+	&_filter_active{
+		background-position: 36px 0;
+	}
 	&_fav_active{
 			background-position: 37px 0;
 		}
@@ -1183,11 +1225,25 @@ button, input {
 		background:url(../images/amount_plus.png);
 		height: 26px;
 		width: 26px;
+		&:hover{
+			background:url(../images/amount_plus_hover.png);
+		}
 	}
 	&_amount-minus{
 		background:url(../images/amount_minus.png);
 		height: 26px;
 		width: 26px;
+		&:hover{
+			background:url(../images/amount_minus_hover.png);
+		}
+	}
+	&_remove-item{
+		background:url(../images/remove_item.png);
+		height: 12px;
+		width: 13px;
+		&:hover{
+			background:url(../images/remove_item_hover.png);
+		}
 	}
 }
 
@@ -2833,7 +2889,7 @@ span{
 	}
 	p{
 		font-size: 15px;
-		color: #818181;
+		color: #818081;
 		margin: 30px 0 50px 0;
 	}
 }
