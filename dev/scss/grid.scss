@@ -45,7 +45,7 @@
 		min-height: 1px;
 		clear: both;
 	}
-	&_margin-bottom-10:after{margin-bottom: 10px;}
+	&_margin-bottom-30{margin-bottom: 30px;}
 	
 }
 
@@ -64,15 +64,15 @@
 
 }
 
-.show-phablet{
-	display:none;
-	@include breakpoint(phablet){
-		display:block;
-	}
-	@include breakpoint(tablet){
-		display:none;
-	}
-}
+//.show-phablet{
+//	display:none;
+//	@include breakpoint(phablet){
+//		display:block;
+//	}
+//	@include breakpoint(tablet){
+//		display:none;
+//	}
+//}
 
 .col-{
 	&mobileonly-{

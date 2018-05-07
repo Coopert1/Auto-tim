@@ -133,7 +133,7 @@ ul.text{
 }
 .product{
 	position:relative;
-	border: 1px solid #d4d8db;
+	//border: 1px solid #d4d8db;
 	// margin-right: -1px;
 	// margin-top: -1px;
 	// border-top: 1px solid #d4d8db;
@@ -148,10 +148,12 @@ ul.text{
 		margin-top: -1px;
 	}
 	.peculiar-properties.show-tablet{
-		padding-top: 0;
-		margin-top: 0;
-		margin-bottom: 15px;
+		//padding-top: 0;
+		//margin-top: 0;
+		//margin-bottom: 15px;
 		border: none;
+		margin: 0 0 15px 0;
+		padding: 0;
 		table{
 			color: #5a5a5a;
 			display: inline-block;
@@ -171,6 +173,9 @@ ul.text{
 		text-decoration: none;
 		color: black;
 	}
+	&.product_margin-top-5{
+		margin-top: -5px;
+	}
 	&__stripe{
 		position: absolute;
 		top: 0;
@@ -186,7 +191,7 @@ ul.text{
 	&__add-favorite{
 		position: absolute;
 		display: inline-block;
-
+		cursor: pointer;
 		right:10px;
 		top: 10px;
 	}
@@ -208,14 +213,14 @@ ul.text{
 		}
 	}
 	&__name{
-		font-size: 16px;
+		font-size: 12px;
 		font-family: 'robotoblack';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
 		height: 83px;
 		overflow: hidden;
-		@include breakpoint(tablet){
+		@include breakpoint(phablet){
 			font-size: 16px;
 		}
 		&:hover{
@@ -259,11 +264,10 @@ ul.text{
 		font-size: 14px;
 		color: white;
 		margin-bottom: 15px;
-		padding: 5px 10px;
-		font-family: 'robotoblack';
+		padding: 6px 10px;
 		background-color: #f2762e;
 		display: inline-block;
-		border-radius: 5px;
+		border-radius: 3px;
 		@include breakpoint(tablet){
 			float: right;
 			position: relative;
@@ -272,9 +276,13 @@ ul.text{
 		
 		a{
 			color: white;
-			font-family: 'robotoblack';
+			//font-family: 'robotoblack';
+			font-weight: 600;
 		
 		}
+	}
+	&.product_bottom-border{
+		border-bottom: 1px solid #d4d8db;
 	}
 	
 }
@@ -287,7 +295,7 @@ ul.text{
 	}
 	// border-top: 1px solid #d4d8db;
 	li:last-child{
-		border-right: 2px solid #d4d8db;
+		border-right: 1.5px solid #d4d8db;
 		.product{
 			margin-top: -2px;
 		}
@@ -1259,6 +1267,13 @@ button, input {
 		color: black;
 		margin-bottom: 25px;
 		display: inline-block;
+		&.phone,&.chat{
+			margin-bottom: 15px;
+		}
+		&.adress{
+			margin-bottom: 10px;
+			margin-top: 35px;
+		}
 		
 	}
 	&-list{
@@ -1268,23 +1283,32 @@ button, input {
 			text-align: left;
 		}
 		&.footer-list_social-items{
-			margin: 50px 0;
+			margin: 30px 0 40px 0;
 			text-align: center;
 			position: relative;
-			top: -8px;
 			
-		
+			.footer-list__title {
+				margin-bottom: 10px;
+				@include breakpoint(tablet){
+					margin-bottom: 15px;
+				}
+			}
+			@media (min-width: 480px){
+				//margin-top: 40px;
+			}
 			@include breakpoint(phablet){
-				margin-top: -180px;
-				margin-bottom: 100px;
-				width: 70vw;
+				margin-top: -163px;
+				margin-bottom: 140px;
+				//width: 70vw;
+				//top: -14px;
 			}
 			
 			@include breakpoint(tablet){
-				margin: 0 0 50px 0;
+				margin:0 0 10px 0;
 				width: auto;
 				text-align: left;
 				top: 0;
+				
 			}
 		}
 		&__social-item{
@@ -1295,9 +1319,14 @@ button, input {
 	}
 	&-list__item{
 		margin-bottom: 15px;
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 	&-info__phone{
-		margin-bottom: 10px;
+		margin-bottom: 5px;
+		color: #6e6e6e;
+		font-size: 14px;
 		@include breakpoint(tablet){
 			font-size: 18px;
 		}
@@ -1312,7 +1341,7 @@ button, input {
 			font-size: 12px;
 			text-transform: none;
 			font-weight: normal;
-			color: #5e5e5e;
+			color: #6e6e6e;
 			font-size: 12px;
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -1329,8 +1358,13 @@ button, input {
 	}
 	&-info{
 		font-size: 12px;
+		color: #6e6e6e;
 		&__text{
 			margin-top: 15px;
+			font-size: 12px;
+			@include breakpoint(tablet){
+				margin: 0;
+			}
 			&_chat{
 				margin-bottom: 20px;;
 			}
@@ -1338,6 +1372,10 @@ button, input {
 			
 		}
 		&__adress{
+			color: #6e6e6e;
+			@include breakpoint(tablet){
+				font-size: 14px;
+			}
 			@include breakpoint(phablet){
 				margin-left: 10vw;
 			}
@@ -1350,6 +1388,7 @@ button, input {
 		
 	}
 	&-rights{
+		color: #6e6e6e;
 		font-size: 12px;
 		text-align: center;
 		padding: 15px 0;
@@ -1461,7 +1500,7 @@ button, input {
 	
 	td{
 		line-height: 1.5;
-		vertical-align: bottom;
+		vertical-align: top;
 		&:first-child{
 			position: relative;
 			overflow: hidden;
@@ -1480,8 +1519,9 @@ button, input {
 			}
 		}
 		&:last-child{
-			min-width: 120px;
+			//min-width: 120px;
 			color: #5e5e5e;
+			vertical-align: bottom;
 
 
 		}
@@ -2062,6 +2102,8 @@ button, input {
 	&__text{
 		span:nth-child(1){
 			font-family: 'gothamproblack',sans-serif;
+			display: inline-block;
+			margin-right: 5px;
 		}
 		span:nth-child(2){
 			font-size:21px;
@@ -2254,7 +2296,7 @@ table#order{
 	.form-contact{
 		background-color: #f2f3f4;
 		margin: 0 25px 30px 25px;
-		width: 774px;
+		//width: 774px;
 		border-bottom: 2px solid white;
 		display: inline-block;
 		float: left;
@@ -2273,44 +2315,60 @@ table#order{
 			padding: 0 15px;
 			display: inline-block;
 			height: 35px;
-			min-width: 242px;
+			width: 100%;
+			//min-width: 242px;
 			margin: 0 20px 45px 0;
 			outline: none;
 			@include breakpoint(mobileonly){
 				margin-right: 0;
 			}
+			@include breakpoint(tablet){
+				width: 242px;
+			}
 			&.contact-zip-code{
 				margin-bottom: 35px;
+				width: 85px;
 			}
 				
 		}
 		
 		@include breakpoint(mobileonly){
-			width: 80%;
+			width: 100%;
 			margin-right: 0;
 			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@include breakpoint(phablet){
-			max-width: 420px;
+			//max-width: 420px;
+			width: 100%;
+			margin-right: 0;
+			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@media (min-width: 800px){
 			max-width: 320px;
 		}
 		@media (min-width: 960px){
-			max-width: 520px;
+			max-width: 550px;
 		}
 		@media (min-width: 1210px){
-			max-width: 785px;
+			max-width: 800px;
 		}
 		
 			
 		.wrap-input{
-			display: inline-block;
+			display: block;
 			position: relative;
+			padding-right: 25px;
 			input{
 				border-radius: 5px;
 				box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
 				outline: none;
+				
 			}
 			.label{
 				position: absolute;
@@ -2322,14 +2380,26 @@ table#order{
 					color: red;
 				}
 			}
+			@include breakpoint(tablet){
+				display: inline-block;
+				padding: 0;
+			}
 		}
 		.wrap-select{
 			display: block;
-			max-width: 515px;
 			position: relative;
+			width: 100%;
+			padding-right: 25px;
 			@include breakpoint(mobileonly){
-				width: 242px;
+				//width: 242px;
 				margin-right: 0;
+			}
+			@include breakpoint(phablet){
+				width: 100%
+			}
+			@include breakpoint(tablet){
+				padding-right: 0;
+				max-width: 510px;
 			}
 			.label{
 				position: absolute;
@@ -2348,7 +2418,14 @@ table#order{
 				display: block;
 				height: 35px;
 				width: 100%;
+				//width: 242px;
 				margin-bottom: 55px;
+				@include breakpoint(tablet){
+					width: 242px;
+				}
+				@media(min-width:960px){
+					width: 100%
+				}
 			}
 			&zip-code{
 				min-width:80px;
@@ -2382,12 +2459,21 @@ table#order{
 			bottom: -2px;
 		}
 		@include breakpoint(mobileonly){
-			width: 80%;
+			width: 100%;
 			margin-right: 0;
 			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@include breakpoint(phablet){
-			max-width: 420px;
+			//max-width: 420px;
+			width: 100%;
+			margin-right: 0;
+			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@media (min-width: 800px){
 			max-width: 320px;
@@ -2448,6 +2534,7 @@ table#order{
 		#pay-shope+label{
 			margin-bottom: 0;
 			.span-wrap{
+				margin-top: 5px;
 				font-size: 12px;
 				color: #919292;
 				position: relative;
@@ -2486,12 +2573,21 @@ table#order{
 			bottom: -2px;
 		}
 		@include breakpoint(mobileonly){
-			width: 80%;
+			width: 100%;
 			margin-right: 0;
 			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@include breakpoint(phablet){
-			max-width: 420px;
+			//max-width: 420px;
+			width: 100%;
+			margin-right: 0;
+			padding-right: 0;
+			margin-left: 0;
+			padding-left: 25px;
+			float: left;
 		}
 		@media (min-width: 800px){
 			max-width: 320px;
@@ -2551,6 +2647,7 @@ table#order{
 		#delivery-courier+label{
 			margin-bottom: 0;
 			.span-wrap{
+				margin-top: 5px;
 				font-size: 12px;
 				color: #919292;
 				position: relative;
@@ -2574,17 +2671,21 @@ table#order{
 	}
 	
 	.form-comment{
-		margin: 0 25px 0 25px;
-		width: 774px;
+		//margin: 0 25px 0 25px;
+		max-width: 774px;
 		display: inline-block;
+		padding: 0 25px 0 25px;
 		padding-bottom: 50px;
+		width: 100%;
 		@include breakpoint(mobileonly){
-			width: 80%;
-			margin-right: 0;
-			padding-right: 0;
+			width: 100%;
+			//margin-right: 0;
+			//padding-right: 0;
 		}
 		@include breakpoint(phablet){
-			max-width: 420px;
+			//max-width: 420px;
+			margin: 0;
+			padding: 0 25px 50px 25px;
 		}
 		@media (min-width: 800px){
 			max-width: 320px;
@@ -2626,6 +2727,7 @@ table#order{
 			margin: 30px 0 0 0;
 			width: 230px;
 			padding-left: 20px;
+			
 			@include breakpoint(mobileonly){
 				width: 180px;
 			}
@@ -2651,12 +2753,14 @@ table#order{
 	}
 	.cart-item{
 		padding-top: 15px;
+		margin: 0 -20px;
 		&__description{
 			padding: 0 0 0 83px;
 			border: none;
 		}
 		&__image{
 			top: 50px;
+			left: 15px;
 		}
 		&__name{
 			font-size: 14px;
@@ -2668,6 +2772,8 @@ table#order{
 			font-size: 14px;
 			color: #464646;
 			margin-right: 10px;
+			position: relative;
+			top: -3px;
 		}
 		&__price{
 			display: inline-block;
@@ -2877,6 +2983,27 @@ span{
 .show-items-on-page{
 	float: right;
 }
+.border-bottom-off {
+	border-bottom: none;
+}
+.border-right-off {
+	border-right: none;
+}
+
+.col-laptop_1100-1-4{
+	
+	@media(min-width:1100px){
+		float: left;
+		width: 25%;
+	}
+}
+.show-width_1100{
+	display: none;
+	border-right: 1px solid #d4d8db;
+	@media(min-width:1100px){
+		display: block;
+	}
+}
 
 ///////// thanks-for-order
 
@@ -3072,9 +3199,9 @@ table.filters-result-items{
 .border_top_bottom{
 	border-top: 1px solid #d4d8db;
 	border-bottom: 1px solid #d4d8db;
-	@include breakpoint(tablet){
-		border: none;
-	}
+//	@include breakpoint(tablet){
+//		border: none;
+//	}
 }
 
 .show-tablet-table{
@@ -3109,7 +3236,26 @@ table.filters-result-items{
 		display: inline-block;
 	}
 }
+.show-{
+	&phablet{
+		display: none;
+		@include breakpoint(phablet){
+			display: block;
+		}
+	}
+}
+.hide-width_1099{
+	@media(min-width:1099px){
+		display: none;
+	}
+}
 .hide-{
+	
+	&phablet{
+		@include breakpoint(phablet){
+			display: none;
+		}
+	}
 	&tablet{
 		@include breakpoint(tablet){
 			display: none;
