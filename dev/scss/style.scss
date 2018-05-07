@@ -137,11 +137,6 @@ ul.text{
 }
 .product{
 	position:relative;
-	//border: 1px solid #d4d8db;
-	// margin-right: -1px;
-	// margin-top: -1px;
-	// border-top: 1px solid #d4d8db;
-	// border-bottom: 1px solid #d4d8db;
 	.lSSlideOuter &{
 		margin-right: 0;
 		border-right: 0;
@@ -230,14 +225,22 @@ ul.text{
 		@include breakpoint(phablet){
 			font-size: 16px;
 			height: 55px;
+			
 		}
-		&:hover{
-			color: #f2762e;
-		}
+		
 		a{
-			font-weight: bold;
+			@include breakpoint(phablet){
+				text-decoration: underline;
+				text-decoration-color: #f2762e;
+			}
+			&:hover{
+				color: #f2762e;
+			}
+			
 		}
+		
 	}
+	
 	&__text{
 		font-size: 11px;
 		font-family: 'Arial', sans-serif;
