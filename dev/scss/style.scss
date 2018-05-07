@@ -63,7 +63,7 @@ h2{
 	color: #3b3b3b;
 	font-family: 'gothamproblack';
 	font-size: 30px;
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 	margin-top: 20px;
 }
 h3{
@@ -81,18 +81,22 @@ p.text{
 	margin-bottom: 25px;
 	font-size: 13px;
 	color: #5a5a5a;
+	line-height: 1.5;
 }
 ul.text{
 	list-style: none;
 	padding-left: 20px;
 	font-size: 13px;
 	color: #5a5a5a;
-	margin: 30px 40px 50px 0;
-	display: inline-block;
+	margin: 30px 40px 25px 0;
+	@include breakpoint(tablet){
+		margin: 30px 40px 50px 0;
+		display: inline-block;
+	}
+	
 	
 	
 	li{
-		padding-left: 20px;
 		position: relative;
 		margin-bottom: 10px;
 		&::before {
@@ -112,10 +116,10 @@ ul.text{
 }
 .image-left{
 	text-align: center;
-	margin:  25px 0 25px 0;
+	margin:  0 0 25px 0;
 	@include breakpoint(phablet){
 		float: left;
-		margin:  25px 25px 25px 0;
+		margin:  0 25px 25px 0;
 		max-width: 330px;
 		max-height: 270px;
 	}
@@ -1420,7 +1424,13 @@ button, input {
 		text-decoration: none;
 		color: #5e5e5e;
 		&:hover{
+			color: #1b1b1b;
+		}
+		&.active{
 			color: #ed762e;
+			&:hover{
+				color: #b24a0b;
+			}
 		}
 	}
 	hr{
@@ -1465,7 +1475,7 @@ button, input {
 }
 .peculiar-properties{
 	text-align: left;
-	border-top: 1px solid #bcbcbc;
+	border-top: 1px solid #e1e1e1;
 	margin-top: 20px;
 	padding-top: 15px;
 	color: #292929;
@@ -1691,32 +1701,32 @@ button, input {
 		
 		
 	}
-	&__thumbnails{
-		
-		@include breakpoint(mobileonly){
-			margin-bottom: 20px;
-		}
-		@include breakpoint(tablet){
-			position: absolute;
-			width: 50%;
-			bottom: 0;
-		}
-	}
-	&__thumbnail{
-		display: inline-block;
-		width: 100px;
-		margin-right: 10px;
-		height: 100px;
-		img{
-			vertical-align: middle;
-		}
-		@include breakpoint(mobileonly){
-			width: 75px;
-			height: 50px;
-			
-		}
-		
-	}
+//	&__thumbnails{
+//		
+//		@include breakpoint(mobileonly){
+//			margin-bottom: 20px;
+//		}
+//		@include breakpoint(tablet){
+//			position: absolute;
+//			width: 50%;
+//			bottom: 0;
+//		}
+//	}
+//	&__thumbnail{
+//		display: inline-block;
+//		width: 100px;
+//		margin-right: 10px;
+//		height: 100px;
+//		img{
+//			vertical-align: middle;
+//		}
+//		@include breakpoint(mobileonly){
+//			width: 75px;
+//			height: 50px;
+//			
+//		}
+//		
+//	}
 	&__price{
 		display: block;
 		font-size: 30px;
@@ -1826,7 +1836,7 @@ button, input {
 		display: inline-block;
 		color: #424242;
 		padding: 10px 13px 10px 10px;
-		border: 1px solid #bcbcbc;
+		border: 1px solid #e1e1e1;
 		border-radius: 5px;
 		font-size: 16px;
 		cursor: pointer;
@@ -1851,7 +1861,7 @@ button, input {
 		padding: 13px 0 23px 40px;
 		text-align: left;
 		font-size: 14px;
-		border-top: 1px solid #bcbcbc;
+		border-top: 1px solid #e1e1e1;
 		margin-top: 30px;
 		margin: 30px -15px 0 -15px;
 		position: relative;
@@ -1901,7 +1911,7 @@ button, input {
 	}
 	.content{
 		margin-bottom: -5px;
-		border-top: 1px solid #bcbcbc;
+		border-top: 1px solid #e1e1e1;
 		margin-top: 30px;
 		margin-left: -35px;
 		position: absolute;
@@ -1917,19 +1927,19 @@ button, input {
 		@include breakpoint(laptop){
 			min-height: 75px;
 			margin-left: -35px;
-			border-top: 1px solid #bcbcbc;
+			border-top: 1px solid #e1e1e1;
 			position: static;
 			width: auto;
 		}
 	}
 	&__spare-parts{
-		padding: 13px 15px 20px 40px;
+		padding: 13px 15px 20px 45px;
 		text-align: left;
 		font-size: 18px;
 		color: #f2762e;
 		font-family:  "gothamproblack", sans-serif;
-		border-bottom: 1px solid #bcbcbc;
-		border-top: 1px solid #bcbcbc;
+		border-bottom: 1px solid #e1e1e1;
+		border-top: 1px solid #e1e1e1;
 		margin: 0 -15px 0 -15px;
 		position: relative;
 		text-decoration: underline;
@@ -1953,7 +1963,7 @@ button, input {
 				
 			}
 			@include breakpoint(laptop){
-				left: 10px;
+				left: 35px;
 				top: 30px;
 				
 			}
@@ -1970,12 +1980,12 @@ button, input {
 		@include breakpoint(laptop){
 			float: right;
 			width: 40%;
-			border-left: 1px solid #bcbcbc;
+			border-left: 1px solid #e1e1e1;
 			border-bottom: none;
 			border-top: none;
 			margin: 0;
 			padding-right: 0;
-			padding: 30px 0 30px 40px;
+			padding: 30px 0 30px 70px;
 			position: relative;
 			
 		}
@@ -1985,14 +1995,20 @@ button, input {
 		text-align: left;
 		font-family:  "gothamproblack", sans-serif;
 		font-size: 18px;
+		
 		@include breakpoint(tablet){
 			margin-bottom: 55px;
+			
 		}
 		a{color: inherit;}
 		&_text{
 			font-size: 14px;
-			color: #a6a6a6;
+			color: #5e5e5e;
 			margin-top: 20px;
+			;line-height: 1.5;
+			@include breakpoint(tablet){
+				margin-top: 30px;
+			}
 			
 		}
 	}
@@ -2022,7 +2038,7 @@ button, input {
 		padding: 0 15px;
 	}
 	@include breakpoint(laptop){
-		border-bottom: 1px solid #bcbcbc;
+		border-bottom: 1px solid #e1e1e1;
 	}
 	@media (min-width:1200px){
 		//max-width: 1180px;
@@ -2037,17 +2053,7 @@ button, input {
 }
 .border-left-tablet {
 	position: relative;
-	border-left: 1px solid #bcbcbc;
-//	&:before{
-//		content: "";
-//		width: 1px;
-//		height: 45px;
-//		display: inline-block;
-//		position: absolute;
-//		background-color: #bcbcbc;
-//		top: -45px;
-//		left: -1px;
-//	}
+	border-left: 1px solid #e1e1e1;
 }
 
 // end product-card
