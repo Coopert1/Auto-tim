@@ -53,11 +53,15 @@ img{
 	}
 }
 h1{
+	text-align: center;
 	color: #3b3b3b;
 	font-family: 'gothamproblack', sans-serif;
 	font-size: 36px;
 	margin-bottom: 30px;
 	margin-top: 20px;
+	@include breakpoint(tablet){
+		text-align: left;
+	}
 }
 h2{
 	color: #3b3b3b;
@@ -214,7 +218,7 @@ ul.text{
 	}
 	&__name{
 		font-size: 12px;
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
@@ -276,7 +280,7 @@ ul.text{
 		
 		a{
 			color: white;
-			//font-family: 'robotoblack';
+			//font-family: 'robotobold';
 			font-weight: 600;
 		
 		}
@@ -459,7 +463,7 @@ button, input {
 	display: inline-block;
 	background: #f2762e;
 	text-align: center;
-	font-family: 'robotoblack';
+	font-family: 'robotobold';
 	&_callback{
 		border-radius: 30px;
 		text-transform: uppercase;
@@ -499,8 +503,11 @@ button, input {
 		width: 100%;
 		&_tablet{
 			padding: 7px 10px;
-			width: 15%;
-			float: right;
+			// width: 15%;
+			// float: right;
+		}
+		&:hover{
+			background: #d9621d;
 		}
 	}
 	&_show-filter{
@@ -516,7 +523,7 @@ button, input {
 		margin-bottom:10px;
 	}
 	&_promo-slider{
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 		font-size: 12px;
 		padding: 12px 15px;
 		@include breakpoint(tablet){
@@ -567,7 +574,7 @@ button, input {
 	a{
 		color: #000;
 		span:nth-child(2){
-			font-family: 'robotoblack';
+			font-family: 'robotobold';
 		}
 	}
 	@include breakpoint(tablet){
@@ -694,6 +701,7 @@ button, input {
 		text-align:center;
 		&.active{
 			background: #323232;
+			color: #fff;
 		}
 		& a{
 			position: relative;
@@ -715,7 +723,7 @@ button, input {
 			}
 			span{
 				position: relative;
-				top: 0px;
+				top: -5px;
 				font-family: 'gothamproblack';
 			}
 			span:nth-child(2){
@@ -728,9 +736,8 @@ button, input {
 			border-radius: 3px;
 		}
 		.normal-position{
-			position: relative{
-				top: 0;
-			}
+			position: relative;
+			top: 5px;
 		}
 	}
 }
@@ -809,7 +816,7 @@ button, input {
 		background:#f2762e;
 	}
 	span{
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 	}
 	span.hide-laptop{
 		line-height: 38px;
@@ -848,8 +855,13 @@ button, input {
 	color: #f2762e;
 	background: #fff;
 	&_black{
+		border-bottom: 1px dashed #5e5e5e;
 		color: #5e5e5e;
 		font-size: 12px;
+		&:hover{
+			border-bottom: 1px dashed #f2762e;
+			color: #f2762e;
+		}
 	}
 }
 
@@ -979,7 +991,7 @@ button, input {
 	}
 	&__title{
 		text-align:left;
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 		text-decoration:none;
 		display: block;
 		font-size:15px;
@@ -1042,7 +1054,7 @@ button, input {
 	span{
 		display: block;
 		color: #000;
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 		font-size: 15px;
 	}
 }
@@ -1222,12 +1234,18 @@ button, input {
 		height: 40px;
 		width: 39px;
 		background-position: -5px 0;
+		&:hover{
+			background-position: -5px 43px;
+		}
 	}
 	&_product-slider_next{
 		background:url(../images/product_slider_controls.png);
 		height: 40px;
 		width: 38px;
 		background-position: 43px 0px;
+				&:hover{
+			background-position: 43px 43px;
+		}
 	}
 	&_amount-plus{
 		background:url(../images/amount_plus.png);
@@ -1478,7 +1496,7 @@ button, input {
 	&_title{
 		font-size: 18px;
 		margin-bottom: 20px;
-		font-family: "robotoblack";
+		font-family: "robotobold";
 	}
 	&_all{
 		font-size: 14px;
@@ -1760,7 +1778,7 @@ button, input {
 		font-size: 16px;
 		margin: 10px 10px;
 		cursor: pointer;
-		font-family: "robotoblack";
+		font-family: "robotobold";
 		@include breakpoint(mobileonly){
 			margin-left: 0;
 			padding-right: 8px;
@@ -1803,7 +1821,7 @@ button, input {
 		border-radius: 5px;
 		font-size: 16px;
 		cursor: pointer;
-		font-family: "robotoblack";
+		font-family: "robotobold";
 		@include breakpoint(mobileonly){
 			
 			padding-right: 7px;
@@ -2023,7 +2041,7 @@ button, input {
 
 // cart.pug styles
 
-.cart-item{
+.product-item{
 	margin-top: -1px;
 	position: relative;
 	padding: 10px 0;
@@ -2047,13 +2065,21 @@ button, input {
 		left: 0;
 	}
 	&__name{
-		font-family: 'robotoblack',sans-serif;
+		position: relative;
+		font-family: 'robotobold',sans-serif;
 		font-size: 16px;
+		&_filters{
+			margin-bottom: 15px;
+		}
 	}
 	&__number{
+		position: absolute;
+		top: -15px;
+		left: 3px;
 		font-family: 'arial';
 		font-size: 11px;
 		margin-bottom: 10px;
+		color: #5a5a5a;
 	}
 	&__field-name{
 		color: #919292;
@@ -2116,10 +2142,15 @@ button, input {
 			font-family: 'rouble',sans-serif;
 		}
 		span.filter{
-			font-family: 'robotoblack';
+			font-family: 'robotobold';
 			display:block;
 			font-size: 18px;
 			margin-bottom: 10px;
+		}
+		&_cart{
+			@include breakpoint(tablet){
+				text-align: right;
+			}
 		}
 	}
 	@include breakpoint(tablet){
@@ -2140,6 +2171,9 @@ button, input {
 	}
 	form{
 		position:relative;
+		@include breakpoint(tablet){
+			width: 350px;
+		}
 		input{
 			-webkit-appearance: textfield;
 			outline: none;
@@ -2163,6 +2197,9 @@ button, input {
 			padding: 10px;
 			color: #5a5a5a;
 			font-size: 14px;
+			&:hover{
+				background: #ced9e4;
+			}
 		}
 	}
 	@include breakpoint(tablet){
@@ -2183,9 +2220,19 @@ table#order{
 		font-size: 14px;
 	}
 	td{
-		padding: 20px 10px;
+		position: relative;
+		vertical-align: top;
+		padding: 30px 10px 20px 10px;
 		text-align: left;
 		border-bottom: 1px solid #e1e1e1;
+		.product-item__number{
+			position: absolute;
+			top: -15px;
+			left: 2px;
+			// @include breakpoint(laptop){
+			// 	top: 20px;
+			// }
+		}
 	}
 	.fix-width{
 		width: 15%;
@@ -2201,18 +2248,31 @@ table#order{
 	margin-top: 70px;
 	margin-bottom: 30px;
 }
-.galery-brand{
+.gallery-brand{
 	margin-bottom: 50px;
 	text-align:center;
 	&__pic{
 		vertical-align: top;
 		height: 50px;
 		margin-bottom: 20px;
+		// &:hover{
+		// 	position:relative;
+		// 	top:-3px;
+		// }
 	}
 	&__name{
 		font-size: 12px;
 		color: #292929;
 		height: 30px;
+	}
+	&:hover{
+		.gallery-brand__pic{
+			position:relative;
+			top:-3px;
+		}
+		.gallery-brand__name{
+			color: #f2762e;
+		}
 	}
 }
 
@@ -2751,9 +2811,9 @@ table#order{
 		text-align: center;
 		padding: 20px 0 15px 0;
 	}
-	.cart-item{
-		padding-top: 15px;
-		margin: 0 -20px;
+	.product-item{
+		padding-top: 35px;
+		margin: -1px -20px;
 		&__description{
 			padding: 0 0 0 83px;
 			border: none;
@@ -2765,6 +2825,9 @@ table#order{
 		&__name{
 			font-size: 14px;
 			margin-bottom: 20px;
+		}
+		&__number{
+			top: -20px;
 		}
 		&__amount{
 			display: inline-block;
@@ -2807,9 +2870,14 @@ table#order{
 		}
 		@include breakpoint(tablet){
 			display: inline-block;
-			width: 25%;
-			margin-right:15px;
+			width: 26.5%;
+			padding-right:8px;
 			margin-bottom: 0;
+			&:last-child{
+				padding: 0;
+				width:19.1%;
+				float: right;
+	}
 		}
 		select{
 			-webkit-appearance: none;
@@ -2906,6 +2974,113 @@ span{
 		}
 	}
 }
+[id^=chkbox]{
+	display: none;
+}
+[id^=color] + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_grey.png');
+	background-repeat: no-repeat;
+span{
+		position: relative;
+		top: 0px;
+		left: 25px;
+	}
+}
+[id^=color]:checked + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_grey_checked.png');
+	background-repeat: no-repeat;
+	label{
+		span{
+			position: relative;
+			top: 0px;
+			left: 24px;
+		}
+	}
+}
+[id^=color2] + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_white.png');
+	background-repeat: no-repeat;
+span{
+		position: relative;
+		top: 0px;
+		left: 25px;
+	}
+}
+[id^=color2]:checked + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_white_checked.png');
+	background-repeat: no-repeat;
+	label{
+		span{
+			position: relative;
+			top: 0px;
+			left: 24px;
+		}
+	}
+}
+[id^=color3] + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_gold.png');
+	background-repeat: no-repeat;
+span{
+		position: relative;
+		top: 0px;
+		left: 25px;
+	}
+}
+[id^=color3]:checked + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_gold_checked.png');
+	background-repeat: no-repeat;
+	label{
+		span{
+			position: relative;
+			top: 0px;
+			left: 24px;
+		}
+	}
+}
+[id^=color4] + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_black.png');
+	background-repeat: no-repeat;
+span{
+		position: relative;
+		top: 0px;
+		left: 25px;
+	}
+}
+[id^=color4]:checked + label{
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	background:url('../images/color_black_checked.png');
+	background-repeat: no-repeat;
+	label{
+		span{
+			position: relative;
+			top: 0px;
+			left: 24px;
+		}
+	}
+}
 .filter__block{
 	text-align: left;
 	border-bottom: 1px solid #b9bbc4;
@@ -2914,22 +3089,28 @@ span{
 		padding-top:0;
 	}
 	a{
-		color: #242424;
+		color: #5e5e5e;
 		font-size: 14px;
 	}
 	a:hover{
 		color: #f2762e;
 	}
+	a.active{
+		color: #f2762e; 
+	}
 	&__name{
 		color: #242424;
 		font-size: 14px;
-		font-family: 'robotoblack';
+		font-family: 'robotobold';
 		margin-bottom: 20px;
 	}
 	&__item{
 		margin-bottom: 15px;
 		color: #5e5e5e;
 		font-size: 14px;
+		&:last-child{
+			margin-bottom: 0px;
+		}
 	}
 	.range-slider{
 		margin-bottom: 15px;
@@ -3127,21 +3308,23 @@ table.filters-result-items{
 		padding: 18px;
 	}
 	td.picture{
-		width: 20%;
+		width: 22%;
 		text-align: center;
 		padding: 0px;
 		padding-left: 5px;
 		position: relative;
 		border-right: none;
 		@include breakpoint(phablet){
-			width: auto;
+			width: 15%;
 			padding: 15px;
+			padding-left: 22px;
 			padding-right: 0;
 		}
 	}
 	td.text{
 		position: relative;
 		border-left: none;
+		padding: 35px 18px 18px 18px;
 	}
 	.item-check{
 		position: absolute;
@@ -3264,6 +3447,23 @@ table.filters-result-items{
 	&laptop{
 		@include breakpoint(laptop){
 			display: none;
+		}
+	}
+}
+#heart{
+	&:hover{
+		.heart-lines{
+			fill: #fff;
+		}
+	}
+}
+#filters-icon{
+	.filters-line{
+		fill: #a5a6a9;
+	}
+	&:hover{
+		.filters-line{
+			fill: #fff;
 		}
 	}
 }

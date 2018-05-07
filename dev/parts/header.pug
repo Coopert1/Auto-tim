@@ -134,19 +134,19 @@
 				a.photogallery(href="gallery.html")
 					span
 						|Фотогалерея
-			li.main-menu__item.show-tablet-inline.add-border.normal-position
-				a(href="filter_results.html")
-					img(src="images/settings.png", alt="filter")
-			li.main-menu__item.add-border.normal-position
-				a(href="#")
-					img(src="images/heart.png", alt="favorite")
+			li.main-menu__item.show-tablet-inline.add-border
+				a.normal-position(href="filter_results.html")
+					include ../images/filters.svg
+			li.main-menu__item.add-border
+				a.normal-position(href="#")
+					include ../images/heart.svg
 			li.main-menu__item.search-mobile.add-border.hide-tablet.normal-position
-				a(href="#")
-					img(src="images/zoom.png", alt="search")
+				a.normal-position(href="#")
+					img(src="images/zoom.svg", alt="search", width="30px" height="30px")
 			li.main-menu__item.add-border.normal-position
-				a(href="cart.html")
+				a.normal-position(href="cart.html")
 					.shoppingcart
-						img(src="images/bascket.png", alt="bascket")
+						include ../images/cart.svg
 						span.cart-item-count 3
 					.shopping-sum.show-laptop-inline
 						span

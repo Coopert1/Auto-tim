@@ -12,7 +12,7 @@
 				a(href="#")
 					|Боксы INMAX (Россия)
 			.filter__block__item
-				a(href="#")
+				a.active(href="#")
 					|Боксы Thule (Швеция)
 			.filter__block__item
 				a(href="#")
@@ -54,6 +54,26 @@
 				input(type="checkbox" name="s6", id="chkbox6")
 				label(for="chkbox6")
 					span Atlant
+			.filter__block__item
+				input(type="checkbox" name="s20", id="chkbox20")
+				label(for="chkbox20")
+					span Thule
+			.filter__block__item
+				input(type="checkbox" name="s21", id="chkbox21")
+				label(for="chkbox21")
+					span Autoform
+			.filter__block__item
+				input(type="checkbox" name="s22", id="chkbox22")
+				label(for="chkbox22")
+					span Atlant
+			.filter__block__item
+				input(type="checkbox", name="s23", id="chkbox23")
+				label(for="chkbox23")
+					span Евродеталь
+			.filter__block__item
+				input(type="checkbox" name="s24", id="chkbox24")
+				label(for="chkbox24")
+					span INMAX
 		.filter__block
 			.filter__block__name  Объем:
 			.filter__block__item
@@ -66,5 +86,18 @@
 					span cвыше 400
 		.filter__block.no-border
 			.filter__block__name  Цвет:
+			.filter__block__item
+				input(type="checkbox" name="color", id="color1")
+				label(for="color1")
+					span
+				input(type="checkbox" name="color", id="color2")
+				label(for="color2")
+					span
+				input(type="checkbox" name="color", id="color3")
+				label(for="color3")
+					span
+				input(type="checkbox" name="color", id="color4")
+				label(for="color4")
+					span
 		button(type="submit").btn.btn_filter.btn_margin-bottom Показать
 		button(type="reset").dashed.dashed_black очистить фильтр
