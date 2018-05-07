@@ -1444,7 +1444,7 @@ button, input {
 	
 	td{
 		line-height: 1.5;
-		vertical-align: bottom;
+		vertical-align: top;
 		&:first-child{
 			position: relative;
 			overflow: hidden;
@@ -1465,6 +1465,7 @@ button, input {
 		&:last-child{
 			//min-width: 120px;
 			color: #5e5e5e;
+			vertical-align: bottom;
 
 
 		}
