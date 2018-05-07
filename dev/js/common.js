@@ -243,9 +243,9 @@ $(function(){
 		//Slider for dealers setting
 			var dealerslider=$('#dealerslider').lightSlider({
 			galleryMargin: 25,
-			autoWidth: false,
+			autoWidth: true,
 			item: 5,
-			slideMargin: 10,
+			slideMargin: 30,
 			slideMove:1,
 			controls:false,
 			responsive:[
@@ -254,7 +254,7 @@ $(function(){
 					settings:
 						{
 							item:4,
-							autoWidth: false,
+							autoWidth: true,
 							slideMove:1,
 						}
 				},
@@ -263,7 +263,7 @@ $(function(){
 					settings:
 						{
 							item:1.5,
-							autoWidth: false,
+							autoWidth: true,
 							slideMove:1,
 						}
 				},
