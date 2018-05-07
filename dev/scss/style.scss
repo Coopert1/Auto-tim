@@ -143,6 +143,9 @@ ul.text{
 		border-right: 0;
 	}
 	padding: 20px 5px 20px 20px;
+	@include breakpoint(mobileonly){
+		padding: 20px 3px 20px 15px;
+	}
 	@include breakpoint(tablet){
 		margin-right: -1px;
 		margin-top: -1px;
@@ -213,15 +216,16 @@ ul.text{
 		}
 	}
 	&__name{
-		font-size: 12px;
+		font-size: 13px;
 		font-family: 'robotoblack';
 		font-weight: bold;
 		text-decoration: none;
 		margin-bottom: 20px;
-		height: 83px;
+		height: 45px;
 		overflow: hidden;
 		@include breakpoint(phablet){
 			font-size: 16px;
+			height: 55px;
 		}
 		&:hover{
 			color: #f2762e;
