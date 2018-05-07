@@ -1567,6 +1567,11 @@ button, input {
 	}
 
 }
+#lightSlider_product_card{
+	li{
+		//height: 100px;
+	}
+}
 .commodity{
 	text-align: center;
 	//position: relative;
@@ -1650,20 +1655,38 @@ button, input {
 		margin-bottom: 30px;
 		position: relative;
 		margin-top: -30px;
-		ma-width: 670px;
 		max-height: 460px;
 		img{vertical-align: middle;}
+		@include breakpoint(phablet){
+			max-width: 500px;
+		}
 		@include breakpoint(tablet){
 			margin-top:40px;
+			width: 440px;
+			max-width: none;
 			
 		}
+		@include breakpoint(laptop){
+			width: 600px;
+			
+		}
+		@media(min-width:1200){
+			width: 700px;
+			max-width: 700px;
+		}
 		&_stripe{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 92px;
-			height: 80px;
-			background-image: url(../images/sale.png);
+			position: relative;
+			&:before{
+				display: inline-block;
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 92px;
+				height: 80px;
+				background-image: url(../images/sale.png);
+				z-index: 5;
+			}
 		}
 		
 		
@@ -2002,8 +2025,12 @@ button, input {
 		border-bottom: 1px solid #bcbcbc;
 	}
 	@media (min-width:1200px){
-		max-width: 1180px;
+		//max-width: 1180px;
+		max-width: 1160px;
 		padding: 0;
+	}
+	@media (min-width:1220px){
+		max-width: 1180px;
 	}
 
 

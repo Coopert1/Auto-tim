@@ -296,6 +296,35 @@ $(function(){
 		slideEndAnimation: true,
 		pause: 10000,
 	});
+		//product_card slider
+		$('#lightSlider_product_card').lightSlider({
+			controls: false,
+			gallery: true,
+			item: 1,
+			loop:true,
+			slideMargin: 0,
+			galleryMargin: 80,
+			thumbItem: 4,
+			responsive:[
+			{breakpoint: 1024,
+				settings:{
+					galleryMargin: 100,
+				}
+			},
+			{breakpoint: 900,
+				settings:{
+					galleryMargin:50,
+				}
+			},
+			{
+			breakpoint: 799,
+				settings:{
+					galleryMargin: 0,
+				}
+			},
+			
+		]
+		});
 	
 	// end wrap in slider elemets
 	

@@ -19,10 +19,19 @@ html
 							a(href="#") Евродеталь
 						.commodity__favorite.hide-tablet
 						.commodity__filter.hide-tablet
-						.commodity__img
-							.commodity__img_stripe
-							img(src="images/product_card.png")
-						.commodity__thumbnails
+						.commodity__img.commodity__img_stripe
+							ul#lightSlider_product_card
+							
+								//img(src="images/product_card.png")
+								li(data-thumb="images/product_card.png")
+									img(src="images/product_card.png")
+								li(data-thumb="images/product_card.png")
+									img(src="images/product_card.png")
+								li(data-thumb="images/product_video.png")
+									img(src="images/product_video.png")
+							
+							
+						//.commodity__thumbnails
 							.commodity__thumbnail
 								img(src="images/product_card.png")
 							.commodity__thumbnail
