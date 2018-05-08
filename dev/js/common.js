@@ -5,7 +5,7 @@ $(function(){
 
 		if (window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
 			var browserMinWidth =  window.innerWidth;
-			if (browserMinWidth >= 1150) {
+			if (browserMinWidth >= 1215) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
 			else {
@@ -38,7 +38,7 @@ $(function(){
 	function fixMenuBar(){
 		var scrolTop = $(window).scrollTop();
 		var width = $(window).width();
-			if (width<1150){
+			if (width<1215){
 				if(scrolTop>=123){
 					$('body').addClass("scroll_padding-top")
 					$(".main-menu").addClass("fixed");
