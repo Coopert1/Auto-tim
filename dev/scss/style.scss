@@ -26,6 +26,7 @@
 
 input {
     -webkit-appearance: none;
+    outline: none;
     &:focus::-webkit-input-placeholder { color:transparent; }
 	&:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
 	&:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
@@ -377,8 +378,9 @@ ul.text{
 	}
 	p{
 		color:#5a5a5a;
+		line-height: 1.5;
 		font-family: 'arial';
-		font-size: 12px;
+		font-size: 11px;
 		margin-bottom: 20px;
 		padding: 5px;
 	}
@@ -1248,6 +1250,7 @@ button, input {
 		}
 	}
 	&_amount-plus{
+		user-select:none;
 		background:url(../images/amount_plus.png);
 		height: 26px;
 		width: 26px;
@@ -1256,6 +1259,7 @@ button, input {
 		}
 	}
 	&_amount-minus{
+		user-select:none;
 		background:url(../images/amount_minus.png);
 		height: 26px;
 		width: 26px;
@@ -1281,7 +1285,7 @@ button, input {
 	&-list__title{
 		text-transform: uppercase;
 		font-size: 15px;
-		font-weight: bold;
+		font-family: 'robotobold';
 		color: black;
 		margin-bottom: 25px;
 		display: inline-block;
@@ -1384,7 +1388,7 @@ button, input {
 				margin: 0;
 			}
 			&_chat{
-				margin-bottom: 20px;;
+				margin-bottom: 30px;;
 			}
 			
 			
@@ -2219,6 +2223,9 @@ table#order{
 		color: #929292;
 		font-size: 14px;
 	}
+	td.picture{
+		padding-top: 20px;
+	}
 	td{
 		position: relative;
 		vertical-align: top;
@@ -2947,6 +2954,7 @@ table#order{
 }
 [id^=chkbox]{
 	display: none;
+	outline: none;
 }
 [id^=chkbox] + label{
 	display: inline-block;
@@ -2976,8 +2984,10 @@ span{
 }
 [id^=chkbox]{
 	display: none;
+	outline: none;
 }
 [id^=color] + label{
+	outline: none;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
@@ -2999,11 +3009,12 @@ span{
 		span{
 			position: relative;
 			top: 0px;
-			left: 24px;
+			left: 25px;
 		}
 	}
 }
 [id^=color2] + label{
+	outline: none;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
@@ -3016,6 +3027,7 @@ span{
 	}
 }
 [id^=color2]:checked + label{
+	outline: none;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
@@ -3025,37 +3037,34 @@ span{
 		span{
 			position: relative;
 			top: 0px;
-			left: 24px;
+			left: 25px;
 		}
 	}
 }
 [id^=color3] + label{
+	outline: none;
+	position: relative;
+	left: 2px;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
 	background:url('../images/color_gold.png');
 	background-repeat: no-repeat;
-span{
-		position: relative;
-		top: 0px;
-		left: 25px;
-	}
 }
 [id^=color3]:checked + label{
+	outline: none;
+	position: relative;
+	left: 2px;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
 	background:url('../images/color_gold_checked.png');
 	background-repeat: no-repeat;
-	label{
-		span{
-			position: relative;
-			top: 0px;
-			left: 24px;
-		}
-	}
 }
 [id^=color4] + label{
+	outline: none;
+	position: relative;
+	left: 2px;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
@@ -3068,6 +3077,10 @@ span{
 	}
 }
 [id^=color4]:checked + label{
+	outline: none;
+	user-select: none;
+	position: relative;
+	left: 2px;
 	display: inline-block;
 	width: 46px;
 	height: 24px;
@@ -3077,7 +3090,7 @@ span{
 		span{
 			position: relative;
 			top: 0px;
-			left: 24px;
+			left: 25px;
 		}
 	}
 }
