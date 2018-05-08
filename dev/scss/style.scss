@@ -378,7 +378,7 @@ ul.text{
 	}
 	p{
 		color:#5a5a5a;
-		line-height: 1.5;
+		line-height: 21px;
 		font-family: 'arial';
 		font-size: 11px;
 		margin-bottom: 20px;
@@ -436,6 +436,17 @@ button, input {
 	font-size: 12px;
 	display: inline-block;
 	position: relative;
+	&:hover{
+		#pin{
+			.pin-lines{
+				fill: #f2762e;
+			}
+		}
+		a{
+			color: #b04b11;
+			border-bottom: 1px dashed #b04b11;
+		}
+	}
 	@include breakpoint(tablet){
 		top: -7px;
 	}
@@ -444,7 +455,7 @@ button, input {
 		text-decoration: none;
 		border-bottom: 1px dashed #f2762e;
 	}
-	img{
+	#pin{
 		display: none;
 		@include breakpoint(tablet){
 			position: absolute;
@@ -668,7 +679,7 @@ button, input {
 	:last-child{
 		float: none;
 	}
-	img{
+	#lock{
 		position:relative;
 		top:4px;
 		margin-right: 10px;
@@ -704,6 +715,16 @@ button, input {
 		&.active{
 			background: #323232;
 			color: #fff;
+			#heart{
+				.heart-lines{
+					fill: #fff;
+				}
+			}
+			#filters-icon{
+				.filters-line{
+					fill: #fff;
+				}
+			}
 		}
 		& a{
 			position: relative;
@@ -1826,6 +1847,10 @@ button, input {
 		font-size: 16px;
 		cursor: pointer;
 		font-family: "robotobold";
+		&:hover{
+			color: #f2762e;
+			border: 1px solid #f2762e;
+		}
 		@include breakpoint(mobileonly){
 			
 			padding-right: 7px;
@@ -2303,11 +2328,15 @@ table#order{
 			color: #181818;
 			display: inline-block;
 			margin: 0px 5px;
-			line-height: 40px;
+			line-height: 36px;
 			border: 1px solid #d3d3d3;
 			border-radius: 100%;
 			width: 40px;
 			height: 40px;
+		}
+		li:hover{
+			color: #f2762e;
+			border: 1px solid #f2762e;
 		}
 		li.active{
 			background: #f2762e;
@@ -2317,6 +2346,11 @@ table#order{
 		li.prev, li.next{
 			padding-top: 10px;
 			background: #f0f0f0;
+			&:hover{
+				background: #d9d9d9;
+				color: #181818;
+				border: 1px solid #d3d3d3;
+			}
 		}
 	}
 }
@@ -3463,23 +3497,7 @@ table.filters-result-items{
 		}
 	}
 }
-#heart{
-	&:hover{
-		.heart-lines{
-			fill: #fff;
-		}
-	}
-}
-#filters-icon{
-	.filters-line{
-		fill: #a5a6a9;
-	}
-	&:hover{
-		.filters-line{
-			fill: #fff;
-		}
-	}
-}
+
 
 
 
