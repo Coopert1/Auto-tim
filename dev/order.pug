@@ -80,8 +80,11 @@ html
 								span Комментарий к заказу
 								textarea.textarea
 								br
-								.order-form__submit
-									input.btn.btn_submit-order(type="submit" value="Оформить заказ")
+								a(href="order_number.html").btn.btn_submit-order
+									|Оформить заказ
+									span
+										include ./images/arrow_cart_btn.svg
+
 					.your-order.show-tablet
 						.order__title Ваш заказ
 						.product-item
