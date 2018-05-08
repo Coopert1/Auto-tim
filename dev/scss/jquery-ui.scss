@@ -182,7 +182,7 @@
 }
 .ui-selectmenu-icon.ui-icon {
 	float: right;
-	margin-top: 0;
+	margin-top: 2px;
 }
 .ui-button {
 	padding: .4em 1em;
@@ -340,7 +340,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-widget.ui-widget-content {
 	font-size: 13px;
-	border-top: 1px solid #f2f3f4;
+	// border-top: 1px solid #f2f3f4;
 	box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
 }
 .ui-widget-content {
@@ -379,7 +379,9 @@ html .ui-button.ui-state-disabled:active {
 	font-weight: normal;
 	color: #454545;
 	outline: none;
-	box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+	border-bottom: 1px solid #b6b7b8;
+	border-right: 1px solid #b6b7b8;
+	// box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
 }
 .ui-state-default a,
 .ui-state-default a:link,

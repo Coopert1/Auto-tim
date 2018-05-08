@@ -1,7 +1,8 @@
 .header-top
 	.wrapper
 		.location
-			img(src="images/pin.png", alt="pin")
+			//- img(src="images/pin.png", alt="pin")
+			include ../images/pin.svg
 			span Ваш город:  
 			a(href="#") Москва
 		.social-hrefs
@@ -17,7 +18,7 @@
 			a(href="#")
 				img(src="images/youtube.png",alt="youtube")
 		.enter
-			img(src="images/lock.png", alt="lock")
+			include ../images/lock.svg
 			a(href="#")
 				span.dashed Вход
 			span |
@@ -108,10 +109,10 @@
 						span Воздушные отопители Webasto
 						i.fa.fa-angle-right 
 					li.hide-tablet
-						img(src="images/lock.png", alt="lock")
+						include ../images/lock.svg
 						a(href="#").no-hover
 							span.dashed Вход
-						span |
+						span.separate |
 						a(href="#").no-hover
 							span.underline Регистрация
 			li.main-menu__item.show-tablet-inline
@@ -137,7 +138,7 @@
 			li.main-menu__item.show-tablet-inline.add-border
 				a.normal-position(href="filter_results.html")
 					include ../images/filters.svg
-			li.main-menu__item.add-border
+			li.main-menu__item.add-border.active
 				a.normal-position(href="#")
 					include ../images/heart.svg
 			li.main-menu__item.search-mobile.add-border.hide-tablet.normal-position
