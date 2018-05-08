@@ -136,21 +136,31 @@ $(function(){
 		}else{
 			//document.body.style.position = 'fixed';
 			//document.body.style.top = -scrollTop + 'px';
-			$("body").addClass("no-scroll");
+			//$("body").addClass("no-scroll");
 		}
 		console.log($(self).hasClass('open'));
 		
 	}
-	$('.main-menu .catalog-list').click(function(){
+	$('.main-menu .catalog-list').click(function(e){
 		var browserMinWidth = $(window).width();
-		
 			$(this).toggleClass('open');
-		if (browserMinWidth < 800) {
+		if (browserMinWidth < 800 ) {
+			
 			noScrollBody(this);
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
 		}
-	})
+	});
+	//prevent hide menu onclick
+	$('.main-menu .catalog-list>ul').click(function(e){
+		e.stopPropagation();
+	});
+	// hide menu when click another place
+	$("body").click(function(e){
+		var elem = $(".main-menu .catalog-list");
+		if (!elem.is(e.target) && elem.has(e.target).length === 0) elem.removeClass('open');
+
+	});
 	
 	
 	$('.search-mobile').click(function(event){
@@ -393,7 +403,7 @@ $(function(){
 		
 		if(!res){
 			console.log(res)
-			$(this).val($(this).val().slice(0,-1))	
+			$(this).val($(this).val().slice(0,-1))
 			return false;
 		}
 		setRangeFilter()
@@ -418,6 +428,10 @@ $(function(){
 	$( ".select-city" ).selectmenu({
 		width: 100 + '%',
 	});
+	
+	$(document).on("touchmove",function(e){
+    e.preventDefault();
+});
 	
 	
 	
