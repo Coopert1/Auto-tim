@@ -136,21 +136,31 @@ $(function(){
 		}else{
 			//document.body.style.position = 'fixed';
 			//document.body.style.top = -scrollTop + 'px';
-			$("body").addClass("no-scroll");
+			//$("body").addClass("no-scroll");
 		}
 		console.log($(self).hasClass('open'));
 		
 	}
-	$('.main-menu .catalog-list').click(function(){
+	$('.main-menu .catalog-list').click(function(e){
 		var browserMinWidth = $(window).width();
-		
 			$(this).toggleClass('open');
-		if (browserMinWidth < 800) {
+		if (browserMinWidth < 800 ) {
+			
 			noScrollBody(this);
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
 		}
-	})
+	});
+	//prevent hide menu onclick
+	$('.main-menu .catalog-list>ul').click(function(e){
+		e.stopPropagation();
+	});
+	// hide menu when click another place
+	$("body").click(function(e){
+		var elem = $(".main-menu .catalog-list");
+		if (!elem.is(e.target) && elem.has(e.target).length === 0) elem.removeClass('open');
+
+	});
 	
 	
 	$('.search-mobile').click(function(event){
@@ -296,6 +306,35 @@ $(function(){
 		slideEndAnimation: true,
 		pause: 10000,
 	});
+		//product_card slider
+		$('#lightSlider_product_card').lightSlider({
+			controls: false,
+			gallery: true,
+			item: 1,
+			loop:true,
+			slideMargin: 0,
+			galleryMargin: 80,
+			thumbItem: 4,
+			responsive:[
+			{breakpoint: 1024,
+				settings:{
+					galleryMargin: 100,
+				}
+			},
+			{breakpoint: 900,
+				settings:{
+					galleryMargin:50,
+				}
+			},
+			{
+			breakpoint: 799,
+				settings:{
+					galleryMargin: 0,
+				}
+			},
+			
+		]
+		});
 	
 	// end wrap in slider elemets
 	
@@ -318,10 +357,10 @@ $(function(){
 	
 	
 	//this part for looking .commodity__img
-	$(".commodity__thumbnails img").click(function(){
-		var sourse =  $(this).attr('src');
-		$(".commodity__img img").attr( 'src', sourse);
-	});
+//	$(".commodity__thumbnails img").click(function(){
+//		var sourse =  $(this).attr('src');
+//		$(".commodity__img img").attr( 'src', sourse);
+//	});
 	//end part for looking .commodity__img
 
 	//range slider
@@ -364,7 +403,7 @@ $(function(){
 		
 		if(!res){
 			console.log(res)
-			$(this).val($(this).val().slice(0,-1))	
+			$(this).val($(this).val().slice(0,-1))
 			return false;
 		}
 		setRangeFilter()
@@ -388,6 +427,10 @@ $(function(){
 	});
 	$( ".select-city" ).selectmenu({
 		width: 100 + '%',
+	});
+	
+	$("body").on("touchmove",function(e){
+		e.preventDefault();
 	});
 	
 	
