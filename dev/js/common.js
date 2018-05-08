@@ -429,9 +429,9 @@ $(function(){
 		width: 100 + '%',
 	});
 	
-	$(document).on("touchmove",function(e){
-    e.preventDefault();
-});
+	$("body").on("touchmove",function(e){
+		e.preventDefault();
+	});
 	
 	
 	
