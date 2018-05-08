@@ -1385,10 +1385,16 @@ button, input {
 	}
 	&-info__phone{
 		margin-bottom: 5px;
-		color: #6e6e6e;
+		
 		font-size: 14px;
 		@include breakpoint(tablet){
 			font-size: 18px;
+		}
+		
+	}
+	.footer-info__phone{
+		a{
+			color: #6e6e6e;
 		}
 	}
 	&-payment{
@@ -1448,7 +1454,7 @@ button, input {
 		
 	}
 	&-rights{
-		color: #6e6e6e;
+		color: #8a8a8a;
 		font-size: 12px;
 		text-align: center;
 		padding: 15px 0;
@@ -1459,6 +1465,7 @@ button, input {
 	}
 	.footer__design-autor{
 		display: none;
+		color: #8a8a8a;
 		@include breakpoint(tablet){
 			display: inline-block;
 			float: right;
@@ -1468,7 +1475,8 @@ button, input {
 		}
 		a{
 			text-decoration: underline;
-			padding-left: 2px
+			padding-left: 2px;
+			color: #8a8a8a;
 		}
 	}
 	
