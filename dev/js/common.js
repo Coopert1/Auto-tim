@@ -1,7 +1,7 @@
 $(function(){
 	//open main menu only main page and show/hide menu
 	function displayCatalog() {
-		if (window.location.pathname== '/taras/autotim/app/index.html') {
+		if (window.location.pathname== '/index.html') {
 			var browserMinWidth =  window.innerWidth;
 			if (browserMinWidth >= 1150) {
 				$('.main-menu .catalog-list').addClass('open');
@@ -46,7 +46,7 @@ $(function(){
 					}
 			}
 			else {
-				if(window.location.pathname== '/taras/autotim/app/index.html'){
+				if(window.location.pathname== '/index.html'){
 					//show-hide menu
 					if(scrolTop>=645 && scrolTop<=860){
 						$('.main-menu .catalog-list').removeClass('open')
@@ -90,7 +90,7 @@ $(function(){
 	$('.catalog-list').click(function(e){
 		var scrolTop = $(window).scrollTop();
 		var width = window.innerWidth;
-		if (window.location.pathname== '/taras/autotim/app/index.html') {
+		if (window.location.pathname== '/index.html') {
 			if(width>=1150 && scrolTop<645) {
 				e.stopImmediatePropagation();
 			}else return
@@ -128,15 +128,15 @@ $(function(){
 	
 	function noScrollBody(self){
 		var scrollTop = $(window).scrollTop();
-		if(!($(self).hasClass('open'))){
+		if(($(self).hasClass('open'))){
 			//document.body.style.position = '';
 			document.body.style.width = '';
 			document.body.style.top = '';
-			$("body").removeClass("no-scroll");
+			$("body").addClass("no-scroll");
 		}else{
 			//document.body.style.position = 'fixed';
 			//document.body.style.top = -scrollTop + 'px';
-			//$("body").addClass("no-scroll");
+			$("body").removeClass("no-scroll");
 		}
 		console.log($(self).hasClass('open'));
 		
@@ -429,9 +429,7 @@ $(function(){
 		width: 100 + '%',
 	});
 	
-	$("body").on("touchmove",function(e){
-		e.preventDefault();
-	});
+	
 	
 	
 	
