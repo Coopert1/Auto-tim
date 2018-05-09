@@ -291,7 +291,28 @@ $(function(){
 		width: 100 + '%',
 	});
 	
+	// input-mask
+	$('input[type="tel"]').inputmask('+7(999)999-99-99');
+	
+	//close modal window
+	$(".fixed-overlay__modal .icon_remove-item").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
+	$(".fixed-overlay__modal input[type='submit']").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
+	//open modal window
+	$("a.btn_callback").click(function(){
+		$(".fixed-overlay.callback").addClass('active');
+		
+	});
+	$(".enter").click(function(){
+		$(".fixed-overlay.sing-in").addClass('active');
+		
+	});
+	
 
-	//scroll disabler
+	
+
 
 });
