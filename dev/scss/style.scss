@@ -539,6 +539,7 @@ button, input {
 		display: block;
 		font-size: 16px;
 		margin: 20px auto;
+		padding-left: 20px;
 		padding: 10px 10px 10px 30px;
 		border-radius:5px;
 		color: #fff;
@@ -546,7 +547,7 @@ button, input {
 		&:hover{
 			background: #d9621d;
 		}
-		span{
+		svg{
 			position: relative;
 			top: 4px;
 			float:right;
@@ -558,6 +559,7 @@ button, input {
 			float: right;
 			width: 218px;
 			padding: 10px;
+			padding-left: 20px;
 		}
 	}
 	&_filter{
@@ -606,6 +608,7 @@ button, input {
 	}
 	&_continue-shopping{
 		font-size: 18px;
+		font-family: "museosansregular";
 		border-radius:5px;
 		color: #fff;
 			padding: 10px 20px;
@@ -839,7 +842,7 @@ button, input {
 		
 		display: none;
 		position: absolute;
-		height: calc(100vh - 180px);
+		height: calc(100vh-100px);
 		top: 100%;
 		z-index: 10;
 		left: 0px;
@@ -2615,7 +2618,8 @@ table#order{
 			padding-right: 25px;
 			input{
 				border-radius: 5px;
-				box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+				border-bottom: 1px solid #b6b7b8;
+				border-right: 1px solid #b6b7b8;
 				outline: none;
 				
 			}
@@ -2966,7 +2970,8 @@ table#order{
 			display: inline-block;
 			outline: none;
 			border-radius: 5px;
-			box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+			border-bottom: 1px solid #b6b7b8;
+			border-right: 1px solid #b6b7b8;
 			@include breakpoint(tablet){
 				width: 500px;
 			}
@@ -3381,7 +3386,7 @@ span{
 	}
 }
 
-///////// thanks-for-order
+///////// order-number.pug
 
 .thanks-for-order{
 	max-width: 640px;
@@ -3392,6 +3397,7 @@ span{
 	}
 	p{
 		font-size: 15px;
+		line-height: 24px;
 		color: #818081;
 		margin: 30px 0 50px 0;
 	}
@@ -3566,6 +3572,22 @@ table.filters-result-items{
 
 .gallery-item{
 	margin-bottom: 30px;
+	&:before {
+		content: "";
+		padding-top: 100%;
+		float: left;
+	}
+	overflow: hidden;
+	img{
+			transform: scale(1.0);
+			transition: all 0.3s ease;
+		}
+	&:hover{
+		img{
+			transform: scale(1.04);
+			transition: all 0.3s ease;
+		}
+	}
 }
 
 //start text-information page
@@ -3598,6 +3620,10 @@ table.filters-result-items{
 .breadcrumbs-filters{
 	margin-top: 40px;
 	margin-bottom:0;
+}
+.title-order-number{
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 ///
@@ -3665,7 +3691,12 @@ table.filters-result-items{
 		}
 	}
 }
-
+#overlay{
+	-webkit-overflow-scrolling: touch;
+}
+.center-text{
+	text-align: center;
+}
 
 
 

@@ -5,7 +5,7 @@ $(function(){
 
 		if (window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
 			var browserMinWidth =  window.innerWidth;
-			if (browserMinWidth >= 1215) {
+			if (browserMinWidth >= 1215 && !($('.main-menu').hasClass('fixed'))) {
 				$('.main-menu .catalog-list').addClass('open');
 			}
 			else {
@@ -294,20 +294,4 @@ $(function(){
 
 	//scroll disabler
 
-	 document.ontouchmove = function ( event ) {
-
-    var isTouchMoveAllowed = true, target = event.target;
-
-    while ( target !== null ) {
-        if ( target.classList && target.classList.contains( 'disable-scrolling' ) ) {
-            isTouchMoveAllowed = false;
-            break;
-        }
-        target = target.parentNode;
-    }
-
-    if ( !isTouchMoveAllowed ) {
-        event.preventDefault();
-    }
-};
 });
