@@ -15,21 +15,21 @@ html
 						form
 							.form-contact.clearfix
 								.wrap-input
-									input.contact-name
+									input.contact-name(required)
 									.label
 										span Контактное лицо:
 										span *
 								.wrap-input
-									input.contact-mail
+									input.contact-mail(required)
 									.label
 										span E-Mail:
 										span *
 								.wrap-input
-									input.contact-phone
+									input.contact-phone(required)
 									.label
 										span Телефон:
 										span *
-								.wrap-select.contact-location
+								.wrap-select.contact-location(required)
 									select.select-city
 										option Выберите город
 										option Москва
@@ -38,12 +38,12 @@ html
 										span Местоположение
 										span *
 								.wrap-input
-									input.contact-address
+									input.contact-address(required)
 									.label
 										span Адрес (без города):
 										span *
 								.wrap-input
-									input.contact-zip-code
+									input.contact-zip-code(required)
 									.label
 										span Индекс:
 										span *
