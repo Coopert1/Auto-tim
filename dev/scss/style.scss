@@ -27,7 +27,7 @@ html, body {
 //	height: 100%;
 //	margin: 0;
 //	padding: 0;
-//	overflow: hidden;
+	// overflow: hidden;
 }
 body {
 //	overflow: auto; /* добавить полосу прокрутки */ 
@@ -67,6 +67,10 @@ img{
 	overflow: hidden;
 	// width: 100%;
 	// position: fixed;
+	// top: 0;
+	// bottom: 0;
+	// left: 0;
+	// right: 0;
 }
 .scroll{
 	&_margin-top{
@@ -93,6 +97,10 @@ h2{
 	font-size: 30px;
 	margin-bottom: 35px;
 	margin-top: 20px;
+	.titles{
+		margin-top: 40px;
+		margin-bottom: 25px;
+	}
 }
 h3{
 	color: #3b3b3b;
@@ -205,6 +213,7 @@ ul.text{
 		padding: 20px;
 		margin-right: -1px;
 		margin-top: -1px;
+		min-height: 391px;
 	}
 	a{
 		text-decoration: none;
@@ -543,6 +552,7 @@ button, input {
 		display: block;
 		font-size: 16px;
 		margin: 20px auto;
+		padding-left: 20px;
 		padding: 10px 10px 10px 30px;
 		border-radius:5px;
 		color: #fff;
@@ -550,7 +560,7 @@ button, input {
 		&:hover{
 			background: #d9621d;
 		}
-		span{
+		svg{
 			position: relative;
 			top: 4px;
 			float:right;
@@ -562,6 +572,7 @@ button, input {
 			float: right;
 			width: 218px;
 			padding: 10px;
+			padding-left: 20px;
 		}
 	}
 	&_filter{
@@ -587,9 +598,6 @@ button, input {
 		background: #fff;
 		width: 100%;
 		margin: 20px auto;
-		&:hover{
-			background: #d9621d;
-		}
 	}
 	&_margin-bottom{
 		margin-bottom:10px;
@@ -613,6 +621,7 @@ button, input {
 	}
 	&_continue-shopping{
 		font-size: 18px;
+		font-family: "museosansregular";
 		border-radius:5px;
 		color: #fff;
 			padding: 10px 20px;
@@ -846,7 +855,7 @@ button, input {
 		
 		display: none;
 		position: absolute;
-		height: calc(100vh - 180px);
+		height: calc(100vh-100px);
 		top: 100%;
 		z-index: 10;
 		left: 0px;
@@ -857,6 +866,7 @@ button, input {
 		list-style: none;
 		padding: 13px 10px;
 		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
 //............................//
 //		width: 100vw;
 //		font-size: 14px;
@@ -1483,6 +1493,7 @@ button, input {
 	.footer-info__phone{
 		a{
 			color: #6e6e6e;
+			font-family: 'robotolight';
 		}
 	}
 	&-payment{
@@ -1499,6 +1510,7 @@ button, input {
 			font-size: 12px;
 			margin-top: 20px;
 			margin-bottom: 20px;
+			font-family: 'robotolight';
 		}
 		&__img a{
 			display: inline-block;
@@ -1516,17 +1528,20 @@ button, input {
 		&__text{
 			margin-top: 15px;
 			font-size: 12px;
+			font-family: 'robotolight';
 			@include breakpoint(tablet){
 				margin: 0;
 			}
 			&_chat{
-				margin-bottom: 30px;;
+				margin-bottom: 30px;
+				font-family: 'robotolight';
 			}
 			
 			
 		}
 		&__adress{
 			color: #6e6e6e;
+			font-family: 'robotolight';
 			@include breakpoint(tablet){
 				font-size: 14px;
 			}
@@ -2616,7 +2631,8 @@ table#order{
 			padding-right: 25px;
 			input{
 				border-radius: 5px;
-				box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+				border-bottom: 1px solid #b6b7b8;
+				border-right: 1px solid #b6b7b8;
 				outline: none;
 				
 			}
@@ -2967,7 +2983,8 @@ table#order{
 			display: inline-block;
 			outline: none;
 			border-radius: 5px;
-			box-shadow: 3px 3px 7px 0px rgba(182,183,184,0.35);
+			border-bottom: 1px solid #b6b7b8;
+			border-right: 1px solid #b6b7b8;
 			@include breakpoint(tablet){
 				width: 500px;
 			}
@@ -3382,7 +3399,7 @@ span{
 	}
 }
 
-///////// thanks-for-order
+///////// order-number.pug
 
 .thanks-for-order{
 	max-width: 640px;
@@ -3393,6 +3410,7 @@ span{
 	}
 	p{
 		font-size: 15px;
+		line-height: 24px;
 		color: #818081;
 		margin: 30px 0 50px 0;
 	}
@@ -3413,7 +3431,7 @@ span{
 }
 ////// brands.pug styles
 .brand-container{
-	margin-bottom: 80px;
+	// margin-bottom: 80px;
 }
 .brand{
 	color: #292929;
@@ -3432,6 +3450,7 @@ span{
 	}
 	&:hover{
 		box-shadow: 0px 0px 25px -7px rgba(176,169,176,1);
+		color: #f2762e;
 	}
 }
 .brand-content{
@@ -3566,6 +3585,22 @@ table.filters-result-items{
 
 .gallery-item{
 	margin-bottom: 30px;
+	&:before {
+		content: "";
+		padding-top: 100%;
+		float: left;
+	}
+	overflow: hidden;
+	img{
+			transform: scale(1.0);
+			transition: all 0.3s ease;
+		}
+	&:hover{
+		img{
+			transform: scale(1.04);
+			transition: all 0.3s ease;
+		}
+	}
 }
 
 //start text-information page
@@ -3582,6 +3617,29 @@ table.filters-result-items{
 //		border: none;
 //	}
 }
+///
+
+.title-dealers{
+	margin-bottom: 35px;
+}
+.title-cart{
+	margin-bottom:25px;
+}
+.title-filters{
+	margin-bottom: 28px;
+	margin-top: 14px;
+	font-size: 48px;
+}
+.breadcrumbs-filters{
+	margin-top: 40px;
+	margin-bottom:0;
+}
+.title-order-number{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+///
 
 .show-tablet-table{
 	display: none;
@@ -3748,6 +3806,13 @@ table.filters-result-items{
 	}
 }
 
+
+#overlay{
+	-webkit-overflow-scrolling: touch;
+}
+.center-text{
+	text-align: center;
+}
 
 
 
