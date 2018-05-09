@@ -196,6 +196,7 @@ ul.text{
 		//padding-top: 0;
 		//margin-top: 0;
 		//margin-bottom: 15px;
+		height: 72px;
 		border: none;
 		margin: 0 0 15px 0;
 		padding: 0;
@@ -2800,7 +2801,7 @@ table#order{
 		#pay-shope+label{
 			margin-bottom: 0;
 			.span-wrap{
-				margin-top: 10px;
+				// margin-top: 10px;
 				font-size: 12px;
 				color: #919292;
 				position: relative;
@@ -2913,7 +2914,7 @@ table#order{
 		#delivery-courier+label{
 			margin-bottom: 0;
 			.span-wrap{
-				margin-top: 10px;
+				margin-top: 5px;
 				font-size: 12px;
 				color: #919292;
 				position: relative;
@@ -3182,15 +3183,15 @@ span{
 		}
 	}
 }
-[id^=chkbox]{
+[id^=color]{
 	display: none;
 	outline: none;
 }
-[id^=color] + label{
+[id^=color1] + label{
 	outline: none;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_grey.png');
 	background-repeat: no-repeat;
 span{
@@ -3199,10 +3200,10 @@ span{
 		left: 25px;
 	}
 }
-[id^=color]:checked + label{
+[id^=color1]:checked + label{
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_grey_checked.png');
 	background-repeat: no-repeat;
 	label{
@@ -3216,8 +3217,8 @@ span{
 [id^=color2] + label{
 	outline: none;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_white.png');
 	background-repeat: no-repeat;
 span{
@@ -3229,8 +3230,8 @@ span{
 [id^=color2]:checked + label{
 	outline: none;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_white_checked.png');
 	background-repeat: no-repeat;
 	label{
@@ -3244,30 +3245,27 @@ span{
 [id^=color3] + label{
 	outline: none;
 	position: relative;
-	left: 2px;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_gold.png');
 	background-repeat: no-repeat;
 }
 [id^=color3]:checked + label{
 	outline: none;
 	position: relative;
-	left: 2px;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_gold_checked.png');
 	background-repeat: no-repeat;
 }
 [id^=color4] + label{
 	outline: none;
 	position: relative;
-	left: 2px;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_black.png');
 	background-repeat: no-repeat;
 span{
@@ -3280,10 +3278,9 @@ span{
 	outline: none;
 	user-select: none;
 	position: relative;
-	left: 2px;
 	display: inline-block;
-	width: 46px;
-	height: 24px;
+	width: 49px;
+	height: 26px;
 	background:url('../images/color_black_checked.png');
 	background-repeat: no-repeat;
 	label{
@@ -3757,18 +3754,17 @@ table.filters-result-items{
 	input{
 		display: inline-block;
 		width: 100%;
-		max-width: 220px;
+		// max-width: 220px;
 		height: 34px;
 		outline: none;
 		border: 1px solid #c8c8c8;
 		border-radius: 3px;
 		padding: 0 15px;
 		color: #a0a0a0;
-		@include breakpoint(phablet){
-			width: 222px;
-		}
+		
 		&[type="submit"]{
 			color: white;
+			border: 1px solid #f2762e;
 			text-transform: none;
 			margin-top: 25px;
 		}
@@ -3779,6 +3775,9 @@ table.filters-result-items{
 		position: relative;
 		display: block;
 		margin-top: 45px;
+		@include breakpoint(phablet){
+			width: 222px;
+		}
 		
 		span{
 			position: absolute;
