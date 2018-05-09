@@ -1,7 +1,33 @@
+.fixed-overlay.fixed-overlay__modal.callback
+	.modal
+		.modal_container
+			span.icon.icon_remove-item
+			form
+				.modal__title Перезвоните мне
+				.wrap-input
+					span Представьтесь
+					input
+				.wrap-input
+					span Номер телефона
+					input(type="tel" placeholder="+7 (____)  ____ -__ - __")
+				input.btn.btn_callback(type="submit" value="Перезвоните мне")
+.fixed-overlay.fixed-overlay__modal.sing-in
+	.modal
+		.modal_container
+			span.icon.icon_remove-item
+			form
+				.modal__title Войти
+				.wrap-input
+					span Логин
+					input
+				.wrap-input
+					span Пароль
+					input(type="password")
+				input.btn.btn_callback(type="submit" value="Войти")
+				a.forgot-password(href="#") Забыли пароль?
 .header-top
 	.wrapper
 		.location
-			//- img(src="images/pin.png", alt="pin")
 			include ../images/pin.svg
 			span Ваш город:  
 			a(href="#") Москва
