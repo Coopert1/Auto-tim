@@ -1,5 +1,14 @@
 
 @font-face {
+	font-family: "robotolight";
+	src: url("../fonts/roboto/robotolight/roboto-light.eot");
+	src: url("../fonts/roboto/robotolight/roboto-light.eot?#iefix")format("embedded-opentype"),
+		 url("../fonts/roboto/robotolight/roboto-light.woff") format("woff"),
+		 url("../fonts/roboto/robotolight/roboto-light.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
 	font-family: "robotoregular";
 	src: url("../fonts/roboto/robotoregular/roboto-regular.eot");
 	src: url("../fonts/roboto/robotoregular/roboto-regular.eot?#iefix")format("embedded-opentype"),

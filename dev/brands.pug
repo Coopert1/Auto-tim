@@ -10,7 +10,7 @@ html
 					a(href="index.html") Главная
 				li
 					a(href="#") Мы официальные дилеры
-			h1
+			h1.title-dealers
 				|Мы официальные дилеры
 			.clearfix.brand-container
 				.col-mobileonly-1-3.col-phablet-1-4.col-tablet-1-5.no-padding
@@ -146,4 +146,24 @@ html
 								img(src="images/buzzrack.png", alt="brand-logo")
 							span Buzzrack
 							span (8)
+			.paginator
+				ul
+					a(href="#")
+						li.prev
+							i.fa.fa-angle-left
+					a(href="#")
+						li 1
+					a(href="#")
+						li.active 2
+					a(href="#")
+						li 3
+					a(href="#").show-tablet-inline
+						li 4
+					a(href="#").show-tablet-inline
+						li 5
+					a(href="#").show-tablet-inline
+						li 6
+					a(href="#")
+						li.next
+							i.fa.fa-angle-right
 		include ./parts/footer.pug
