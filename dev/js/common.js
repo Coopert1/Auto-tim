@@ -248,7 +248,8 @@ $(function(){
 	//end range slider
 
 	// sorting
-		$('a.price').click(function(){
+		$('a.price').click(function(e){
+			e.preventDefault();
 			if($(this).children().hasClass('fa-caret-up')){
 				$(this).children('i.fa.fa-caret-up').removeClass("fa-caret-up").addClass("fa-caret-down");
 			}
@@ -257,7 +258,8 @@ $(function(){
 			}
 		});
 
-		$('a.popular').click(function(){
+		$('a.popular').click(function(e){
+			e.preventDefault();
 			if($(this).children().hasClass('fa-caret-up')){
 				$(this).children('i.fa.fa-caret-up').removeClass("fa-caret-up").addClass("fa-caret-down");
 			}
@@ -289,4 +291,23 @@ $(function(){
 		width: 100 + '%',
 	});
 	
+
+	//scroll disabler
+
+	 document.ontouchmove = function ( event ) {
+
+    var isTouchMoveAllowed = true, target = event.target;
+
+    while ( target !== null ) {
+        if ( target.classList && target.classList.contains( 'disable-scrolling' ) ) {
+            isTouchMoveAllowed = false;
+            break;
+        }
+        target = target.parentNode;
+    }
+
+    if ( !isTouchMoveAllowed ) {
+        event.preventDefault();
+    }
+};
 });
