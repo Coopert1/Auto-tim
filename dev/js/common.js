@@ -1,9 +1,9 @@
 $(function(){
-
+	var host_pathname = '/taras/autotim-dev/app/index.html';
 	//open main menu only main page and show/hide menu
 	function displayCatalog() {
 
-		if (window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if (window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
 			var browserMinWidth =  window.innerWidth;
 			if (browserMinWidth >= 1215 && !($('.main-menu').hasClass('fixed'))) {
 				$('.main-menu .catalog-list').addClass('open');
@@ -32,6 +32,7 @@ $(function(){
 	$(window).resize(function(){
 		displayCatalog();
 		dealersSlider();
+		menuSet();
 	});
 	
 	//scroll fixed top main-menu
@@ -49,7 +50,7 @@ $(function(){
 			}
 			else {
 
-				if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+				if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
 					//show-hide menu
 					if(scrolTop>=645 && scrolTop<=860){
 						$('.main-menu .catalog-list').removeClass('open')
@@ -93,7 +94,7 @@ $(function(){
 	$('.catalog-list').click(function(e){
 		var scrolTop = $(window).scrollTop();
 		var width = window.innerWidth;
-		if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
 			if(width>=1150 && scrolTop<645) {
 				e.stopImmediatePropagation();
 			}else return
@@ -131,28 +132,38 @@ $(function(){
 	
 	function noScrollBody(self){
 		var scrollTop = $(window).scrollTop();
+		var topPosition = 182 - scrollTop;
 		if(($(self).hasClass('open'))){
-			//document.body.style.position = '';
 			document.body.style.width = '';
 			document.body.style.top = '';
-			$("body").addClass("no-scroll");
-		}else{
-			//document.body.style.position = 'fixed';
-			//document.body.style.top = -scrollTop + 'px';
-			$("body").removeClass("no-scroll");
 		}
-		console.log($(self).hasClass('open'));
 		
+		if(topPosition<=0){
+			return 56;
+		}else return topPosition;
 	}
-	$('.main-menu .catalog-list').click(function(e){
-		var browserMinWidth = $(window).width();
-			$(this).toggleClass('open');
+	function menuSet(self){
+		var browserMinWidth = window.innerWidth;
+		var heightMenu = window.innerHeight - document.querySelector(".main-menu").getBoundingClientRect().bottom + "px";
+			$(self).toggleClass('open');
 		if (browserMinWidth < 800 ) {
-			// disableScroll()
+			console.log(browserMinWidth)
+			$('.main-menu .catalog-list>ul').css({
+				"max-height": heightMenu,
+				"top": noScrollBody(self) +"px"
+			});
 			$('body').toggleClass('no-scroll')
 			$('.backdrop').toggleClass('on');
 			$('.bars').toggleClass('active');
+		} else {
+			$('.main-menu .catalog-list>ul').css({
+				"max-height": "",
+				"top": ""
+			});
 		}
+	}
+	$('.main-menu .catalog-list').click(function(){
+		menuSet(this);
 	});
 	//prevent hide menu onclick
 	$('.main-menu .catalog-list>ul').click(function(e){
@@ -171,7 +182,7 @@ $(function(){
 	// hide menu when click another place
 	$("body").click(function(e){
 		var elem = $(".main-menu .catalog-list");
-		if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
 			if($(".main-menu").hasClass("fixed")){
 				if (!elem.is(e.target) && elem.has(e.target).length === 0) elem.removeClass('open');
 			}
