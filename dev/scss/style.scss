@@ -65,7 +65,7 @@ img{
 .no-scroll {
 	// height: 100%;
 	overflow: hidden;
-	// width: 100%;
+	width: 100%;
 	// position: fixed;
 	// top: 0;
 	// bottom: 0;
@@ -3124,8 +3124,9 @@ table#order{
     top: 0;
     right: -320px;
     z-index: 11;
-	overflow-x: scroll;
+	overflow-y: scroll;
     visibility: hidden;
+    -webkit-overflow-scrolling: touch;
     &_active{
 		transition: all 0.4s ease;
 		right: 0;

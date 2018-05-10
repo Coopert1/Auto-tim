@@ -3,7 +3,7 @@ $(function(){
 	//open main menu only main page and show/hide menu
 	function displayCatalog() {
 
-		if (window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if (window.location.pathname== '/taras/autotim/app/index.html' || window.location.pathname== '/index.html'){
 			var browserMinWidth =  window.innerWidth;
 			if (browserMinWidth >= 1215 && !($('.main-menu').hasClass('fixed'))) {
 				$('.main-menu .catalog-list').addClass('open');
@@ -49,7 +49,7 @@ $(function(){
 			}
 			else {
 
-				if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+				if(window.location.pathname== '/taras/autotim/app/index.html' || window.location.pathname== '/index.html'){
 					//show-hide menu
 					if(scrolTop>=645 && scrolTop<=860){
 						$('.main-menu .catalog-list').removeClass('open')
@@ -93,7 +93,7 @@ $(function(){
 	$('.catalog-list').click(function(e){
 		var scrolTop = $(window).scrollTop();
 		var width = window.innerWidth;
-		if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if(window.location.pathname== '/taras/autotim/app/index.html' || window.location.pathname== '/index.html'){
 			if(width>=1150 && scrolTop<645) {
 				e.stopImmediatePropagation();
 			}else return
@@ -171,7 +171,7 @@ $(function(){
 	// hide menu when click another place
 	$("body").click(function(e){
 		var elem = $(".main-menu .catalog-list");
-		if(window.location.pathname== '/taras/autotim-dev/app/index.html' || window.location.pathname== '/index.html'){
+		if(window.location.pathname== '/taras/autotim/app/index.html' || window.location.pathname== '/index.html'){
 			if($(".main-menu").hasClass("fixed")){
 				if (!elem.is(e.target) && elem.has(e.target).length === 0) elem.removeClass('open');
 			}
@@ -345,7 +345,7 @@ $(function(){
 
 	}
 
-	removeIOSRubberEffect( document.querySelector( ".scrollable" ) );
+	// removeIOSRubberEffect( document.querySelector( ".scrollable" ) );
 	
 
 
