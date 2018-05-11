@@ -63,14 +63,14 @@ img{
 	position: relative;
 }
 .no-scroll {
-	// height: 100%;
-	overflow: hidden;
+	height: 100%;
 	width: 100%;
 	// position: fixed;
-	// top: 0;
-	// bottom: 0;
-	// left: 0;
-	// right: 0;
+	// top:0;
+	// left:0;
+	// right:0;
+	// bottom:0;
+	overflow: hidden;
 }
 .scroll{
 	&_margin-top{
@@ -768,8 +768,8 @@ button, input {
 .main-menu{
 	padding: 0;
 	background: #424242;
-	position: relative;
-	z-index: 10;
+	position:relative;
+	z-index: 11;
 	&.fixed{
 		position: fixed;
 		top: 0;
@@ -847,6 +847,7 @@ button, input {
 .catalog-list{
 	color: #fff;
 	position:relative;
+	z-index: 10;
 	font-family: 'robotobold';
 	margin-left: -10px;
 	@include breakpoint(tablet){
@@ -855,18 +856,20 @@ button, input {
 	ul{
 		
 		display: none;
-		position: absolute;
-		height: calc(100vh-100px);
-		top: 100%;
-		z-index: 10;
-		left: 0px;
-		width: 100vw;
+		position: fixed;
+		bottom: 0;
+	    top:0;
+	    z-index: 10;
+	    // margin-top: 182px;
+	    left: 0px;
+	    width: 100vw;
 		font-size: 14px;
 		background: #fff;
 		color: #5e5e5e;
 		list-style: none;
 		padding: 13px 10px;
 		overflow-y:scroll;
+		// height:531px
 		-webkit-overflow-scrolling: touch;
 //............................//
 //		width: 100vw;
@@ -885,11 +888,14 @@ button, input {
 		//transform: translate(-50%, -50%);
 //............................//
 		@include breakpoint(tablet){
+			position: absolute;
+	    	top: 100%;
 			width: 262px;
 			left: 0px;
 			height: auto;
 			box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.38);
 			overflow: auto;
+			bottom: auto;
 		}
 		@media(min-width: 1150px){
 			//display: block;
@@ -3813,7 +3819,5 @@ table.filters-result-items{
 .center-text{
 	text-align: center;
 }
-
-
 
 
