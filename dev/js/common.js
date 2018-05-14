@@ -185,9 +185,10 @@ $(function(){
 	function disableScroll() {
 		 var scrollTop = window.pageYOffset;
 			function setBodyPosition(){
-				var topPosition = 182 - scrollTop;
-				console.log(scrollTop)
+				var topPosition = 182 - 56 - scrollTop;
+				
 				if(topPosition<=0){
+					console.log(scrollTop)
 					return 126
 				}else return scrollTop;
 			}
