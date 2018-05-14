@@ -792,7 +792,7 @@ button, input {
 		display: inline-block;
 		color:#fff;
 		text-align:center;
-		&.active{
+		&:hover{
 			background: #323232;
 			color: #fff;
 			#heart{
@@ -1265,8 +1265,14 @@ button, input {
 }
 .open{
 	background: #fff;
+	&:hover{
+		background: #fff;
+	}
 	@include breakpoint(tablet){
 		background: #323232;
+		&:hover{
+			background: #323232;
+		}
 	}
 	span.menu-list-name{
 		color: #5e5e5e;
