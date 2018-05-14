@@ -354,17 +354,17 @@ $('span.icon.icon_fav').click(function(){
 
 
 //prevent click main page on laptop
-	$('.catalog-list').click(function(e){
-		var scrolTop = $(window).scrollTop();
-		var width = window.innerWidth;
-		if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
-			if(width>=1150 && scrolTop<645) {
-				e.stopImmediatePropagation();
-			}else return
-		}else return
+	// $('.catalog-list').click(function(e){
+		// var scrolTop = $(window).scrollTop();
+		// var width = window.innerWidth;
+		// if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
+		// 	if(width>=1150 && scrolTop<645) {
+		// 		e.stopImmediatePropagation();
+		// 	}else return
+		// }else return
 			
 		
-	})
+	// })
 	
 	// peculiar-properties row show/hide
 	$('.peculiar-properties_all').click(function(e){

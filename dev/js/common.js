@@ -99,7 +99,7 @@ $(function(){
 	
 	//іскщдд
 
-	function menuPosition(self){
+	function menuPosition(){
 		var scrollTop = $(window).scrollTop();
 		var topPosition = 182 - scrollTop;
 		if(topPosition<=0){
@@ -114,32 +114,66 @@ $(function(){
 		if (browserWidth < 800 ) {
 			$('.main-menu .catalog-list>ul').css({
 				"max-height": heightMenu,
-				"margin-top": menuPosition(self) +"px"
+				"position": "fixed",
+				"top": menuPosition() +"px"
 			});
 
 		} else {
 			$('.main-menu .catalog-list>ul').css({
 				"max-height": "",
-				"margin-top": ""
+				"top": "",
+				"position": ""
 			});
 		}
+
 	}
  	var scrollPosition;
 	$('.main-menu .catalog-list').click(function(e){
 		var scrollTop = window.pageYOffset;
-		$(this).toggleClass('open');
+		var browserWidth = window.innerWidth;
+		console.log(scrollTop);
 		var self = this;
-		menuSet(self);
-		if($(this).hasClass('open')){
-			scrollPosition = disableScroll();
-			$('.backdrop').addClass('on');
-			$('.bars').addClass('active');
+		if(window.location.pathname== host_pathname || window.location.pathname== '/index.html'){
+			if(browserWidth>=1150 && scrollTop<645) {
+				e.stopImmediatePropagation();
+			}else{
+				$(this).toggleClass('open');
+				
+				menuSet(self);
+				if($(this).hasClass('open')){
+					if(browserWidth<800){
+						scrollPosition = disableScroll();
+					}
+					$('.bars').addClass('active');
+				}
+				else{
+					if(browserWidth<800){
+						enableScroll();
+					}
+					$('.bars').removeClass('active');
+				}
+			}
+		}else{
+			$(this).toggleClass('open');
+				
+				menuSet(self);
+				if($(this).hasClass('open')){
+					if(browserWidth<800){
+						scrollPosition = disableScroll();
+					}
+					$('.bars').addClass('active');
+				}
+				else{
+					if(browserWidth<800){
+						enableScroll();
+					}
+					$('.bars').removeClass('active');
+				}
 		}
-		else{
-			enableScroll();
-			$('.backdrop').removeClass('on');
-			$('.bars').removeClass('active');
-		}
+
+
+
+		
 	});
 	//prevent hide menu onclick
 	$('.main-menu .catalog-list>ul').click(function(e){
@@ -149,26 +183,29 @@ $(function(){
 	// 	var scrollTop = window.pageYOffset;
 	// 	 window.scrollTo(0,scrollTop)
 	// });
-	
 	//disable scroll
 	function disableScroll() {
 		 var scrollTop = window.pageYOffset;
-			function test(){
+			function setBodyPosition(){
 				var topPosition = 182 - scrollTop;
 				console.log(scrollTop)
 				if(topPosition<=0){
-					return 126
+					return 125
 				}else return scrollTop;
 			}
 	    	 $('body').addClass('no-scroll');
+	    	 $('.backdrop').addClass('on');
 	    	 $('body').css("position","fixed");
-	   		 $('body').css("top", -test() + 'px');
+	   		 $('body').css("top", -setBodyPosition() + 'px');
 	   		 // console.log(scrollTop)
+	   		 window.scrollTo(0,scrollTop || 0)
+	   		 console.log(scrollPosition);
 	   		 return scrollTop;
 	}
 	function enableScroll() {
 			 $('body').removeClass('no-scroll');
 			 $('body').css("position","");
+			 $('.backdrop').removeClass('on');
 			 $('body').css("top", "");
 			 window.scrollTo(0,scrollPosition || 0)
 	}
