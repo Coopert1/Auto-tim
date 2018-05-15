@@ -26,7 +26,6 @@
 						input(type="password")
 					input.btn.btn_callback(type="submit" value="Войти")
 					a.forgot-password(href="#") Забыли пароль?
-
 	.header-top
 		.wrapper
 			.location
@@ -80,105 +79,105 @@
 					input(type="search", placeholder="Поиск", name="search")
 					button(type="submit")
 						img(src="images/magnifying-glass.png", alt="logo")
-	.main-menu
-		.wrapper
-			.search-form
-						form
-							input(type="search", placeholder="Поиск", name="search")
-							button(type="submit") Найти
-			ul
-				li.main-menu__item.catalog-list
-					.bars
-						.bar
-						.bar
-						.bar
-					span.menu-list-name.hide-laptop
-							|Меню
-					span.menu-list-name.show-laptop
-						|Каталог товаров
-					ul#overlay.scrollable
-						li 
-							span Боксы на крышу
-							i.fa.fa-angle-right 
-						li 
-							span Велокрепления
-							i.fa.fa-angle-right 
-						li 
-							span Багажники
-							i.fa.fa-angle-right 
-						li 
-							span Грузовые и экспедиц. корзины
-							i.fa.fa-angle-right 
-						li 
-							span Багажник для лыж и сноубордов
-							i.fa.fa-angle-right 
-						li 
-							span Чехлы, сумки и рюкзаки
-							i.fa.fa-angle-right 
-						li 
-							span Цепи противоскольжения
-							i.fa.fa-angle-right 
-						li 
-							span Крепления
-							i.fa.fa-angle-right 
-						li 
-							span Автохолодильники
-							i.fa.fa-angle-right 
-						li 
-							span Автоодеяла 
-							i.fa.fa-angle-right 
-						li 
-							span Подогреватели
-							i.fa.fa-angle-right 
-						li 
-							span Фильтры-сепараторы Separ
-							i.fa.fa-angle-right 
-						li 
-							span Воздушные отопители Webasto
-							i.fa.fa-angle-right 
-						li.hide-tablet
-							include ../images/lock.svg
-							a(href="#").no-hover
-								span.dashed.sign-in Вход
-							span.separate |
-							a(href="#").no-hover
-								span.underline Регистрация
-				li.main-menu__item.show-tablet-inline
-					a(href="#")
+.main-menu
+	.wrapper
+		.search-form
+					form
+						input(type="search", placeholder="Поиск", name="search")
+						button(type="submit") Найти
+		ul
+			li.main-menu__item.catalog-list
+				.bars
+					.bar
+					.bar
+					.bar
+				span.menu-list-name.hide-laptop
+						|Меню
+				span.menu-list-name.show-laptop
+					|Каталог товаров
+				ul#overlay
+					li 
+						span Боксы на крышу
+						i.fa.fa-angle-right 
+					li 
+						span Велокрепления
+						i.fa.fa-angle-right 
+					li 
+						span Багажники
+						i.fa.fa-angle-right 
+					li 
+						span Грузовые и экспедиц. корзины
+						i.fa.fa-angle-right 
+					li 
+						span Багажник для лыж и сноубордов
+						i.fa.fa-angle-right 
+					li 
+						span Чехлы, сумки и рюкзаки
+						i.fa.fa-angle-right 
+					li 
+						span Цепи противоскольжения
+						i.fa.fa-angle-right 
+					li 
+						span Крепления
+						i.fa.fa-angle-right 
+					li 
+						span Автохолодильники
+						i.fa.fa-angle-right 
+					li 
+						span Автоодеяла 
+						i.fa.fa-angle-right 
+					li 
+						span Подогреватели
+						i.fa.fa-angle-right 
+					li 
+						span Фильтры-сепараторы Separ
+						i.fa.fa-angle-right 
+					li 
+						span Воздушные отопители Webasto
+						i.fa.fa-angle-right 
+					li.hide-tablet
+						include ../images/lock.svg
+						a(href="#").no-hover
+							span.dashed.sign-in Вход
+						span.separate |
+						a(href="#").no-hover
+							span.underline Регистрация
+			li.main-menu__item.show-tablet-inline
+				a(href="#")
+					span
+						|О Компании
+			li.main-menu__item.show-tablet-inline.active
+				a(href="#")
+					span
+						|Доставка
+			li.main-menu__item.show-tablet-inline
+				a(href="#")
+					span
+						|Оплата
+			li.main-menu__item.show-tablet-inline
+				a(href="#")
+					span
+						|Контакты
+			li.main-menu__item.show-tablet-inline
+				a.photogallery(href="gallery.html")
+					span
+						|Фотогалерея
+			li.main-menu__item.show-tablet-inline.add-border
+				a.normal-position(href="filter_results.html")
+					include ../images/filters.svg
+			li.main-menu__item.add-border.active
+				a.normal-position(href="#")
+					include ../images/heart.svg
+			li.main-menu__item.search-mobile.add-border.hide-tablet.normal-position
+				a.normal-position(href="#")
+					img(src="images/zoom.svg", alt="search", width="30px" height="30px")
+			li.main-menu__item.add-border.normal-position
+				a.normal-position(href="cart.html")
+					.shoppingcart
+						include ../images/cart.svg
+						span.cart-item-count 3
+					.shopping-sum.show-laptop-inline
 						span
-							|О Компании
-				li.main-menu__item.show-tablet-inline.active
-					a(href="#")
+							|8800 
 						span
-							|Доставка
-				li.main-menu__item.show-tablet-inline
-					a(href="#")
-						span
-							|Оплата
-				li.main-menu__item.show-tablet-inline
-					a(href="#")
-						span
-							|Контакты
-				li.main-menu__item.show-tablet-inline
-					a.photogallery(href="gallery.html")
-						span
-							|Фотогалерея
-				li.main-menu__item.show-tablet-inline.add-border
-					a.normal-position(href="filter_results.html")
-						include ../images/filters.svg
-				li.main-menu__item.add-border.active
-					a.normal-position(href="#")
-						include ../images/heart.svg
-				li.main-menu__item.search-mobile.add-border.hide-tablet.normal-position
-					a.normal-position(href="#")
-						img(src="images/zoom.svg", alt="search", width="30px" height="30px")
-				li.main-menu__item.add-border.normal-position
-					a.normal-position(href="cart.html")
-						.shoppingcart
-							include ../images/cart.svg
-							span.cart-item-count 3
-						.shopping-sum.show-laptop-inline
-							span
-								|8800 
-							span
-								|u
+							|u
