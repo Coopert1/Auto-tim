@@ -62,24 +62,24 @@
 	
 		//Slider for popular parts setting
 		var slider=$('#popular-section-slider').lightSlider({
-		galleryMargin: 25,
-		item: 3,
-		controls: false,
-		slideMove: 1,
-		responsive:[
-			{
-				breakpoint: 500,
-				settings:
-					{
-						item:1.5,
-						slideMove:1,
-					}
-			},
-		],
-	});
+			galleryMargin: 25,
+			item: 3,
+			controls: false,
+			slideMove: 1,
+			responsive:[
+				{
+					breakpoint: 500,
+					settings:
+						{
+							item:1.5,
+							slideMove:1,
+						}
+				},
+			],
+		});
 
 		//Slider for dealers setting
-			var dealerslider=$('#dealerslider').lightSlider({
+		var dealerslider=$('#dealerslider').lightSlider({
 			galleryMargin: 25,
 			autoWidth: true,
 			item: 5,
@@ -140,9 +140,9 @@
 			gallery: true,
 			item: 1,
 			loop:true,
-			slideMargin: 0,
+			slideMargin:0,
 			galleryMargin: 80,
-			thumbItem: 4,
+			thumbItem: 6,
 			responsive:[
 			{breakpoint: 1024,
 				settings:{
@@ -158,6 +158,7 @@
 			breakpoint: 799,
 				settings:{
 					galleryMargin: 0,
+					thumbItem: 4
 				}
 			},
 			
