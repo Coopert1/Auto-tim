@@ -94,26 +94,11 @@ $(function(){
 	// end scroll fixes top main-menu
 	
 
-	
-	
-	
-	
-	//іскщдд
-
-	// function menuPosition(){
-	// 	var scrollTop = $(window).scrollTop();
-	// 	var topPosition = 182 - scrollTop;
-	// 	if(scrollTop == 0) return 56;
-	// 	if(topPosition<=0){
-	// 		return 56
-	// 	}else return topPosition;
-	// }
 
 	function menuSet(self){
 		var browserWidth = window.innerWidth;
 		var heightMenu = window.innerHeight - document.querySelector(".main-menu").getBoundingClientRect().bottom + "px";
 		var menuPosition = document.querySelector(".main-menu").getBoundingClientRect().bottom;
-		//console.log(document.querySelector(".main-menu").getBoundingClientRect().bottom);
 
 		if (browserWidth < 800 ) {
 			$('.main-menu .catalog-list>ul').css({

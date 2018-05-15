@@ -339,15 +339,18 @@
 
 
 
-$('span.icon.icon_fav').click(function(){
-		$(this).toggleClass('icon_fav_active');
+$('.product__add-favorite').click(function(){
+		$(this).toggleClass('active');
 		})
 
-	$('span.icon.icon_filter').click(function(){
-		$(this).toggleClass('icon_filter_active');
+	$('.product__add-filter').click(function(){
+		$(this).toggleClass('active');
 		})
 
 	$('.commodity__favorite').click(function(){
+		$(this).toggleClass('active');
+		})
+	$('.commodity__filter').click(function(){
 		$(this).toggleClass('active');
 		})
 
