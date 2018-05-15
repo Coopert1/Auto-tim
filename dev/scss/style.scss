@@ -234,6 +234,16 @@ ul.text{
 
 		right:50px;
 		top: 10px;
+		&.active{
+			svg{
+				.lines{
+					fill: #f2762e;
+				}
+				.circle{
+					stroke: #f2762e;
+				}
+			}
+		}
 	}
 	&__add-favorite{
 		position: absolute;
@@ -241,6 +251,16 @@ ul.text{
 		cursor: pointer;
 		right:10px;
 		top: 10px;
+		&.active{
+			svg{
+				.lines{
+					fill: #f2762e;
+				}
+				.circle{
+					stroke: #f2762e;
+				}
+			}
+		}
 	}
 	&__img{
 		text-align: center;
@@ -1692,6 +1712,7 @@ button, input {
 	font-size: 14px;
 	
 	td{
+
 		line-height: 1.5;
 		vertical-align: top;
 		&:first-child{
@@ -1802,8 +1823,8 @@ button, input {
 	&__favorite{
 		display: inline-block;
 		width: 34px;
-		height: 33px;
-		background-image: url(../images/add_to_fav.png);
+		height: 34px;
+		// background-image: url(../images/add_to_fav.png);
 		margin: 10px 10px 30px 0;
 		background-position: 0 0px;
 		@include breakpoint(tablet){
@@ -1814,14 +1835,21 @@ button, input {
 			}
 		}
 		&.active{
-			background-position: 37px 0;
+		svg{
+			.lines{
+				fill: #f2762e;
+			}
+			.circle{
+				stroke: #f2762e;
+			}
+		}
 		}
 	}
 	&__filter{
 		display: inline-block;
-		width: 33px;
-		height: 33px;
-		background-image: url(../images/filter_little.png);
+		width: 34px;
+		height: 34px;
+		// background-image: url(../images/filter_little.png);
 		margin: 10px 10px 30px 0;
 		background-position: 0 0;
 		@include breakpoint(tablet){
@@ -1829,6 +1857,16 @@ button, input {
 			margin-bottom: 0;
 			&.hide-tablet{
 				display: none;
+			}
+		}
+		&.active{
+			svg{
+				.lines{
+					fill: #f2762e;
+				}
+				.circle{
+					stroke: #f2762e;
+				}
 			}
 		}
 		
