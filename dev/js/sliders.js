@@ -142,7 +142,8 @@
 			loop:true,
 			slideMargin:0,
 			galleryMargin: 80,
-			thumbItem: 6,
+			thumbItem: 5,
+			thumbMargin: 40,
 			responsive:[
 			{breakpoint: 1024,
 				settings:{
@@ -158,7 +159,8 @@
 			breakpoint: 799,
 				settings:{
 					galleryMargin: 0,
-					thumbItem: 4
+					thumbItem: 4,
+					thumbMargin: 4,
 				}
 			},
 			
